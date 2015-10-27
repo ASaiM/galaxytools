@@ -6,12 +6,12 @@
             <actions_group>
                 <!-- Download the binaries -->
                 <actions os="linux" architecture="x86_64">
-                    <action type="shell_command">svn checkout http://ea-utils.googlecode.com/svn/trunk/</action>
-                    <action type="change_directory">trunk/clipper/</action>
+                    <action type="shell_command">svn checkout http://ea-utils.googlecode.com/svn/trunk/ ea-utils</action>
+                    <action type="change_directory">ea-utils/clipper/</action>
                     <action type="shell_command">make</action>
                     <action type="move_file">
                         <source>fastq-join</source>
-                        <destination>$INSTALL_DIR/bin</destination>
+                        <destination>$INSTALL_DIR</destination>
                     </action>
                 </actions>
 
@@ -25,7 +25,7 @@
 
                 <!-- The $PATH environment variable is only set if one of the above <actions> tags resulted in a successful installation. -->
                 <action type="set_environment">
-                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR</environment_variable>
                 </action>
             </actions_group>
         </install>
