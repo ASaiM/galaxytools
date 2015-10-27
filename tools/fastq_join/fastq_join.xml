@@ -2,7 +2,7 @@
     <description>to assemble paired-end reads</description>
 
     <requirements>
-        <requirement type="package" version="1.0-r68">seqtk</requirement>
+        <requirement type="package" version="0.1.0">ea-utils</requirement>
     </requirements>
 
     <stdio>
@@ -10,7 +10,16 @@
     </stdio>
 
     <command><![CDATA[
-        A changer !!!!!!!
+        fastq_join
+            -p $max_diff_perc
+            -m $min_overlap
+            $smaller_insert
+
+            $r1_sequence_file
+            $r2_sequence_file
+            -o $single_R1_sequence_file
+            -o $single_R2_sequence_file
+            -o $join_sequence_file
     ]]></command>
 
 
@@ -19,7 +28,7 @@
         <param name="r2_sequence_file" type="data" format="fastq,fasta" label="R2 sequence file" help=""/>
         <param name="min_overlap" type="integer" min="0" max="3000" value="6" label="Minimal overlap length (in bp) required to join pairs" help=""/>
         <param name="max_diff_perc" type="integer" min="0" max="100" value="8" label="Maximal percentage of differences within overlap region" help=""/>
-        <param name='smaller_insert' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Smaller insert?" help=""/> 
+        <param name='smaller_insert' type='boolean' checked="true" truevalue='-x' falsevalue='' label="Smaller insert?" help=""/> 
     </inputs>
 
     <outputs>
@@ -43,77 +52,77 @@
 
     <help><![CDATA[
 
-        FastQJoin is not working on MacOSX
+FastQJoin is not working on MacOSX
 
-        **What it does**
+**What it does**
 
-        FastQJoin is a command-line tool available in ea-utils tools. 
+FastQJoin is a command-line tool available in ea-utils tools. 
 
-        Similar to audy's stitch program, it uses the squared distance for 
-        anchored alignment, which is a good measure of anchored alignment 
-        quality, akin to squared-deviation for means.
+Similar to audy's stitch program, it uses the squared distance for 
+anchored alignment, which is a good measure of anchored alignment 
+quality, akin to squared-deviation for means.
 
-        For assembly, the overlapping bases are treated as:
+For assembly, the overlapping bases are treated as:
 
-            - When the bases match, the higher quality base is used
-            - When the bases don't match, if one quality is greater than 50%, then the resulting quality is the difference between the two qualities (reduced quality due to mismatch), or 50%, whichever is greater.
+    - When the bases match, the higher quality base is used
+    - When the bases don't match, if one quality is greater than 50%, then the resulting quality is the difference between the two qualities (reduced quality due to mismatch), or 50%, whichever is greater.
 
-        -----
+-----
 
-        **Input files**
+**Input files**
 
-        Inputs files are two files in fasta or fastq:
+Inputs files are two files in fasta or fastq:
 
-            - R1 sequence file that corresponds to sequence file with left-hand reads
+    - R1 sequence file that corresponds to sequence file with left-hand reads::
 
-            @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 1:N:0:ATCACG
-            GTGTACAAGGCCCGGGAACGTATTCACCGCGGCATGCTGATCCGCGATTACTAGCGATTCCAACTTCA
-            +   
-            BCCCCGGED8DFGC::+@C@9@,,EGFAF@CC7@@@FGAF<@FGGEGD7:<6EDDECCFGGCFGGC<6
+        @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 1:N:0:ATCACG
+        GTGTACAAGGCCCGGGAACGTATTCACCGCGGCATGCTGATCCGCGATTACTAGCGATTCCAACTTCA
+        +   
+        BCCCCGGED8DFGC::+@C@9@,,EGFAF@CC7@@@FGAF<@FGGEGD7:<6EDDECCFGGCFGGC<6
 
-            - R2 sequence file that corresponds to sequence file with right-hand reads
+    - R2 sequence file that corresponds to sequence file with right-hand reads::
 
-            @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 2:N:0:ATCACG
-            AACAGAGGCAGTCAATACCCCGAGTTGGTGCACCTCCCTATTAGCCCTCCCACTTCGCCTTGCCTCCT
-            +
-            ####################################################################
+        @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 2:N:0:ATCACG
+        AACAGAGGCAGTCAATACCCCGAGTTGGTGCACCTCCCTATTAGCCCTCCCACTTCGCCTTGCCTCCT
+        +
+        ####################################################################
 
-        ------
+------
 
-        **Parameters**
+**Parameters**
 
-        3 parameters can modified the paired-end assembly:
+3 parameters can modified the paired-end assembly:
 
-            - Minimal overlap length (in bp) required to join pairs
-            - Maximal percentage of differences within overlap region
-            - Information if smaller insert
+    - Minimal overlap length (in bp) required to join pairs
+    - Maximal percentage of differences within overlap region
+    - Information if smaller insert
 
-        -----
+-----
 
-        **Output files**
+**Output files**
 
-        Fastq-join generates 3 output files:
+Fastq-join generates 3 output files:
 
-            - A file with joined sequences
+    - A file with joined sequences::
 
-            @HWI-M00234:263:000000000-ADM55:1:1101:7508:4067 1:N:0:ATCACG
-            GGTGCACTAGGATCGTAGTTGGCTACTTTCCCGTTTTCAATGTATACGCAAGGTACACGGTCAGCGGT
-            +
-            CCCCCGFGED8DDCAFDAEE9DFGGGG9CFAFFCC@@CFGFGGCGFGG>GGGFFGDGEFFEFG8>4GF
+        @HWI-M00234:263:000000000-ADM55:1:1101:7508:4067 1:N:0:ATCACG
+        GGTGCACTAGGATCGTAGTTGGCTACTTTCCCGTTTTCAATGTATACGCAAGGTACACGGTCAGCGGT
+        +
+        CCCCCGFGED8DDCAFDAEE9DFGGGG9CFAFFCC@@CFGFGGCGFGG>GGGFFGDGEFFEFG8>4GF
 
-            - A file with non joined sequences from R1 sequence file
+    - A file with non joined sequences from R1 sequence file::
 
-            @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 1:N:0:ATCACG
-            GTGTACAAGGCCCGGGAACGTATTCACCGCGGCATGCTGATCCGCGATTACTAGCGATTCCAACTTCA
-            +
-            BCCCCGGED8DFGC::+@C@9@,,EGFAF@CC7@@@FGAF<@FGGEGD7:<6EDDECCFGGCFGGC<6
+        @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 1:N:0:ATCACG
+        GTGTACAAGGCCCGGGAACGTATTCACCGCGGCATGCTGATCCGCGATTACTAGCGATTCCAACTTCA
+        +
+        BCCCCGGED8DFGC::+@C@9@,,EGFAF@CC7@@@FGAF<@FGGEGD7:<6EDDECCFGGCFGGC<6
 
-            - A file with non joined sequences from R2 sequence file
+    - A file with non joined sequences from R2 sequence file::
 
-            @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 2:N:0:ATCACG
-            AACAGAGGCAGTCAATACCCCGAGTTGGTGCACCTCCCTATTAGCCCTCCCACTTCGCCTTGCCTCCT
-            +
-            ####################################################################
+        @HWI-M00234:263:000000000-ADM55:1:1101:21704:2233 2:N:0:ATCACG
+        AACAGAGGCAGTCAATACCCCGAGTTGGTGCACCTCCCTATTAGCCCTCCCACTTCGCCTTGCCTCCT
+        +
+        ####################################################################
 
     ]]>
     </help>
