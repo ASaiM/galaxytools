@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="ea-utils" version="0.1.0">
+        <repository name="package_ea_utils" owner="bebatut" />
+    </package>
+</tool_dependency>
