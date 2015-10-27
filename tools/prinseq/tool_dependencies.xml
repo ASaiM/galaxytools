@@ -2,11 +2,11 @@
 <tool_dependency>
     <package name="prinseq" version="0.20.4">
         <install version="1.0">
-            <actions os="linux" architecture="x86_64">
+            <actions>
                 <action type="download_by_url">http://downloads.sourceforge.net/project/prinseq/standalone/prinseq-lite-0.20.4.tar.gz</action>
-                <action type="move_directory_files">
-                    <source_directory>.</source_directory>
-                    <destination_directory>$INSTALL_DIR</destination_directory>
+                <action type="move_file">
+                    <source>prinseq-lite.pl</source>
+                    <destination>$INSTALL_DIR</destination>
                 </action>
                 <action type="set_environment">
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR</environment_variable>
