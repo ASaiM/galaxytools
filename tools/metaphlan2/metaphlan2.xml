@@ -17,17 +17,18 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 ]]>
     </version_command>
 
-    <command><![CDATA[
+    <command>
+<![CDATA[
         python \${METAPHLAN2_DIR}/metaphlan.py
             $input_file
             -o $output_file
 
-            --input_type ${input_reads.datatype.file_ext}
+            --input_type ${input_file.datatype.file_ext}
             --mpa_pkl \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200.pkl 
             --bowtie2db \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200
 
             $bowtie2_output
-            #if $bowtie2_output == '':
+            #if $bowtie2_output == ''
                 --bowtie2out $bowtie2_output
             #end if
 
@@ -35,21 +36,14 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
             #if $analysis_type.analysis_type_select == "rel_ab"
                 --tax_lev $analysis_type.taxonomic_level 
-            #elif $analysis_type.analysis_type_select == "marker_ab_table"
-                #if $analysis_type.nreads != ''
-                    --nreads $analysis_type.nreads
-                #end if 
-            #elif $analysis_type.analysis_type_select == "marker_pres_table"
-                #if $analysis_type.pres_th != ''
-                    --pres_th $analysis_type.pres_th 
-                #end if
+            #else if $analysis_type.analysis_type_select == "marker_ab_table"
+                --nreads $analysis_type.nreads
+            #else if $analysis_type.analysis_type_select == "marker_pres_table"
+                --pres_th $analysis_type.pres_th 
             #end if
 
             --min_cu_len $min_cu_len
-
-            #if $min_alignment_len != ''
-                --min_alignment_len $min_alignment_len
-            #end if
+            --min_alignment_len $min_alignment_len
 
             $ignore_viruses
             $ignore_eukaryotes
@@ -58,14 +52,15 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
             --stat_q $stat_q
 
-            #if $sam_output:
+            #if $sam_output
                 -s $sam_output_file
-            #endif
-            #if $biom_output:
-                -biom $biom_output_file
-            #endif
+            #end if
 
-    ]]></command>
+            #if $biom_output
+                -biom $biom_output_file
+            #end if
+]]>
+    </command>
 
     <inputs>
         <param name="input_file" type="data" format="fastq,fasta,sam,bowtie2out" label="Input file" help=""/>
@@ -101,7 +96,7 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
         <param name="min_cu_len" type="integer" value="2000" label="Minimum total nucleotide length for the markers in a clade for estimating the abundance without considering sub-clade abundances" help=""/>
 
-        <param name="min_alignment_len" type="integer" value="0" label="The sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded." help=""/>
+        <param name="min_alignment_len" type="integer" value="0" label="Sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded." help=""/>
 
         <param name="ignore_viruses" type='boolean' checked="true" truevalue='' falsevalue='--ignore_viruses' label="Profile viral organisms?" help="" />
         <param name="ignore_eukaryotes" type='boolean' checked="true" truevalue='' falsevalue='--ignore_eukaryotes' label="Profile eukaryotic organisms?" help="" />
@@ -169,16 +164,21 @@ previous MetaPhlAn
 
 Several parameters can modulate the MetaPhlAn execution
 
-    - Mapping arguments
-        - Test to avoid saving the output of BowTie2
-    - Post-mapping arguments
-        - Taxonomic level for the relative abundance output
-        - Minimum total nucleotide length for the markers in a clade for estimating the abundance without considering sub-clade abundances
-        - Sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded
-        - Tests to avoid profiling of virus, eukaryotes, bacteria and/or archea
-        - Quantile value
-    - Additional analysis types and arguments
-        - Type of analyse to perform and some parameters for specific analysis type
+    * Mapping arguments
+
+        * Test to avoid saving the output of BowTie2
+
+    * Post-mapping arguments
+
+        * Taxonomic level for the relative abundance output
+        * Minimum total nucleotide length for the markers in a clade for estimating the abundance without considering sub-clade abundances
+        * Sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded
+        * Tests to avoid profiling of virus, eukaryotes, bacteria and/or archea
+        * Quantile value
+
+    * Additional analysis types and arguments
+
+        * Type of analyse to perform and some parameters for specific analysis type
 
 -----
 
@@ -189,9 +189,9 @@ relative abundances.
 
 Given the choosen parameters, other output files can be:
 
-    - a sam output file
-    - a biom output fime
-    - a BowTie2 output file
+    * a sam output file
+    * a biom output fime
+    * a BowTie2 output file
 
     ]]></help>
 
