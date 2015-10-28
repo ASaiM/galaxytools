@@ -1,0 +1,7 @@
+categories: [Metagenomics]
+description: SortMeRNA is a local sequence alignment tool for filtering rRNA from
+  metatranscriptomic data
+homepage_url: http://bioinfo.lifl.fr/RNA/sortmerna/
+name: sortmerna
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/metaphlan2
