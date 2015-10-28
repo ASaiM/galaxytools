@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="bowtie2" version="2.2.5">
+        <repository name="package_bowtie_2_2_5" owner="iuc" />
+    </package>
+    <package name="metaphlan2" version="2.0">
+        <install version="1.0">
+            <actions>
+                <action type="shell_command">hg clone https://bitbucket.org/biobakery/metaphlan2</action>
+                <action type="move_directory_files">
+                    <source_directory>.</source_directory>
+                    <destination_directory>$INSTALL_DIR</destination_directory>
+                </action>
+                <action type="set_environment">
+                    <environment_variable name="METAPHLAN2_DIR" action="set_to">$INSTALL_DIR</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme></readme>
+    </package>
+</tool_dependency>

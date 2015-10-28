@@ -1,0 +1,175 @@
+<tool id="metaphlan2" name="MetaPhlAn2" version="0.1.0">
+
+    <description>to profile the composition of microbial communities</description>
+
+    <requirements>
+        <requirement type="package" version="2.2.5">bowtie2</requirement>
+        <requirement type="package" version="2.0">metaphlan2</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <version_command>
+<![CDATA[
+python \${METAPHLAN2_DIR}/metaphlan.py -v
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        python \${METAPHLAN2_DIR}/metaphlan.py
+            $input_file
+            -o $output_file
+
+            --input_type ${input_reads.datatype.file_ext}
+            --mpa_pkl \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200.pkl 
+            --bowtie2db \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200
+
+            $bowtie2_output
+            #if $bowtie2_output == '':
+                --bowtie2out $bowtie2_output
+            #end if
+
+            -t $analysis_type
+
+            #if $analysis_type.analysis_type_select == "rel_ab"
+                --tax_lev $analysis_type.taxonomic_level 
+            #elif $analysis_type.analysis_type_select == "marker_ab_table"
+                #if $analysis_type.nreads != ''
+                    --nreads $analysis_type.nreads
+                #end if 
+            #elif $analysis_type.analysis_type_select == "marker_pres_table"
+                #if $analysis_type.pres_th != ''
+                    --pres_th $analysis_type.pres_th 
+                #end if
+            #end if
+
+            --min_cu_len $min_cu_len
+
+            #if $min_alignment_len != ''
+                --min_alignment_len $min_alignment_len
+            #end if
+
+            $ignore_viruses
+            $ignore_eukaryotes
+            $ignore_bacteria
+            $ignore_archaea
+
+            --stat_q $stat_q
+
+            #if $sam_output:
+                -s $sam_output_file
+            #endif
+            #if $biom_output:
+                -biom $biom_output_file
+            #endif
+
+    ]]></command>
+
+    <inputs>
+        <param name="input_file" type="data" format="fastq,fasta,sam,bowtie2out" label="Input file" help=""/>
+
+        <conditional name="analysis_type">
+            <param name="analysis_type_select" type="select" label="Type of analysis to perform">
+              <option value="rel_ab" selected="true">Profiling a metagenomes in terms of relative abundances</option>
+              <option value="rel_ab_w_read_stats">Profiling a metagenomes in terms of relative abundances and estimate the number of reads comming from each clade</option>
+              <option value="reads_map">Mapping from reads to clades (only reads hitting a marker)</option>
+              <option value="clade_profiles">Normalized marker counts for clades with at least a non-null marker</option>
+              <option value="marker_ab_table">Normalized marker counts (only when > 0.0 and normalized by metagenome size if --nreads is specified)</option>
+              <option value="marker_pres_table">List of markers present in the sample (threshold at 1.0 if not differently specified with --pres_th</option>
+            </param>
+            <when value="rel_ab">
+              <param name="taxonomic_level" type="select" label="Taxonomic level for the relative abundance output">
+                <option value="a" selected="true">All taxonomic levels</option>
+                <option value="k">Kingdoms (Bacteria and Archaea) only</option>
+                <option value="p">Phyla only</option>
+                <option value="c">Classes only</option>
+                <option value="o">Orders only</option>
+                <option value="f">Families only</option>
+                <option value="g">Genera only</option>
+                <option value="s">Species only</option>
+              </param>
+            </when>
+            <when value="marker_ab_table">
+                <param name="nreads" type="integer" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
+            </when>
+            <when value="marker_pres_table">
+                <param name="pres_th" type="integer" label=" Threshold for calling a marker present" help=""/>
+            </when>
+        </conditional>
+
+        <param name="min_cu_len" type="integer" value="2000" label="Minimum total nucleotide length for the markers in a clade for estimating the abundance without considering sub-clade abundances" help=""/>
+
+        <param name="min_alignment_len" type="integer" label="The sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded." help=""/>
+
+        <param name="ignore_viruses" type='boolean' checked="true" truevalue='' falsevalue='--ignore_viruses' label="Profile viral organisms?" help="" />
+        <param name="ignore_eukaryotes" type='boolean' checked="true" truevalue='' falsevalue='--ignore_eukaryotes' label="Profile eukaryotic organisms?" help="" />
+        <param name="ignore_bacteria" type='boolean' checked="true" truevalue='' falsevalue='--ignore_bacteria' label="Profile bacteria organisms?" help="" />
+        <param name="ignore_archaea" type='boolean' checked="true" truevalue='' falsevalue='--ignore_archaea' label="Profile archea organisms?" help="" />
+
+        <param name="stat_q" type="float" value="0.1" label="Quantile value for the robust average" help=""/>
+
+        <param name="bowtie2_output" type='boolean' checked="true" truevalue='' falsevalue='--no_map' label="Store the output of BowTie2?" help="" />
+        <param name="sam_output" type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Output a sam file?" help="" />
+        <param name="biom_output" type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Output a biom file?" help="" />
+    </inputs>
+
+    <outputs>
+        <data format_source="txt" name="output_file" 
+            metadata="input_sequence_file" 
+            label="Profile of communities on ${on_string} (MetaPhlAn)" />
+
+        <data format_source="bowtie2" name="bowtie2_output_file" 
+            metadata="input_sequence_file" 
+            label="Bowtie2 output on ${on_string} (MetaPhlAn)">
+            <filter>!bowtie2_output</filter>
+        </data>
+
+        <data format_source="sam" name="sam_output_file" 
+            metadata="input_sequence_file" 
+            label="Sam output on ${on_string} (MetaPhlAn)">
+            <filter>sam_output</filter>
+        </data>
+        <data format_source="biom" name="biom_output_file" 
+            metadata="input_sequence_file" 
+            label="Biom output on ${on_string} (MetaPhlAn)">
+            <filter>biom_output</filter>
+        </data>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input_file" value="input_sequences.fastq"/>
+            <output name="output_file" file="profiled_metagenome.txt"/>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+
+**What it does**
+
+MetaPhlAn is a computational tool for profiling the composition of microbial 
+communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun 
+sequencing data with species level resolution
+
+.. _MetaPhlAn2 user manual: https://bitbucket.org/biobakery/metaphlan2
+
+-----
+
+**Input**
+
+-----
+
+**Parameters**
+
+-----
+
+**Outputs**
+
+    ]]></help>
+
+    <citations>
+        <citation type="doi">10.1038/nmeth.3589</citation>
+    </citations>
+</tool>
