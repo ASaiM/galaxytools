@@ -92,16 +92,16 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
               </param>
             </when>
             <when value="marker_ab_table">
-                <param name="nreads" type="integer" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
+                <param name="nreads" type="integer" value="0" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
             </when>
             <when value="marker_pres_table">
-                <param name="pres_th" type="integer" label=" Threshold for calling a marker present" help=""/>
+                <param name="pres_th" type="integer" value="0" label=" Threshold for calling a marker present" help=""/>
             </when>
         </conditional>
 
         <param name="min_cu_len" type="integer" value="2000" label="Minimum total nucleotide length for the markers in a clade for estimating the abundance without considering sub-clade abundances" help=""/>
 
-        <param name="min_alignment_len" type="integer" label="The sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded." help=""/>
+        <param name="min_alignment_len" type="integer" value="0" label="The sam records for aligned reads with the longest subalignment length smaller than this threshold will be discarded." help=""/>
 
         <param name="ignore_viruses" type='boolean' checked="true" truevalue='' falsevalue='--ignore_viruses' label="Profile viral organisms?" help="" />
         <param name="ignore_eukaryotes" type='boolean' checked="true" truevalue='' falsevalue='--ignore_eukaryotes' label="Profile eukaryotic organisms?" help="" />
