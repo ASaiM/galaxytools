@@ -1,7 +1,8 @@
 categories: [Metagenomics]
-description: SortMeRNA is a local sequence alignment tool for filtering rRNA from
-  metatranscriptomic data
-homepage_url: http://bioinfo.lifl.fr/RNA/sortmerna/
-name: sortmerna
+description: MetaPhlAn is a computational tool for profiling the composition of microbial
+  communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun
+  sequencing data with species level resolution
+homepage_url: https://bitbucket.org/biobakery/metaphlan2
+name: metaphlan2
 owner: bebatut
-remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/metaphlan2
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/sortmerna/
