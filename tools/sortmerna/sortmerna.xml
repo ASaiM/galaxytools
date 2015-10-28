@@ -41,25 +41,25 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
     sortmerna
         --ref $ref
         --reads $input_sequence_file
+        --aligned aligned
 
         #if $fastx.test:
-            --aligned $aligned_sequence_file
             --fastx
             #if $fastx.rejected:
-                --other $rejected_sequence_file
+                --other other_file
             #end if
         #end if
 
         #if $sam.test:
-            --aligned $sam_alignment_file
             --sam
-            $sq_tag
+            $sam.sq_tag
         #end if
 
         #if $blast.test:
-            --aligned $blast_output_file
-            --blast '$blast.format'
+            --blast "$blast.format"
         #end if
+
+        $log
 
         #if $report.type == 'best':
             #if $report.best.type == '0':
@@ -81,12 +81,12 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
             #end if
         #end if
 
-        --e $e_value
+        -e $e_value
         --match $match
         --mismatch $mismatch
         --gap_open $gap_open
         --gap_ext $gap_ext
-        --N $ambiguous_letter
+        -N $ambiguous_letter
 
         #if $strand == 'forward':
             -F
@@ -144,6 +144,8 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
             </when>
         </conditional>
 
+        <param name='log' type='boolean' checked="true" truevalue='--log' falsevalue='' label="Conserve overall statistic output into a log file?" help=""/>
+
         <conditional name="report">
             <param name="type" type="select" display="radio" label="Parameters for filtering and read mapping" help="">
                 <option value="best" selected="true">Report best alignments per read reaching E-value</option>
@@ -197,20 +199,36 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
     </inputs>
     
     <outputs>
-        <data format="fastq,fasta" name="aligned_sequence_file" metadata="input_sequence_file">
+        <data format_source="input_sequence_file" name="aligned_sequence_file" 
+            metadata="input_sequence_file" from_work_dir="aligned.dat"
+            label="Aligned sequences on ${on_string} (SortMeRNA)">
             <filter>((fastx['test']))</filter>
         </data>
 
-        <data format="fastq,fasta" name="rejected_sequence_file" metadata="input_sequence_file">
+        <data format_source="input_sequence_file" name="rejected_sequence_file" 
+            metadata="input_sequence_file" from_work_dir="other_file.dat"
+            label="Rejected sequences on ${on_string} (SortMeRNA)">
             <filter>((fastx['test'] and fastx['rejected']))</filter>
         </data>
 
-        <data format="sam" name="sam_alignment_file" metadata="input_sequence_file">
+        <data format="sam" name="sam_alignment_file" metadata="input_sequence_file"
+            from_work_dir="aligned.sam"
+            label="SAM alignments on ${on_string} (SortMeRNA)">
             <filter>((sam['test']]))</filter>
         </data>
 
-        <data format="text" name="blast_output_file" metadata="input_sequence_file">
+        <data format="tabular" name="blast_output_file" 
+            metadata="input_sequence_file" from_work_dir="aligned.blast"
+            label="Blast alignments on ${on_string} (SortMeRNA)">
             <filter>((blast['test']))</filter>
+            <change_format>
+                <when input="blast.format" value="0" format="txt" />
+            </change_format>
+        </data>
+
+        <data format="txt" name="output_log" metadata="input_sequence_file" 
+            from_work_dir="aligned.log" label="Log on ${on_string} (SortMeRNA)">
+            <filter>log</filter>
         </data>
     </outputs>
     
