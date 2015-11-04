@@ -113,7 +113,7 @@ install:
 # - cp ${TRAVIS_BUILD_DIR}/test-data/* test-data/
 # - cp ${TRAVIS_BUILD_DIR}/tool-data/* tool-data/
  - ./run.sh --stop-daemon || true
- - python scripts/fetch_eggs.py
+# - python scripts/fetch_eggs.py
 
 
 # Testing tools in Galaxy
