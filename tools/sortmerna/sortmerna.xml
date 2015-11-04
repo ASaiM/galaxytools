@@ -43,7 +43,7 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
         --reads $input_sequence_file
         --aligned aligned
 
-        #if $fastx.fastx_test:
+        #if $fastx.fastx_test == 'yes' :
             --fastx
             #if $fastx.fastx_rejected:
                 --other other_file
@@ -237,23 +237,26 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
             <param name="input_sequence_file" value="input_sequences.fastq"/>
             <param name="databases_selector" value="history"/>
             <param name="databases_name" value="db.fasta"/>
-            <param name="fastx_test" value="yes"/>
-            <param name="fastx_rejected" value="yes"/>
-            <param name="sam_test" value="yes"/>
-            <param name="blast_test" value="yes"/>
-            <param name="blast_format" value="1 cigar qcov"/>
-            <param name="report_type" value="best"/>
-            <param name="report_best_type" value="1"/>
-            <param name="report_best_min_lis" value="2"/>
-            <param name="e_value" value="1"/>
+            <param name="fastx_test" value='no' />
+            <param name='fastx_rejected' value='no'/>
+            <param name="sam_test" value='yes'/>
+            <param name='sam_sq_tag' value='--SQ'/>
+            <param name='blast_test' value='yes'/>
+            <param name="blast_format" value="1 cigar qcov" />
+            <param name='log' value='--log' />
+            <param name="report_type" value="best" />
+            <param name="report_best_type" value="1" /> 
+            <param name="report_best_min_lis" value="2" />
+            <param name="e_value" value="1" />
             <param name="match" value="2"/>
-            <param name="mismatch" value="-3"/>
-            <param name="gap_open" value="5" />
-            <param name="gap_ext" value="2"/>
-            <param name="ambiguous_letter" value="-3"/>
-            <param name="strand" value="both"/>
-            <param name="seed_length" value="18"/>
-            <param name="max_pos" value="10000"/>
+            <param name="mismatch" value="-3" />
+            <param name="gap_open" value="5"/>
+            <param name="gap_ext" value="2" />
+            <param name="ambiguous_letter" value="-3" />
+            <param name="strand" value="both" />
+            <param name="seed_length" value="18" />
+            <param name="max_pos" value="10000" />
+
 
             <output name="aligned_sequence_file" file="aligned_sequences.fastq"/>
             <output name="rejected_sequence_file" file="rejected_sequences.fastq"/>
@@ -312,8 +315,7 @@ For RNA sorting, the parameters are:
         - Test for conservation of best alignment or first alignment
         - Number of searched, conserved alignments
     - E-value threshold
-    - SW score for a match, for a mismatch, for introducing a gap, for extending
-    a gap, for ambigous letters
+    - SW score for a match, for a mismatch, for introducing a gap, for extending a gap, for ambigous letters
     - Strand to search
 
 -----
