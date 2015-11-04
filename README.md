@@ -43,7 +43,7 @@ their dependencies. See the `.travis.yml` file for more technical details.
 
 # Bugs
 
-You can file an issue here https://github.com/ASaiM/galaxytools/issues
+You can file an issue [here](https://github.com/ASaiM/galaxytools/issues).
 
 # License
 
