@@ -260,7 +260,7 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
 
             <output name="aligned_sequence_file" file="aligned_sequences.fastq"/>
             <output name="rejected_sequence_file" file="rejected_sequences.fastq"/>
-            <output name="blast_output_file" file="blast_output.txt"/>
+            <output name="blast_output_file" file="blast_output.tabular"/>
             <output name="sam_alignment_file" file="sam_alignments.sam"/>
         </test>
     </tests>
