@@ -110,8 +110,8 @@ install:
  - rm -f config/shed_tool_data_table_conf.xml
  - ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_data_table_conf.xml config/shed_tool_data_table_conf.xml
  - for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ ); do ln -s ${TRAVIS_BUILD_DIR}/tools/$i/ tools/$i; cp ${TRAVIS_BUILD_DIR}/tools/$i/test-data/* test-data/; if [ -d ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/ ]; then cp ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/* tool-data/; fi; done
- - cp ${TRAVIS_BUILD_DIR}/test-data/* test-data/
- - cp ${TRAVIS_BUILD_DIR}/tool-data/* tool-data/
+# - cp ${TRAVIS_BUILD_DIR}/test-data/* test-data/
+# - cp ${TRAVIS_BUILD_DIR}/tool-data/* tool-data/
  - ./run.sh --stop-daemon || true
  - python scripts/fetch_eggs.py
 
