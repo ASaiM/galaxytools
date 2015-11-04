@@ -36,7 +36,7 @@ If the tools are installed, theses tests can be runned via Galaxy's `run_tests.s
 In addition the same functional tests are runned via TravisCI whenever this 
 GitHub repository is updated:
 
-[![Build Status](https://travis-ci.org/ASaiM/galaxytools.svg)](https://travis-ci.org/ASaiM/galaxytools.svg)
+[![Build Status](https://travis-ci.org/ASaiM/galaxytools.svg)](https://travis-ci.org/ASaiM/galaxytools)
 
 This TravisCI integration simulates a manual install of these Galaxy Tools and 
 their dependencies. See the `.travis.yml` file for more technical details.
