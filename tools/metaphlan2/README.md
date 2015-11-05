@@ -26,7 +26,13 @@ normal:
 </section>
 ```
 
-MetaPhlAn2 must be installed somewhere on the system path. 
+MetaPhlAn2 must be installed somewhere on the system path. It can be done using:
+
+```
+planemo dependency_script ~/repositories/galaxytools/tools/metaphlan2/
+bash dep_install.sh
+source env.sh
+```
 
 To test the Galaxy integration, the functional tests can be runned:
 
