@@ -1,12 +1,13 @@
 #!/bin/bash
 
 TRAVIS_BUILD_DIR=$PWD
+pip install -r requirements.txt
 
-if [ ! -d tests]; then
+if [ ! -d tests ]; then
     mkdir tests
 fi
 cd tests
-pip install -r requirements.txt
+
 
 # Install tool dependencies
 # =========================
