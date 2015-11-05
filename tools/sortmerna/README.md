@@ -36,7 +36,13 @@ have to be completed:
 </table>
 ```
 
-SortMeRNA must be installed somewhere on the system path. 
+SortMeRNA must be installed somewhere on the system path. It can be done using:
+
+```
+planemo dependency_script ~/repositories/galaxytools/tools/sortmerna/
+bash dep_install.sh
+source env.sh
+```
 
 To test the Galaxy integration, the functional tests can be runned:
 
