@@ -37,7 +37,7 @@ All of these Galaxy tools include a <tests> section in the tool XML files, which
 defines at least one functional test (sample input files, parameters and the 
 expected output). 
 
-If the tools are installed, theses tests can be runned via Galaxy's `run_tests.sh`
+If the tools are installed, theses tests can be runned `src/run_tests.sh`
  script. See the `README` file for each tool for more details.
 
 In addition the same functional tests are runned via TravisCI whenever this 
