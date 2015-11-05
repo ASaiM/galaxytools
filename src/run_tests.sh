@@ -2,6 +2,10 @@
 
 TRAVIS_BUILD_DIR=$PWD
 
+if [ ! -d tests]; then
+    mkdir tests
+fi
+cd tests
 pip install -r requirements.txt
 
 # Install tool dependencies
@@ -14,8 +18,6 @@ do
     bash dep_install.sh
     source env.sh
 done
-
-cd tests
 
 # Install Galaxy
 # ==============
