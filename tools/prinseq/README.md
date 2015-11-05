@@ -26,7 +26,13 @@ normal:
 </section>
 ```
 
-PRINSEQ must be installed somewhere on the system path. 
+PRINSEQ must be installed somewhere on the system path. It can be done using:
+
+```
+planemo dependency_script ~/repositories/galaxytools/tools/prinseq/
+bash dep_install.sh
+source env.sh
+```
 
 To test the Galaxy integration, the functional tests can be runned:
 
