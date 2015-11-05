@@ -3,12 +3,20 @@
     <description>to profile the composition of microbial communities</description>
 
     <requirements>
-        <requirement type="package" version="2.2.5">bowtie2</requirement>
+        <requirement type="package" version="2.2.4">bowtie2</requirement>
         <requirement type="package" version="2.0">metaphlan2</requirement>
     </requirements>
 
     <stdio>
-        <exit_code range="1:" />
+        <exit_code range="1:" level="fatal"   description="" />
+        <regex match="ERROR"
+               source="stderr"
+               level="fatal"
+               description="" />
+        <regex match="WARNING"
+               source="stderr"
+               level="warning"
+               description="" />
     </stdio>
 
     <version_command>
@@ -19,7 +27,7 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
     <command>
 <![CDATA[
-        python \${METAPHLAN2_DIR}/metaphlan.py
+        python \${METAPHLAN2_DIR}/metaphlan2.py
             $input_file
             -o $output_file
 
@@ -27,13 +35,9 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
             --mpa_pkl \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200.pkl 
             --bowtie2db \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200
 
-            $bowtie2_output
-            #if $bowtie2_output == ''
-                --bowtie2out $bowtie2_output
-            #end if
+            --no_map
 
-            -t $analysis_type
-
+            -t $analysis_type.analysis_type_select
             #if $analysis_type.analysis_type_select == "rel_ab"
                 --tax_lev $analysis_type.taxonomic_level 
             #else if $analysis_type.analysis_type_select == "marker_ab_table"
@@ -57,7 +61,7 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
             #end if
 
             #if $biom_output
-                -biom $biom_output_file
+                --biom $biom_output_file
             #end if
 ]]>
     </command>
@@ -105,28 +109,27 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
         <param name="stat_q" type="float" value="0.1" label="Quantile value for the robust average" help=""/>
 
-        <param name="bowtie2_output" type='boolean' checked="true" truevalue='' falsevalue='--no_map' label="Store the output of BowTie2?" help="" />
-        <param name="sam_output" type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Output a sam file?" help="" />
-        <param name="biom_output" type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Output a biom file?" help="" />
+        <param name="sam_output" type='boolean' label="Output a sam file?" help="" />
+        <param name="biom_output" type='boolean' label="Output a biom file?" help="" />
     </inputs>
 
     <outputs>
-        <data format_source="txt" name="output_file" 
+        <data format="txt" name="output_file" 
             metadata="input_sequence_file" 
             label="Profile of communities on ${on_string} (MetaPhlAn)" />
 
-        <data format_source="bowtie2" name="bowtie2_output_file" 
+        <data format="bowtie2" name="bowtie2_output_file" 
             metadata="input_sequence_file" 
             label="Bowtie2 output on ${on_string} (MetaPhlAn)">
-            <filter>!bowtie2_output</filter>
+            <filter>bowtie2_output</filter>
         </data>
 
-        <data format_source="sam" name="sam_output_file" 
+        <data format="sam" name="sam_output_file" 
             metadata="input_sequence_file" 
             label="Sam output on ${on_string} (MetaPhlAn)">
             <filter>sam_output</filter>
         </data>
-        <data format_source="biom" name="biom_output_file" 
+        <data format="biom" name="biom_output_file" 
             metadata="input_sequence_file" 
             label="Biom output on ${on_string} (MetaPhlAn)">
             <filter>biom_output</filter>
@@ -136,7 +139,20 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
     <tests>
         <test>
             <param name="input_file" value="input_sequences.fastq"/>
+            <param name="analysis_type_select" value="rel_ab" />
+            <param name="taxonomic_level" value="a" />
+            <param name="min_cu_len" value="2000" />
+            <param name="min_alignment_len" value="0" />
+            <param name="ignore_viruses" value="" />
+            <param name="ignore_eukaryotes" value="" />
+            <param name="ignore_bacteria" value="" />
+            <param name="ignore_archaea" value="" />
+            <param name="stat_q" value="0.1" />
+            <param name="sam_output" value='True' />
+            <param name="biom_output" value='True' />
             <output name="output_file" file="profiled_metagenome.txt"/>
+            <output name="biom_output_file" file="biom.biom"/>
+            <output name="sam_output_file" file="sam_alignments.sam"/>
         </test>
     </tests>
 
