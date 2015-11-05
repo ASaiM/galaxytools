@@ -48,13 +48,13 @@ A release can be pushed to the test or main "Galaxy Tool Shed", using the follow
 Planemo commands (with required Tool Shed access detailed in `~/.planemo.yml`):
 
 ```
-planemo shed_update -t testtoolshed --check_diff --shed_target ~/repositories/galaxytools/tools/fastq_join/
+planemo shed_update -t testtoolshed --check_diff ~/repositories/galaxytools/tools/fastq_join/
 ```
 
 or:
 
 ```
-planemo shed_update -t toolshed --check_diff --shed_target ~/repositories/galaxytools/tools/fastq_join/
+planemo shed_update -t toolshed --check_diff ~/repositories/galaxytools/tools/fastq_join/
 ```
 
 # License (Apache 2) 
