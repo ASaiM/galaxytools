@@ -24,6 +24,13 @@ into a Galaxy instance for use, generally via the Galaxy Tool Shed.
 However, manual installation is possible as described in the `README`
  file of each tool.
 
+## Requirements
+
+Some tools must be installed before test:
+
+- `pip`
+- `wget`
+
 # Testing
 
 All of these Galaxy tools include a <tests> section in the tool XML files, which 
@@ -41,9 +48,9 @@ GitHub repository is updated:
 This TravisCI integration simulates a manual install of these Galaxy Tools and 
 their dependencies. See the `.travis.yml` file for more technical details.
 
-# Bugs
+# Bug Reports
 
-You can file an issue [here](https://github.com/ASaiM/galaxytools/issues).
+Any bug can be filed in an issue [here](https://github.com/ASaiM/galaxytools/issues).
 
 # License
 
