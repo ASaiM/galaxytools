@@ -46,6 +46,23 @@ To test the Galaxy integration, the functional tests can be runned:
 
 # Bug Reports
 
+Any bug can be filed in an issue [here](https://github.com/ASaiM/galaxytools/issues).
+
+# Developers
+
+A release can be pushed to the test or main "Galaxy Tool Shed", using the following 
+Planemo commands (with required Tool Shed access detailed in `~/.planemo.yml`):
+
+```
+planemo shed_update -t testtoolshed --check_diff --shed_target ~/repositories/galaxytools/tools/sortmerna/
+```
+
+or:
+
+```
+planemo shed_update -t toolshed --check_diff --shed_target ~/repositories/galaxytools/tools/sortmerna/
+```
+
 # License (Apache 2) 
 
 This wrapper are released under Apache 2 License. See the [LICENSE file](https://github.com/ASaiM/galaxytools/blob/master/LICENSE) for details
