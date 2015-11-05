@@ -60,7 +60,7 @@ before_install:
  - echo "Downloading and setting up dependencies..."
  - export INSTALL_DIR=/tmp/dep_install && mkdir $INSTALL_DIR
  - export DOWNLOAD_CACHE=/tmp/download_cache && mkdir $DOWNLOAD_CACHE
- - planemo dependency_script ${TRAVIS_BUILD_DIR}/tools/sortmerna/
+ - for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ ); do planemo dependency_script ${TRAVIS_BUILD_DIR}/tools/$i/; bash dep_install.sh; source env.sh; done
  - bash dep_install.sh
  - source env.sh
  - echo "Fetching Galaxy ${GALAXY_BRANCH} branch..."
