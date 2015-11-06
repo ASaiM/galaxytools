@@ -16,8 +16,40 @@ cd tests
 
 # Install tool dependencies
 # =========================
-export INSTALL_DIR=/tmp/dep_install && mkdir $INSTALL_DIR
-export DOWNLOAD_CACHE=/tmp/download_cache && mkdir $DOWNLOAD_CACHE
+export INSTALL_DIR=/tmp/dep_install
+if [ -d $INSTALL_DIR ]; then
+    if [[ -z $2 ]]; then
+        rm -rf $INSTALL_DIR
+        mkdir $INSTALL_DIR
+    elif [[ $2 != '--no-reset' ]]; then
+        rm -rf $INSTALL_DIR
+        mkdir $INSTALL_DIR
+    fi
+else
+    mkdir $INSTALL_DIR
+fi
+
+
+export DOWNLOAD_CACHE=/tmp/download_cache
+if [ -d $DOWNLOAD_CACHE ]; then
+    if [[ -z $2 ]]; then
+        rm -rf $DOWNLOAD_CACHE
+        mkdir $DOWNLOAD_CACHE
+    elif [[ $2 != '--no-reset' ]]; then
+        rm -rf $DOWNLOAD_CACHE
+        mkdir $DOWNLOAD_CACHE
+    fi
+else
+    mkdir $DOWNLOAD_CACHE
+fi
+
+for i in $( ls ${TRAVIS_BUILD_DIR}/packages/ )
+do 
+    planemo dependency_script ${TRAVIS_BUILD_DIR}/packages/$i/
+    bash dep_install.sh
+    source env.sh
+done
+
 for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ )
 do 
     planemo dependency_script ${TRAVIS_BUILD_DIR}/tools/$i/
