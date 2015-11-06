@@ -1,7 +1,11 @@
 <tool id="prinseq" name="PRINSEQ" version="0.1.0">
     <description>to process quality of sequences</description>
 
-    <version_command interpreter="perl">prinseq-lite.pl --version</version_command>
+    <version_command>
+<![CDATA[
+    perl \${PRINSEQ_DIR}/prinseq-lite.pl --version
+]]>
+    </version_command>
 
     <requirements>
         <requirement type="package" version="0.20.4">prinseq</requirement>
@@ -19,12 +23,12 @@
                description="" />
     </stdio>
 
-    <command interpreter="perl">
+    <command>
 <![CDATA[
-        prinseq-lite.pl    
+        perl \${PRINSEQ_DIR}/prinseq-lite.pl    
             -fastq $input_sequence_file
-            -out_good $good_sequence_file
-            -out_bad null
+            -out_good good_sequences
+            -out_bad rejected_sequences
 
             #if $filter_treatments.apply_filter_treatments :
                 #set length_filter_treatments=$filter_treatments.length_filter_treatments
@@ -175,56 +179,102 @@
     </command>
 
     <inputs>
-        <param name="input_sequence_file" type="data" format="fastq" label="Input sequence file" help="The file must be in fastq format for quality scores"/>
+        <param name="input_sequence_file" type="data" format="fastq" label="Input 
+            sequence file" help="The file must be in fastq format for quality 
+            scores"/>
 
         <conditional name="filter_treatments">
-            <param name='apply_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Apply filter treatments?" help=""/>
-            <when value="yes">
+            <param name='apply_filter_treatments' type='boolean' checked="true" 
+                label="Apply filter treatments?" help=""/>
+            <when value="true">
                 <conditional name="length_filter_treatments">
-                    <param name='apply_length_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequence based on their length?" help="By default, sequences smaller than 60 bp are removed. No top threshold is defined"/> 
-                    <when value="yes">
+                    <param name='apply_length_filter_treatments' type='boolean' 
+                        checked="true" label="Filter sequence based on their 
+                        length?" help="By default, sequences smaller than 60 bp 
+                        are removed. No top threshold is defined"/> 
+                    <when value="true">
                         <conditional name="min_length_filter_treatments">
-                            <param name='apply_min_length_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter too small sequences?" help="By default, sequences smaller than 60 bp are removed."/>   
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="3000" value="60" label="Minimum length threshold to conserve sequences" help=""/>
+                            <param name='apply_min_length_filter_treatments' 
+                                type='boolean' checked="true" label="Filter too 
+                                small sequences?" help="By default, sequences 
+                                smaller than 60 bp are removed."/>   
+                            <when value="true">
+                                <param name="value" type="integer" min="0" 
+                                    max="3000" value="60" label="Minimum length t
+                                    hreshold to conserve sequences" help=""/>
                             </when>
                         </conditional>  
                         <conditional name="max_length_filter_treatments">
-                            <param name='apply_max_length_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter too big sequences?" help="By default, no treatment based on a maximal length is made"/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="3000" value="1000" label="Maximal length threshold to conserve sequences" help=""/>
+                            <param name='apply_max_length_filter_treatments' 
+                                type='boolean' checked="false" label="Filter too 
+                                big sequences?" help="By default, no treatment 
+                                based on a maximal length is made"/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" 
+                                    max="3000" value="1000" label="Maximal length 
+                                    threshold to conserve sequences" help=""/>
                             </when>
                         </conditional>  
                     </when>
                 </conditional>  
                 <conditional name="quality_filter_treatments">
-                    <param name='apply_quality_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequences based on quality score?" help="By default, sequences with a mean score below 15 are removed."/>
-                    <when value="yes">
+                    <param name='apply_quality_filter_treatments' type='boolean' 
+                        checked="true" label="Filter sequences based on quality 
+                        score?" help="By default, sequences with a mean score 
+                        below 15 are removed."/>
+                    <when value="true">
                         <conditional name="min_quality_filter_treatments">
-                            <param name='apply_min_quality_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences based on their minimum score?" help="By default, no treatment based on a minimum score is made"/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="40" value="2" label="Minimum score threshold to conserve sequences" help=""/>
+                            <param name='apply_min_quality_filter_treatments' 
+                                type='boolean' checked="false" label="Filter sequences 
+                                based on their minimum score?" help="By default, 
+                                no treatment based on a minimum score is made"/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" 
+                                    max="40" value="2" label="Minimum score threshold 
+                                    to conserve sequences" help=""/>
                             </when>
                         </conditional>
                         <conditional name="max_quality_filter_treatments">
-                            <param name='apply_max_quality_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences based on their maximum score?" help="By default, no treatment based on a maximum score is made"/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="40" value="38" label="Maximum score threshold to conserve sequences" help=""/>
+                            <param name='apply_max_quality_filter_treatments' 
+                                type='boolean' checked="false" label="Filter sequences 
+                                based on their maximum score?" help="By default, 
+                                no treatment based on a maximum score is made"/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" 
+                                    max="40" value="38" label="Maximum score 
+                                    threshold to conserve sequences" help=""/>
                             </when>
                         </conditional>
                         <conditional name="mean_quality_filter_treatments">
-                            <param name='apply_mean_quality_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequences based on their mean score?" help="By default, sequences with a mean score below 15 are removed."/>
-                            <when value="yes">
+                            <param name='apply_mean_quality_filter_treatments' 
+                                type='boolean' checked="true" label="Filter sequences 
+                                based on their mean score?" help="By default, 
+                                sequences with a mean score below 15 are removed."/>
+                            <when value="true">
                                 <conditional name="min_mean_quality_filter_treatments">
-                                    <param name='apply_min_mean_quality_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequences with too small mean score?" help="By default, sequences with a mean score below 15 are removed."/>
-                                    <when value="yes">   
-                                        <param name="value" type="integer" min="0" max="40" value="15" label="Minimum mean score threshold to conserve sequences" help=""/>
+                                    <param name='apply_min_mean_quality_filter_treatments' 
+                                        type='boolean' checked="true" label="Filter 
+                                        sequences with too small mean score?" 
+                                        help="By default, sequences with a mean 
+                                        score below 15 are removed."/>
+                                    <when value="true">   
+                                        <param name="value" type="integer" min="0" 
+                                            max="40" value="15" label="Minimum mean 
+                                            score threshold to conserve sequences" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="max_mean_quality_filter_treatments">
-                                    <param name='apply_max_mean_quality_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences with too high mean score?" help="By default, no treatment based on a maximum mean score is made"/>
-                                    <when value="yes">   
-                                        <param name="value" type="integer" min="0" max="40" value="40" label="Maximum mean score threshold to conserve sequences" help=""/>
+                                    <param name='apply_max_mean_quality_filter_treatments' 
+                                        type='boolean' checked="false" label="Filter 
+                                        sequences with too high mean score?" 
+                                        help="By default, no treatment based on 
+                                        a maximum mean score is made"/>
+                                    <when value="true">   
+                                        <param name="value" type="integer" 
+                                            min="0" max="40" value="40" 
+                                            label="Maximum mean score threshold 
+                                            to conserve sequences" help=""/>
                                     </when>
                                 </conditional>
                             </when>
@@ -232,95 +282,181 @@
                     </when>
                 </conditional>
                 <conditional name="base_content_filter_treatments">
-                    <param name='apply_base_content_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequences based on their base content?" help="By default, sequences with more than 2% of N bases are removed."/>
-                    <when value="yes">
+                    <param name='apply_base_content_filter_treatments' 
+                        type='boolean' checked="true" label="Filter sequences 
+                        based on their base content?" help="By default, sequences 
+                        with more than 2% of N bases are removed."/>
+                    <when value="true">
                         <conditional name="GC_perc_content_filter_treatments">
-                            <param name='apply_GC_perc_content_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences based on their GC percentage?" help="By default, no treatment based on GC percentage is made."/>
-                            <when value="yes">
+                            <param name='apply_GC_perc_content_filter_treatments' 
+                                type='boolean' checked="false" label="Filter 
+                                sequences based on their GC percentage?" 
+                                help="By default, no treatment based on GC percentage 
+                                is made."/>
+                            <when value="true">
                                 <conditional name="min_GC_perc_content_filter_treatments">
-                                    <param name='apply_min_GC_perc_content_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences with too small GC percentage?" help="By default, no treatment based on GC percentage is made."/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="100" value="10" label="Minimal GC percentage threshold to conserve sequences" help=""/>
+                                    <param name='apply_min_GC_perc_content_filter_treatments' 
+                                        type='boolean' checked="false" label="Filter 
+                                        sequences with too small GC percentage?" 
+                                        help="By default, no treatment based on 
+                                        GC percentage is made."/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="100" value="10" label="Minimal 
+                                            GC percentage threshold to conserve 
+                                            sequences" help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="max_GC_perc_content_filter_treatments">
-                                    <param name='apply_max_GC_perc_content_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences with too high GC percentage?" help="By default, no treatment based on GC percentage is made."/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="100" value="90" label="Maximal GC percentage threshold to conserve sequences" help=""/>
+                                    <param name='apply_max_GC_perc_content_filter_treatments' 
+                                        type='boolean' checked="false" label="Filter 
+                                        sequences with too high GC percentage?" 
+                                        help="By default, no treatment based on 
+                                        GC percentage is made."/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="100" value="90" label="Maximal GC
+                                             percentage threshold to conserve 
+                                             sequences" help=""/>
                                     </when>
                                 </conditional>
                             </when>
                         </conditional>
                         <conditional name="N_number_content_filter_treatments">
-                            <param name='apply_N_number_content_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences based on their number of N bases?" help="By default, no treatment based on N number is made."/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="3000" value="10" label="Maximal N number threshold to conserve sequences" help=""/>
+                            <param name='apply_N_number_content_filter_treatments' 
+                                type='boolean' checked="false" label="Filter 
+                                sequences based on their number of N bases?" 
+                                help="By default, no treatment based on N number 
+                                is made."/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" 
+                                    max="3000" value="10" label="Maximal N number 
+                                    threshold to conserve sequences" help=""/>
                             </when>
                         </conditional>
                         <conditional name="N_percentage_content_filter_treatments">
-                            <param name='apply_N_percentage_content_filter_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Filter sequences based on their percentage of N bases?" help="By default, sequences with more than 2% of N bases are removed."/>  
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="100" value="2" label="Maximal N percentage threshold to conserve sequences" help=""/>
+                            <param name='apply_N_percentage_content_filter_treatments' 
+                                type='boolean' checked="true" label="Filter sequences 
+                                based on their percentage of N bases?" help="By 
+                                default, sequences with more than 2% of N bases 
+                                are removed."/>  
+                            <when value="true">
+                                <param name="value" type="integer" min="0" max="100" 
+                                    value="2" label="Maximal N percentage threshold 
+                                    to conserve sequences" help=""/>
                             </when>
                         </conditional>
-                        <param name='apply_other_base_content_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences with characters other than A, T, C, G and N?" help="By default, this treatment is not made."/>
+                        <param name='apply_other_base_content_filter_treatments' 
+                            type='boolean' checked="false" label="Filter sequences 
+                            with characters other than A, T, C, G and N?" help="By 
+                            default, this treatment is not made."/>
                     </when>
                 </conditional>
                 <conditional name="complexity_filter_treatments">
-                    <param name='apply_complexity_filter_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Filter sequences based on their complexity?" help="By default, no complexity filter is applied"/>
-                    <when value="yes">
-                        <param name="method_complexity_filter_treatments" type="select" display="radio" label="Method to filter low complexity sequences" help="">
+                    <param name='apply_complexity_filter_treatments' type='boolean' 
+                        checked="false" label="Filter sequences based on their 
+                        complexity?" help="By default, no complexity filter is 
+                        applied"/>
+                    <when value="true">
+                        <param name="method_complexity_filter_treatments" type="select" 
+                            display="radio" label="Method to filter low complexity 
+                            sequences" help="">
                             <option value="dust">Dust</option>
                             <option value="entropy" >Entropy</option>
                         </param> 
-                        <param name="threshold_complexity_filter_treatments" type="integer" min="0" max="100" value="2" label="Threshold value used to filter sequences by sequence complexity" help="The dust method uses the threshold as maximum allowed score and the entropy method as minimum allowed value."/>
+                        <param name="threshold_complexity_filter_treatments" type="integer" 
+                            min="0" max="100" value="2" label="Threshold value used 
+                            to filter sequences by sequence complexity" help="The 
+                            dust method uses the threshold as maximum allowed score 
+                            and the entropy method as minimum allowed value."/>
                     </when>
                 </conditional>
             </when>
         </conditional>  
 
         <conditional name="trimming_treatments">
-            <param name='apply_trimming_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Apply trimming treatments?" help=""/>
-            <when value="yes">
+            <param name='apply_trimming_treatments' type='boolean' checked="true" 
+                label="Apply trimming treatments?" help=""/>
+            <when value="true">
                 <conditional name="length_trimming_treatments">
-                    <param name='apply_length_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim all sequences from the 3'-end to a length?" help="By default, no length trimming is made"/>
-                    <when value="yes">
-                        <param name="value" type="integer" min="0" max="3000" value="100" label="Length of sequences after trimming" help=""/>
+                    <param name='apply_length_trimming_treatments' type='boolean' 
+                        checked="false" label="Trim all sequences from the 3'-end 
+                        to a length?" help="By default, no length trimming is made"/>
+                    <when value="true">
+                        <param name="value" type="integer" min="0" max="3000" 
+                            value="100" label="Length of sequences after 
+                            trimming" help=""/>
                     </when>
                 </conditional>
                 <conditional name="position_trimming_treatments">
-                    <param name='apply_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim all sequences from the ends?" help="By default, no position trimming is made"/>
-                    <when value="yes">
+                    <param name='apply_position_trimming_treatments' type='boolean' 
+                        checked="false" label="Trim all sequences from the ends?" 
+                        help="By default, no position trimming is made"/>
+                    <when value="true">
                         <conditional name="nb_position_trimming_treatments">
-                            <param name='apply_nb_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences by a defined number of positions?" help="By default, no position trimming is made"/>
-                            <when value="yes">
+                            <param name='apply_nb_position_trimming_treatments' 
+                                type='boolean' checked="false" label="Trim sequences 
+                                by a defined number of positions?" help="By default, 
+                                no position trimming is made"/>
+                            <when value="true">
                                 <conditional name="left_position_trimming_treatments">
-                                    <param name='apply_left_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences at the 5'-end by a defined number of positions?" help="By default, no position trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Number of positions to trim on 5'-end" help=""/>
+                                    <param name='apply_left_position_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        sequences at the 5'-end by a defined number 
+                                        of positions?" help="By default, no position 
+                                        trimming is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Number of 
+                                            positions to trim on 5'-end" help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="right_position_trimming_treatments">
-                                    <param name='apply_right_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences at the 3'-end by a defined number of positions?" help="By default, no position trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Number of positions to trim on 3'-end" help=""/>
+                                    <param name='apply_right_position_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        sequences at the 3'-end by a defined number 
+                                        of positions?" help="By default, no position 
+                                        trimming is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Number 
+                                            of positions to trim on 3'-end" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                             </when>
                         </conditional>
                         <conditional name="percentage_position_trimming_treatments">
-                            <param name='apply_percentage_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences by a defined percentage of read length?" help="By default, no position trimming is made. The trim length is rounded towards the lower integer"/>
-                            <when value="yes">
+                            <param name='apply_percentage_position_trimming_treatments' 
+                                type='boolean' checked="false" label="Trim sequences 
+                                by a defined percentage of read length?" help="By 
+                                default, no position trimming is made. The trim 
+                                length is rounded towards the lower integer"/>
+                            <when value="true">
                                 <conditional name="left_percentage_position_trimming_treatments">
-                                    <param name='apply_left_percentage_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences at the 5'-end by a defined percentage of read length?" help="By default, no position trimming is made. The trim length is rounded towards the lower integer"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="100" value="2" label="Percentage of positions to trim on 5'-end" help=""/>
+                                    <param name='apply_left_percentage_position_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        sequences at the 5'-end by a defined percentage 
+                                        of read length?" help="By default, no position 
+                                        trimming is made. The trim length is rounded 
+                                        towards the lower integer"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="100" value="2" label="Percentage 
+                                            of positions to trim on 5'-end" help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="right_percentage_position_trimming_treatments">
-                                    <param name='apply_right_percentage_position_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequences at the 3'-end by a defined percentage of read length?" help="By default, no position trimming is made. The trim length is rounded towards the lower integer"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="100" value="2" label="Percentage of positions to trim on 3'-end" help=""/>
+                                    <param name='apply_right_percentage_position_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        sequences at the 3'-end by a defined percentage 
+                                        of read length?" help="By default, no position 
+                                        trimming is made. The trim length is rounded 
+                                        towards the lower integer"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="100" value="2" label="Percentage 
+                                            of positions to trim on 3'-end" help=""/>
                                     </when>
                                 </conditional>
                             </when>
@@ -328,38 +464,70 @@
                     </when>
                 </conditional>
                 <conditional name="tail_trimming_treatments">
-                    <param name='apply_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim tails?" help="By default, no tail trimming is made"/>
-                    <when value="yes">
+                    <param name='apply_tail_trimming_treatments' type='boolean' 
+                        checked="false" label="Trim tails?" help="By default, no 
+                        tail trimming is made"/>
+                    <when value="true">
                         <conditional name="a_t_tail_trimming_treatments">
-                            <param name='apply_a_t_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-A/T tail?" help="By default, no poly-A/T tail trimming is made"/>
-                            <when value="yes">
+                            <param name='apply_a_t_tail_trimming_treatments' 
+                                type='boolean' checked="false" label="Trim poly-A/T 
+                                tail?" help="By default, no poly-A/T tail trimming 
+                                is made"/>
+                            <when value="true">
                                 <conditional name="left_a_t_tail_trimming_treatments">
-                                    <param name='apply_left_a_t_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-A/T tail at the 5'-end?" help="By default, no 5'-end poly-A/T tail trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Minimum length of poly-A/T to trim at the 5'-end" help=""/>
+                                    <param name='apply_left_a_t_tail_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        poly-A/T tail at the 5'-end?" help="By 
+                                        default, no 5'-end poly-A/T tail trimming 
+                                        is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Minimum 
+                                            length of poly-A/T to trim at the 5'-end" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="right_a_t_tail_trimming_treatments">
-                                    <param name='apply_right_a_t_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-A/T tail at the 5'-end?" help="By default, no 3'-end poly-A/T tail trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Minimum length of poly-A/T to trim at the 5'-end" help=""/>
+                                    <param name='apply_right_a_t_tail_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim poly-A/T 
+                                        tail at the 5'-end?" help="By default, no 
+                                        3'-end poly-A/T tail trimming is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Minimum 
+                                            length of poly-A/T to trim at the 5'-end" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                             </when>
                         </conditional>
                         <conditional name="ns_tail_trimming_treatments">
-                            <param name='apply_ns_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-N tail?" help="By default, no poly-N tail trimming is made"/>
-                            <when value="yes">
+                            <param name='apply_ns_tail_trimming_treatments' type='boolean' 
+                                checked="false" label="Trim poly-N tail?" help="By 
+                                default, no poly-N tail trimming is made"/>
+                            <when value="true">
                                 <conditional name="left_ns_tail_trimming_treatments">
-                                    <param name='apply_left_ns_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-N tail at the 5'-end?" help="By default, no 5'-end poly-N tail trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Minimum length of poly-N to trim at the 5'-end" help=""/>
+                                    <param name='apply_left_ns_tail_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        poly-N tail at the 5'-end?" help="By default, 
+                                        no 5'-end poly-N tail trimming is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Minimum 
+                                            length of poly-N to trim at the 5'-end" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                                 <conditional name="right_ns_tail_trimming_treatments">
-                                    <param name='apply_right_ns_tail_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim poly-N tail at the 5'-end?" help="By default, no 3'-end poly-N tail trimming is made"/>
-                                    <when value="yes">
-                                        <param name="value" type="integer" min="0" max="3000" value="100" label="Minimum length of poly-N to trim at the 5'-end" help=""/>
+                                    <param name='apply_right_ns_tail_trimming_treatments' 
+                                        type='boolean' checked="false" label="Trim 
+                                        poly-N tail at the 5'-end?" help="By default, 
+                                        no 3'-end poly-N tail trimming is made"/>
+                                    <when value="true">
+                                        <param name="value" type="integer" min="0" 
+                                            max="3000" value="100" label="Minimum 
+                                            length of poly-N to trim at the 5'-end" 
+                                            help=""/>
                                     </when>
                                 </conditional>
                             </when>
@@ -367,33 +535,60 @@
                     </when>
                 </conditional>
                 <conditional name="quality_trimming_treatments">
-                    <param name='apply_quality_trimming_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Trim sequence by quality score?" help="By default, a 3'-end trimming is made to remove ends with a minimum quality score over 5 bp below 20"/>
-                    <when value="yes">
+                    <param name='apply_quality_trimming_treatments' type='boolean' 
+                        checked="true" label="Trim sequence by quality score?" 
+                        help="By default, a 3'-end trimming is made to remove ends 
+                        with a minimum quality score over 5 bp below 20"/>
+                    <when value="true">
                         <conditional name="left_quality_trimming_treatments">
-                            <param name='apply_left_quality_trimming_treatments' type='boolean' checked="false" truevalue='yes' falsevalue='no' label="Trim sequence by quality score from the 5'-end?" help="By default, no 5'-end quality trimming is made"/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="40" value="20" label="Quality score threshold to trim positions" help=""/>
+                            <param name='apply_left_quality_trimming_treatments' 
+                                type='boolean' checked="false" label="Trim sequence 
+                                by quality score from the 5'-end?" help="By default, 
+                                no 5'-end quality trimming is made"/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" max="40" 
+                                    value="20" label="Quality score threshold to 
+                                    trim positions" help=""/>
                             </when>
                         </conditional>
                         <conditional name="right_quality_trimming_treatments">
-                            <param name='apply_right_quality_trimming_treatments' type='boolean' checked="true" truevalue='yes' falsevalue='no' label="Trim sequence by quality score from the 3'-end?" help="By default, 3'-end trimming is made based on a score of 20"/>
-                            <when value="yes">
-                                <param name="value" type="integer" min="0" max="40" value="20" label="Quality score threshold to trim positions" help=""/>
+                            <param name='apply_right_quality_trimming_treatments' 
+                                type='boolean' checked="true" label="Trim sequence 
+                                by quality score from the 3'-end?" help="By default,
+                                 3'-end trimming is made based on a score of 20"/>
+                            <when value="true">
+                                <param name="value" type="integer" min="0" max="40" 
+                                    value="20" label="Quality score threshold to 
+                                    trim positions" help=""/>
                             </when>
                         </conditional>
-                        <param name="type_quality_trimming_treatments" type="select" display="radio" label="Type of quality score calculation to use" help="By default, min is used">
+                        <param name="type_quality_trimming_treatments" type="select" 
+                            display="radio" label="Type of quality score calculation 
+                            to use" help="By default, min is used">
                             <option value="min" selected="true">Mininum</option>
                             <option value="mean" >Mean</option>
                             <option value="max" >Max</option>
                             <option value="sum" >Sum</option>
                         </param>
-                        <param name="rule_quality_trimming_treatments" type="select" display="radio" label="Rule tu use to compare quality score to calculated value" help="By default, 'less than' is used">
+                        <param name="rule_quality_trimming_treatments" type="select" 
+                            display="radio" label="Rule tu use to compare quality 
+                            score to calculated value" help="By default, 'less than' 
+                            is used">
                             <option value="lt" selected="true">Less than</option>
                             <option value="gt" >Greater than</option>
                             <option value="et" >Equal to</option>
                         </param>
-                        <param name="window_quality_trimming_treatments" type="integer" min="0" max="300" value="1" label="Size of the sliding window used to calculated quality score by type" help="To stop at the first base that fails the rule defined, use a window size of 1 (default value)"/>
-                        <param name="step_quality_trimming_treatments" type="integer" min="0" max="300" value="1" label="Step size used to move the sliding window" help="To move the window over all quality scores without missing any, the step size sould be less or equal to the window size. The default value is 1."/>
+                        <param name="window_quality_trimming_treatments" type="integer"
+                         min="0" max="300" value="1" label="Size of the sliding 
+                         window used to calculated quality score by type" help="To 
+                         stop at the first base that fails the rule defined, use a 
+                         window size of 1 (default value)"/>
+                        <param name="step_quality_trimming_treatments" type="integer" 
+                            min="0" max="300" value="1" label="Step size used to move 
+                            the sliding window" help="To move the window over all 
+                            quality scores without missing any, the step size sould 
+                            be less or equal to the window size. The default value 
+                            is 1."/>
                     </when>
                 </conditional>
             </when>
@@ -401,7 +596,12 @@
     </inputs>
 
     <outputs>
-        <data format="fastq" name="good_sequence_file" metadata_source="input_sequence_file"/>
+        <data format="fastq" name="good_sequence_file" 
+            metadata="input_sequence_file" from_work_dir="good_sequences.fastq"
+            label="Good sequences of ${on_string} (PRINSEQ)" />
+        <data format="fastq" name="rejected_sequence_file" 
+            metadata="input_sequence_file" from_work_dir="rejected_sequences.fastq"
+            label="Rejected sequences of ${on_string} (PRINSEQ)" />
     </outputs>
 
     <tests>
@@ -416,7 +616,7 @@
 **What it does**
 
 PRINSEQ is a tool for easy and rapid quality control and data processing of metagenomic and metatranscriptomic datasets.
-This tool allow to process the sequences with filtering and trimming.
+This tool allow to process the sequences with filtering and trimming. 
 More information on `PRINSEQ manual <http://prinseq.sourceforge.net/manual.html>`_.
 
 -----
