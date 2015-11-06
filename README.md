@@ -37,16 +37,21 @@ All of these Galaxy tools include a <tests> section in the tool XML files, which
 defines at least one functional test (sample input files, parameters and the 
 expected output). 
 
-If the tools are installed, theses tests can be runned `src/run_tests.sh`
- script. See the `README` file for each tool for more details.
+To test the correct integration of the tools in Galaxy, several tests can be runned.
+These tests simulates a manual install of these Galaxy Tools and 
+their dependencies.
 
-In addition the same functional tests are runned via TravisCI whenever this 
+With `./src/run_tests.sh --integration`, the integration in a local Galaxy instance
+is tested with the launch of the interface at [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
+The tools can be then tested manually. 
+
+With `./src/run_tests.sh --functional`, functional automatic tests defined for 
+each tool are runned. The same functional tests are runned via TravisCI whenever this 
 GitHub repository is updated:
 
 [![Build Status](https://travis-ci.org/ASaiM/galaxytools.svg)](https://travis-ci.org/ASaiM/galaxytools)
 
-This TravisCI integration simulates a manual install of these Galaxy Tools and 
-their dependencies. See the `.travis.yml` file for more technical details.
+See the `.travis.yml` file for more technical details.
 
 # Bug Reports
 
