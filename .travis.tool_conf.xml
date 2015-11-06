@@ -6,5 +6,6 @@
     <section name="Continuous-Integration" id="Travis">
         <tool file="sortmerna/sortmerna.xml" />
 	<tool file="metaphlan2/metaphlan2.xml" />
+	<tool file="prinseq/prinseq.xml" />
     </section>
 </toolbox>
