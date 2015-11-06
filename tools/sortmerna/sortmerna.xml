@@ -265,9 +265,7 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
 **What it does**
 
 SortMeRNA is a tool for RNA filtering based on local sequence alignment against 
-rRNA database
-
-.. _sortmerna user manual: http://bioinfo.lifl.fr/RNA/sortmerna/code/SortMeRNA-user-manual-v1.7.pdf
+rRNA database. For more information, check the `user manual <http://bioinfo.lifl.fr/RNA/sortmerna/code/SortMeRNA-user-manual-v1.7.pdf>_`.
 
 -----
 
