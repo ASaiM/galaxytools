@@ -1,6 +1,8 @@
 <tool id="prinseq" name="PRINSEQ" version="0.1.0">
     <description>to process quality of sequences</description>
 
+    <version_command interpreter="perl">prinseq-lite.pl --version</version_command>
+
     <requirements>
         <requirement type="package" version="0.20.4">prinseq</requirement>
     </requirements>
@@ -17,10 +19,11 @@
                description="" />
     </stdio>
 
-    <command><![CDATA[
-        perl prinseq-lite.pl    
+    <command interpreter="perl">
+<![CDATA[
+        prinseq-lite.pl    
             -fastq $input_sequence_file
-            -out_good stdout
+            -out_good $good_sequence_file
             -out_bad null
 
             #if $filter_treatments.apply_filter_treatments :
@@ -168,9 +171,7 @@
                 #end if
 
             #end if
-
-            >> $good_sequence_file
-    ]]>
+]]>
     </command>
 
     <inputs>
