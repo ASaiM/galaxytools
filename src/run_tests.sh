@@ -1,4 +1,9 @@
 #!/bin/bash
+if [[ $1 != '--functional' && $1 != '--integration' ]]; then
+    echo "Unknow test"
+    exit
+fi
+
 
 TRAVIS_BUILD_DIR=$PWD
 pip install -r requirements.txt
@@ -51,9 +56,16 @@ do
     fi
 done
 
-./run.sh --stop-daemon || true
-python scripts/fetch_eggs.py
 
-# Test tools
-# ==========
-python ./scripts/functional_tests.py -v `python tool_list.py Continuous-Integration-Travis`
+if [ $1 == '--functional' ]; then
+    ./run.sh --stop-daemon || true
+    python scripts/fetch_eggs.py
+
+    # Test tools
+    # ==========
+    python ./scripts/functional_tests.py -v `python tool_list.py Continuous-Integration-Travis`
+elif [ $1 == '--integration' ]; then
+    ./run.sh
+else
+    echo "Unknow test"
+fi
