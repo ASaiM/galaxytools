@@ -27,12 +27,14 @@ done
 
 # Install Galaxy
 # ==============
-if [ -d galaxy-master ]; then
-    rm -rf galaxy-master
+if [ $2 != '--no-reset' ]; then
+    if [ -d galaxy-master ]; then
+        rm -rf galaxy-master
+    fi
+    wget https://codeload.github.com/galaxyproject/galaxy/tar.gz/master
+    tar -zxvf master | tail
+    rm master
 fi
-wget https://codeload.github.com/galaxyproject/galaxy/tar.gz/master
-tar -zxvf master | tail
-rm master
 cd galaxy-master
 
 # Configure tools in Galaxy
