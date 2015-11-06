@@ -118,12 +118,6 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
             metadata="input_sequence_file" 
             label="Profile of communities on ${on_string} (MetaPhlAn)" />
 
-        <data format="bowtie2" name="bowtie2_output_file" 
-            metadata="input_sequence_file" 
-            label="Bowtie2 output on ${on_string} (MetaPhlAn)">
-            <filter>bowtie2_output</filter>
-        </data>
-
         <data format="sam" name="sam_output_file" 
             metadata="input_sequence_file" 
             label="Sam output on ${on_string} (MetaPhlAn)">
@@ -148,11 +142,10 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
             <param name="ignore_bacteria" value="" />
             <param name="ignore_archaea" value="" />
             <param name="stat_q" value="0.1" />
-            <param name="sam_output" value='True' />
+            <param name="sam_output" value='False' />
             <param name="biom_output" value='True' />
             <output name="output_file" file="profiled_metagenome.txt"/>
             <output name="biom_output_file" file="biom.biom"/>
-            <output name="sam_output_file" file="sam_alignments.sam"/>
         </test>
     </tests>
 
