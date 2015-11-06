@@ -26,7 +26,7 @@
     <command>
 <![CDATA[
         perl \${PRINSEQ_DIR}/prinseq-lite.pl    
-            -fastq $input_sequence_file
+            -fastq $sequence_to_control_file
             -out_good good_sequences
             -out_bad rejected_sequences
 
@@ -179,7 +179,7 @@
     </command>
 
     <inputs>
-        <param name="input_sequence_file" type="data" format="fastq" label="Input 
+        <param name="sequence_to_control_file" type="data" format="fastq" label="Input 
             sequence file" help="The file must be in fastq format for quality 
             scores"/>
 
@@ -613,42 +613,42 @@
 
     <outputs>
         <data format="fastq" name="good_sequence_file" 
-            metadata="input_sequence_file" from_work_dir="good_sequences.fastq"
+            from_work_dir="good_sequences.fastq"
             label="Good sequences of ${on_string} (PRINSEQ)" />
         <data format="fastq" name="rejected_sequence_file" 
-            metadata="input_sequence_file" from_work_dir="rejected_sequences.fastq"
+            from_work_dir="rejected_sequences.fastq"
             label="Rejected sequences of ${on_string} (PRINSEQ)" />
     </outputs>
 
     <tests>
         <test>
-            <param name="input_sequence_file" value="input_sequences.fastq"/>
+            <param name="sequence_to_control_file" value="prinseq_input_sequences.fastq"/>
             <param name='apply_filter_treatments' value="true"/>
             <param name='apply_length_filter_treatments' value="true"/> 
-            <param name='apply_min_length_filter_treatments' checked="true"/>   
+            <param name='apply_min_length_filter_treatments' value="true"/>   
             <param name="min_length_filter_treatment_value" value="60"/>
-            <param name='apply_max_length_filter_treatments' checked="false" />
-            <param name='apply_quality_filter_treatments' checked="true"/>
-            <param name='apply_min_quality_filter_treatments' checked="false" />
-            <param name='apply_max_quality_filter_treatments' checked="false"/>
-            <param name='apply_mean_quality_filter_treatments' checked="true"/>
-            <param name='apply_min_mean_quality_filter_treatments' checked="true"/>
+            <param name='apply_max_length_filter_treatments' value="false" />
+            <param name='apply_quality_filter_treatments' value="true"/>
+            <param name='apply_min_quality_filter_treatments' value="false" />
+            <param name='apply_max_quality_filter_treatments' value="false"/>
+            <param name='apply_mean_quality_filter_treatments' value="true"/>
+            <param name='apply_min_mean_quality_filter_treatments' value="true"/>
             <param name="min_mean_quality_filter_treatment_value" value="15"/>
-            <param name='apply_max_mean_quality_filter_treatments' checked="false"/>
-            <param name='apply_base_content_filter_treatments' checked="true"/>
-            <param name='apply_GC_perc_content_filter_treatments' checked="false"/>
-            <param name='apply_N_number_content_filter_treatments' checked="false"/>
-            <param name='apply_N_percentage_content_filter_treatments' checked="true"/>  
+            <param name='apply_max_mean_quality_filter_treatments' value="false"/>
+            <param name='apply_base_content_filter_treatments' value="true"/>
+            <param name='apply_GC_perc_content_filter_treatments' value="false"/>
+            <param name='apply_N_number_content_filter_treatments' value="false"/>
+            <param name='apply_N_percentage_content_filter_treatments' value="true"/>  
             <param name="N_percentage_content_filter_treatment_value" value="2"/>
-            <param name='apply_other_base_content_filter_treatments' checked="false"/>
-            <param name='apply_complexity_filter_treatments' checked="false"/>
-            <param name='apply_trimming_treatments' checked="true" />
-            <param name='apply_length_trimming_treatments' checked="false"/>
-            <param name='apply_position_trimming_treatments' checked="false"/>
-            <param name='apply_tail_trimming_treatments' checked="false"/>
-            <param name='apply_quality_trimming_treatments' checked="true"/>
-            <param name='apply_left_quality_trimming_treatments' checked="false"/>
-            <param name='apply_right_quality_trimming_treatments' checked="true" />
+            <param name='apply_other_base_content_filter_treatments' value="false"/>
+            <param name='apply_complexity_filter_treatments' value="false"/>
+            <param name='apply_trimming_treatments' value="true" />
+            <param name='apply_length_trimming_treatments' value="false"/>
+            <param name='apply_position_trimming_treatments' value="false"/>
+            <param name='apply_tail_trimming_treatments' value="false"/>
+            <param name='apply_quality_trimming_treatments' value="true"/>
+            <param name='apply_left_quality_trimming_treatments' value="false"/>
+            <param name='apply_right_quality_trimming_treatments' value="true" />
             <param name="right_quality_trimming_treatment_value" value="20"/>
             <param name="type_quality_trimming_treatments" value="min"/>
             <param name="rule_quality_trimming_treatments" value="lt" />
