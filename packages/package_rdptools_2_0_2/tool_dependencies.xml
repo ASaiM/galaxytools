@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="ant" version="1.9.6">
+        <repository name="ant" owner="bebatut" />
+    </package>
+    <package name="rdptools" version="2.0.2">
+        <install version="1.0">
+            <actions>
+                <action type="shell_command">git clone --recursive https://github.com/rdpstaff/RDPTools.git rdptools</action>
+                <action type="change_directory">rdptools</action>
+                <action type="shell_command">git checkout 2.0.2</action>
+                <action type="shell_command">git submodule update --init</action>
+                <action type="shell_command">make</action>
+                <action type="move_file">
+                    <source>.</source>
+                    <destination>$INSTALL_DIR</destination>
+                </action>
+                <action type="set_environment">
+                    <environment_variable name="RDP_TOOLS_DIR" action="set_to">$INSTALL_DIR/rdptools</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                </action>
+            </actions>
+        </install>
+    </package>
+</tool_dependency>
