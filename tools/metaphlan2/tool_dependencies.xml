@@ -7,12 +7,13 @@
         <install version="1.0">
             <actions>
                 <action type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
+                <action type="make_directory">$INSTALL_DIR/metaphlan2</action>
                 <action type="move_directory_files">
                     <source_directory>.</source_directory>
-                    <destination_directory>$INSTALL_DIR</destination_directory>
+                    <destination_directory>$INSTALL_DIR/metaphlan2</destination_directory>
                 </action>
                 <action type="set_environment">
-                    <environment_variable name="METAPHLAN2_DIR" action="set_to">$INSTALL_DIR</environment_variable>
+                    <environment_variable name="METAPHLAN2_DIR" action="set_to">$INSTALL_DIR/biobakery-metaphlan2-d1016b2f4e10/</environment_variable>
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
                 </action>
             </actions>
