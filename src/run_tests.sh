@@ -27,13 +27,22 @@ done
 
 # Install Galaxy
 # ==============
-if [ $2 != '--no-reset' ]; then
-    if [ -d galaxy-master ]; then
-        rm -rf galaxy-master
-    fi
+function install_galaxy {
     wget https://codeload.github.com/galaxyproject/galaxy/tar.gz/master
     tar -zxvf master | tail
     rm master
+}
+
+if [ -d "galaxy-master" ]; then
+    if [[ -z $2 ]]; then
+        rm -rf galaxy-master
+        install_galaxy
+    elif [[ $2 != '--no-reset' ]]; then
+        rm -rf galaxy-master
+        install_galaxy
+    fi
+else
+    install_galaxy
 fi
 cd galaxy-master
 
