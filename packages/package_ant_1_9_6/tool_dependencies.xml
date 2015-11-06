@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="ant" version="1.9.6">
+        <install version="1.0">
+            <actions>
+                <action type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
+                <action type="shell_command">sudo sh build.sh -Ddist.dir=$INSTALL_DIR/bin/ant dist</action>
+                <action type="set_environment">
+                    <environment_variable name="ANT_DIR" action="set_to">$INSTALL_DIR/bin/ant</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin/ant</environment_variable>
+                </action>
+            </actions>
+        </install>
+    </package>
+</tool_dependency>
