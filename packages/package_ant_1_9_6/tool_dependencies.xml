@@ -3,13 +3,22 @@
     <package name="ant" version="1.9.6">
         <install version="1.0">
             <actions>
-                <action type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
-                <action type="shell_command">sudo sh build.sh -Ddist.dir=$INSTALL_DIR/bin/ant dist</action>
+                <action type="download_by_url">http://apache.websitebeheerjd.nl//ant/source/apache-ant-1.9.6-src.zip</action>
+                <action type="shell_command">sudo sh build.sh -Ddist.dir=$INSTALL_DIR/bin/ant/ dist</action>
                 <action type="set_environment">
-                    <environment_variable name="ANT_DIR" action="set_to">$INSTALL_DIR/bin/ant</environment_variable>
-                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin/ant</environment_variable>
+                    <environment_variable name="ANT_DIR" action="set_to">$INSTALL_DIR/bin/ant/</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin/ant/bin/</environment_variable>
                 </action>
             </actions>
         </install>
+        <readme>
+Apache Ant is a Java library and command-line tool whose mission is to drive processes 
+described in build files as targets and extension points dependent upon each other. 
+
+Download source distribution and build them into a specific directory.
+
+For more details, see:
+http://ant.apache.org/
+        </readme>
     </package>
 </tool_dependency>
