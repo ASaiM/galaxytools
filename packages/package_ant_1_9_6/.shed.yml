@@ -1,0 +1,8 @@
+categories: [Tool Dependency Packages]
+description: 'Apache Ant is a Java library and command-line tool whose mission is
+  to drive processes described in build files as targets and extension points dependent
+  upon each other. '
+homepage_url: http://ant.apache.org/
+name: package_ant_1_9_6
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/packages/package_ant_1_9_6
