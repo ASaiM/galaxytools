@@ -11,45 +11,227 @@
             -a $alignment_mode
             -b $denovo_abund_cutoff
             -d $denovo_id_cutoff
-            -i ' + args.identity_cutoff
-            -k ' + args.knn
-            -l ' + args.length_cutoff
+            -i $identity_cutoff
+            -k $knn
+            -l $length_cutoff
     
-            if args.no_metric_search == 'yes':
-                command += ' -N '
-                command += ' -e ' + args.gap_ext_penalty
-                command += ' -f ' + args.frameshift_penalty
-                command += ' -g ' + args.gap_open_penalty
-                if args.no_prefilter == 'yes':
-                    command += ' -P'
-                command += ' -x ' + args.scoring_matrix
+            if $no_metric_search.no_metric_search_test == 'yes':
+                -N 
+                -e $no_metric_search.gap_ext_penalty
+                -f $no_metric_search.frameshift_penalty
+                -g $no_metric_search.gap_open_penalty
+                $no_metric_search.no_prefilter 
+                -x $no_metric_search.scoring_matrix
             else:
-                command += ' -m ' + args.max_radius
+                -m $no_metric_search.max_radius
 
-            -o ' + dirpath + '/output'
-            -w ' + args.word_size
+            -o output
+            -w $word_size
     
-            if args.de_novo == 'yes':
-                -z '
+            $de_novo
  
+            #if str( $databases.databases_selector ) == 'history'
+                $databases.databases_name
+            #else
+                #set $data_table = dict([(_[0], _[2]) for _ in $databases.databases_input.input.options.tool_data_table.data])
+                $$data_table[databases_input.value]
+            #end if
+
             $input_sequence_file
     ]]></command>
+
     <inputs>
-        <param type="data" name="input1" format="fastq" />
+        <param name="sequence_file" type="data" format="fasta" 
+            label="Input sequence file" help=""/>
+
+        <conditional name="databases">
+            <param name="databases_selector" type="select" label="Databases to query" help="">
+                <option value="cached" selected="true">Public reference gene databases</option>
+                <option value="history">Databases from your history</option>
+            </param>
+            <when value="cached">
+                <param name="databases_input" label="Reference gene databases" type="select" display="radio">
+                    <options from_data_table="framebot_ref_gene_databases" />
+                    <validator type="no_options" message="Select at least one database"/>
+                </param>
+            </when>
+            <when value="history">
+                <param name="databases_name" type="data" format="fasta" label="Reference gene database"
+                    multiple="false" help=""/>
+            </when>
+        </conditional>
+
+        <param name="alignment_mode" type="select" display="radio" 
+            label="Alignment mode" help="">
+            <option value="glocal">Glocal</option>
+            <option value="local">Local</option>
+            <option value="global">Global</option>
+        </param>
+
+        <param name="denovo_abund_cutoff" type="integer" min="0" max="100" 
+            value="10" label="Minimum abundance for de-novo mode" help=""/>
+        <param name="denovo_id_cutoff" type="float" min="0" max="1" value="0.7" 
+            label="Maximimum aa identity cutoff for de-novo mode" help=""/>
+        <param name="identity_cutoff" type="float" min="0" max="1" value="0.4" 
+            label="Percent identity cutoff" help=""/>
+
+        <conditional name="no_metric_search">
+            <param name="no_metric_search_test" type='boolean' checked="true" label="Disable 
+                metric search?" help="Provide fasta file of seeds instead of 
+                index file"/>
+            <when value="true">
+                <param name="gap_ext_penalty" type="integer" min="-10" max="0" 
+                    value="-1" label="Gap extension penalty" help=""/>
+                <param name="frameshift_penalty" type="integer" min="-20" max="0" 
+                    value="-10" label="Frameshift penalty" help=""/>
+                <param name="gap_open_penalty" type="integer" min="-20" max="0" 
+                    value="-10" label="Gap opening penalty" help=""/>
+                <param name="no_prefilter" type='boolean' checked="false" 
+                    truevalue="-P" falsevalue="" label="Disable the pre-filtering 
+                    step?" help=""/>
+                <param name="scoring_matrix" type="select" display="radio" 
+                    label="Protein scoring matrix" help="">
+                    <option value="Blosum62">Blosum62</option>
+                </param>
+            </when>
+            <when value="false">
+                <param name="max_radius" type="float" min="1" max="2147483647" 
+                    value="100" label="Maximum radius" help=""/>
+            </when>
+        </conditional>
+        
+        <param name="knn" type="integer" min="0" max="100" value="10" 
+            label="The top k closest protein targets" help=""/>
+        <param name="length_cutoff" type="integer" min="0" max="100" value="80" 
+            label="Length cutoff in number of amino acids" help=""/>
+        
+        <param name="transl_table" type="select" display="radio" label="Protein 
+            translation table to use" help="NCBI Translation Tables">
+            <option value="1">Standard Code</option>
+            <option value="2">Vertebrate Mitochondrial Code</option>
+            <option value="3">Yeast Mitochondrial Code</option>
+            <option value="4">Mold, Protozoan, and Coelenterate Mitochondrial Code and the Mycoplasma/Spiroplasma Code</option>
+            <option value="5">Invertebrate Mitochondrial Code</option>
+            <option value="6">Ciliate, Dasycladacean and Hexamita Nuclear Code</option>
+            <option value="9">Echinoderm and Flatworm Mitochondrial Code</option>
+            <option value="10">Euplotid Nuclear Code</option>
+            <option value="11" selected="true">Bacterial, Archaeal and Plant Plastid Code</option>
+            <option value="12">Alternative Yeast Nuclear Code</option>
+            <option value="13">Ascidian Mitochondrial Code</option>
+            <option value="14">Alternative Flatworm Mitochondrial Code</option>
+            <option value="16">Chlorophycean Mitochondrial Code</option>
+            <option value="21">Trematode Mitochondrial Code</option>
+            <option value="22">Scenedesmus obliquus Mitochondrial Code</option>
+            <option value="23">Thraustochytrium Mitochondrial Code</option>
+            <option value="24">Pterobranchia Mitochondrial Code</option>
+            <option value="25">Candidate Division SR1 and Gracilibacteria Code</option>
+        </param>
+        
+        <param name="word_size" type="integer" min="3" max="6" value="4" 
+            label="Word size used to find closest protein target" help=""/>
+        <param name="de_novo" type='boolean' checked="false" truevalue="-z" 
+            falsevalue="" label="Enable de novo mode to add abundant query seqs 
+            to refset" help=""/>
     </inputs>
+
     <outputs>
-        <data name="output1" format="fasta" from_work_dir="2.fasta" />
+        <data format="txt" name="conserved_alignment_file" 
+            from_work_dir="output_framebot"
+            label="Conserved alignments to the neared match of ${on_string} (Framebot)" />
+        <data format="fasta" name="nucl_corr_seq_file" 
+            from_work_dir="output_nucl_corr"
+            label="Frameshift-corrected nucleotide sequences of ${on_string} (Framebot)" />
+         <data format="fasta" name="all_seqs_derep_prot_corr_seq_file" 
+            from_work_dir="all_seqs_derep_prot_corr"
+            label="Frameshift-corrected protein sequences of ${on_string} (Framebot)" />
+        <data format="txt" name="rejected_alignment_file" 
+            from_work_dir="output_failed_framebot"
+            label="Rejected alignments to the neared match of ${on_string} (Framebot)" />
+        <data format="fasta" name="nucl_failed" 
+            from_work_dir="output_nucl_failed_seq_file"
+            label="Non frameshift-corrected nucleotide sequences of ${on_string} (Framebot)" />
     </outputs>
+
     <tests>
         <test>
-            <param name="input1" value="2.fastq"/>
-            <output name="output1" file="2.fasta"/>
+            <param name="sequence_file" value="framebot_input_sequence.fasta"/>
+            <param name="databases_selector" value="cached" />
+            <param name="databases_input" value="amoA_prot_ref" />
+            <param name="alignment_mode" value="glocal" />
+            <param name="denovo_abund_cutoff" value="10" />
+            <param name="denovo_id_cutoff" value="0.7" />
+            <param name="identity_cutoff" value="0.4" />
+            <param name="no_metric_search_test" value="true" />
+            <param name="gap_ext_penalty" value="-1" label="Gap extension penalty" help=""/>
+            <param name="frameshift_penalty" value="-10" label="Frameshift penalty" help=""/>
+            <param name="gap_open_penalty" value="-10" label="Gap opening penalty" help=""/>
+            <param name="no_prefilter" value="false" />
+            <param name="scoring_matrix" value="Blosum62"/>
+            <param name="knn" value="10" />
+            <param name="length_cutoff" value="80"/>
+            <param name="transl_table" value="11"/>
+            <param name="word_size" value="4"/>
+            <param name="de_novo" value="false"/>
+
+            <output name="conserved_alignment_file" file="framebot_conserved_alignment_file.txt"/>
+            <output name="nucl_corr_seq_file" file="framebot_nucl_corr_seq_file.fasta"/>
+            <output name="all_seqs_derep_prot_corr_seq_file" file="framebot_all_seqs_derep_prot_corr_seq_file.fasta"/>
+            <output name="rejected_alignment_file" file="framebot_rejected_alignment_file.txt"/>
+            <output name="nucl_failed" file="framebot_nucl_failed.fasta"/>
         </test>
     </tests>
+
     <help><![CDATA[
-        TODO: Fill in help.
+
+**What it does**
+
+RDP FrameBot is a frameshift correction and nearest neighbor classification tool for use with high-throughput amplicon sequencing. It uses a dynamic programming algorithm to align each query DNA sequence against a set of target protein sequences, produces frameshift-corrected protein and DNA sequences and an optimal global or local protein alignment. 
+More information on `Github repository <https://github.com/rdpstaff/Framebot>`_.
+
+-----
+
+**Input**
+
+One protein reference fasta file or index file, and one DNA query fasta file are required. 
+
+Several reference sets for a list of genes are available. 
+But personal own set of reference sequences can be provide as representative of the gene of interest (`http://fungene.cme.msu.edu <http://fungene.cme.msu.edu>`_ is a good resource). 
+The reference set must contain protein or DNA representative sequences of the gene target and should be compiled to have a good coverage of diversity of the gene family. FrameBot is significantly more accurate when the nearest target protein sequence (from the reference set) is at least 50% identical to the query read. Running FrameBot is computationally intensive in no-metric-search mode because it performs all-against-all comparisons between query DNA and the target protein sequences. Therefore we recommend limiting your reference set to 200 protein sequences for no-metric-search mode. The index metic-search mode gains more than 10-fold speedup by reducing the number of comparisons (see FrameBot citation). A larger DNA reference set can be used. 
+
+-----
+
+**Parameters**
+
+The parameters are numerous in Framebot
+
+    - The alignment mode: glocal, local or global
+    - The minimum abundance for de-novo mode
+    - The maxmimum aa identity cutoff for de-novo mode
+    - The Percent identity cutoff
+    - The top k closest protein targets
+    - Length cutoff in number of amino acids
+    - Disable metric search (provide fasta file of seeds instead of index file)
+    - Result file name stem
+    - Disable the pre-filtering step for non-metric search
+    - Sequence quality data
+    - Protein translation table to use
+    - The word size used to find closest protein targets
+    - ...
+
+-----
+
+**Output**
+
+The framebot step produces five output files:
+
+    - the alignment to the nearest match satisfying the minimum length and protein identity cutoff.
+    - the frameshift-corrected nucleotide and protein sequences satisfying the minimum length and protein identity cutoff.
+    - the alignment to the nearest match that failed the minimum length and protein identity cutoff.
+    - a fasta file containing the nucleotide sequences that failed the minimum length and protein identity cutoff.
+
     ]]></help>
+
     <citations>
-        <citation type="doi"></citation>
+        <citation type="doi">10.1128/mBio.00592-13</citation>
     </citations>
 </tool>
