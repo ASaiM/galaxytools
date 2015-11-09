@@ -11,15 +11,16 @@
                 <action type="shell_command">git checkout 2.0.2</action>
                 <action type="shell_command">git submodule update --init</action>
                 <action type="shell_command">make</action>
-                <action type="move_file">
-                    <source>.</source>
-                    <destination>$INSTALL_DIR</destination>
-                </action>
+                <action type="change_directory">../</action>
+                <action type="shell_command">mv rdptools/ $INSTALL_DIR/</action>
                 <action type="set_environment">
-                    <environment_variable name="RDP_TOOLS_DIR" action="set_to">$INSTALL_DIR/rdptools</environment_variable>
+                    <environment_variable name="RDP_TOOLS_DIR" action="set_to">$INSTALL_DIR/rdptools/</environment_variable>
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
                 </action>
             </actions>
         </install>
+        <readme>
+...
+        </readme>
     </package>
 </tool_dependency>
