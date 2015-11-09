@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="ant" version="1.9.6">
-        <repository name="ant" owner="bebatut" />
+        <repository name="package_ant_1_9_6" owner="bebatut" />
     </package>
     <package name="rdptools" version="2.0.2">
         <install version="1.0">
@@ -20,7 +20,13 @@
             </actions>
         </install>
         <readme>
-...
+RDPTols is an open source command-line tool suite for performing a complete 
+workflow of analysis tasks of NGS data.
+
+Clone the github repository and configure the tools.
+
+For more details, see: 
+https://github.com/rdpstaff/RDPTools
         </readme>
     </package>
 </tool_dependency>
