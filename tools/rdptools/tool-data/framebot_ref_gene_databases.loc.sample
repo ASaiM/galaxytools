@@ -1,0 +1,17 @@
+#This is a sample file distributed with Galaxy that is used to define a
+#list of public ribosomal databases for SortMeRNA, using the following format
+#(white space characters are TAB characters):
+#
+#<unique_id>    <database_caption>  <fasta_file_path>
+#
+
+alkb_prot_ref	alkb protein sequences	$RDP_TOOLS_DIR/Framebot/refset/alkb_prot_ref.fasta
+amoA_prot_ref	amoA protein sequences	$RDP_TOOLS_DIR/Framebot/refset/amoA_prot_ref.fasta
+bphA_prot_ref	bphA protein sequences	$RDP_TOOLS_DIR/Framebot/refset/bphA_prot_ref.fasta
+buk_prot_ref	buk protein sequences	$RDP_TOOLS_DIR/Framebot/refset/buk_prot_ref.fasta
+but_prot_ref	but protein sequences	$RDP_TOOLS_DIR/Framebot/refset/but_prot_ref.fasta
+nifh_nucl_ref_polyprimers	nifh nucleotide sequences flanked by the Poly nifH primers	$RDP_TOOLS_DIR/Framebot/refset/nifh_nucl_ref_polyprimers
+nifh_prot_ref	nifh protein sequences	$RDP_TOOLS_DIR/Framebot/refset/nifh_prot_ref.fasta
+nifh_prot_ref_polyprimers	nifh protein sequences flanked by the Poly nifH primers	$RDP_TOOLS_DIR/Framebot/refset/nifh_prot_ref_polyprimers.fasta
+p450_prot_ref	p450 protein sequences	$RDP_TOOLS_DIR/Framebot/refset/p450_prot_ref.fasta
+pmoA_prot_ref	pmoAprotein sequences	$RDP_TOOLS_DIR/Framebot/refset/pmoA_prot_ref.fasta
