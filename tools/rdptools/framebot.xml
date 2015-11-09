@@ -1,7 +1,10 @@
-<tool id="framebot" name="Framebot to frameshift correction and nearest neighbor classification tool" version="0.1.0">
+<tool id="framebot" name="Framebot" version="0.1.0">
+    <description> to coorect frameshift and classify nearest neighbor</description>
+
     <requirements>
         <requirement type="rdptools"></requirement>
     </requirements>
+
     <stdio>
         <exit_code range="1:" />
     </stdio>
@@ -15,15 +18,16 @@
             -k $knn
             -l $length_cutoff
     
-            if $no_metric_search.no_metric_search_test == 'yes':
+            #if $no_metric_search.no_metric_search_test
                 -N 
                 -e $no_metric_search.gap_ext_penalty
                 -f $no_metric_search.frameshift_penalty
                 -g $no_metric_search.gap_open_penalty
                 $no_metric_search.no_prefilter 
                 -x $no_metric_search.scoring_matrix
-            else:
+            #else
                 -m $no_metric_search.max_radius
+            #end if
 
             -o output
             -w $word_size
@@ -34,7 +38,7 @@
                 $databases.databases_name
             #else
                 #set $data_table = dict([(_[0], _[2]) for _ in $databases.databases_input.input.options.tool_data_table.data])
-                $$data_table[databases_input.value]
+                $data_table[$databases.databases_input.value]
             #end if
 
             $input_sequence_file
