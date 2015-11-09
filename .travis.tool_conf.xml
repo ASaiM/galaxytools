@@ -7,5 +7,6 @@
         <tool file="sortmerna/sortmerna.xml" />
 	<tool file="metaphlan2/metaphlan2.xml" />
 	<tool file="prinseq/prinseq.xml" />
+	<tool file="rdptools/framebot.xml" />
     </section>
 </toolbox>
