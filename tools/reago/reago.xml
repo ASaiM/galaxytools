@@ -33,7 +33,6 @@
             .
             -l $read_length
             -o $overlap
-            -e $error_correction
             -t $tip_size 
             -b $path_finding_parameter
 ]]>
@@ -48,8 +47,6 @@
             label="Read length" help=""/>
         <param name="overlap" type="float" min="0" max="1" value="0.8" 
             label="Overlap" help=""/>
-        <param name="error_correction" type="float" min="0" max="1000" value="0.05" 
-            label="Error correction" help=""/>
         <param name="tip_size" type="integer" min="0" max="1000" value="30" 
             label="Tip size" help=""/>
         <param name="path_finding_parameter" type="integer" min="2" max="11" 
