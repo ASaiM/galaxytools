@@ -11,7 +11,7 @@
 
     <command>
 <![CDATA[
-        python format_reago_input_files.py 
+        python $__tool_directory__/format_reago_input_files.py 
             --r1_sequence_file $r1_file
             --r2_sequence_file $r2_file
 
