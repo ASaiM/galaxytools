@@ -129,7 +129,7 @@
             label="Frameshift-corrected protein sequences of ${on_string} (Framebot)" />
         
         <data format="txt" name="failed_alignment_file" 
-            rom_work_dir="output_failed_framebot.txt"
+            from_work_dir="output_failed_framebot.txt"
             label="Rejected alignments to the neared match of ${on_string} (Framebot)" />
         <data format="fasta" name="failed_nucl_output" 
             from_work_dir="output_failed_nucl.fasta"
@@ -158,10 +158,10 @@
             <param name="de_novo" value="false"/>
 
             <output name="conserved_alignment_file" file="framebot_conserved_alignment_file.txt"/>
-            <output name="nucl_corr_seq_file" file="framebot_nucl_corr_seq_file.fasta"/>
-            <output name="all_seqs_derep_prot_corr_seq_file" file="framebot_all_seqs_derep_prot_corr_seq_file.fasta"/>
-            <output name="rejected_alignment_file" file="framebot_rejected_alignment_file.txt"/>
-            <output name="nucl_failed" file="framebot_nucl_failed.fasta"/>
+            <output name="corr_nucl_output" file="framebot_corr_nucl_output.fasta"/>
+            <output name="corr_prot_output" file="framebot_corr_prot_output.fasta"/>
+            <output name="failed_alignment_file" file="framebot_failed_alignment_file.txt"/>
+            <output name="failed_nucl_output" file="framebot_failed_nucl_output.fasta"/>
         </test>
     </tests>
 
