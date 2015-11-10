@@ -1,12 +1,6 @@
 <tool id="prinseq" name="PRINSEQ" version="0.1.0">
     <description>to process quality of sequences</description>
-
-    <version_command>
-<![CDATA[
-    perl \${PRINSEQ_DIR}/prinseq-lite.pl --version
-]]>
-    </version_command>
-
+    
     <requirements>
         <requirement type="package" version="0.20.4">prinseq</requirement>
     </requirements>
@@ -22,6 +16,12 @@
                level="warning"
                description="" />
     </stdio>
+
+    <version_command>
+<![CDATA[
+    perl \${PRINSEQ_DIR}/prinseq-lite.pl --version
+]]>
+    </version_command>
 
     <command>
 <![CDATA[
