@@ -28,5 +28,5 @@ if __name__ == '__main__':
     parser.add_argument('--r2_sequence_file', required=True)
     args = parser.parse_args()
 
-    add_read_pair_num(args.r1_input_sequence_file, args.r1_input_sequence_file, 1)
-    add_read_pair_num(args.r2_input_sequence_file, args.r2_input_sequence_file, 2)
+    add_read_pair_num(args.r1_sequence_file, args.r1_sequence_file, 1)
+    add_read_pair_num(args.r2_sequence_file, args.r2_sequence_file, 2)
