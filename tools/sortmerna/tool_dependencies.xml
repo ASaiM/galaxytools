@@ -5,8 +5,10 @@
             <actions>
                 <action type="download_by_url" target_filename="sortmerna-2.0.tar.gz">https://github.com/biocore/sortmerna/archive/2.0.tar.gz</action>
                 <action type="autoconf"/>
+                <action type="change_directory">../</action>
+                <action type="shell_command">mv sortmerna-2.0/ $INSTALL_DIR/</action>
                 <action type="set_environment">
-                    <environment_variable name="SORTMERNADIR" action="set_to">$INSTALL_DIR</environment_variable>
+                    <environment_variable name="SORTMERNADIR" action="set_to">$INSTALL_DIR/sortmerna-2.0/</environment_variable>
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
                 </action>
             </actions>

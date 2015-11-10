@@ -11,7 +11,7 @@
 
     <version_command>
 <![CDATA[
-sortmerna --version 2>&1|grep 'SortMeRNA version'
+\${SORTMERNADIR}/sortmerna --version 2>&1|grep 'SortMeRNA version'
 ]]>
     </version_command>
 
@@ -34,11 +34,11 @@ sortmerna --version 2>&1|grep 'SortMeRNA version'
         #end for
     #end if
 
-    indexdb_rna --ref $ref -L $seed_length --max_pos $max_pos
+    \${SORTMERNADIR}/indexdb_rna --ref $ref -L $seed_length --max_pos $max_pos
 
     &&
 
-    sortmerna
+    \${SORTMERNADIR}/sortmerna
         --ref $ref
         --reads $input_sequence_file
         --aligned aligned
