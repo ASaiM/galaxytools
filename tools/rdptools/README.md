@@ -44,10 +44,6 @@ planemo dependency_script ~/repositories/galaxytools/packages/package_ant_1_9_6/
 bash dep_install.sh
 source env.sh
 
-planemo dependency_script ~/repositories/galaxytools/packages/package_rdptools_2_0_2/
-bash dep_install.sh
-source env.sh
-
 planemo dependency_script ~/repositories/galaxytools/tools/rdptools/
 bash dep_install.sh
 source env.sh
