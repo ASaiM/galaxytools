@@ -2,7 +2,7 @@
     <description> to coorect frameshift and classify nearest neighbor</description>
 
     <requirements>
-        <requirement type="rdptools"></requirement>
+        <requirement type="package" version="2.0.2">rdptools</requirement>
     </requirements>
 
     <stdio>
@@ -10,10 +10,8 @@
     </stdio>
 
     <command><![CDATA[
-        java -jar \{RDP_TOOLS_DIR}/FrameBot.jar framebot
+        java -jar \${RDP_TOOLS_DIR}/FrameBot.jar framebot
             -a $alignment_mode
-            -b $denovo_abund_cutoff
-            -d $denovo_id_cutoff
             -i $identity_cutoff
             -k $knn
             -l $length_cutoff
@@ -23,16 +21,12 @@
                 -e $no_metric_search.gap_ext_penalty
                 -f $no_metric_search.frameshift_penalty
                 -g $no_metric_search.gap_open_penalty
-                $no_metric_search.no_prefilter 
-                -x $no_metric_search.scoring_matrix
             #else
                 -m $no_metric_search.max_radius
             #end if
 
             -o output
             -w $word_size
-    
-            $de_novo
  
             #if str( $databases.databases_selector ) == 'history'
                 $databases.databases_name
@@ -72,10 +66,6 @@
             <option value="global">Global</option>
         </param>
 
-        <param name="denovo_abund_cutoff" type="integer" min="0" max="100" 
-            value="10" label="Minimum abundance for de-novo mode" help=""/>
-        <param name="denovo_id_cutoff" type="float" min="0" max="1" value="0.7" 
-            label="Maximimum aa identity cutoff for de-novo mode" help=""/>
         <param name="identity_cutoff" type="float" min="0" max="1" value="0.4" 
             label="Percent identity cutoff" help=""/>
 
@@ -90,13 +80,6 @@
                     value="-10" label="Frameshift penalty" help=""/>
                 <param name="gap_open_penalty" type="integer" min="-20" max="0" 
                     value="-10" label="Gap opening penalty" help=""/>
-                <param name="no_prefilter" type='boolean' checked="false" 
-                    truevalue="-P" falsevalue="" label="Disable the pre-filtering 
-                    step?" help=""/>
-                <param name="scoring_matrix" type="select" display="radio" 
-                    label="Protein scoring matrix" help="">
-                    <option value="Blosum62">Blosum62</option>
-                </param>
             </when>
             <when value="false">
                 <param name="max_radius" type="float" min="1" max="2147483647" 
@@ -133,9 +116,6 @@
         
         <param name="word_size" type="integer" min="3" max="6" value="4" 
             label="Word size used to find closest protein target" help=""/>
-        <param name="de_novo" type='boolean' checked="false" truevalue="-z" 
-            falsevalue="" label="Enable de novo mode to add abundant query seqs 
-            to refset" help=""/>
     </inputs>
 
     <outputs>
