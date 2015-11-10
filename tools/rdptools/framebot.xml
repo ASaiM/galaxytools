@@ -41,11 +41,11 @@
                 $data_table[$databases.databases_input.value]
             #end if
 
-            $input_sequence_file
+            $framebot_input_sequence_file
     ]]></command>
 
     <inputs>
-        <param name="sequence_file" type="data" format="fasta" 
+        <param name="framebot_input_sequence_file" type="data" format="fasta" 
             label="Input sequence file" help=""/>
 
         <conditional name="databases">
@@ -158,7 +158,7 @@
 
     <tests>
         <test>
-            <param name="sequence_file" value="framebot_input_sequence.fasta"/>
+            <param name="framebot_input_sequence_file" value="framebot_input_sequence.fasta"/>
             <param name="databases_selector" value="cached" />
             <param name="databases_input" value="amoA_prot_ref" />
             <param name="alignment_mode" value="glocal" />
