@@ -11,14 +11,19 @@
 
     <command>
 <![CDATA[
+        #set $r1_output=$os.path.splitext($os.path.basename(str($r1_file)))[0]
+        #set $r2_output=$os.path.splitext($os.path.basename(str($r2_file)))[0]
+
         python $__tool_directory__/format_reago_input_files.py 
-            --r1_sequence_file $r1_file
-            --r2_sequence_file $r2_file
+            --r1_input $r1_file
+            --r2_input $r2_file
+            --r1_output $r1_output
+            --r2_output $r2_output
 
         && 
         python \${REAGO_DIR}/filter_input.py 
-            $r1_file
-            $r2_file
+            $r1_output
+            $r2_output
             .
             \${REAGO_DIR}/cm ab 4
 

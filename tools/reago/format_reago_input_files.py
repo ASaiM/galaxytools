@@ -24,9 +24,11 @@ def add_read_pair_num(input_filepath, output_filepath, read_pair_num):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--r1_sequence_file', required=True)
-    parser.add_argument('--r2_sequence_file', required=True)
+    parser.add_argument('--r1_input', required=True)
+    parser.add_argument('--r2_input', required=True)
+    parser.add_argument('--r1_output', required=True)
+    parser.add_argument('--r2_output', required=True)
     args = parser.parse_args()
 
-    add_read_pair_num(args.r1_sequence_file, args.r1_sequence_file, 1)
-    add_read_pair_num(args.r2_sequence_file, args.r2_sequence_file, 2)
+    add_read_pair_num(args.r1_input, args.r1_output, 1)
+    add_read_pair_num(args.r2_input, args.r2_output, 2)
