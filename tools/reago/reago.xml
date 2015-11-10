@@ -1,0 +1,110 @@
+<tool id="reago" name="Reago" version="0.1.0">
+    <description> to assemble rRNA</description>
+
+    <requirements>
+        <requirement type="package">reago</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <command>
+<![CDATA[
+        python format_reago_input_files.py 
+            --r1_sequence_file $r1_file
+            --r2_sequence_file $r2_file
+
+        && 
+        python \${REAGO_DIR}/filter_input.py 
+            $r1_file
+            $r2_file
+            .
+            \${REAGO_DIR}/cm ab 4'
+
+        && 
+        python \${REAGO_DIR}/reago.py 
+            filtered.fasta 
+            .
+            -l $read_length
+            -o $overlap
+            -e $error_correction
+            -t $tip_size 
+            -b $path_finding_parameter
+]]>
+    </command>
+
+    <inputs>
+        <param name="r1_file" type="data" format="fasta" label="R1 input sequence 
+            file" help=""/>
+        <param name="r2_file" type="data" format="fasta" label="R2 input sequence 
+            file" help=""/>
+        <param name="read_length" type="integer" min="1" max="1000" value="1" 
+            label="Read length" help=""/>
+        <param name="overlap" type="float" min="0" max="1" value="0.8" 
+            label="Overlap" help=""/>
+        <param name="error_correction" type="float" min="0" max="1000" value="0.05" 
+            label="Error correction" help=""/>
+        <param name="tip_size" type="integer" min="0" max="1000" value="30" 
+            label="Tip size" help=""/>
+        <param name="path_finding_parameter" type="integer" min="2" max="11" 
+            value="10" label="Path finding parameter" help=""/>
+    </inputs>
+
+    <outputs>
+        <data format="fasta" name="full_genes" 
+            from_work_dir="full_genes.fasta"
+            label="Full genes of ${on_string} (Framebot)" />
+        <data format="fasta" name="fragments" 
+            from_work_dir="fragments.fasta"
+            label="Fragment genes of ${on_string} (Framebot)" />
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input1" value="2.fastq"/>
+            <output name="output1" file="2.fasta"/>
+        </test>
+    </tests>
+
+    <help>
+<![CDATA[
+
+**What it does**
+
+Reago is tool to assembly 16S ribosomal RNA recovery from metagenomic data.
+More information on `Github repository <https://github.com/chengyuan/reago-1.1>`_.
+
+-----
+
+**Input**
+
+Sequence files with r1 and r2 are required. 
+
+-----
+
+**Parameters**
+
+The parameters are 
+
+    - The overlap percentage
+    - The threshold for error correction
+    - The tip size
+    - The parameter for path finding
+
+-----
+
+**Output**
+
+Reago produces two output files:
+
+    - A sequence file with full genes
+    - A sequence file with fragment genes
+
+    ]]>
+    </help>
+
+    <citations>
+        <citation type="doi">10.1093/bioinformatics/btv231</citation>
+    </citations>
+</tool>
