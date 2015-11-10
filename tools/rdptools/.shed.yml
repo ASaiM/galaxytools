@@ -1,0 +1,7 @@
+categories: [Sequence Analysis,Fasta Manipulation]
+description: RDPTols is an open source command-line tool suite for performing a complete
+  workflow of analysis tasks of NGS data.
+homepage_url: https://github.com/rdpstaff/RDPTools
+name: rdptools
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/rdptools
