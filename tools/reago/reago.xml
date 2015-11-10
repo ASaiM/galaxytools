@@ -20,7 +20,7 @@
             $r1_file
             $r2_file
             .
-            \${REAGO_DIR}/cm ab 4'
+            \${REAGO_DIR}/cm ab 4
 
         && 
         python \${REAGO_DIR}/reago.py 
@@ -62,8 +62,16 @@
 
     <tests>
         <test>
-            <param name="input1" value="2.fastq"/>
-            <output name="output1" file="2.fasta"/>
+            <param name="r1_file" value="reago_r1_sequences.fasta"/>
+            <param name="r2_file" value="reago_r2_sequences.fasta"/>
+            <param name="read_length" value="1" />
+            <param name="overlap" value="0.8" />
+            <param name="error_correction" value="0.05" />
+            <param name="tip_size" value="30" />
+            <param name="path_finding_parameter" value="10"/>
+
+            <output name="full_genes" file="full_genes.fasta"/>
+            <output name="fragments" file="fragments.fasta"/>
         </test>
     </tests>
 
