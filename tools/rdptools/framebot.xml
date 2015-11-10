@@ -25,7 +25,7 @@
                 -m $no_metric_search.max_radius
             #end if
 
-            -o $conserved_alignment_file $rejected_alignment_file $corr_prot_output $corr_nucl_output $failed_nucl_output
+            -o output
  
             #if str( $databases.databases_selector ) == 'history'
                 $databases.databases_name
@@ -119,14 +119,20 @@
 
     <outputs>
         <data format="txt" name="conserved_alignment_file" 
+            from_work_dir="output_framebot.txt"
             label="Conserved alignments to the neared match of ${on_string} (Framebot)" />
         <data format="fasta" name="corr_nucl_output" 
+            from_work_dir="output_corr_nucl.fasta"
             label="Frameshift-corrected nucleotide sequences of ${on_string} (Framebot)" />
          <data format="fasta" name="corr_prot_output" 
+            from_work_dir="output_corr_prot.fasta"
             label="Frameshift-corrected protein sequences of ${on_string} (Framebot)" />
-        <data format="txt" name="rejected_alignment_file" 
+        
+        <data format="txt" name="failed_alignment_file" 
+            rom_work_dir="output_failed_framebot.txt"
             label="Rejected alignments to the neared match of ${on_string} (Framebot)" />
         <data format="fasta" name="failed_nucl_output" 
+            from_work_dir="output_failed_nucl.fasta"
             label="Non frameshift-corrected nucleotide sequences of ${on_string} (Framebot)" />
     </outputs>
 
