@@ -8,5 +8,6 @@
 	<tool file="metaphlan2/metaphlan2.xml" />
 	<tool file="prinseq/prinseq.xml" />
 	<tool file="rdptools/framebot.xml" />
+	<tool file="reago/reago.xml" />
     </section>
 </toolbox>
