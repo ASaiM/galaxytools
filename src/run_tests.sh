@@ -80,6 +80,17 @@ cd galaxy-master
 
 # Configure tools in Galaxy
 # =========================
+function create_symlink {
+    if [ -e $1 ]; then
+        if [ ! -L $1 ]; then
+            rm -rf $1
+            ln -s $2 $1
+        fi
+    else
+        ln -s $2 $1
+    fi 
+}
+
 export GALAXY_TEST_UPLOAD_ASYNC=false
 export GALAXY_TEST_DB_TEMPLATE=https://github.com/jmchilton/galaxy-downloads/raw/master/db_gx_rev_0127.sqlite
 
@@ -92,11 +103,7 @@ ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_data_table_conf.xml $PWD/config/shed_tool
 
 for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ )
 do 
-    ln -s ${TRAVIS_BUILD_DIR}/tools/$i/ $PWD/tools/$i
-    cp ${TRAVIS_BUILD_DIR}/tools/$i/test-data/* test-data/
-    if [ -d ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/ ]; then 
-        cp ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/* tool-data/
-    fi
+    create_symlink $PWD/tools/$i ${TRAVIS_BUILD_DIR}/tools/$i/
 done
 
 
