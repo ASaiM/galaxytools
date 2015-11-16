@@ -10,7 +10,11 @@
         <install version="1.0">
             <actions>
                 <action type="shell_command">git clone https://github.com/chengyuan/reago-1.1</action>
-                <action type="shell_command">mv reago-1.1 $INSTALL_DIR/</action>
+                <action type="make_directory">$INSTALL_DIR/reago-1.1/</action>
+                <action type="move_directory_files">
+                    <source_directory>reago-1.1/</source_directory>
+                    <destination_directory>$INSTALL_DIR/reago-1.1/</destination_directory>
+                </action>
                 <action type="set_environment">
                     <environment_variable name="REAGO_DIR" action="set_to">$INSTALL_DIR/reago-1.1/</environment_variable>
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
