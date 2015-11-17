@@ -233,9 +233,9 @@
     
     <tests>
         <test>
-            <param name="input_sequence_file" value="input_sequences.fastq" ftype="fastq"/>
+            <param name="input_sequence_file" value="sortmerna_input_sequences.fastq" ftype="fastq"/>
             <param name="databases_selector" value="history" />
-            <param name="databases_name" value="db.fasta" ftype="fasta"/>
+            <param name="databases_name" value="sortmerna_db.fasta" ftype="fasta"/>
             <param name="fastx_test" value="--fastx" />
             <param name='fastx_rejected' value="True"/>
             <param name="sam_test" value="" />
@@ -254,9 +254,9 @@
             <param name="seed_length" value="18" />
             <param name="max_pos" value="10000" />
             
-            <output name="aligned_sequence_file" file="aligned_sequences.fastq" ftype="fastq"/>
-            <output name="rejected_sequence_file" file="rejected_sequences.fastq" ftype="fastq"/>
-            <output name="blast_output_file" file="blast_output.tabular" ftype="tabular"/>
+            <output name="aligned_sequence_file" file="sortmerna_aligned_sequences.fastq" ftype="fastq"/>
+            <output name="rejected_sequence_file" file="sortmerna_rejected_sequences.fastq" ftype="fastq"/>
+            <output name="blast_output_file" file="sortmerna_blast_output.tabular" ftype="tabular"/>
         </test>
     </tests>
     
