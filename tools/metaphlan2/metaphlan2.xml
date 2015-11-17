@@ -132,7 +132,7 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
 
     <tests>
         <test>
-            <param name="input_file" value="input_sequences.fastq"/>
+            <param name="input_file" value="metaphlan2_input_sequences.fastq"/>
             <param name="analysis_type_select" value="rel_ab" />
             <param name="taxonomic_level" value="a" />
             <param name="min_cu_len" value="2000" />
@@ -144,8 +144,8 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
             <param name="stat_q" value="0.1" />
             <param name="sam_output" value='False' />
             <param name="biom_output" value='True' />
-            <output name="output_file" file="profiled_metagenome.txt"/>
-            <output name="biom_output_file" file="biom.biom"/>
+            <output name="output_file" file="metaphlan2_profiled_metagenome.txt"/>
+            <output name="biom_output_file" file="metaphlan2_biom.biom"/>
         </test>
     </tests>
 
