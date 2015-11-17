@@ -104,6 +104,16 @@ ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_data_table_conf.xml $PWD/config/shed_tool
 for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ )
 do 
     create_symlink $PWD/tools/$i ${TRAVIS_BUILD_DIR}/tools/$i/
+    for j in $( ls ${TRAVIS_BUILD_DIR}/tools/$i/test-data/ )
+    do
+        create_symlink $PWD/test-data/$j ${TRAVIS_BUILD_DIR}/tools/$i/test-data/$j
+    done
+    if [ -d ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/ ]; then
+        for j in $( ls ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/ )
+        do
+            create_symlink $PWD/tool-data/$j ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/$j
+        done
+    fi
 done
 
 
