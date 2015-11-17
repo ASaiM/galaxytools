@@ -655,7 +655,7 @@
             <param name="window_quality_trimming_treatments" value="1"/>
             <param name="step_quality_trimming_treatments" value="1"/>
 
-            <output name="good_sequence_file" file="good_sequences.fastq"/>
+            <output name="good_sequence_file" file="prinseq_good_sequences.fastq"/>
         </test>
     </tests>
 
