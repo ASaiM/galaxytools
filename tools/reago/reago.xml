@@ -64,16 +64,16 @@
 
     <tests>
         <test>
-            <param name="r1_file" value="sample_1.fasta"/>
-            <param name="r2_file" value="sample_2.fasta"/>
+            <param name="r1_file" value="reago_sample_1.fasta"/>
+            <param name="r2_file" value="reago_sample_2.fasta"/>
             <param name="read_length" value="101" />
             <param name="overlap" value="0.8" />
             <param name="error_correction" value="0.05" />
             <param name="tip_size" value="30" />
             <param name="path_finding_parameter" value="10"/>
 
-            <output name="full_genes" file="full_genes.fasta"/>
-            <output name="fragments" file="fragments.fasta"/>
+            <output name="full_genes" file="reago_full_genes.fasta"/>
+            <output name="fragments" file="reago_fragments.fasta"/>
         </test>
     </tests>
 
