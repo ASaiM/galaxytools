@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="bowtie2" version="2.2.4">
-        <repository name="bowtie2" owner="devteam" />
+    <package name="bowtie2" version="2.2.6">
+        <repository name="package_bowtie_2_2_6" owner="iuc" toolshed="https://toolshed.g2.bx.psu.edu" />
     </package>
     <package name="metaphlan2" version="2.0">
         <install version="1.0">
