@@ -2,7 +2,9 @@
     <description> to assemble rRNA</description>
 
     <requirements>
-        <requirement type="package">reago</requirement>
+        <requirement type="package" version="1.1">infernal</requirement>
+        <requirement type="package" version="1.5.7">genometools</requirement>
+        <requirement type="package" version="1.1">reago</requirement>
     </requirements>
 
     <stdio>
