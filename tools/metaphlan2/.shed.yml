@@ -1,4 +1,5 @@
-categories: [Metagenomics]
+categories: 
+  - Metagenomics
 description: MetaPhlAn is a computational tool for profiling the composition of microbial
   communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun
   sequencing data with species level resolution
