@@ -21,7 +21,7 @@
 
     <version_command>
 <![CDATA[
-python \${METAPHLAN2_DIR}/metaphlan.py -v
+python \${METAPHLAN2_DIR}/metaphlan2.py -v
 ]]>
     </version_command>
 
@@ -90,6 +90,9 @@ python \${METAPHLAN2_DIR}/metaphlan.py -v
                 <option value="s">Species only</option>
               </param>
             </when>
+            <when value="rel_ab_w_read_stats"/>
+            <when value="reads_map"/>
+            <when value="clade_profiles"/>
             <when value="marker_ab_table">
                 <param name="nreads" type="integer" value="0" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
             </when>
