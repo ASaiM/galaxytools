@@ -22,14 +22,14 @@
             --r1_output $r1_output
             --r2_output $r2_output
 
-        && 
+        ; 
         python \${REAGO_DIR}/filter_input.py 
             $r1_output
             $r2_output
             .
-            \${REAGO_DIR}/cm ab 4
+            \${REAGO_DIR}/cm/ ab 4
 
-        && 
+        ;
         python \${REAGO_DIR}/reago.py 
             filtered.fasta 
             .
