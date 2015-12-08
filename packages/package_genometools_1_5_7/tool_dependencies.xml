@@ -4,7 +4,7 @@
         <install version="1.0">
             <actions>
                 <action type="download_by_url">http://genometools.org/pub/genometools-1.5.7.tar.gz</action>
-                <action type="autoconf"></action>
+                <action type="make_install"></action>
                 <action type="set_environment">
                     <environment_variable name="GENOMETOOLS_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/</environment_variable>
