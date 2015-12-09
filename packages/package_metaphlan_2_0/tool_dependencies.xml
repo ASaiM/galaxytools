@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="metaphlan2" version="2.0">
+        <install version="1.0">
+            <actions>
+                <action sha256sum="17b090bcd8dc98531639455176607efd2fb76ecab1f6eedfd5ec70e7d92cf375" type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
+                <action type="move_directory_files">
+                    <source_directory>.</source_directory>
+                    <destination_directory>$INSTALL_DIR/</destination_directory>
+                </action>
+                <action type="set_environment">
+                    <environment_variable name="METAPHLAN2_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme></readme>
+    </package>
+</tool_dependency>
