@@ -27,7 +27,9 @@
             $r1_output
             $r2_output
             .
-            \${REAGO_DIR}/cm/ ab 4
+            \${REAGO_DIR}/cm/ 
+            $cm_to_use
+            $cpu_nb
 
         ;
         python \${REAGO_DIR}/reago.py 
@@ -52,7 +54,16 @@
         <param name="tip_size" type="integer" min="0" max="1000" value="30" 
             label="Tip size" help=""/>
         <param name="path_finding_parameter" type="integer" min="2" max="11" 
-            value="10" label="Path finding parameter" help=""/>
+            value="10" label="Path finding parameter" help="(-b)"/>
+
+        <param name="cm_to_use" type="select" label="Database to use to to identify 16S reads" help="">
+            <option value="b">Bacteria only</option>
+            <option value="a">Archea only</option>
+            <option value="ab">Bacteria and archea</option>
+        </param>
+
+        <param name="cpu_nb" type="integer" min="1" max="10" 
+            value="4" label="Number of CPU to use to identify 16S reads" help=""/>
     </inputs>
 
     <outputs>
@@ -73,6 +84,8 @@
             <param name="error_correction" value="0.05" />
             <param name="tip_size" value="30" />
             <param name="path_finding_parameter" value="10"/>
+            <param name="cm_to_use" value="ab" />
+            <param name="cpu_nb" value="4" />
 
             <output name="full_genes" file="reago_full_genes.fasta"/>
             <output name="fragments" file="reago_fragments.fasta"/>
