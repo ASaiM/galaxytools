@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="bowtie2" version="2.2.5">
+        <repository name="package_bowtie_2_2_5" owner="iuc" />
+    </package>
+    <package name="metaphlan2" version="2.0">
+        <repository name="package_metaphlan_2_0" owner="bebatut" />
+    </package>
+    <package name="diamond" version="0.6.13">
+        <repository name="package_diamond_0_6_13" owner="iuc" />
+    </package>
+    <package name="humann2" version="2.0">
+        <install version="1.0">
+            <actions>
+                <action sha256sum="77291569ec1a90287d7eedef131bda583ce7ffd9bc3208d52d5c7407a1890e06" type="download_by_url">https://bitbucket.org/biobakery/humann2/downloads/humann2_v0.5.0.tar.gz</action>
+                <action type="shell_command">python setup.py install --bypass-dependencies-install</action>
+                <action type="make_directory">$INSTALL_DIR/databases</action>
+                <action type="shell_command">humann2_databases --download chocophlan full $INSTALL_DIR/databases</action>
+                <action type="shell_command">humann2_databases --download uniref diamond $INSTALL_DIR/databases</action>
+                <action type="set_environment">
+                    <environment_variable name="METAPHLAN2_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                </action>
+            </actions>
+        </install>
+        <readme></readme>
+    </package>
+</tool_dependency>
