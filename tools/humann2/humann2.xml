@@ -31,8 +31,14 @@
             --prescreen-threshold $prescreen
 
             --pathways $pathways
-            --protein-database \${HUMANN2_DIR}/databases/uniref
-            --nucleotide-database \${HUMANN2_DIR}/databases/chocophlan
+
+            #set $data_table = dict([(_[0], _[2]) for _ in $protein_database.input.options.tool_data_table.data])
+            #set $db = $protein_database.value
+            --protein-database $data_table[$db]
+
+            #set $data_table = dict([(_[0], _[2]) for _ in $nucleotide_database.input.options.tool_data_table.data])
+            #set $db = $nucleotide_database.value
+            --nucleotide-database $data_table[$db]
 
             --metaphlan \${METAPHLAN2_DIR}/
             --metaphlan-options "-t rel_ab"
@@ -65,6 +71,14 @@
             </when>
             <when value="false" />
         </conditional>
+
+        <param name="nucleotide_database" label="Nucleotide database" type="select" >
+            <options from_data_table="humann2_nucleotide_database" />
+        </param>
+
+        <param name="protein_database" label="Protein database" type="select" >
+            <options from_data_table="humann2_protein_database" />
+        </param>
 
         <param name="e_value" type="float" min="0" max="10" value="1" 
             label="E-value threshold to use with the translated search" 
