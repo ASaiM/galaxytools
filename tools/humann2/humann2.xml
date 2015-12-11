@@ -13,10 +13,83 @@
     </stdio>
 
     <command><![CDATA[
-        TODO: Fill in command template.
+        humann2 
+            -i "$input_file"
+        
+            #if $taxonomic_profile.test:
+                --taxonomic-profile $taxonomic_profile.file
+            #end if
+
+            --evalue $e_value
+            --identity-threshold $identity
+            --prescreen-threshold $prescreen
+
+            --pathways $pathways
+            --protein-database \${HUMANN2_DIR}/databases/uniref
+            --nucleotide-database \${HUMANN2_DIR}/databases/chocophlan
+
+            --metaphlan \${METAPHLAN2_DIR}/
+            --metaphlan-options "-t rel_ab"
+
+            --threads \${GALAXY_SLOTS:-4}
+
+            --translated-alignment diamond
+
+            --xipe $xipe
+            --minpath $minpath
+            --pick-frames $pick_frames
+
+            -o "output"
+            --output-format $output_format
+            --output-max-decimals $output_max_dec
+            --output-basename "humann2"            
     ]]></command>
 
     <inputs>
+        <param name="input_file" type="data" format="fastq,fasta,sam,bam,biom" 
+            label="Input sequence file" help=""/>
+
+        <conditional name="taxonomic_profile">
+            <param name='test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use a custom taxonomic profile?" 
+                help="The file must have been created by MetaPhlan"/>
+            <when value="true">
+                <param name="file" type="data" format="" label="Taxonomic profile 
+                    file" help=""/>
+            </when>
+            <when value="false" />
+        </conditional>
+
+        <param name="e_value" type="float" min="0" max="10" value="1" 
+            label="E-value threshold to use with the translated search" 
+            help="(--evalue)"/>
+        <param name="identity" type="integer" min="0" max="100" value="40" 
+            label="Identity threshold for alignments" help="(--identity-threshold)"/>
+        <param name="prescreen" type="float" min="0" max="1" value="0.01" 
+            label="Minimum percentage of reads matching a species" 
+            help="(--prescreen-threshold)"/>
+
+        <param name='pathways' type="select" label="Database to use for pathway computations"
+            help="(--pathways)">
+            <option value="metacyc" selected="true">MetaCyc</option>
+            <option value="unipathway">UniPathway</option>
+        </param>
+
+        <param name='xipe' type='boolean' checked="false" truevalue='on' 
+            falsevalue='off' label="Use xipe computation?" help="(--xipe)"/>
+        <param name='minpath' type='boolean' checked="true" truevalue='on' 
+            falsevalue='off' label="Use minpath computation?" help="(--minpath)"/>
+        <param name='pick_frames' type='boolean' checked="true" truevalue='on' 
+            falsevalue='off' label="Use pick frames computation?" 
+            help="(--pick-frames)"/>
+
+        <param name='output_format' type="select" label="Format of the output files"
+            help="(--output-format)">
+            <option value="tsv" selected="true">TSV</option>
+            <option value="biom">BIOM</option>
+        </param>
+        <param name="output_max_dec" type="integer" min="0" max="100" value="10" 
+            label="Number of decimals to output" help="(--output-max-decimals)"/>
     </inputs>
 
     <outputs>
