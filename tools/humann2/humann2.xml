@@ -12,6 +12,12 @@
         <exit_code range="1:" />
     </stdio>
 
+    <version_command>
+<![CDATA[
+    humann2 --version
+]]>
+    </version_command>
+
     <command><![CDATA[
         humann2 
             -i "$input_file"
@@ -95,6 +101,9 @@
     <outputs>
     </outputs>
 
+    <tests>
+    </tests>
+
     <help><![CDATA[
         **What it does**
 
@@ -126,4 +135,6 @@
 
     ]]></help>
 
+    <citations>
+    </citations>
 </tool>
