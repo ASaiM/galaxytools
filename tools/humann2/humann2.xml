@@ -113,6 +113,38 @@
     </inputs>
 
     <outputs>
+        <data format="tabular" name="gene_families_tsv" 
+            from_work_dir="humann2_genefamilies.tsv"
+            label="Gene families for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "tsv"</filter>
+        </data>
+        <data format="biom" name="gene_families_biom" 
+            from_work_dir="humann2_genefamilies.biom"
+            label="Gene families for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "biom"</filter>
+        </data>
+
+        <data format="tabular" name="pathcoverage_tsv" 
+            from_work_dir="humann2_pathcoverage.tsv"
+            label="Pathway coverage for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "tsv"</filter>
+        </data>
+        <data format="biom" name="pathcoverage_biom" 
+            from_work_dir="humann2_pathcoverage.biom"
+            label="Pathway coverage for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "biom"</filter>
+        </data>
+
+        <data format="tabular" name="pathabundance_tsv" 
+            from_work_dir="humann2_pathabundance.tsv"
+            label="Pathway abundance for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "tsv"</filter>
+        </data>
+        <data format="tabular" name="pathabundance_biom" 
+            from_work_dir="humann2_pathabundance.biom"
+            label="Pathway abundance for ${on_string} (HUMAnN2)" >
+            <filter>output_format == "biom"</filter>
+        </data>
     </outputs>
 
     <tests>
