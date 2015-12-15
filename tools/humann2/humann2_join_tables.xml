@@ -1,0 +1,63 @@
+<tool id="humann2_join_tables" name="Join HUMAnN2 table" version="0.1.0">
+    <description></description>
+
+    <requirements>
+        <requirement type="package" version="2.2.4">bowtie2</requirement>
+        <requirement type="package" version="2.0">metaphlan2</requirement>
+        <requirement type="package" version="0.6.13">diamond</requirement>
+        <requirement type="package" version="2.0">humann2</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <version_command>
+<![CDATA[
+    humann2_join_tables --version
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        `mkdir tmp_dir`
+        && 
+
+        #for $file in $input_files
+            `cp $file tmp_dir`
+        #end for
+
+        && 
+        humann2_join_tables
+            -i "tmp_dir"
+            -o $joined_table           
+    ]]></command>
+
+    <inputs>
+        <param name="input_files" type="data" format="tsv,biom" multiple="true" 
+            label="Gene/pathway tables"
+            help=""/>
+    </inputs>
+
+    <outputs>
+        <data format="tsv,biom" name="joined_table" label="Joined table for 
+            ${on_string} (HUMAnN2)" />
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input_files" value="humann2_sam_pathcoverage.tsv,humann2_fasta_pathcoverage.tsv"/>
+            <output name="joined_table" file="humann2_sam_fasta_joined_pathcoverage.tsv"/>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
+
+        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
