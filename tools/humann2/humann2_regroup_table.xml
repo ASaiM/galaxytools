@@ -1,0 +1,91 @@
+<tool id="humann2_regroup_table" name="Regroup HUMAnN2 table features" version="0.1.0">
+    <description></description>
+
+    <requirements>
+        <requirement type="package" version="2.2.4">bowtie2</requirement>
+        <requirement type="package" version="2.0">metaphlan2</requirement>
+        <requirement type="package" version="0.6.13">diamond</requirement>
+        <requirement type="package" version="2.0">humann2</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <version_command>
+<![CDATA[
+    humann2_regroup_table --version
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        humann2_regroup_table
+            -i $input_table
+            -o $output_table
+            --function $function
+
+            #if $built_in.test:
+                --groups $built_in.groups
+            #else:
+                --custom $built_in.file
+                $built_in.reversed
+            #end if  
+    ]]></command>
+
+    <inputs>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
+            table" help=""/>
+
+        <param name="function" type="select" label="How to combine grouped features?" help="(--function)">
+            <option value="sum" selected="true">Sum</option>
+            <option value="mean">Mean</option>
+        </param>
+
+        <conditional name="built_in">
+            <param name='test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use built-in grouping options?" 
+                help=""/>
+            <when value="true">
+                <param name="groups" type="select" label="Grouping options" help="(--groups)">
+                    <option value="uniref50_ec" selected="true">Collapses UniRef50 gene families into top level enzyme commission (EC) categories (associations inferred from UniProt)</option>
+                    <option value="uniref50_go">Collapses UniRef50 gene families into a subset of non-redundant, high-level Gene Ontology (GO) categories (associations inferred from UniProt and a HUMAnN2-specific parsing of the GO hierarchy)</option>
+                    <option value="uniref50_ko">Collapses UniRef50 gene fammilies into KEGG Orthogroups (KOs) (associations inferred from UniProt)</option>
+                    <option value="uniref50_rxn">Collapses UniRef50 gene families into metacyc reactions (use of reaction abundances to compute the abundance and coverage of broader metabolic pathways)</option>
+                </param>
+            </when>
+            <when value="false">
+                <param name="file" type="data" format="tsv" label="Custom groups file" help="(--custom)"/>
+                <param name='reversed' type='boolean' checked="false" truevalue='--reversed' 
+                    falsevalue='' label="Is the groups file reversed?" 
+                    help="Mapping from features to groups. (--reversed)"/>
+            </when>
+        </conditional>
+    </inputs>
+
+    <outputs>
+        <data format="tsv" name="output_table" label="Regrouped table for 
+            ${on_string} (HUMAnN2)" />
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input_table" value="humann2_fasta_pathabundance.tsv"/>
+            <param name="function" value="sum"/>
+            <param name="test" value="true"/>
+            <param name="groups" value="uniref50_ec"/>
+            <output name="output_table" file="humann2_fasta_pathabundance_cpm_renormalized.tsv"/>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        Regroup HUMAnN2 table features is a tool for egrouping table features. Given a table of feature values and a mapping of groups to component features, produce a new table with group values in place of feature values.
+
+        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
