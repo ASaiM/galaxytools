@@ -22,8 +22,8 @@
         humann2 
             -i "$input_file"
         
-            #if $taxonomic_profile.test:
-                --taxonomic-profile $taxonomic_profile.file
+            #if $taxonomic_profile.taxonomic_profile_test:
+                --taxonomic-profile $taxonomic_profile.taxonomic_profile_file
             #end if
 
             --evalue $e_value
@@ -62,11 +62,11 @@
             label="Input sequence file" help=""/>
 
         <conditional name="taxonomic_profile">
-            <param name='test' type='boolean' checked="false" truevalue='true' 
+            <param name='taxonomic_profile_test' type='boolean' checked="false" truevalue='true' 
                 falsevalue='false' label="Use a custom taxonomic profile?" 
                 help="The file must have been created by MetaPhlan"/>
             <when value="true">
-                <param name="file" type="data" format="" label="Taxonomic profile 
+                <param name="taxonomic_profile_file" type="data" format="" label="Taxonomic profile 
                     file" help=""/>
             </when>
             <when value="false" />
