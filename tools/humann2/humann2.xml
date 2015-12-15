@@ -148,6 +148,78 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="humann2_input.fasta"/>
+            <param name='taxonomic_profile_test' value="false"/>
+            <param name="nucleotide_database" value="chocophlan"/>
+            <param name="protein_database" value="uniref"/>
+            <param name="e_value" value="1"/>
+            <param name="identity" value="40"/>
+            <param name="prescreen" value="0.01"/>
+            <param name='pathways' value="metacyc"/>
+            <param name='xipe' value="false"/>
+            <param name='minpath' value="true"/>
+            <param name='pick_frames' value="true"/>
+            <param name='output_format' value="tsv"/>
+            <param name="output_max_dec" value="10"/>
+            <output name="gene_families_tsv" file="humann2_fasta_gene_families.tsv"/>
+            <output name="pathcoverage_tsv" file="humann2_fasta_pathcoverage.tsv"/>
+            <output name="pathabundance_tsv" file="humann2_fasta_pathabundance.tsv"/>
+        </test>
+        <test>
+            <param name="input_file" value="humann2_input.fastq"/>
+            <param name='taxonomic_profile_test' value="false"/>
+            <param name="nucleotide_database" value="chocophlan"/>
+            <param name="protein_database" value="uniref"/>
+            <param name="e_value" value="1"/>
+            <param name="identity" value="40"/>
+            <param name="prescreen" value="0.01"/>
+            <param name='pathways' value="metacyc"/>
+            <param name='xipe' value="false"/>
+            <param name='minpath' value="true"/>
+            <param name='pick_frames' value="true"/>
+            <param name='output_format' value="tsv"/>
+            <param name="output_max_dec" value="10"/>
+            <output name="gene_families_tsv" file="humann2_fastq_gene_families.tsv"/>
+            <output name="pathcoverage_tsv" file="humann2_fastq_pathcoverage.tsv"/>
+            <output name="pathabundance_tsv" file="humann2_fastq_pathabundance.tsv"/>
+        </test>
+        <test>
+            <param name="input_file" value="humann2_input.m8"/>
+            <param name='taxonomic_profile_test' value="false"/>
+            <param name="nucleotide_database" value="chocophlan"/>
+            <param name="protein_database" value="uniref"/>
+            <param name="e_value" value="1"/>
+            <param name="identity" value="40"/>
+            <param name="prescreen" value="0.01"/>
+            <param name='pathways' value="metacyc"/>
+            <param name='xipe' value="false"/>
+            <param name='minpath' value="true"/>
+            <param name='pick_frames' value="true"/>
+            <param name='output_format' value="tsv"/>
+            <param name="output_max_dec" value="10"/>
+            <output name="gene_families_tsv" file="humann2_m8_gene_families.tsv"/>
+            <output name="pathcoverage_tsv" file="humann2_m8_pathcoverage.tsv"/>
+            <output name="pathabundance_tsv" file="humann2_m8_pathabundance.tsv"/>
+        </test>
+        <test>
+            <param name="input_file" value="humann2_input.sam"/>
+            <param name='taxonomic_profile_test' value="false"/>
+            <param name="nucleotide_database" value="chocophlan"/>
+            <param name="protein_database" value="uniref"/>
+            <param name="e_value" value="1"/>
+            <param name="identity" value="40"/>
+            <param name="prescreen" value="0.01"/>
+            <param name='pathways' value="metacyc"/>
+            <param name='xipe' value="false"/>
+            <param name='minpath' value="true"/>
+            <param name='pick_frames' value="true"/>
+            <param name='output_format' value="tsv"/>
+            <param name="output_max_dec" value="10"/>
+            <output name="gene_families_tsv" file="humann2_sam_gene_families.tsv"/>
+            <output name="pathcoverage_tsv" file="humann2_sam_pathcoverage.tsv"/>
+            <output name="pathabundance_tsv" file="humann2_sam_pathabundance.tsv"/>
+        </test>
     </tests>
 
     <help><![CDATA[
