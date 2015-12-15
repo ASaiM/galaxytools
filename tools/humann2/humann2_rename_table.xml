@@ -1,0 +1,67 @@
+<tool id="humann2_rename_table" name="Rename HUMAnN2 table features" version="0.1.0">
+    <description></description>
+
+    <requirements>
+        <requirement type="package" version="2.2.4">bowtie2</requirement>
+        <requirement type="package" version="2.0">metaphlan2</requirement>
+        <requirement type="package" version="0.6.13">diamond</requirement>
+        <requirement type="package" version="2.0">humann2</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+
+    <version_command>
+<![CDATA[
+    humann2_rename_table --version
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        humann2_rename_table
+            -i $input_table
+            -o $output_table
+
+            --names $built_in.names
+            $built_in.simplify 
+            -c $built_in.file
+    ]]></command>
+
+    <inputs>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
+            table" help=""/>
+
+        <param name="names" type="select" label="Table features that 
+        can be renamed" help="(--names)">
+            <option value="metacyc-rxn" selected="true">MetaCyc reactions</option>
+            <option value="metacyc-pwy">MetaCyc pathways</option>
+            <option value="ko">KEGG Orthogroups (KO)</option>
+            <option value="ec">Enzyme commision (EC)</option>
+            <option value="uniref50">UniRef50 gene families</option>
+        </param>
+        <param name='simplify' type='boolean' checked="false" truevalue='-s' 
+            falsevalue='' label="Remove non-alphanumeric characters from names?" 
+            help="(--simplify)"/>
+        <param name="file" type="data" format="tsv" label="Custom mapping file of feature IDs to full names" help="(--custom)"/>
+    </inputs>
+
+    <outputs>
+        <data format="tsv" name="output_table" label="Renamed table for 
+            ${on_string} (HUMAnN2)" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        Rename HUMAnN2 table features is a tool for renaming table features given built-in or custom mapping.
+
+        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
