@@ -3,7 +3,7 @@
     <package name="metaphlan2" version="2.0">
         <install version="1.0">
             <actions>
-                <action sha256sum="17b090bcd8dc98531639455176607efd2fb76ecab1f6eedfd5ec70e7d92cf375" type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
+                <action type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/default.zip</action>
                 <action type="move_directory_files">
                     <source_directory>.</source_directory>
                     <destination_directory>$INSTALL_DIR/</destination_directory>
