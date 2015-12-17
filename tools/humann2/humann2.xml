@@ -2,7 +2,7 @@
     <description>to profile the presence/absence and abundance of microbial pathways</description>
 
     <requirements>
-        <requirement type="package" version="2.2.4">bowtie2</requirement>
+        <requirement type="package" version="2.2.5">bowtie2</requirement>
         <requirement type="package" version="2.0">metaphlan2</requirement>
         <requirement type="package" version="0.6.13">diamond</requirement>
         <requirement type="package" version="2.0">humann2</requirement>
