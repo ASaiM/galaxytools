@@ -26,13 +26,19 @@ python \${METAPHLAN2_DIR}/metaphlan2.py -v
     </version_command>
 
     <command>
-<![CDATA[
+<![CDATA[        
+        (which bowtie2 || exit 200)
+
+        &&
+
         python \${METAPHLAN2_DIR}/metaphlan2.py
             $input_file
             -o $output_file
 
             --input_type ${input_file.datatype.file_ext}
             --mpa_pkl \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200.pkl 
+
+            --bowtie2_exe `which bowtie2`
             --bowtie2db \${METAPHLAN2_DIR}/db_v20/mpa_v20_m200
 
             --no_map
