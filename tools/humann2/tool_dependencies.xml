@@ -12,7 +12,7 @@
     <package name="humann2" version="2.0">
         <install version="1.0">
             <actions>
-                <action sha256sum="77291569ec1a90287d7eedef131bda583ce7ffd9bc3208d52d5c7407a1890e06" type="download_by_url">https://bitbucket.org/biobakery/humann2/downloads/humann2_v0.5.0.tar.gz</action>
+                <action type="download_by_url">https://bitbucket.org/biobakery/humann2/downloads/humann2_v0.5.0.tar.gz</action>
                 <action type="shell_command">python setup.py install --bypass-dependencies-install</action>
                 <action type="make_directory">$INSTALL_DIR/databases</action>
                 <action type="set_environment">
