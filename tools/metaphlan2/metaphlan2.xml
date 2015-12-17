@@ -1,9 +1,9 @@
-<tool id="metaphlan2" name="MetaPhlAn2" version="0.1.0">
+<tool id="metaphlan_2" name="MetaPhlAn2" version="0.1.0">
 
     <description>to profile the composition of microbial communities</description>
 
     <requirements>
-        <requirement type="package" version="2.2.4">bowtie2</requirement>
+        <requirement type="package" version="2.2.5">bowtie2</requirement>
         <requirement type="package" version="2.0">metaphlan2</requirement>
     </requirements>
 
