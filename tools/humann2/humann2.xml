@@ -42,6 +42,7 @@
 
             --metaphlan \${METAPHLAN2_DIR}/
             --metaphlan-options "-t rel_ab"
+            --bowtie2 \${PATH}
 
             --threads \${GALAXY_SLOTS:-4}
 
