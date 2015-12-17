@@ -55,7 +55,8 @@
             -o "output"
             --output-format $output_format
             --output-max-decimals $output_max_dec
-            --output-basename "humann2"            
+            --output-basename "humann2"
+            $remove_statified_output            
     ]]></command>
 
     <inputs>
@@ -111,6 +112,9 @@
         </param>
         <param name="output_max_dec" type="integer" min="0" max="100" value="10" 
             label="Number of decimals to output" help="(--output-max-decimals)"/>
+        <param name='remove_statified_output' type='boolean' checked="false" 
+            truevalue='--remove-stratified-output' falsevalue='' 
+            label="Remove stratification from output?" help="(--remove-stratified-output)"/>
     </inputs>
 
     <outputs>
