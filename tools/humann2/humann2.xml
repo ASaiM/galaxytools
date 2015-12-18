@@ -4,7 +4,7 @@
     <requirements>
         <requirement type="package" version="2.2.5">bowtie2</requirement>
         <requirement type="package" version="2.0">metaphlan2</requirement>
-        <requirement type="package" version="0.6.13">diamond</requirement>
+        <requirement type="package" version="0.7.10">diamond</requirement>
         <requirement type="package" version="2.0">humann2</requirement>
     </requirements>
 
@@ -43,10 +43,9 @@
             --metaphlan \${METAPHLAN2_DIR}/
             --metaphlan-options "-t rel_ab"
             --bowtie2 \${PATH}
+            --diamond \${PATH}
 
             --threads \${GALAXY_SLOTS:-4}
-
-            --translated-alignment diamond
 
             --xipe $xipe
             --minpath $minpath
