@@ -1,0 +1,61 @@
+<tool id="fasta_add_barcode" name="Add barcodes">
+
+    <description>to FASTA sequences</description>
+
+    <requirements>
+        <requirement type='package' version="1.0">fasta_add_barcode</requirement>
+    </requirements>
+
+    <stdio>
+    </stdio>
+
+    <version_command>python -version</version_command>
+
+    <!--<command>-->
+    <command><![CDATA[
+        python $__tool_directory__/fasta_add_barcode.py 
+            --input_sequence_file $sequence_file
+            --input_mapping_file $mapping_file
+            --output_sequence_file $output_sequence_file
+        ]]>
+    </command>
+
+    <inputs>
+        <param name="sequence_file" type="data" format="fasta" label="Sequence 
+        zfile" help=""/>
+        <param name="mapping_file" type="data" format="tabular" 
+            label="Mapping file between sequence identifier and barcode to add" 
+            help="The mapping file must be a tabular delimited file with
+            two columns. The first column contains sequence identifier and
+            the second column corresponding barcode to add at the beginning
+            of each sequence."/>
+    </inputs>
+
+    <outputs>
+        <data format="fasta" name="output_sequence_file" metadata_source="sequence_file" 
+            label="Sequences with added barcodes from ${on_string}" />
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="sequence_file" value="input_sequence_file"/>
+            <param name="mapping_file" value="mapping_file"/>
+            <param name="output_sequence_file" value="output_sequence_file" />
+        </test>
+    </tests>
+
+    <help><![CDATA[
+
+**What it does**
+
+This tool takes a FASTA file and add at the beginning of each sequence a barcode.
+The barcode of each sequence is determined given sequence identifier and the mapping 
+file.
+
+]]>
+    </help>
+
+    <citations>
+    </citations>
+</tool>
+

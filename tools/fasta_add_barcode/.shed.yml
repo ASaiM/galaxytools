@@ -1,0 +1,8 @@
+categories: 
+ - Fasta Manipulation
+description: Add barcodes at begining of FASTA sequences
+homepage_url: ''
+long_description: Add barcodes at begining of FASTA sequences
+name: fasta_add_barcode
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/fasta_add_barcode
