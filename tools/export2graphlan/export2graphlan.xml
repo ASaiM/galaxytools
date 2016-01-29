@@ -1,0 +1,162 @@
+<tool id="export2graphlan" name="Export to GraPhlAn" version="0.1.0">
+
+    <description></description>
+
+    <requirements>
+        <requirement type="package" version="0.16">pandas</requirement>
+        <requirement type="package" version="0.16">scipy</requirement>
+        <requirement type="package" version="1.4">matplotlib</requirement>
+        <requirement type="package" version="1.0">export2graphlan</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" level="fatal"   description="" />
+        <regex match="ERROR"
+               source="stderr"
+               level="fatal"
+               description="" />
+        <regex match="WARNING"
+               source="stderr"
+               level="warning"
+               description="" />
+    </stdio>
+
+    <version_command>
+<![CDATA[
+python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
+]]>
+    </version_command>
+
+    <command>
+<![CDATA[        
+        python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py
+            -i $input_file
+
+            -t $tree
+            -a $annotation
+
+            #if $annotations
+                --annotations $annotations
+            #end if
+
+            #if $external_annotations
+                --external_annotations $external_annotations
+            #end if
+
+            #if $background_levels
+                --background_levels $background_levels
+            #end if
+
+            #if $background_clades
+                --background_clades "$background_clades"
+            #end if
+
+            #if $background_colors
+                --background_colors "$background_colors"
+            #end if
+ 
+            #if $title
+                --title "title"
+            #end if
+  
+            --title_font_size  $title_font_size 
+            --def_clade_size $def_clade_size 
+            --min_clade_size $min_clade_size
+            --max_clade_size $max_clade_size
+            --def_font_size $def_font_size
+            --min_font_size $min_font_size
+            --max_font_size $max_font_size
+            --annotation_legend_font_size $annotation_legend_font_size
+            --abundance_threshold $abundance_threshold           
+]]>
+    </command>
+
+    <inputs>
+        <param name="input_file" type="data" format="tabular" label="Input file" 
+            help=""/>
+
+        <param name="annotations" type="text" label="List which levels should be 
+            annotated in the tree (Optional)" help="The levels must be in
+            comma-separated form (--annotations)" optional="True"/>
+
+        <param name="external_annotations" type="text" label="List which levels 
+            should use the external legend for the annotation (Optional)" 
+            help="The levels must be in comma-separated form (--external_annotations)" 
+            optional="True"/>
+
+        <param name="background_levels" type="text" label="List which levels should 
+            be highlight with a shaded background (Optional)" 
+            help="The levels must be in comma-separated form (--background_levels)" 
+            optional="True"/>
+
+        <param name="background_clades" type="text" label="List of the clades that 
+            should be highlight with a shaded background (Optional)" 
+            help="The clades must be in comma-separated form (--background_clades)" 
+            optional="True"/>
+
+        <param name="background_colors" type="text" label="List of color to use 
+            for the shaded background (Optional)" 
+            help="Colors can be either in RGB or HSV (using a semi-colon to 
+            separate values, surrounded with ()). The different colors must be 
+            in comma-separated form (--background_colors)" 
+            optional="True"/>
+        
+        <param name="title" type="text" label="Title of the GraPhlAn plot (Optional)" 
+            help="(--title)" optional="True"/>
+
+        <param name="title_font_size" type="integer" value="15" label="Title 
+            font size" help="(--title_font_size)"/>
+
+        <param name="def_clade_size" type="integer" value="10" label="Default 
+            size for clades that are not found as biomarkers" 
+            help="(--def_clade_size)"/>
+
+        <param name="min_clade_size" type="integer" value="20" label="Minimum 
+            value of clades that are biomarkers" help="(--min_clade_size)"/>
+
+        <param name="max_clade_size" type="integer" value="200" label="Maximum 
+            value of clades that are biomarkers" help="(--max_clade_size)"/>
+
+        <param name="def_font_size" type="integer" value="10" label="Default
+            font size" help="(--def_font_size)"/>
+
+        <param name="min_font_size" type="integer" value="8" label="Minimum
+            font size" help="(--min_font_size)"/>
+
+        <param name="max_font_size" type="integer" value="12" label="Maximum
+            font size" help="(--max_font_size)"/>
+
+        <param name="annotation_legend_font_size" type="integer" value="10" 
+            label="Font size for the annotation legend" 
+            help="(--annotation_legend_font_size)"/>
+
+        <param name="abundance_threshold" type="float" value="20.0" 
+            label="Minimun abundace value for a clade to be annotated" 
+            help="(--abundance_threshold)"/>
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="tree" 
+            label="${tool.name} on ${on_string}: Tree" />
+        <data format="txt" name="annotation" 
+            label="${tool.name} on ${on_string}: Annotation" />
+        
+    </outputs>
+
+    <tests>
+        <test>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+
+**What it does**
+
+export2graphlan is a conversion software tool for producing both annotation and tree file for GraPhlAn. In particular, the annotation file tries to highlight specific sub-trees deriving automatically from input file what nodes are important. For more information, check the 
+`user manual <https://bitbucket.org/CibioCM/export2graphlan/overview/>`_.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
