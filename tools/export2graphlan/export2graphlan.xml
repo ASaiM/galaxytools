@@ -10,15 +10,6 @@
     </requirements>
 
     <stdio>
-        <exit_code range="1:" level="fatal"   description="" />
-        <regex match="ERROR"
-               source="stderr"
-               level="fatal"
-               description="" />
-        <regex match="WARNING"
-               source="stderr"
-               level="warning"
-               description="" />
     </stdio>
 
     <version_command>
@@ -30,7 +21,11 @@ python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
     <command>
 <![CDATA[        
         python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py
-            -i $input_file
+            -i $lefse_input
+
+            #if $lefse_output
+                -o lefse_output
+            #end if
 
             -t $tree
             -a $annotation
@@ -59,7 +54,7 @@ python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
                 --title "title"
             #end if
   
-            --title_font_size  $title_font_size 
+            --title_font_size $title_font_size 
             --def_clade_size $def_clade_size 
             --min_clade_size $min_clade_size
             --max_clade_size $max_clade_size
@@ -67,13 +62,52 @@ python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
             --min_font_size $min_font_size
             --max_font_size $max_font_size
             --annotation_legend_font_size $annotation_legend_font_size
-            --abundance_threshold $abundance_threshold           
+            --abundance_threshold $abundance_threshold
+
+            #if $most_abundant
+                --most_abundant $most_abundant
+            #end if
+
+            #if $least_biomarkers
+                --least_biomarkers $least_biomarkers
+            #end if
+
+            --fname_row $fname_row
+            --sname_row $sname_row
+
+            #if $metadata_rows
+                --metadata_rows $metadata_rows
+            #end if
+                  
+            #if $skip_rows  
+                --skip_rows $skip_rows
+            #end if
+
+            #if $sperc
+                --sperc $sperc
+            #end if
+
+            #if $fperc
+                --fperc $fperc
+            #end if
+
+            #if $stop
+                --stop $stop
+            #end if
+
+            #if $ftop
+                --ftop $ftop
+            #end if
 ]]>
     </command>
 
     <inputs>
-        <param name="input_file" type="data" format="tabular" label="Input file" 
-            help=""/>
+        <param name="lefse_input" type="data" format="tabular" label="Input file" 
+            help="Identical to LEfSe input file (--lefse_input)"/>
+
+        <param name="lefse_output" type="data" format="tabular" label="Input file 
+            corresponding to LEfSe output file (Optional)" help="(--lefse_output)"
+            optional="True"/>
 
         <param name="annotations" type="text" label="List which levels should be 
             annotated in the tree (Optional)" help="The levels must be in
@@ -131,8 +165,47 @@ python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
             help="(--annotation_legend_font_size)"/>
 
         <param name="abundance_threshold" type="float" value="20.0" 
-            label="Minimun abundace value for a clade to be annotated" 
+            label="Minimun abundance value for a clade to be annotated" 
             help="(--abundance_threshold)"/>
+
+        <param name="most_abundant" type="integer" label="Number of clades to 
+            highlight (Optional)" help="(--most_abundant)" optional="True"/>
+
+        <param name="least_biomarkers" type="integer" label="Minimum number of 
+            biomarkers to extract (Optional)" help=" The taxonomy is parsed, and 
+            the level is choosen in order to have at least the specified number 
+            of biomarkers(--least_biomarkers)" optional="True"/>
+
+        <param name="fname_row" type="integer" value="0" label="Row number 
+            containing the names of the features" help="-1 specifies that no 
+            names are present in the matrix (--fname_row)"/>
+
+        <param name="sname_row" type="integer" value="0" label="Row number 
+            containing the names of the samples" help="-1 specifies that no 
+            names are present in the matrix (--sname_row)"/>
+
+        <param name="metadata_rows" type="integer" label="Row number 
+            to use as metadata (Optional)" help="(--metadata_rows)" optional="True"/>
+
+        <param name="skip_rows" type="text" label="Row number to skip 
+            from the input file" help="The row numbers ar indexed to 0 and comma
+            separated (--skip_rows)" optional="True"/>
+
+        <param name="sperc" type="float" label="Percentile of sample value 
+            distribution for sample selection (Optional)" help="(--sperc)" 
+            optional="True"/>
+
+        <param name="fperc" type="float" label="Percentile of feature value 
+            distribution for sample selection (Optional)" help="(--fperc)" 
+            optional="True"/>
+
+        <param name="stop" type="integer" label="Number of top samples to select
+            (Optional)" help="The order is based on percentile specified by --sperc
+            (--stop)" optional="True"/>
+
+        <param name="ftop" type="integer" label="Number of top features to select
+            (Optional)" help="The order is based on percentile specified by --fperc
+            (--ftop)" optional="True"/>
     </inputs>
 
     <outputs>
