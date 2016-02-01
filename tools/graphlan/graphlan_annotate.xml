@@ -1,0 +1,69 @@
+<tool id="graphlan_annotate" name="Modify an input tree for GraPhlAn" version="0.1.0">
+
+    <description></description>
+
+    <requirements>
+        <requirement type="package" version="1.66">biopython</requirement>
+        <requirement type="package" version="1.4">matplotlib</requirement>
+        <requirement type="package" version="1.0">graphlan</requirement>
+    </requirements>
+
+    <stdio>
+    </stdio>
+
+    <version_command>
+<![CDATA[
+python \${GRAPHLAN_DIR}/graphlan_annotate.py -v
+]]>
+    </version_command>
+
+    <command>
+<![CDATA[        
+        python \${GRAPHLAN_DIR}/graphlan_annotate.py
+            #if $annot
+                --annot $annot
+            #end if
+
+            $input_tree
+            $output_tree
+]]>
+    </command>
+
+    <inputs>
+        <param name="input_tree" type="data" format="txt" label="Input tree" 
+            help="Newick, Nexus, PhyloXML or plain text"/>
+
+        <param name="annot" type="data" format="txt" label="Annotation file 
+            (Optional)" help="(--annot)" optional="True"/>
+    </inputs>
+
+    <outputs>
+        <data format="text" name="output_tree" 
+            label="${tool.name} on ${on_string}: Tree in PhyloXML" />
+    </outputs>
+
+    <tests>
+        <test>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+
+**What it does**
+
+GraPhlAn is a software tool for producing high-quality circular 
+representations of taxonomic and phylogenetic trees. GraPhlAn focuses on 
+concise, integrative, informative, and publication-ready representations of 
+phylogenetically- and taxonomically-driven investigation.
+
+`graphlan_annotate` modifies any input tree (in any of the three standard format) 
+adding additional information regarding structural or graphical aspects of the tree 
+(like colors and style of the taxa, labels, shadows, heatmaps, ...).
+
+For more information, check the `user manual <https://bitbucket.org/nsegata/graphlan/overview>`_.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
