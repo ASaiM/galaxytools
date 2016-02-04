@@ -1,0 +1,113 @@
+<tool id="group_humann2_uniref_abundances_to_go" name="Group HUMAnN2 UniRef50 abundances" version="0.1.0">
+    <description>to Gene Ontology (GO) slim terms</description>
+
+    <requirements>
+        <requirement type="package" version="2.0">humann2</requirement>
+        <requirement type="package" version="0.5.9">goatools</requirement>
+        <requirement type="package" version="0.1">uniref_to_go</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+        <regex match="IOError"
+               source="both"
+               level="fatal"
+               description="Python file error" />
+    </stdio>
+
+    <version_command></version_command>
+
+    <command><![CDATA[
+        \${GROUP_UNIREF_GO_DIR}/group_to_GO_abundances.sh
+            -i $humann2_gene_families_abundance 
+            -o $go_slim_term_abundance
+
+            #if $gene_ontology.gene_ontology_test:
+                -a $gene_ontology.gene_ontology_file
+            #end if
+
+            #if $slim_gene_ontology.slim_gene_ontology_test:
+                -s $slim_gene_ontology.slim_gene_ontology_file
+            #end if
+
+            #if $uniref50_go.uniref50_go_test:
+                -u $uniref50_go.uniref50_go_file
+            #end if
+
+            -g \${GOATOOLS_ROOT_PATH}/scripts/
+            > $log       
+            2> $errors     
+    ]]></command>
+
+    <inputs>
+        <param name="humann2_gene_families_abundance" type="data" 
+            format="tabular,tsv,txt" 
+            label="HUMAnN2 output with UniRef50 gene family abundance" help="(-i)"/>
+
+        <conditional name="gene_ontology">
+            <param name='gene_ontology_test' type='boolean' checked="false" 
+                truevalue='true' falsevalue='false' 
+                label="Use a custom Gene Ontology file?" help="By default, the 
+                used Gene Ontology is the core ontology downloaded on Gene
+                Ontology website"/>
+            <when value="true">
+                <param name="gene_ontology_file" type="data" format="txt" 
+                    label="Gene Ontology" help=""/>
+            </when>
+            <when value="false" />
+        </conditional>
+
+        <conditional name="slim_gene_ontology">
+            <param name='slim_gene_ontology_test' type='boolean' checked="false" 
+                truevalue='true' falsevalue='false' 
+                label="Use a custom slim Gene Ontology file?" help="By default, the 
+                used slim Gene Ontology is the metagenomics slim developed by
+                Jane Lomax and the InterPro group"/>
+            <when value="true">
+                <param name="slim_gene_ontology_file" type="data" format="txt" 
+                    label="Slim Gene Ontology" help=""/>
+            </when>
+            <when value="false" />
+        </conditional>
+
+        <conditional name="uniref50_go">
+            <param name='uniref50_go_test' type='boolean' checked="false" 
+                truevalue='true' falsevalue='false' 
+                label="Use a custom correspondance between UniRef50 and precise
+                GO?" help="By default, the used correspondance is the one
+                proposed in HUMAnN2"/>
+            <when value="true">
+                <param name="uniref50_go_file" type="data" format="txt" 
+                    label="Correspondance between UniRef50 and GO" help=""/>
+            </when>
+            <when value="false" />
+        </conditional>
+    </inputs>
+
+    <outputs>
+        <data format="tsv" name="go_slim_term_abundance" 
+            label="${tool.name} on ${on_string}: GO slim abundance"/>
+        <data format="txt" name="log" 
+            label="${tool.name} on ${on_string}: Log"/>
+        <data format="txt" name="errors" 
+            label="${tool.name} on ${on_string}: Errors"/>
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        HUMAnN2 is a pipeline to profile the presence/absence and abundance of microbial pathways in community of microbiota sequencing data. One output is a file with UniRef50 gene family abundances. HUMAnN2 proposes a script to regroup Uniref50 to GO, but used GO terms are too precise to get a broad overview of the ontology content.
+
+        The tool described here contains scripts to group UniRef50 abundances obtained using main HUMANn2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
+
+        More information on `GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
+
+    ]]></help>
+
+    <citations>
+        <citation type="doi">10.5281/zenodo.31628</citation>
+    </citations>
+</tool>
