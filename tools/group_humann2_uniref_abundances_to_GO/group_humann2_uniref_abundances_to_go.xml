@@ -35,8 +35,6 @@
             #end if
 
             -g \${GOATOOLS_ROOT_PATH}/scripts/
-            > $log       
-            2> $errors     
     ]]></command>
 
     <inputs>
@@ -87,10 +85,6 @@
     <outputs>
         <data format="tsv" name="go_slim_term_abundance" 
             label="${tool.name} on ${on_string}: GO slim abundance"/>
-        <data format="txt" name="log" 
-            label="${tool.name} on ${on_string}: Log"/>
-        <data format="txt" name="errors" 
-            label="${tool.name} on ${on_string}: Errors"/>
     </outputs>
 
     <tests>
