@@ -14,6 +14,10 @@
                source="both"
                level="fatal"
                description="Python file error" />
+        <regex match="pkg_resources"
+               source="both"
+               level="fatal"
+               description="PKG Error" />
     </stdio>
 
     <version_command></version_command>
