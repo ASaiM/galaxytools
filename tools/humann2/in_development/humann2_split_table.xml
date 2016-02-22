@@ -14,12 +14,12 @@
 
     <version_command>
 <![CDATA[
-    humann2_split_table --version
+    \${HUMANN2_DIR}/humann2_split_table --version
 ]]>
     </version_command>
 
     <command><![CDATA[
-        humann2_split_table
+        \${HUMANN2_DIR}/humann2_split_table
             -i "input_file"
             -o "output"            
     ]]></command>

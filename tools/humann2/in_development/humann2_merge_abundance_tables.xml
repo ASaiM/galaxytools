@@ -14,12 +14,12 @@
 
     <version_command>
 <![CDATA[
-    humann2_merge_abundance_tables --version
+    \${HUMANN2_DIR}/humann2_merge_abundance_tables --version
 ]]>
     </version_command>
 
     <command><![CDATA[
-        humann2_merge_abundance_tables
+        \${HUMANN2_DIR}/humann2_merge_abundance_tables
             --input-genes $input_gene
             --input-pathways $input_pathway
             --gene-mapping $gene_mapping

@@ -14,12 +14,12 @@
 
     <version_command>
 <![CDATA[
-    humann2_rna_dna_norm --version
+    \${HUMANN2_DIR}/humann2_rna_dna_norm --version
 ]]>
     </version_command>
 
     <command><![CDATA[
-        humann2_rna_dna_norm
+        \${HUMANN2_DIR}/humann2_rna_dna_norm
             --input_dna $input_dna
             --input_rna $input_rna
             --output_basename "combined"

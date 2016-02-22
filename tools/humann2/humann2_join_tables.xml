@@ -14,7 +14,7 @@
 
     <version_command>
 <![CDATA[
-    humann2_join_tables --version
+    \${HUMANN2_DIR}/humann2_join_tables --version
 ]]>
     </version_command>
 
@@ -27,7 +27,7 @@
         #end for
 
         && 
-        humann2_join_tables
+        \${HUMANN2_DIR}/humann2_join_tables
             -i "tmp_dir"
             -o $joined_table           
     ]]></command>
