@@ -1,0 +1,6 @@
+categories: 
+  - Visualization 
+description: Plot a barplot graphic using R
+name: plot_barplot
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/plot_barplot
