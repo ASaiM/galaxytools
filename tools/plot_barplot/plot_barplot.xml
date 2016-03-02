@@ -26,7 +26,7 @@
 
             --data_column $column_with_data
             --names_column $names_column
-            --xlab $xlab
+            --xlab "$xlab"
             --col $col
             --bottom_margin $bottom_margin
             --left_margin $left_margin
