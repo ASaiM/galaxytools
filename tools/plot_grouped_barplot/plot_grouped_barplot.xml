@@ -107,7 +107,10 @@
     <help><![CDATA[
         **What it does**
 
-        This tool plot a barplot from a tabular file into different format files given different customizable parameters.
+        This tool plot a grouped barplot from a tabular file into different format files given different customizable parameters:
+
+        .. image:: $PATH_TO_IMAGES/output.png
+           :scale: 50 %
 
         This tool relies on R's barplot function.
 
