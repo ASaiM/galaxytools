@@ -1,0 +1,6 @@
+categories: 
+  - Visualization 
+description: Plot a generic X-Y plot graphic using R
+name: plot_generic_x_y_plot
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/plot_generic_x_y_plot
