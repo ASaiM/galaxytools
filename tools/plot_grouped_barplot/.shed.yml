@@ -1,0 +1,6 @@
+categories: 
+  - Visualization 
+description: Plot a grouped barplot graphic using R
+name: plot_grouped_barplot
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/plot_grouped_barplot
