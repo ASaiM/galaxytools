@@ -38,8 +38,8 @@
             #set $names = $names
 
             --data_column $column_with_data
-            --col $colors
-            --names $names
+            --col "$colors"
+            --names "$names"
             --replace_null $replace_null
             --order $order
             --names_column $names_column
