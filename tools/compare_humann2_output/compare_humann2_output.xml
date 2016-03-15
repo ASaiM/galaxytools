@@ -19,7 +19,7 @@
             #for $sample in $samples:
                 --sample_name "${sample.sample_name}"
                 --charact_input_file "${sample.input}"
-                --specific_output_file "specifics/${sample.sample_name}.txt"
+                --specific_output_file "specifics/specific_to_${sample.sample_name}.txt"
             #end for
 
             --most_abundant_characteristics_to_extract $charact_nb
@@ -46,7 +46,7 @@
         <data name="log" format="txt"
             label="${tool.name} on ${on_string}: Log" />
         <collection name="specific_files" type="list">
-            <discover_datasets pattern="__name__" directory="specifics"/>
+            <discover_datasets pattern="__designation_and_ext__" directory="specifics"/>
         </collection>
 
     </outputs>
