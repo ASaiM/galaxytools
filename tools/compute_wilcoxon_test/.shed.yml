@@ -1,0 +1,6 @@
+categories: 
+  - Statistics 
+description: Compute Wilcoxon test with R
+name: compute_wilcoxon_test
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/compute_wilcoxon_test

@@ -1,0 +1,80 @@
+<tool id="compute_wilcoxon_test" name="Compute Wilcoxon test" version="0.1.0">
+    <description>with R</description>
+
+    <requirements>
+        <requirement type="package" version="3.2.1">R</requirement>
+        <requirement type="package" version="1.20.0">getopt</requirement>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+        <exit_code range=":-1" />
+    </stdio>
+
+    <version_command></version_command>
+
+    <command><![CDATA[
+        Rscript $__tool_directory__/compute_wilcoxon_test.R
+            --input_file $input_file
+            --output_file $output_file
+            --column1_id $column1_id
+
+            #if $add_data.test == 'true':
+                --column2_id $add_data.column2_id
+                --paired $add_data.paired
+            #end if
+
+            --alternative "$alternative"
+            --mu $mu
+            
+            --exact $exact
+            --correct $correct
+            
+    ]]></command>
+
+    <inputs>
+        <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns and header in first line (--input_file)"/>
+
+        <param name="column1_id" type="data_column" data_ref="input_file" label="Column containing data" multiple="false" numerical="true" help="(--column1_id)"/>
+
+        <conditional name="add_data">
+            <param name="test" label="Add a new column?" type="select" help="(--alternative)">
+                <option value="true" selected="True">Yes</option>
+                <option value="false">No</option>
+            </param>
+            <when value="true">
+                <param name="column2_id" type="data_column" data_ref="input_file" label="Column containing data" multiple="false" numerical="true" help="(--column2_id)"/>
+                <param name="paired" type="boolean" truevalue="TRUE" falsevalue="FALSE" label="Paired datasets?" checked="false" help="(--paired)"/>
+            </when>
+            <when value="false" />
+        </conditional>
+
+        <param name="alternative" label="Alternative hypothesis" type="select" help="(--alternative)">
+            <option value="two.sided" selected="True">Two sided</option>
+            <option value="greater">Greater</option>
+            <option value="less">Less</option>
+        </param>
+        <param name="mu" type="integer" value="0" label="Optional parameter used to form the null hypothesis" help="(--mu)"/>
+        
+        <param name="exact" type="boolean" truevalue="TRUE" falsevalue="FALSE" label="Compute an exact p-value?" checked="false" help="(--exact)"/>
+        <param name="correct" type="boolean" truevalue="TRUE" falsevalue="FALSE" label="Apply a continuity correction in the normal approximation for the p-value?" checked="true" help="(--correct)"/>
+    </inputs>
+
+    <outputs>
+        <data name="output_file" format="text"
+            label="${tool.name} on ${on_string}: Wilcox test result" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        This tool compute a Wilcoxon test with R's wilcox.test function.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
