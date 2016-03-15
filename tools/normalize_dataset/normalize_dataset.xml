@@ -1,0 +1,53 @@
+<tool id="normalize_dataset" name="Normalize a dataset by" version="0.1.0">
+    <description>row or column sum</description>
+
+    <requirements>
+    </requirements>
+
+    <stdio>
+        <exit_code range="1:" />
+        <exit_code range=":-1" />
+    </stdio>
+
+    <version_command></version_command>
+
+    <command><![CDATA[
+        python $__tool_directory__/normalize_dataset.py
+            --input_file $input_file
+            --output_file $output_file
+            --normalization $normalization
+            --format $format
+    ]]></command>
+
+    <inputs>
+        <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns and header in first line (--input_file)"/>
+
+        <param name="normalization" label="Normalization on" type="select" help="(--normalization)">
+            <option value="column" selected="True">Column</option>
+            <option value="row">Row</option>
+        </param>
+
+        <param name="format" label="Output format" type="select" help="(--format)">
+            <option value="proportion" selected="True">Proportion</option>
+            <option value="percentage">Percentage</option>
+        </param>
+    </inputs>
+
+    <outputs>
+        <data name="output_file" format="tabular"
+            label="${tool.name} on ${on_string}: Normalized dataset" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        This tool normalizes each row or column of a dataset by the row or column sum.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>

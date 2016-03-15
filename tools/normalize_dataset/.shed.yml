@@ -1,0 +1,6 @@
+categories: 
+  - Text Manipulation
+description: Normalize a dataset by row or column sum
+name: normalize_dataset
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/normalize_dataset
