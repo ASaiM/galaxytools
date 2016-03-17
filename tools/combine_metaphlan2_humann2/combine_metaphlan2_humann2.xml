@@ -37,11 +37,11 @@
 
     <outputs>
         <data name="gene_families_output_file" format="tabular"
-            label="${tool.name} on ${on_string}: Gene families abundances related to genus/species abundances" >
+            label="${tool.name} on ${on_string}: Gene family abundances related to genus/species abundances" >
             <filter>type=="gene_families"</filter>
         </data>
         <data name="pathway_output_file" format="tabular"
-            label="${tool.name} on ${on_string}: Gene families abundances related to genus/species abundances" >
+            label="${tool.name} on ${on_string}: Pathway abundances related to genus/species abundances" >
             <filter>type=="pathways"</filter>
         </data>
     </outputs>
