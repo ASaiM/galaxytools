@@ -67,7 +67,7 @@
                 falsevalue='false' label="Use a custom taxonomic profile?" 
                 help="The file must have been created by MetaPhlan"/>
             <when value="true">
-                <param name="taxonomic_profile_file" type="data" format="" label="Taxonomic profile 
+                <param name="taxonomic_profile_file" type="data" format="tabular,txt" label="Taxonomic profile 
                     file" help=""/>
             </when>
             <when value="false" />
