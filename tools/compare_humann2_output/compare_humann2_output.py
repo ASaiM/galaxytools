@@ -33,27 +33,31 @@ def extract_abundances(filepath, nb_charact_to_extract):
                     more_abund_charact += more_abund_charact[best_pos:-1]
     return abundances, more_abund_charact
 
-def format_characteristic_name(name):
-    formatted_name = name
-    if formatted_name.find(':') != -1:
-        formatted_name = formatted_name.split(':')[1][1:]
-    formatted_name = formatted_name.replace('/',' ')
-    formatted_name = formatted_name.replace('-',' ')
-    formatted_name = formatted_name.replace("'",'')
-    if formatted_name.find('(') != -1 and formatted_name.find(')') != -1:
-        open_bracket = formatted_name.find('(')
-        close_bracket = formatted_name.find(')')+1
-        formatted_name = formatted_name[:open_bracket] + formatted_name[close_bracket:]
-    return formatted_name
+def format_characteristic_name(all_name):
+    if all_name.find(':') != -1:
+        charact_id = all_name.split(':')[0]
+        charact_name = all_name.split(':')[1][1:]
+    else:
+        charact_id = all_name
+        charact_name = ''
+
+    charact_name = charact_name.replace('/',' ')
+    charact_name = charact_name.replace('-',' ')
+    charact_name = charact_name.replace("'",'')
+    if charact_name.find('(') != -1 and charact_name.find(')') != -1:
+        open_bracket = charact_name.find('(')
+        close_bracket = charact_name.find(')')+1
+        charact_name = charact_name[:open_bracket] + charact_name[close_bracket:]
+    return charact_id,charact_name
 
 def write_more_abundant_charat(abundances,more_abund_charact, output_filepath):
     with open(output_filepath,'w') as output_file:
-        output_file.write('\t')
+        output_file.write('id\tname\t')
         output_file.write('\t'.join(abundances.keys()) + '\n')
 
         for mac in more_abund_charact:
-            formatted_mac = format_characteristic_name(mac)
-            output_file.write(formatted_mac)
+            charact_id,charact_name = format_characteristic_name(mac)
+            output_file.write(charact_id + '\t' + charact_name)
             for sample in abundances:
                 abund = abundances[sample].get(mac, 0)
                 output_file.write('\t' + str(abund))
@@ -67,9 +71,10 @@ def extract_similar_characteristics(abundances, sim_output_filepath,
     print 'Similar between all samples:', len(sim_characteristics)
 
     with open(sim_output_filepath, 'w') as sim_output_file:
-        sim_output_file.write('\t' + '\t'.join(abundances.keys()) + '\n')
+        sim_output_file.write('id\tname\t' + '\t'.join(abundances.keys()) + '\n')
         for charact in list(sim_characteristics):
-            sim_output_file.write(format_characteristic_name(charact))
+            charact_id,charact_name = format_characteristic_name(charact)
+            sim_output_file.write(charact_id + '\t' + charact_name)
             for sample in abundances.keys():
                 sim_output_file.write('\t' + str(abundances[sample][charact]))
             sim_output_file.write('\n')
@@ -89,9 +94,10 @@ def extract_similar_characteristics(abundances, sim_output_filepath,
 
         relative_abundance = 0
         with open(specific_output_files[i], 'w') as output_file:
-            output_file.write(sample + '\tabundances\n')
+            output_file.write('id\tname\tabundances\n')
             for charact in list(diff_characteristics[sample]):
-                output_file.write(format_characteristic_name(charact) + '\t')
+                charact_id,charact_name = format_characteristic_name(charact)
+                output_file.write(charact_id + '\t' + charact_name + '\t')
                 output_file.write(str(abundances[sample][charact]) + '\n')
                 relative_abundance += abundances[sample][charact]
         print '    Relative abundance of specific characteristics(%):', relative_abundance
