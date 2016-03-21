@@ -12,7 +12,7 @@ option_specification = matrix(c(
   'xlab', 'i', 2, 'character',
   'ylab', 'j', 2, 'character',
   'col', 'k', 2, 'character',
-  'pch', 'l', 2, 'character',
+  'pch', 'l', 2, 'integer',
   'lim', 'm', 2, 'logical',
   'abline', 'n', 2, 'logical',
   'bottom_margin', 'o', 2, 'integer',

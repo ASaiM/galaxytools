@@ -36,6 +36,7 @@
             --left_margin $left_margin
             --top_margin $top_margin
             --right_margin $right_margin
+            --pch $pch
     ]]></command>
 
     <inputs>
