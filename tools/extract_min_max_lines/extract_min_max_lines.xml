@@ -1,0 +1,51 @@
+<tool id="extract_min_max_lines" name="Extract lines corresponding" version="0.1.0">
+    <description>with minimum and maximum values of a column</description>
+
+    <requirements>
+    </requirements>
+
+    <stdio>
+    </stdio>
+
+    <version_command></version_command>
+
+    <command><![CDATA[
+        python $__tool_directory__/extract_min_max_lines.py
+            --input_file $input_file
+            --output_file $output_file
+            --column_id $column_id
+            --extraction_type $extraction_type
+            --extraction_nb $extraction_nb
+    ]]></command>
+
+    <inputs>
+        <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns (--input_file)"/>
+
+        <param name="column_id" type="data_column" data_ref="input_file" label="Column containing data to extract minimum or maximum values" multiple="false" numerical="true" help="(--column_id)"/>
+
+        <param name="extraction_type" label="Type of values to extract lines" type="select" help="(--extraction_type)">
+            <option value="min" selected="True">Minimal values</option>
+            <option value="max">Maximal values</option>
+        </param>
+
+        <param name="extraction_nb" type="integer" value="10" label="Number of lines to extract" help="(--extraction_nb)"/>
+    </inputs>
+
+    <outputs>
+        <data name="output_file" format="tabular"
+            label="${tool.name} on ${on_string}: Extracted lines" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        This tool extract lines from a tabular file corresponding to minimum or maximum values of a column.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>

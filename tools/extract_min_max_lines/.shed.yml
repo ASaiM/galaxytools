@@ -1,0 +1,6 @@
+categories: 
+  - Text Manipulation 
+description: Extract lines corresponding with minimum and maximum values of a column
+name: extract_min_max_lines
+owner: bebatut
+remote_repository_url: https://github.com/asaim/galaxytools/tree/master/tools/extract_min_max_lines
