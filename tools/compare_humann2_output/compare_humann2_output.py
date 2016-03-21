@@ -28,9 +28,10 @@ def extract_abundances(filepath, nb_charact_to_extract):
                     else:
                         break
                 if best_pos != None:
-                    more_abund_charact = more_abund_charact[:best_pos]
+                    tmp_more_abund_charact = more_abund_charact
+                    more_abund_charact = tmp_more_abund_charact[:best_pos]
                     more_abund_charact += [charact_id]
-                    more_abund_charact += more_abund_charact[best_pos:-1]
+                    more_abund_charact += tmp_more_abund_charact[best_pos:-1]
     return abundances, more_abund_charact
 
 def format_characteristic_name(all_name):
