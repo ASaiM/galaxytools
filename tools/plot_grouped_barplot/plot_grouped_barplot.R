@@ -17,12 +17,16 @@ option_specification = matrix(c(
   'right_margin', 'r', 2, 'integer',
   'legend_pos','e',2,'character',
   'replace_null','u',2,'logical',
-  'order','w',2,'logical'
+  'order','w',2,'logical',
+  'header','y',2,'logical'
 ), byrow=TRUE, ncol=4);
 
 options = getopt(option_specification);
 
-data = read.table(options$input_file, sep = '\t', h = T)
+header = TRUE
+if(!is.null(options$header)) header = options$header
+
+data = read.table(options$input_file, sep = '\t', h = header)
 if(!is.null(options$replace_null) && options$replace_null){
   data[data == 0] = NA
 }
