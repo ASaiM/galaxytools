@@ -16,6 +16,7 @@
     <command><![CDATA[
         Rscript $__tool_directory__/plot_barplot.R
             --input_file $input_file
+            --header $header
 
             #if str($output_format)=="pdf"
                 --output_pdf_file $output_pdf_file
@@ -36,6 +37,8 @@
 
     <inputs>
         <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns and header in first line (--input_file)"/>
+
+        <param name="header" type="boolean" truevalue="TRUE" falsevalue="FALSE" checked="false" label="Header in first line?" help="(--header)"/>
 
         <param name="output_format" label="Format for output image" type="select" help="">
             <option value="pdf" selected="True">PDF</option>
