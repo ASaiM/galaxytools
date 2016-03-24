@@ -18,12 +18,16 @@ option_specification = matrix(c(
   'bottom_margin', 'o', 2, 'integer',
   'left_margin', 'p', 2, 'integer',
   'top_margin', 'q', 2, 'integer',
-  'right_margin', 'r', 2, 'integer'
+  'right_margin', 'r', 2, 'integer',
+  'header','s',2,'logical'
 ), byrow=TRUE, ncol=4);
 
 options = getopt(option_specification);
 
-data = read.table(options$input_file, sep = '\t', h = T)
+header = TRUE
+if(!is.null(options$header)) header = options$header
+
+data = read.table(options$input_file, sep = '\t', h = header)
 
 x_column_id = 2
 if(!is.null(options$x_column_id)) x_column_id = options$x_column_id
