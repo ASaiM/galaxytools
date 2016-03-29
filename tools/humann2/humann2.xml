@@ -227,31 +227,31 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
 
-        ----- 
+----- 
 
-        **Input**
+**Input**
 
-        Usually, a single file is the input. It must be one of the following types:
+Usually, a single file is the input. It must be one of the following types:
 
-            - filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format)
-            - alignment file (sam, bam or blastm8 format)
-            - gene table file (tsv or biom format)
+- filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format)
+- alignment file (sam, bam or blastm8 format)
+- gene table file (tsv or biom format)
 
-        A file with taxonomic profiles can also be given to be use to select pangenomes in ChocoPhlan database.
+A file with taxonomic profiles can also be given to be use to select pangenomes in ChocoPhlan database.
 
-        ----- 
+----- 
 
-        **Outputs**
+**Outputs**
 
-        HUMAnN creates three output files:
+HUMAnN creates three output files:
 
-            - Gene family abundance
-            - Pathway abundance
-            - Pathway coverage
+- Gene family abundance
+- Pathway abundance
+- Pathway coverage
 
     ]]></help>
 
