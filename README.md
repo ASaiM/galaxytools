@@ -21,7 +21,7 @@ The individual Galaxy tools, found in the `tools/` folder, must be installed int
 
 The tools are tested using [Travis CI](https://travis-ci.org/) after each update of this GitHub repository. These tests includes `planemo` tests (`lint`, `test`) to test dependencies installation and functional tests described `test` section of each wrapper.
 
-See [`.travis.yml`](https://raw.githubusercontent.com/ASaiM/galaxytools/master/.travis.yml) file for more technical details.
+See [`.travis.yml`](https://raw.githubusercontent.com/ASaiM/galaxytools/master/.travis.yml) file for more technical details. This file and corresponding tests are highly inspired from [tools-iuc tests](https://github.com/galaxyproject/tools-iuc).
 
 # Bug Reports
 
