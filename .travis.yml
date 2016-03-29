@@ -1,140 +1,25 @@
-# License MIT - https://github.com/peterjc/galaxy_blast/blob/master/.travis.yml - Peter Cock
-#
-# This is a special configuration file to run tests on Travis-CI via
-# GitHub notifications when changes are committed.
-#
-# For technical details, see http://travis-ci.org/ and this blog post
-# for background,
-# http://blastedbio.blogspot.com/2013/09/using-travis-ci-for-testing-galaxy-tools.html
-
-# We don't need sudo so can avoid slower legacy TravisCI infrastructure
-sudo: true
-
-# We need Python 2.6 or 2.7 to run Galaxy (and some of the wrappers)
-# but don't really care which. We also need Java to run Blast2GO,
-# which seems to be included even with TravisCI set to Python :)
+# Inspired from .travis.yml from tools-iuc: https://github.com/galaxyproject/tools-iuc/blob/master/.travis.yml
 language: python
-python:
- - "2.7"
-
-# We use the TravisCI build matrix to test two versions of Galaxy,
-# the current development branch (dev), and as a proxy for the
-# current stable release, master:
-#
-env:
- - GALAXY_BRANCH=master
-
-# Installing Galaxy
-# =================
-#
-# Before installing our Galaxy wrappers, we need to install Galaxy.
-#
-# Galaxy used to be developed in hg using BitBucket, but cloning with
-# hg or getting a specific revision with wget was quite slow. Using
-# git clone with a mirror on GitHub was faster, while getting the
-# latest revision with wget from GitHub was even faster.
-#
-# We therefore use wget with the new official Galaxy repository on
-# GitHub, https://github.com/galaxyproject/galaxy
-#
-#
-# Installing Tool Dependencies
-# ============================
-#
-# We grab Galaxy, and will later make configuration changes specifically
-# for testing our tools. Otherwise we use the default settings such as
-# running with an SQLite database.
-#
-# We also need to install our tool dependencies, e.g. NCBI BLAST+ binaries,
-# which we will do manually rather than via a (local) Galaxy Tool Shed.
-#
+python: 2.7
 
 before_install:
- - echo "Using planemo shed_lint to check for obvious tool errors"
- - pip install planemo
- - planemo shed_lint --report_level warn --fail_level error --recursive ${TRAVIS_BUILD_DIR}/tools/
- - planemo shed_lint --report_level warn --fail_level error --recursive ${TRAVIS_BUILD_DIR}/packages/
- - echo "Fixing permissions on Python eggs cache folder"
- - mkdir -p "$HOME/.python-eggs"
- - chmod 700 "$HOME/.python-eggs" 
- - echo "Downloading and setting up dependencies..."
- - export INSTALL_DIR=/tmp/dep_install && mkdir $INSTALL_DIR
- - export DOWNLOAD_CACHE=/tmp/download_cache && mkdir $DOWNLOAD_CACHE
- - for i in $( ls ${TRAVIS_BUILD_DIR}/packages/ ); do planemo dependency_script ${TRAVIS_BUILD_DIR}/packages/$i/; bash dep_install.sh; source env.sh; done
- - for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ ); do planemo dependency_script ${TRAVIS_BUILD_DIR}/tools/$i/; bash dep_install.sh; source env.sh; done
- - echo "Fetching Galaxy ${GALAXY_BRANCH} branch..."
- - cd ${TRAVIS_BUILD_DIR}
- - wget https://codeload.github.com/galaxyproject/galaxy/tar.gz/${GALAXY_BRANCH}
- - tar -zxvf ${GALAXY_BRANCH} | tail
- - cd galaxy-${GALAXY_BRANCH}
-
-
-# Configuring tools within Galaxy
-# ===============================
-#
-# We setup a minimal tool_conf.xml and/or tool_conf.xml.sample file to
-# get Galaxy to just test our tools, rather than via a (local) Galaxy
-# Tool Shed.
-#
-# TODO - GALAXY_TEST_TOOL_CONF environment variable rather than symlink?
-#
-# We setup our tools under the Galaxy tool folder by using symlinks.
-# TODO - Restructure this to auto-update in future when add folders?
-#
-# We setup our datatypes by adding blast.py to the Galaxy library, and
-# adding the insert into lib/galaxy/datatypes/registry.py, and replacing
-# the datatypes_conf.xml file.
-#
-# We setup our sample data in the Galaxy test-data folder by copying them
-# (using symlinks might be faster?)
-#
-# We setup out sample *.loc files in the Galaxy tool-data folder by copying
-# them (using symlinks might be faster?)
-#
-# We then want to use run.sh to setup all the sample files, fetch eggs etc,
-# but not actually start running Galaxy. One way to do this is by calling
-# "./run.sh --stop-daemon" but must override its error level 1 return value.
-#
+  - export GALAXY_REPO=https://github.com/galaxyproject/galaxy
+  - export GALAXY_RELEASE=release_16.01
+  - export CONDA_PREFIX=$HOME/conda
 
 install:
- - cd ${TRAVIS_BUILD_DIR}/galaxy-${GALAXY_BRANCH}
- - export GALAXY_TEST_UPLOAD_ASYNC=false
- - export GALAXY_TEST_DB_TEMPLATE=https://github.com/jmchilton/galaxy-downloads/raw/master/db_gx_rev_0127.sqlite
- - rm -f tool_conf.xml
- - ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_conf.xml tool_conf.xml
- - rm -f config/tool_conf.xml.sample
- - ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_conf.xml config/tool_conf.xml.sample
- - rm -f config/shed_tool_data_table_conf.xml
- - ln -s ${TRAVIS_BUILD_DIR}/.travis.tool_data_table_conf.xml config/shed_tool_data_table_conf.xml
- - for i in $( ls ${TRAVIS_BUILD_DIR}/tools/ ); do ln -s ${TRAVIS_BUILD_DIR}/tools/$i/ tools/$i; cp ${TRAVIS_BUILD_DIR}/tools/$i/test-data/* test-data/; if [ -d ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/ ]; then cp ${TRAVIS_BUILD_DIR}/tools/$i/tool-data/* tool-data/; fi; done
-# - cp ${TRAVIS_BUILD_DIR}/test-data/* test-data/
-# - cp ${TRAVIS_BUILD_DIR}/tool-data/* tool-data/
- - ./run.sh --stop-daemon || true
- - python scripts/fetch_eggs.py
-
-
-# Testing tools in Galaxy
-# =======================
-#
-# Having setup our Galaxy with a minimal tool_conf.xml / tool_conf.xml.sample
-# we call run_functional_tests.sh to run just our tests (grouped under a
-# common section "travis" in the XML file for this purpose).
-#
-# ./run_functional_tests.sh -sid Continuous-Integration-Travis
-#
-# calls:
-#
-# python ./scripts/functional_tests.py --with-nosehtml --html-report-file run_functional_tests.html -v `python tool_list.py Continuous-Integration-Travis`
-#
-# That gives an error sadly under Travis,
-# functional_tests.py: error: no such option: --with-nosehtml
-# And also,
-# functional_tests.py: error: no such option: --html-report-file
-# Perhaps Galaxy's nose egg isn't being fetched?
+  - pip install -q click==5.1
+  - pip install -q https://github.com/galaxyproject/planemo/archive/86328a6a1fd3cc589eeb61337202c49c673ae98a.tar.gz
+  - planemo conda_init --conda_prefix $CONDA_PREFIX
+  - export PATH=$CONDA_PREFIX/bin:$PATH
+  - conda create -y -q -c bioconda --name iuc_conda numpy==1.9.2 samtools bcftools
+  - source activate iuc_conda
+  - planemo --version
+  - echo $TRAVIS_COMMIT_RANGE
+  - planemo shed_lint --report_level warn --tools --fail_level error --recursive .
+  - git diff --name-only $TRAVIS_COMMIT_RANGE | xargs -n1 dirname | ./filter_directories.py | sort -u > changed_repositories.list
+  - cat changed_repositories.list
 
 script:
- - python ./scripts/functional_tests.py -v `python tool_list.py Continuous-Integration-Travis`
-
-#The email defaults are too talkative while we're getting Travis working nicely.
-notifications:
-  email: false
+  - for DIR in `cat changed_repositories.list`; do planemo conda_install --conda_ensure_channels iuc,bioconda,r --conda_prefix $CONDA_PREFIX $DIR ; done
+  - for DIR in `cat changed_repositories.list`; do planemo test --conda_dependency_resolution --conda_prefix $CONDA_PREFIX --galaxy_branch $GALAXY_RELEASE  --galaxy_source $GALAXY_REPO --skip_venv $DIR || exit 1; done
