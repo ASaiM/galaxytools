@@ -1,4 +1,4 @@
-<tool id="fasta_add_barcode" name="Add barcodes">
+<tool id="fasta_add_barcode" name="Add barcodes" version="1.0">
 
     <description>to FASTA sequences</description>
 
