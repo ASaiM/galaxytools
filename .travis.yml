@@ -1,4 +1,4 @@
-# Inspired from .travis.yml from tools-iuc: https://github.com/galaxyproject/tools-iuc/blob/master/.travis.yml
+# Highly inspired from .travis.yml from tools-iuc: https://github.com/galaxyproject/tools-iuc/blob/master/.travis.yml
 language: python
 python: 2.7
 
