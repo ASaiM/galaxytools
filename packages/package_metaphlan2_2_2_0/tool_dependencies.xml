@@ -18,10 +18,6 @@
                     <source_directory>utils/</source_directory>
                     <destination_directory>$INSTALL_DIR/bin/</destination_directory>
                 </action>
-                <action type="move_directory_files">
-                    <source_directory>db_v20/</source_directory>
-                    <destination_directory>$INSTALL_DIR/db_v20</destination_directory>
-                </action>
                 <action type="setup_python_environment">
                     <repository name="package_python_2_7_10" owner="iuc">
                        <package name="python" version="2.7.10" />
