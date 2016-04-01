@@ -1,4 +1,4 @@
-<tool id="graphlan" name="GraPhlAn" version="0.1.0">
+<tool id="graphlan" name="GraPhlAn" version="1.0">
 
     <description>to produce graphical output of an input tree</description>
 

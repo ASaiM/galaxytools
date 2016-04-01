@@ -10,7 +10,7 @@
         <install version="1.0">
             <actions>
                 <action type="shell_command"><![CDATA[
-                    hg clone https://hg@bitbucket.org/nsegata/graphlan
+                    hg clone -u 1.0 https://hg@bitbucket.org/nsegata/graphlan
                 ]]></action>
                 <action type="move_directory_files">
                     <source_directory>.</source_directory>
