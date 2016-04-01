@@ -3,8 +3,8 @@
     <package name="bowtie2" version="2.2.5">
         <repository name="package_bowtie_2_2_5" owner="iuc" />
     </package>
-    <package name="metaphlan2" version="2.0">
-        <repository name="package_metaphlan_2_0" owner="bebatut" />
+    <package name="metaphlan2" version="2.2.0">
+        <repository name="package_metaphlan2_2_2_0" owner="bebatut" />
     </package>
     <package name="diamond" version="0.7.10">
         <repository name="package_diamond_0_7_10" owner="iuc" />
