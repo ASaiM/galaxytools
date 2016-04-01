@@ -3,7 +3,7 @@
     <package name="bowtie2" version="2.2.5">
         <repository name="package_bowtie_2_2_5" owner="iuc" />
     </package>
-    <package name="metaphlan2" version="2.0">
-        <repository name="package_metaphlan_2_0" owner="bebatut" />
+    <package name="metaphlan2" version="2.2.0">
+        <repository name="package_metaphlan2_2_2_0" owner="bebatut" />
     </package>
 </tool_dependency>

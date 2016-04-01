@@ -4,6 +4,6 @@ description: "MetaPhlAn is a computational tool for profiling the composition of
 communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun 
 sequencing data with species level resolution"
 homepage_url: https://bitbucket.org/biobakery/metaphlan2/
-name: package_metaphlan_2_0
+name: package_metaphlan2_2_2_0
 owner: bebatut
-remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/packages/package_metaphlan_2_0
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/packages/package_metaphlan2_2_2_0
