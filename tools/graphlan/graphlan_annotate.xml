@@ -13,13 +13,13 @@
 
     <version_command>
 <![CDATA[
-python \${GRAPHLAN_DIR}/graphlan_annotate.py -v
+graphlan_annotate.py -v
 ]]>
     </version_command>
 
     <command>
 <![CDATA[        
-        python \${GRAPHLAN_DIR}/graphlan_annotate.py
+        graphlan_annotate.py
             #if $annot
                 --annot $annot
             #end if

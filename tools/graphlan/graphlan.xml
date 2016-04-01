@@ -13,13 +13,13 @@
 
     <version_command>
 <![CDATA[
-python \${GRAPHLAN_DIR}/graphlan.py -v
+graphlan.py -v
 ]]>
     </version_command>
 
     <command>
 <![CDATA[        
-        python \${GRAPHLAN_DIR}/graphlan.py
+        graphlan.py
             --format $format
 
             #if $dpi

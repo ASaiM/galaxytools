@@ -14,7 +14,7 @@
                 ]]></action>
                 <action type="move_directory_files">
                     <source_directory>.</source_directory>
-                    <destination_directory>$INSTALL_DIR/</destination_directory>
+                    <destination_directory>$INSTALL_DIR/bin/</destination_directory>
                 </action>
                 <action type="set_environment">
                     <environment_variable name="GRAPHLAN_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
