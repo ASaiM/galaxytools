@@ -166,6 +166,34 @@ export2graphlan.py -v
 
     <tests>
         <test>
+            <param name="lefse_input" value="input_profile.tabular"/>
+            <param name="annotations" value=""/>
+            <param name="external_annotations" value=""/>
+            <param name="background_levels" value=""/>
+            <param name="background_clades" value=""/>
+            <param name="background_colors" value=""/>
+            <param name="title" value=""/>
+            <param name="title_font_size" value="15"/>
+            <param name="def_clade_size" value="10"/>
+            <param name="min_clade_size" value="20"/>
+            <param name="max_clade_size" value="200"/>
+            <param name="def_font_size" value="10"/>
+            <param name="min_font_size" value="8"/>
+            <param name="max_font_size" value="12"/>
+            <param name="annotation_legend_font_size" value="10"/>
+            <param name="abundance_threshold" value="20.0"/>
+            <param name="most_abundant" value=""/>
+            <param name="least_biomarkers" value=""/>
+            <param name="fname_row" value="0"/>
+            <param name="sname_row" value="0" />
+            <param name="metadata_rows" value=""/>
+            <param name="skip_rows" value=""/>
+            <param name="sperc" value=""/>
+            <param name="fperc" value=""/>
+            <param name="stop" value=""/>
+            <param name="ftop" value=""/>
+            <output name="annotation" file="output_annotation.txt"/>
+            <output name="tree" file="output_tree.txt"/>
         </test>
     </tests>
 
