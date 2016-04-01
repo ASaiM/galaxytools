@@ -1,0 +1,63 @@
+<tool id="humann2_merge_abundance_tables" name="Merge HUMAnN2 gene and pathway abundance tables" version="0.1.0">
+    <description></description>
+
+    <macros>
+        <import>humann2_macros.xml</import>
+    </macros>
+
+    <expand macro="requirements"/>
+    <expand macro="stdio"/>
+
+    <version_command>
+<![CDATA[
+    humann2_merge_abundance_tables --version
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        humann2_merge_abundance_tables
+            --input-genes $input_gene
+            --input-pathways $input_pathway
+            --gene-mapping $gene_mapping
+            --pathway-mapping $pathway-mapping
+            $remove_taxonomy
+                                  
+            -o $output_table
+    ]]></command>
+
+    <inputs>
+        <param name="input_gene" type="data" format="tsv" label="Gene family or EC 
+            abundance file" help="(--input-genes)"/>
+        <param name="input_pathway" type="data" format="tsv" label="Pathway 
+            abundance file" help="(--input-pathways)"/>
+        <param name="gene_mapping" type="data" format="tsv" label="Gene family 
+            to reaction mapping file" help="(--gene-mapping)"/>
+        <param name="pathway_mapping" type="data" format="tsv" label="Reaction to 
+            pathway mapping file" help="(--pathway-mapping)"/>
+        <param name='remove_taxonomy' type='boolean' checked="false" 
+            truevalue='--remove-taxonomy' falsevalue='' 
+            label="Remove the taxonomy from the output file?" 
+            help="(--remove-taxonomy)"/>
+        
+    </inputs>
+
+    <outputs>
+        <data format="tsv" name="output_table" label="Merged table for 
+            ${on_string} (HUMAnN2)" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+        **What it does**
+
+        This tool merge gene and pathway abundance tables.
+
+        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>
