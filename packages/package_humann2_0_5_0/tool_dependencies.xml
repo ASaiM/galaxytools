@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="humann2" version="1.0">
+    <package name="humann2" version="0.5.0">
         <install version="1.0">
             <actions>
                 <action type="download_by_url">https://bitbucket.org/biobakery/humann2/downloads/humann2_v0.5.0.tar.gz</action>
