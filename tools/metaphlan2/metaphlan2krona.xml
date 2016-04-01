@@ -21,13 +21,13 @@
 
     <version_command>
 <![CDATA[
-python \${METAPHLAN2_DIR}/utils/metaphlan2krona.py -v
+metaphlan2krona.py -v
 ]]>
     </version_command>
 
     <command>
 <![CDATA[        
-        python \${METAPHLAN2_DIR}/utils/metaphlan2krona.py
+        metaphlan2krona.py
             -p $input_file
             -k $krona
 ]]>

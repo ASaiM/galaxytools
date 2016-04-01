@@ -21,7 +21,7 @@
 
     <version_command>
 <![CDATA[
-python \${METAPHLAN2_DIR}/metaphlan2.py -v
+metaphlan2.py -v
 ]]>
     </version_command>
 
@@ -31,7 +31,7 @@ python \${METAPHLAN2_DIR}/metaphlan2.py -v
 
         &&
 
-        python \${METAPHLAN2_DIR}/metaphlan2.py
+        metaphlan2.py
             $input_file
             -o $output_file
 
