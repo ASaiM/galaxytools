@@ -21,7 +21,12 @@ install:
   #- cat changed_repositories.list
 
 script:
+  - planemo conda_install --conda_ensure_channels bgruening,iuc,bioconda,r --conda_prefix $CONDA_PREFIX tools/compute_wilcoxon_test
+  - planemo test --conda_dependency_resolution --conda_prefix $CONDA_PREFIX --galaxy_branch $GALAXY_RELEASE  --galaxy_source $GALAXY_REPO --skip_venv tools/compute_wilcoxon_test
+  - planemo conda_install --conda_ensure_channels bgruening,iuc,bioconda,r --conda_prefix $CONDA_PREFIX tools/extract_sequence_file
+  - planemo test --conda_dependency_resolution --conda_prefix $CONDA_PREFIX --galaxy_branch $GALAXY_RELEASE  --galaxy_source $GALAXY_REPO --skip_venv tools/extract_sequence_file
+
   - planemo conda_install --conda_ensure_channels bgruening,iuc,bioconda,r --conda_prefix $CONDA_PREFIX tools/metaphlan2
-  - planemo test --conda_dependency_resolution --conda_prefix $CONDA_PREFIX --galaxy_branch $GALAXY_RELEASE  --galaxy_source $GALAXY_REPO --skip_venv tools/metaphlan2
+  
   #- for DIR in `ls tools`; do planemo conda_install --conda_ensure_channels bgruening,iuc,bioconda,r --conda_prefix $CONDA_PREFIX tools/$DIR ; done
   #- for DIR in `ls tools`; do planemo test --conda_dependency_resolution --conda_prefix $CONDA_PREFIX --galaxy_branch $GALAXY_RELEASE  --galaxy_source $GALAXY_REPO --skip_venv tools/$DIR || exit 1; done
