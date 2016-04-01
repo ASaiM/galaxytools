@@ -10,12 +10,12 @@
 
     <version_command>
 <![CDATA[
-    \${HUMANN2_DIR}/humann2_regroup_table --version
+    humann2_regroup_table --version
 ]]>
     </version_command>
 
     <command><![CDATA[
-        \${HUMANN2_DIR}/humann2_regroup_table
+        humann2_regroup_table
             -i $input_table
             -o $output_table
             --function $function

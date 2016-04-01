@@ -10,12 +10,12 @@
 
     <version_command>
 <![CDATA[
-    \${HUMANN2_DIR}/humann2_renorm_table --version
+    humann2_renorm_table --version
 ]]>
     </version_command>
 
     <command><![CDATA[
-        \${HUMANN2_DIR}/humann2_renorm_table
+        humann2_renorm_table
             -i $input_table
             -o $output_table
             --norm $norm

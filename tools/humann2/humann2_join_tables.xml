@@ -23,7 +23,7 @@
         #end for
 
         && 
-        \${HUMANN2_DIR}/humann2_join_tables
+        humann2_join_tables
             -i "tmp_dir"
             -o $joined_table           
     ]]></command>
