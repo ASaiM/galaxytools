@@ -43,7 +43,11 @@ metaphlan2krona.py -v
             label="${tool.name} on ${on_string}: Krona file" />
     </outputs>
 
-    <tests>      
+    <tests>
+        <test>
+            <param name="input_file" value="metaphlan2_profiled_metagenome.txt"/>
+            <output name="krona" file="metaphlan2krona_output_file.tabular.txt"/>
+        </test>      
     </tests>
 
     <help><![CDATA[
