@@ -38,7 +38,7 @@ graphlan_annotate.py -v
     </inputs>
 
     <outputs>
-        <data format="text" name="output_tree" 
+        <data format="txt" name="output_tree" 
             label="${tool.name} on ${on_string}: Tree in PhyloXML" />
     </outputs>
 
