@@ -78,10 +78,10 @@ metaphlan2.py -v
         <conditional name="analysis_type">
             <param name="analysis_type_select" type="select" label="Type of analysis to perform">
               <option value="rel_ab" selected="true">Profiling a metagenomes in terms of relative abundances</option>
-              <option value="rel_ab_w_read_stats">Profiling a metagenomes in terms of relative abundances and estimate the number of reads comming from each clade</option>
               <option value="reads_map">Mapping from reads to clades (only reads hitting a marker)</option>
               <option value="clade_profiles">Normalized marker counts for clades with at least a non-null marker</option>
               <option value="marker_ab_table">Normalized marker counts (only when > 0.0 and normalized by metagenome size if --nreads is specified)</option>
+              <option value="marker_counts">Non-normalized marker counts (use with extreme caution)</option>
               <option value="marker_pres_table">List of markers present in the sample (threshold at 1.0 if not differently specified with --pres_th</option>
             </param>
             <when value="rel_ab">
@@ -96,12 +96,12 @@ metaphlan2.py -v
                 <option value="s">Species only</option>
               </param>
             </when>
-            <when value="rel_ab_w_read_stats"/>
             <when value="reads_map"/>
             <when value="clade_profiles"/>
             <when value="marker_ab_table">
                 <param name="nreads" type="integer" value="0" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
             </when>
+            <when value="marker_counts"/>
             <when value="marker_pres_table">
                 <param name="pres_th" type="integer" value="0" label=" Threshold for calling a marker present" help=""/>
             </when>
