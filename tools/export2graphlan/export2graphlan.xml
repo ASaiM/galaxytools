@@ -14,13 +14,13 @@
 
     <version_command>
 <![CDATA[
-python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py -v
+export2graphlan.py -v
 ]]>
     </version_command>
 
     <command>
 <![CDATA[        
-        python \${EXPORT2GRAPHLAN_DIR}/export2graphlan.py
+        export2graphlan.py
             -i $lefse_input
 
             #if $lefse_output

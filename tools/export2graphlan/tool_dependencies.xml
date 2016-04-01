@@ -15,13 +15,18 @@
                 <action type="shell_command"><![CDATA[
                     hg clone https://hg@bitbucket.org/CibioCM/export2graphlan
                 ]]></action>
+                <action type="move_file">
+                    <source>export2graphlan.py</source>
+                    <destination>$INSTALL_DIR/bin/</destination>
+                </action>
                 <action type="move_directory_files">
-                    <source_directory>.</source_directory>
-                    <destination_directory>$INSTALL_DIR/</destination_directory>
+                    <source_directory>hclust2</source_directory>
+                    <destination_directory>$INSTALL_DIR/bin/hclust2/</destination_directory>
                 </action>
                 <action type="set_environment">
                     <environment_variable name="EXPORT2GRAPHLAN_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
-                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin/</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/</environment_variable>
                 </action>
             </actions>
         </install>
