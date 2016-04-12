@@ -52,13 +52,11 @@
     		 <param name="humann2_file" value="humann2_file.txt"/>
     		 <param name='type' value="gene_families"/>
     		 <output name="gene_families_output_file" value="combined_humann2_metaphlan2.txt"/>
-    		 <output name="pathway_output_file" value="combined_humann2_metaphlan2.txt"/>
     	</test>
     	<test>
     		 <param name="metaphlan2_file" value="metaphlan2_file.txt"/>
     		 <param name="humann2_file" value="humann2_file.txt"/>
     		 <param name='type' value="pathways"/>
-    		 <output name="gene_families_output_file" value="combined_humann2_metaphlan2.txt"/>
     		 <output name="pathway_output_file" value="combined_humann2_metaphlan2.txt"/>
     	</test>
     </tests>
