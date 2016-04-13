@@ -39,38 +39,16 @@
     <tests>
         <test>
             <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="3"/>
+            <param name="column_id" value=""/>
             <param name="extraction_type" value="min"/>
-            <output name="output_file" value="output_file.txt"/>
-        </test>
-        <test>
-            <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="4"/>
-            <param name="extraction_type" value="min"/>
+            <param name="extraction_nb" value="10"/>
             <output name="output_file" value="output_file.txt"/>
         </test>
          <test>
             <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="5"/>
-            <param name="extraction_type" value="min"/>
-            <output name="output_file" value="output_file.txt"/>
-        </test>
-        <test>
-            <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="3"/>
+            <param name="column_id" value=""/>
             <param name="extraction_type" value="max"/>
-            <output name="output_file" value="output_file.txt"/>
-        </test>
-        <test>
-            <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="4"/>
-            <param name="extraction_type" value="max"/>
-            <output name="output_file" value="output_file.txt"/>
-        </test>
-        <test>
-            <param name="input_file" value="input_file.tabular"/>
-            <param name="column_id" value="5"/>
-            <param name="extraction_type" value="max"/>
+            <param name="extraction_nb" value="10"/>
             <output name="output_file" value="output_file.txt"/>
         </test>
     </tests>
