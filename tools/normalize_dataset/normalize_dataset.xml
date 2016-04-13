@@ -39,6 +39,30 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value=""/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" value=""/>
+        </test>
+        <test>
+            <param name="input_file" value=""/>
+            <param name="normalization" value="row"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" value=""/>
+        </test>
+        <test>
+            <param name="input_file" value=""/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="percentage"/>
+            <output name="output_file" value=""/>
+        </test>
+        <test>
+            <param name="input_file" value=""/>
+            <param name="normalization" value="row"/>
+            <param name="format" value="percentage"/>
+            <output name="output_file" value=""/>
+        </test>
     </tests>
 
     <help><![CDATA[
