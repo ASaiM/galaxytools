@@ -76,7 +76,7 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
+            <output name="output_file" value="output_test_true_two-sided.text" />
         </test>
         <test>
             <param name="input_file" value="input_file.txt" />
@@ -86,7 +86,7 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
+            <output name="output_file" value="output_test_false_two-sided.text" />
         </test>
         <test>
             <param name="input_file" value="input_file.txt" />
@@ -98,41 +98,8 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
+            <output name="output_file" value="output_test_true_greater.text" />
         </test>
-        <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="false" />
-            <param name="alternative" value="greater" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
-            <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
-        </test>
-        <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="true" />
-            <param name="column2_id" value="3" />
-            <param name="paired" value="TRUE" />
-            <param name="alternative" value="less" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
-            <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
-        </test>
-        <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="false" />
-            <param name="alternative" value="less" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
-            <param name="correct" value="TRUE"/>
-            <output name="output_file" value="output_file.txt" />
-        </test>
-       
     </tests>
 
     <help><![CDATA[
