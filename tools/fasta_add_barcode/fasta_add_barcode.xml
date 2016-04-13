@@ -40,7 +40,7 @@
         <test>
             <param name="sequence_file" value="input_sequence_file"/>
             <param name="mapping_file" value="mapping_file"/>
-            <param name="output_sequence_file" value="output_sequence_file" />
+            <output name="output_sequence_file" value="output_sequence_file" />
         </test>
     </tests>
 
