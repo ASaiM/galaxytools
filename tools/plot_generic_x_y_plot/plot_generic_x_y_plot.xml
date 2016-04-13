@@ -87,6 +87,48 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="input_file.txt" />
+            <param name="header" value="TRUE" />
+            <param name="output_format" value="pdf" />    
+            <param name="x_column_id" value="2" />
+            <param name="y_column_id" value="3" />
+            <param name="xlog" value="TRUE" />
+            <param name="ylog" value="TRUE" />
+            <param name="xlab" value="" />
+            <param name="ylab" value="" />
+            <param name="color" value= "grey25" />
+            <param name="pch" value="21" />
+            <param name="lim" value="TRUE" />
+            <param name="abline" value="TRUE" />
+            <param name="bottom_margin" value="5" />
+            <param name="left_margin" value="5" />
+            <param name="top_margin" value="1" />
+            <param name="right_margin" value="1" />
+            <output name="output_pdf_file" value="output.pdf" />
+            <output name="output_png_file" value="" />
+        </test>
+        <test>
+            <param name="input_file" value="input_file.txt" />
+            <param name="header" value="TRUE" />
+            <param name="output_format" value="svg" />    
+            <param name="x_column_id" value="2" />
+            <param name="y_column_id" value="3" />
+            <param name="xlog" value="TRUE" />
+            <param name="ylog" value="TRUE" />
+            <param name="xlab" value="" />
+            <param name="ylab" value="" />
+            <param name="color" value= "grey25" />
+            <param name="pch" value="21" />
+            <param name="lim" value="TRUE" />
+            <param name="abline" value="TRUE" />
+            <param name="bottom_margin" value="5" />
+            <param name="left_margin" value="5" />
+            <param name="top_margin" value="1" />
+            <param name="right_margin" value="1" />
+            <output name="output_png_file" value="" />
+            <output name="output_svg_file" value="" />
+        </test>
     </tests>
 
     <help><![CDATA[
