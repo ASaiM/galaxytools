@@ -67,7 +67,7 @@
 
     <tests>
         <test>
-            <param name="input_file" value="input_file.txt" />
+            <param name="input_file" value="input_file_test.tabular" />
             <param name="column1_id" value="2" />
             <param name="test" value="true" />
             <param name="column2_id" value="3" />
@@ -79,7 +79,7 @@
             <output name="output_file" value="output_test_true_two-sided.text" />
         </test>
         <test>
-            <param name="input_file" value="input_file.txt" />
+            <param name="input_file" value="input_file_test.tabular" />
             <param name="column1_id" value="2" />
             <param name="test" value="false" />
             <param name="alternative" value="two.sided" />
@@ -89,7 +89,7 @@
             <output name="output_file" value="output_test_false_two-sided.text" />
         </test>
         <test>
-            <param name="input_file" value="input_file.txt" />
+            <param name="input_file" value="input_file_test.tabular" />
             <param name="column1_id" value="2" />
             <param name="test" value="true" />
             <param name="column2_id" value="3" />
