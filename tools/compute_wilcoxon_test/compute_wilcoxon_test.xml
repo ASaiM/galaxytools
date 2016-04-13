@@ -71,7 +71,7 @@
             <param name="column1_id" value="2" />
             <param name="test" value="true" />
             <param name="column2_id" value="3" />
-            <param name="paired" value="TRUE" />
+            <param name="paired" value="FALSE" />
             <param name="alternative" value="two.sided" />
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
@@ -93,7 +93,7 @@
             <param name="column1_id" value="2" />
             <param name="test" value="true" />
             <param name="column2_id" value="3" />
-            <param name="paired" value="TRUE" />
+            <param name="paired" value="FALSE" />
             <param name="alternative" value="greater" />
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
