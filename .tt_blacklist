@@ -1,5 +1,4 @@
 cdhit
-combine_metaphlan2_humann2
 compare_humann2_output
 compute_wilcoxon_test
 export2graphlan
