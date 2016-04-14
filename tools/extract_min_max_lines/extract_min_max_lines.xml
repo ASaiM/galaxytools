@@ -42,28 +42,28 @@
             <param name="column_id" value="3"/>
             <param name="extraction_type" value="min"/>
             <param name="extraction_nb" value="10"/>
-            <output name="output_file" value="output_test_col_3_min.tabular"/>
+            <output name="output_file" file="output_test_col_3_min.tabular"/>
         </test>
         <test>
             <param name="input_file" value="input_file.tabular"/>
             <param name="column_id" value="3"/>
             <param name="extraction_type" value="max"/>
             <param name="extraction_nb" value="10"/>
-            <output name="output_file" value="output_test_col_3_max.tabular"/>
+            <output name="output_file" file="output_test_col_3_max.tabular"/>
         </test>
         <test>
             <param name="input_file" value="input_file.tabular"/>
             <param name="column_id" value="4"/>
             <param name="extraction_type" value="min"/>
             <param name="extraction_nb" value="10"/>
-            <output name="output_file" value="output_test_col_4_min.tabular"/>
+            <output name="output_file" file="output_test_col_4_min.tabular"/>
         </test>
         <test>
             <param name="input_file" value="input_file.tabular"/>
             <param name="column_id" value="4"/>
             <param name="extraction_type" value="max"/>
             <param name="extraction_nb" value="10"/>
-            <output name="output_file" value="output_test_col_4_max.tabular"/>
+            <output name="output_file" file="output_test_col_4_max.tabular"/>
         </test>
     </tests>
 
