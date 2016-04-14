@@ -6,7 +6,7 @@
     <package name="matplotlib" version="1.4">
         <repository name="package_python_2_7_matplotlib_1_4" owner="iuc" />
     </package>
-    <package name="graphlan" version="1.0">
+    <package name="graphlan" version="1.0.0">
         <install version="1.0">
             <actions>
                 <action type="shell_command"><![CDATA[
