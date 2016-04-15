@@ -1,5 +1,5 @@
 <tool id="normalize_dataset" name="Normalize a dataset by" version="0.1.0">
-    <description>row or column sum</description>
+    <description>row or column sum to obtain proportion or percentage</description>
 
     <requirements>
     </requirements>
