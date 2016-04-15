@@ -3,7 +3,6 @@
     <description>to FASTA sequences</description>
 
     <requirements>
-        <requirement type='package' version="1.0">fasta_add_barcode</requirement>
     </requirements>
 
     <stdio>
