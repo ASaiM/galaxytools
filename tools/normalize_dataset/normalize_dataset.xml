@@ -60,10 +60,12 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool normalizes each row or column of a dataset by the row or column sum.
+This tool normalizes each row or column of a dataset by the row or column sum.
+The results can be in proportion or percentage.
 
+The input file must be in tabular format with tab-separated columns. Only data will be used for normalization.
     ]]></help>
 
     <citations>
