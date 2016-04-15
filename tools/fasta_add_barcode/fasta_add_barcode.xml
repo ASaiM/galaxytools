@@ -37,9 +37,9 @@
 
     <tests>
         <test>
-            <param name="sequence_file" value="input_sequence_file"/>
-            <param name="mapping_file" value="mapping_file"/>
-            <param name="output_sequence_file" value="output_sequence_file" />
+            <param name="sequence_file" value="input_sequences.fasta"/>
+            <param name="mapping_file" value="mapping_file.txt"/>
+            <output name="output_sequence_file" file="output_test.fasta" />
         </test>
     </tests>
 
