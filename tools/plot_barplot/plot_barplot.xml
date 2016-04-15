@@ -101,7 +101,7 @@
             <param name="left_margin" value="19"/>
             <param name="top_margin" value="1"/>
             <param name="right_margin" value="1"/>
-            <output name="output_svg_file" file="output_test.svg"/>
+            <output name="output_pdf_file" file="output_test.svg"/>
         </test>
     </tests>
 
