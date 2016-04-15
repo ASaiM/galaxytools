@@ -87,13 +87,13 @@
             <param name="left_margin" value="19"/>
             <param name="top_margin" value="1"/>
             <param name="right_margin" value="1"/>
-            <output name="output_pdf_file" file="output_test.pdf"/>
+            <output name="output_pdf_file" file="output_test_col_2.pdf"/>
         </test>
         <test>
             <param name="input_file" value="input_file.txt"/>
             <param name="header" value="TRUE"/>
-            <param name="output_format" value="svg"/>
-            <param name="column_with_data" value="2"/>
+            <param name="output_format" value="pdf"/>
+            <param name="column_with_data" value="3"/>
             <param name="names_column" value="1"/>
             <param name="xlab" value=""/>
             <param name="col" value="blue"/>
@@ -101,7 +101,7 @@
             <param name="left_margin" value="19"/>
             <param name="top_margin" value="1"/>
             <param name="right_margin" value="1"/>
-            <output name="output_pdf_file" file="output_test.svg"/>
+            <output name="output_pdf_file" file="output_test_col_3.pdf"/>
         </test>
     </tests>
 
