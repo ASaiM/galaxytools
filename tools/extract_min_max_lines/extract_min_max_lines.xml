@@ -68,10 +68,11 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool extract lines from a tabular file corresponding to minimum or maximum values of a column.
+This tool extract a variable number of lines corresponding to minimum or maximum values of a chosen column.
 
+The file must be in tabular format with tabular separated columns. To chosen column to extract minimum or maximum values must be data columns.
     ]]></help>
 
     <citations>
