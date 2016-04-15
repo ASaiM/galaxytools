@@ -1,5 +1,5 @@
 <tool id="extract_min_max_lines" name="Extract lines corresponding" version="0.1.0">
-    <description>with minimum and maximum values of a column</description>
+    <description>to minimum and maximum values of a column</description>
 
     <requirements>
     </requirements>
@@ -37,13 +37,42 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="column_id" value="3"/>
+            <param name="extraction_type" value="min"/>
+            <param name="extraction_nb" value="10"/>
+            <output name="output_file" file="output_test_col_3_min.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="column_id" value="3"/>
+            <param name="extraction_type" value="max"/>
+            <param name="extraction_nb" value="10"/>
+            <output name="output_file" file="output_test_col_3_max.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="column_id" value="4"/>
+            <param name="extraction_type" value="min"/>
+            <param name="extraction_nb" value="10"/>
+            <output name="output_file" file="output_test_col_4_min.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="column_id" value="4"/>
+            <param name="extraction_type" value="max"/>
+            <param name="extraction_nb" value="10"/>
+            <output name="output_file" file="output_test_col_4_max.tabular"/>
+        </test>
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool extract lines from a tabular file corresponding to minimum or maximum values of a column.
+This tool extract a variable number of lines corresponding to minimum or maximum values of a chosen column.
 
+The file must be in tabular format with tabular separated columns. To chosen column to extract minimum or maximum values must be data columns.
     ]]></help>
 
     <citations>
