@@ -62,9 +62,11 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool combine MetaPhlAn2 outputs and HUMANnN2 outputs to get, for each gene families/pathways and the corresponding taxonomic stratification, relative abundance of this gene family/pathway and the relative abundance of corresponding species and genus.
+This tool combine MetaPhlAn2 outputs and HUMANnN2 outputs.
+
+For each gene families/pathways and the corresponding taxonomic stratification, you get relative abundance of this gene family/pathway and the relative abundance of corresponding species and genus.
     ]]></help>
 
     <citations>
