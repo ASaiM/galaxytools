@@ -48,16 +48,16 @@
 
     <tests>
     	<test>
-    		 <param name="metaphlan2_file" value="input_metaphlan.txt"/>
-    		 <param name="humann2_file" value="input_gene_families_humann2.tabular"/>
+    		 <param name="metaphlan2_file" value="metaphlan2_input.txt"/>
+    		 <param name="humann2_file" value="humann2_gene_families_input.tabular"/>
     		 <param name='type' value="gene_families"/>
-    		 <output name="gene_families_output_file" file="output_family.tabular"/>
+    		 <output name="gene_families_output_file" file="gene_families_output.tabular"/>
     	</test>
     	<test>
-    		 <param name="metaphlan2_file" value="input_metaphlan.txt"/>
-    		 <param name="humann2_file" value="input_pathway_humann2.tabular"/>
+    		 <param name="metaphlan2_file" value="metaphlan2_input.txt"/>
+    		 <param name="humann2_file" value="humann2_pathways_input.tabular"/>
     		 <param name='type' value="pathways"/>
-    		 <output name="pathway_output_file" file="output_Pathway.tabular"/>
+    		 <output name="pathway_output_file" file="pathways_output.tabular"/>
     	</test>
     </tests>
 
