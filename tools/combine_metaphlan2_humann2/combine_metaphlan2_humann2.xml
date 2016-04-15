@@ -47,6 +47,18 @@
     </outputs>
 
     <tests>
+    	<test>
+    		 <param name="metaphlan2_file" value="input_metaphlan.txt"/>
+    		 <param name="humann2_file" value="input_gene_families_humann2.tabular"/>
+    		 <param name='type' value="gene_families"/>
+    		 <output name="gene_families_output_file" file="output_family.tabular"/>
+    	</test>
+    	<test>
+    		 <param name="metaphlan2_file" value="input_metaphlan.txt"/>
+    		 <param name="humann2_file" value="input_pathway_humann2.tabular"/>
+    		 <param name='type' value="pathways"/>
+    		 <output name="pathway_output_file" file="output_Pathway.tabular"/>
+    	</test>
     </tests>
 
     <help><![CDATA[
