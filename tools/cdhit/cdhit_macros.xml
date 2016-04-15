@@ -1,4 +1,10 @@
 <macros>
+  <xml name="requirements">
+      <requirements>
+        <requirement type="package" version="4.6.4">cd-hit</requirement>
+      </requirements>
+    </xml>
+
   <template name="common_cdhit_options">      
     <!-- start common cdhit  options -->
 

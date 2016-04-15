@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="cd-hit" version="4.6.1">
+    <package name="cd-hit" version="4.6.4">
         <install version="1.0">
             <actions>
-                <action type="download_by_url">https://cdhit.googlecode.com/files/cd-hit-v4.6.1-2012-08-27.tgz</action>
+                <action type="download_by_url" md5="d4baba1e95ba9c831a763c6b8a19ce21">https://github.com/weizhongli/cdhit/releases/download/V4.6.4/cd-hit-v4.6.4-2015-0603.tar.gz</action>
                 <action type="shell_command">make</action>
                 <action type="move_file">
                      <source>cd-hit</source>

@@ -3,7 +3,6 @@
     <description>to FASTA sequences</description>
 
     <requirements>
-        <requirement type='package' version="1.0">fasta_add_barcode</requirement>
     </requirements>
 
     <stdio>
@@ -38,9 +37,9 @@
 
     <tests>
         <test>
-            <param name="sequence_file" value="input_sequence_file"/>
-            <param name="mapping_file" value="mapping_file"/>
-            <param name="output_sequence_file" value="output_sequence_file" />
+            <param name="sequence_file" value="input_sequences.fasta"/>
+            <param name="mapping_file" value="mapping_file.txt"/>
+            <output name="output_sequence_file" file="output_test.fasta" />
         </test>
     </tests>
 
@@ -49,8 +48,8 @@
 **What it does**
 
 This tool takes a FASTA file and add at the beginning of each sequence a barcode.
-The barcode of each sequence is determined given sequence identifier and the mapping 
-file.
+
+The barcode of each sequence is determined given its sequence identifier. The mapping between sequence identifier and corresponding barcode is defined inside the mapping file. This file must be a tabular delimited file with two columns: the first with sequence identifiers and the second the corresponding barcode.
 
 ]]>
     </help>
