@@ -39,6 +39,24 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" file="output_column_proportion.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="row"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" file="output_row_proportion.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="percentage"/>
+            <output name="output_file" file="output_column_percentage.tabular"/>
+        </test>
     </tests>
 
     <help><![CDATA[
