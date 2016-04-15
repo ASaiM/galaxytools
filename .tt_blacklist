@@ -5,7 +5,6 @@ tools/compute_wilcoxon_test
 tools/export2graphlan
 tools/extract_min_max_lines
 tools/extract_sequence_file
-tools/fasta_add_barcode
 tools/format_cd_hit_output
 tools/format_metaphlan2_output
 tools/graphlan
