@@ -1,5 +1,5 @@
 <tool id="extract_min_max_lines" name="Extract lines corresponding" version="0.1.0">
-    <description>with minimum and maximum values of a column</description>
+    <description>to minimum and maximum values of a column</description>
 
     <requirements>
     </requirements>
