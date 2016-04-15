@@ -5,7 +5,7 @@
     <requirements>
         <requirement type="package" version="1.66">biopython</requirement>
         <requirement type="package" version="1.4">matplotlib</requirement>
-        <requirement type="package" version="1.0">graphlan</requirement>
+        <requirement type="package" version="1.0.0">graphlan</requirement>
     </requirements>
 
     <stdio>
