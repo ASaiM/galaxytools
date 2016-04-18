@@ -96,7 +96,7 @@
             <param name="column_with_data" value="3"/>
             <param name="names_column" value="1"/>
             <param name="xlab" value=""/>
-            <param name="col" value="blue"/>
+            <param name="col" value="red"/>
             <param name="bottom_margin" value="5"/>
             <param name="left_margin" value="19"/>
             <param name="top_margin" value="1"/>
