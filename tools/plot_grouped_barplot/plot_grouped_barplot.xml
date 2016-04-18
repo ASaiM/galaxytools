@@ -106,7 +106,7 @@
 
     <tests>
         <test>
-            <param name="input_file" value="input_file_test.txt"/>
+            <param name="input_file" value="input_file.txt"/>
             <param name='header' value="FALSE"/>
             <param name="output_format" value="pdf"/>
             <param name="samples_0|name" value="A"/>
@@ -125,7 +125,7 @@
             <param name='top_margin' value="1"/>
             <param name='right_margin' value="1"/>
             <param name="legend_pos" value="topright"/>
-            <output name="output_pdf_file" file="output_test.pdf"/>
+            <output name="output_pdf_file" file="output_file.pdf"/>
         </test>
     </tests>
 
