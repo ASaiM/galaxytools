@@ -87,6 +87,26 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="header" value="FALSE" />
+            <param name="output_format" value="pdf" />    
+            <param name="x_column_id" value="2" />
+            <param name="y_column_id" value="3" />
+            <param name="xlog" value="FALSE" />
+            <param name="ylog" value="FALSE" />
+            <param name="xlab" value="" />
+            <param name="ylab" value="" />
+            <param name="color" value= "grey25" />
+            <param name="pch" value="21" />
+            <param name="lim" value="FALSE" />
+            <param name="abline" value="FALSE" />
+            <param name="bottom_margin" value="5" />
+            <param name="left_margin" value="5" />
+            <param name="top_margin" value="1" />
+            <param name="right_margin" value="1" />
+            <output name="output_pdf_file" file="output_test.pdf" />
+        </test>
     </tests>
 
     <help><![CDATA[
