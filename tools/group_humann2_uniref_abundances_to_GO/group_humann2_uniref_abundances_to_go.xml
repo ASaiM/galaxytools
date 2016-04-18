@@ -100,6 +100,27 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="humann2_gene_families_abundance" value="humann2_gene_families.csv"/>
+            <param name="gene_ontology_test" value="false"/>
+            <param name="slim_gene_ontology_test" value="true"/>
+            <param name="slim_gene_ontology_file" value="goslim_metagenomics_02_22_2016.obo"/>
+            <param name="uniref50_go_test" value="false"/>
+            <output name="molecular_function_abundance" file="output_slim_Molecular_function.tabular"/>
+            <output name="biological_process_abundance" file="output_slim_Biological_process.tabular"/>
+            <output name="cellular_component_abundance" file="output_slim_Cellular_component.tabular"/>
+        </test>
+         <test>
+            <param name="humann2_gene_families_abundance" value="humann2_gene_families.csv"/>
+            <param name="gene_ontology_test" value="true"/>
+            <param name="gene_ontology_file" value="go_02_22_2016.obo"/>
+            <param name="slim_gene_ontology_test" value="false"/>
+            <param name="uniref50_go_test" value="true"/>
+            <param name="uniref50_go_file" value="map_infogo1000_uniref50_02_22_2016.txt"/>
+            <output name="molecular_function_abundance" file="output_GO_uniref_50_Molecular_function.tabular"/>
+            <output name="biological_process_abundance" file="output_GO_uniref_50_Biological_process.tabular"/>
+            <output name="cellular_component_abundance" file="output_GO_uniref_50_Cellular_component.tabular"/>
+        </test>
     </tests>
 
     <help><![CDATA[
