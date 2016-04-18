@@ -3,7 +3,7 @@
 
     <requirements>
         <requirement type="package" version="3.2.1">R</requirement>
-        <requirement type="package" version="1.20.0">getopt</requirement>
+        <requirement type="package" version="1.20.0">r-getopt</requirement>
     </requirements>
 
     <stdio>
