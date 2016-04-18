@@ -77,7 +77,7 @@
     <tests>
         <test>
             <param name="input_file" value="input_file.txt"/>
-            <param name="header" value="TRUE"/>
+            <param name="header" value="FALSE"/>
             <param name="output_format" value="pdf"/>
             <param name="column_with_data" value="2"/>
             <param name="names_column" value="1"/>
@@ -91,7 +91,7 @@
         </test>
         <test>
             <param name="input_file" value="input_file.txt"/>
-            <param name="header" value="TRUE"/>
+            <param name="header" value="FALSE"/>
             <param name="output_format" value="pdf"/>
             <param name="column_with_data" value="3"/>
             <param name="names_column" value="1"/>
