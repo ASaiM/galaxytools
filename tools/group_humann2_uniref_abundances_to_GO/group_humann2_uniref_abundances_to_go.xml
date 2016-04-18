@@ -23,7 +23,7 @@
     <version_command></version_command>
 
     <command><![CDATA[
-        \${GROUP_UNIREF_GO_DIR}/group_to_GO_abundances.sh
+        group_to_GO_abundances.sh
             -i $humann2_gene_families_abundance 
             -m $molecular_function_abundance
             -b $biological_process_abundance
