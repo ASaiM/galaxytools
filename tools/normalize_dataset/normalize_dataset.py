@@ -35,9 +35,9 @@ def normalize_dataset(args):
                     for col in split_line:
                         if isfloat(col):
                             if args.format == 'percentage':
-                                output_file.write(sep + str(float(col)/row_sum))
-                            else:
                                 output_file.write(sep + str(100*float(col)/row_sum))
+                            else:
+                                output_file.write(sep + str(float(col)/row_sum))
                         else:
                             output_file.write(sep + col)
                         sep = '\t'

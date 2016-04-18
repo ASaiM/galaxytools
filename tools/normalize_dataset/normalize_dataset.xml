@@ -1,5 +1,5 @@
 <tool id="normalize_dataset" name="Normalize a dataset by" version="0.1.0">
-    <description>row or column sum</description>
+    <description>row or column sum to obtain proportion or percentage</description>
 
     <requirements>
     </requirements>
@@ -39,13 +39,33 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" file="output_column_proportion.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="row"/>
+            <param name="format" value="proportion"/>
+            <output name="output_file" file="output_row_proportion.tabular"/>
+        </test>
+        <test>
+            <param name="input_file" value="input_file.tabular"/>
+            <param name="normalization" value="column"/>
+            <param name="format" value="percentage"/>
+            <output name="output_file" file="output_column_percentage.tabular"/>
+        </test>
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool normalizes each row or column of a dataset by the row or column sum.
+This tool normalizes each row or column of a dataset by the row or column sum.
+The results can be in proportion or percentage.
 
+The input file must be in tabular format with tab-separated columns. Only data will be used for normalization.
     ]]></help>
 
     <citations>
