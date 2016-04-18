@@ -1,6 +1,5 @@
 tools/cdhit
 tools/compare_humann2_output
-tools/compute_wilcoxon_test
 tools/export2graphlan
 tools/extract_sequence_file
 tools/format_cd_hit_output
