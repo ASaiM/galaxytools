@@ -88,8 +88,8 @@
 
     <tests>
         <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="header" value="TRUE" />
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="header" value="FALSE" />
             <param name="output_format" value="pdf" />    
             <param name="x_column_id" value="2" />
             <param name="y_column_id" value="3" />
@@ -106,11 +106,10 @@
             <param name="top_margin" value="1" />
             <param name="right_margin" value="1" />
             <output name="output_pdf_file" value="output_test.pdf" />
-            <output name="output_png_file" value="" />
         </test>
         <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="header" value="TRUE" />
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="header" value="FALSE" />
             <param name="output_format" value="svg" />    
             <param name="x_column_id" value="2" />
             <param name="y_column_id" value="3" />
@@ -126,7 +125,6 @@
             <param name="left_margin" value="5" />
             <param name="top_margin" value="1" />
             <param name="right_margin" value="1" />
-            <output name="output_png_file" value="" />
             <output name="output_svg_file" value="output_test.svg" />
         </test>
     </tests>
