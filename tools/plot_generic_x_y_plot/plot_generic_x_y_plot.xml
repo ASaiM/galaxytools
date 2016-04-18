@@ -110,15 +110,14 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool plot a generic X-Y plot from a tabular file into different format files given different customizable parameters:
+This tool plot a generic X-Y plot:
 
-        .. image:: $PATH_TO_IMAGES/output.png
-           :scale: 50 %
+.. image:: $PATH_TO_IMAGES/output.png
+   :scale: 50 %
 
-        This tool relies on R's plot function.
-
+This tool relies on R's plot function. The input file must be a tabular file with at least two data columns. The output image is customizable (margin, legend positions, ...) and can be export in different format. 
     ]]></help>
 
     <citations>
