@@ -1,0 +1,1535 @@
+id	name	abundances
+UniRef50_I3YQK0	Acetyltransferase 	205.76131687
+UniRef50_F5XD83	Conjugative transposon protein TraK|g__Bacteroides.s__Bacteroides_fragilis	161.03059581
+UniRef50_Q64TK3|g__Bacteroides.s__Bacteroides_fragilis		833.33333333
+UniRef50_A6LCF8	Glycoside hydrolase family 92|g__Bacteroides.s__Bacteroides_fragilis	93.9640513
+UniRef50_F5IX22|g__Bacteroides.s__Bacteroides_fragilis		181.15942029
+UniRef50_R5RX65|g__Bacteroides.s__Bacteroides_fragilis		95.51098376
+UniRef50_R7HMB1|g__Bacteroides.s__Bacteroides_thetaiotaomicron		308.64197531
+UniRef50_R6MHA9	PPIC type PPIASE domain protein|g__Bacteroides.s__Bacteroides_fragilis	81.9000819
+UniRef50_R5PMA9	CzcA family heavy metal efflux pump	33.73819163
+UniRef50_Q7MDF5	Peptidase T|g__Bacteroides.s__Bacteroides_fragilis	93.10986965
+UniRef50_R7EDB9	L fucose	93.89671362
+UniRef50_R6ZI80		44.38526409
+UniRef50_R5RK45|g__Bacteroides.s__Bacteroides_fragilis		47.1475719
+UniRef50_R5GVY8|g__Bacteroides.s__Bacteroides_thetaiotaomicron		99.20634921
+UniRef50_F0R6R3	Glycoside hydrolase family protein|g__Bacteroides.s__Bacteroides_fragilis	194.55252918
+UniRef50_C3QR17		152.90519878
+UniRef50_Q64NG8	Type I restriction modification system DNA methylase	123.00123001
+UniRef50_A0A016BJA8	TonB linked outer membrane , SusC RagA family protein|g__Bacteroides.s__Bacteroides_fragilis	96.37014054
+UniRef50_R6JDJ4	Transcription termination factor Rho|g__Bacteroides.s__Bacteroides_fragilis	104.98687664
+UniRef50_R5ZBS9|g__Bacteroides.s__Bacteroides_fragilis		250.62656642
+UniRef50_Q5LEY5|g__Bacteroides.s__Bacteroides_fragilis		8333.33333333
+UniRef50_R7PCK6	Acyltransferase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	100.1001001
+UniRef50_R6FFL5	Hydrogenase accessory protein HypB	167.7852349
+UniRef50_R5V2J4		82.91873964
+UniRef50_O83668	Fructose bisphosphate aldolase|g__Bacteroides.s__Bacteroides_fragilis	116.95906433
+UniRef50_R6RWK6	Beta galactosidase|g__Bacteroides.s__Bacteroides_fragilis	34.32887058
+UniRef50_I3YJD8	Antirestriction protein|g__Bacteroides.s__Bacteroides_fragilis	121.21212121
+UniRef50_R6T2Y9	Transcriptional regulator	133.33333333
+UniRef50_R7JAP3	Glutaminyl tRNA synthetase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	62.89308176
+UniRef50_E1WMC2		775.19379845
+UniRef50_Q64QH1|g__Bacteroides.s__Bacteroides_fragilis		64.72491909
+UniRef50_R6AHC9		819.67213115
+UniRef50_B2RK67	UDP glucose 6 dehydrogenase	171.82130584
+UniRef50_Q64R13		4000.0
+UniRef50_R5ETA7	Arylsulfatase|g__Bacteroides.s__Bacteroides_fragilis	69.58942241
+UniRef50_R5NSA2|g__Bacteroides.s__Bacteroides_fragilis		262.4671916
+UniRef50_C7MNW3	Acyl CoA synthetase  AMP acid ligase II|g__Bacteroides.s__Bacteroides_fragilis	130.97576948
+UniRef50_UPI000468D7B3	membrane protein|g__Bacteroides.s__Bacteroides_fragilis	34.65003465
+UniRef50_R5C552		203.66598778
+UniRef50_C6IND1|g__Bacteroides.s__Bacteroides_fragilis		124.37810945
+UniRef50_B2UML1	Aminotransferase class I and II	60.38647343
+UniRef50_R6D8F5	Solute	71.37758744
+UniRef50_D5EH68	NAD dependent epimerase dehydratase	123.9157373
+UniRef50_UPI000043E677	probable truncated integrase|g__Bacteroides.s__Bacteroides_fragilis	1333.33333333
+UniRef50_E4T734	Phosphoesterase PA phosphatase related protein	210.97046414
+UniRef50_Q58903|g__Bacteroides.s__Bacteroides_thetaiotaomicron		190.47619048
+UniRef50_A0A016L6F5	His Kinase A domain protein|g__Bacteroides.s__Bacteroides_fragilis	25.72016461
+UniRef50_Q64PP4|g__Bacteroides.s__Bacteroides_fragilis		1123.59550562
+UniRef50_G8UMG2	ABC 3 transport family protein	151.51515152
+UniRef50_R6ALV2	Transglycosylase SLT domain protein	80.7102502
+UniRef50_Q8A6G5	UPF0324 membrane protein BT_1919|g__Bacteroides.s__Bacteroides_fragilis	112.99435028
+UniRef50_R7H1P1	Transporter major facilitator family protein|g__Bacteroides.s__Bacteroides_fragilis	98.32841691
+UniRef50_F0R4U0	RHS repeat associated core domain|g__Bacteroides.s__Bacteroides_fragilis	23.72479241
+UniRef50_R5C5D8|g__Bacteroides.s__Bacteroides_fragilis		100.70493454
+UniRef50_Q64VZ2	Beta glucanase|g__Bacteroides.s__Bacteroides_fragilis	148.14814815
+UniRef50_R5MLH6	Glycosyl hydrolase family 20 catalytic domain protein|g__Bacteroides.s__Bacteroides_fragilis	91.95402299
+UniRef50_Q8AA15	Phosphomethylpyrimidine synthase|g__Bacteroides.s__Bacteroides_fragilis	64.72491909
+UniRef50_R5V6X2		79.93605116
+UniRef50_R6FNM5|g__Bacteroides.s__Bacteroides_thetaiotaomicron		1612.90322581
+UniRef50_I3YNC5	DNA RNA helicase, superfamily II, SNF2 family	35.05082369
+UniRef50_R5RA11	Amino acid adenylation|g__Bacteroides.s__Bacteroides_fragilis	73.26007326
+UniRef50_S6CE85	O acetylhomoserine O acetylserine sulfhydrylase|g__Bacteroides.s__Bacteroides_fragilis	88.4173298
+UniRef50_R7JJE2|g__Bacteroides.s__Bacteroides_fragilis		33.36670003
+UniRef50_R5K3I7	TonB dependent Receptor Plug domain containing protein|g__Bacteroides.s__Bacteroides_stercoris	89.28571429
+UniRef50_Q8UEY5	CTP synthase|g__Bacteroides.s__Bacteroides_fragilis	68.87052342
+UniRef50_R5GCJ0	Phospholipase D Transphosphatidylase|g__Bacteroides.s__Bacteroides_fragilis	77.51937984
+UniRef50_A0A016FPM3	Tetratricopeptide repeat family protein|g__Bacteroides.s__Bacteroides_fragilis	57.87037037
+UniRef50_R5G7Y9	Riboflavin synthase alpha subunit	220.75055188
+UniRef50_Q8A3G2	Virulence associated protein E like protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	76.98229407
+UniRef50_R7DNV5		116.55011655
+UniRef50_R6SK49|g__Bacteroides.s__Bacteroides_thetaiotaomicron		130.20833333
+UniRef50_R5CB12	Glycoside hydrolase family 92	45.53734062
+UniRef50_B2RJD7	Translation initiation factor IF 3	245.09803922
+UniRef50_R6FD83	Outer membrane protein OMP85 family	136.23978202
+UniRef50_R5RWB9		68.58710562
+UniRef50_E1WS50	Ferritin	300.3003003
+UniRef50_B1ZNE5	50S ribosomal protein L2|g__Bacteroides.s__Bacteroides_fragilis	148.14814815
+UniRef50_Q5L8L7	ATP dependent Clp protease ATP binding subunit ClpX|g__Bacteroides.s__Bacteroides_thetaiotaomicron	91.32420091
+UniRef50_Q8A1E9	N acetylornithine carbamoyltransferase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	123.9157373
+UniRef50_E6SSM2	Transcriptional regulator, AraC family|g__Bacteroides.s__Bacteroides_fragilis	149.47683109
+UniRef50_E6SRT4	RagB SusD domain protein|g__Bacteroides.s__Bacteroides_fragilis	67.47638327
+UniRef50_R5JL81	Glycosyl hydrolase family 3 N terminal domain containing protein	49.52947003
+UniRef50_Q64Q57|g__Bacteroides.s__Bacteroides_fragilis		84.81764207
+UniRef50_A0A015UVJ4	TonB linked outer membrane , SusC RagA family protein	31.77629488
+UniRef50_A6L227	Ribonuclease Y|g__Bacteroides.s__Bacteroides_fragilis	72.15007215
+UniRef50_P59946	Putative ribosome biogenesis GTPase RsgA|g__Bacteroides.s__Bacteroides_fragilis	127.71392082
+UniRef50_P44681	Ribosome binding ATPase YchF|g__Bacteroides.s__Bacteroides_fragilis	104.82180294
+UniRef50_R5BDA2		59.52380952
+UniRef50_R6IRX6	Two component system sensor protein histidine kinase|g__Bacteroides.s__Bacteroides_fragilis	110.37527594
+UniRef50_R6RPC2	Transcriptional regulator|g__Bacteroides.s__Bacteroides_fragilis	137.74104683
+UniRef50_R6IE27|g__Bacteroides.s__Bacteroides_fragilis		88.88888889
+UniRef50_R6T1E4	Peptidase|g__Bacteroides.s__Bacteroides_fragilis	153.60983103
+UniRef50_G8UNW7	ABC transporter, ATP binding protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	21.92982456
+UniRef50_R5V1N1	SusC RagA family TonB linked outer membrane protein|g__Bacteroides.s__Bacteroides_fragilis	33.26679973
+UniRef50_R5TZY1	Ribonuclease BN|g__Bacteroides.s__Bacteroides_fragilis	170.94017094
+UniRef50_R5RDR3|g__Bacteroides.s__Bacteroides_fragilis		127.71392082
+UniRef50_R6XBT3	Pyruvate kinase|g__Bacteroides.s__Bacteroides_fragilis	76.45259939
+UniRef50_F9D752|g__Bacteroides.s__Bacteroides_thetaiotaomicron		226.75736961
+UniRef50_R5M3D3	Peptidase S9A B C family catalytic domain protein|g__Bacteroides.s__Bacteroides_stercoris	48.37929366
+UniRef50_R5M715	Creatinase	197.23865878
+UniRef50_Q8GBW6	Methylmalonyl CoA carboxyltransferase 12S subunit	72.15007215
+UniRef50_Q8A0Y5|g__Bacteroides.s__Bacteroides_stercoris		142.45014245
+UniRef50_J0S1M2	ATPase associated with various cellular activities AAA_3	118.20330969
+UniRef50_R6IG72	Acyltransferase	99.50248756
+UniRef50_Q64TC3|g__Bacteroides.s__Bacteroides_fragilis		196.99045928
+UniRef50_E1WRP4|g__Bacteroides.s__Bacteroides_fragilis		87.2600349
+UniRef50_R5ZBS9		250.62656642
+UniRef50_G8UMR7	Prevent host death family protein|g__Bacteroides.s__Bacteroides_fragilis	67.34006734
+UniRef50_A0A015QGK3	Response regulator	26.49708532
+UniRef50_R6ACB7|g__Bacteroides.s__Bacteroides_thetaiotaomicron		52.65929437
+UniRef50_R5JP39	PfkB family carbohydrate kinase	238.0952381
+UniRef50_Q8A2A1	Translation initiation factor IF 2|g__Bacteroides.s__Bacteroides_fragilis	34.50655625
+UniRef50_D2QFV1	Phosphoribosylaminoimidazolecarboxamide formyltransferase IMP cyclohydrolase|g__Bacteroides.s__Bacteroides_stercoris	72.78020378
+UniRef50_R5CWL9	Phosphoribulokinase	65.6167979
+UniRef50_R7E8U3	Heavy metal efflux pump CzcA family	66.46726487
+UniRef50_R7EAT3|g__Bacteroides.s__Bacteroides_fragilis		170.06802721
+UniRef50_R5ASI6		64.5994832
+UniRef50_A6H086	Potassium transporting ATPase A chain|g__Bacteroides.s__Bacteroides_thetaiotaomicron	128.45215157
+UniRef50_P58812	2,3 bisphosphoglycerate independent phosphoglycerate mutase|g__Bacteroides.s__Bacteroides_fragilis	94.16195857
+UniRef50_R5W7L0	Sodium hydrogen exchanger|g__Bacteroides.s__Bacteroides_fragilis	75.93014427
+UniRef50_R5LYQ6		107.87486516
+UniRef50_W4US16	Alanine  tRNA ligase	161.86145092
+UniRef50_R5UHE0	SusD family protein|g__Bacteroides.s__Bacteroides_fragilis	70.4721635
+UniRef50_R5S5U0	Glycosyltransferase group 1 family protein|g__Bacteroides.s__Bacteroides_fragilis	95.23809524
+UniRef50_R6HYK5	N acetylglucosamine 6 phosphate deacetylase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	98.32841691
+UniRef50_R5SQC5|g__Bacteroides.s__Bacteroides_thetaiotaomicron		41.98152813
+UniRef50_R5CWL9	Phosphoribulokinase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	65.6167979
+UniRef50_D6D2H7	Relaxase Mobilisation nuclease domain|g__Bacteroides.s__Bacteroides_fragilis	126.26262626
+UniRef50_R5UXB6		216.45021645
+UniRef50_R6ZDL2|g__Bacteroides.s__Bacteroides_fragilis		40.16064257
+UniRef50_A0A016LVA7	Glycosyl transferase 2 family protein|g__Bacteroides.s__Bacteroides_fragilis	123.00123001
+UniRef50_W0ETG2	Mobilization protein|g__Bacteroides.s__Bacteroides_fragilis	215.40624435
+UniRef50_R7H1P1	Transporter major facilitator family protein	98.32841691
+UniRef50_R6KIY7	Conjugative transposon TraN protein|g__Bacteroides.s__Bacteroides_fragilis	143.67816092
+UniRef50_Q2S1Q6	DNA directed RNA polymerase subunit beta|g__Bacteroides.s__Bacteroides_fragilis	24.18964683
+UniRef50_R5U9S4	RNA polymerase sigma 70 factor|g__Bacteroides.s__Bacteroides_fragilis	183.15018315
+UniRef50_F9D3C0	DNA topoisomerase  subunit B|g__Bacteroides.s__Bacteroides_fragilis	58.07200929
+UniRef50_R7EI38	Magnesium transporter	83.96305626
+UniRef50_Q64R34|g__Bacteroides.s__Bacteroides_fragilis		72.62164125
+UniRef50_R5YXY8		305.81039755
+UniRef50_R6ZFF9|g__Bacteroides.s__Bacteroides_fragilis		119.47431302
+UniRef50_A6LDU4	Excisionase in mobilizable transposon, xis protein|g__Bacteroides.s__Bacteroides_fragilis	456.62100457
+UniRef50_Q11UF9	Peptidyl prolyl cis trans isomerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	163.39869281
+UniRef50_R6JIE4|g__Bacteroides.s__Bacteroides_thetaiotaomicron		34.08316292
+UniRef50_R6ZAV9	SusC RagA family TonB linked outer membrane protein|g__Bacteroides.s__Bacteroides_fragilis	30.80714726
+UniRef50_A0A015UVJ4	TonB linked outer membrane , SusC RagA family protein|g__Bacteroides.s__Bacteroides_fragilis	31.77629488
+UniRef50_R5RY27|g__Bacteroides.s__Bacteroides_fragilis		81.4995925
+UniRef50_D6D518	Myo inositol 1 phosphate synthase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	87.71929825
+UniRef50_P26830	Putative peroxiredoxin in ndh 5region |g__Bacteroides.s__Bacteroides_fragilis	239.80815348
+UniRef50_R6Y770	Ribulose phosphate 3 epimerase	199.6007984
+UniRef50_Q89YI4|g__Bacteroides.s__Bacteroides_thetaiotaomicron		114.54753723
+UniRef50_R5K5B2	Mutator family transposase	94.6969697
+UniRef50_R5VKI6		56.30630631
+UniRef50_R5U4F7	MATE efflux family protein|g__Bacteroides.s__Bacteroides_fragilis	87.48906387
+UniRef50_B2RJF8	Phosphatidylserine decarboxylase proenzyme|g__Bacteroides.s__Bacteroides_fragilis	186.21973929
+UniRef50_I3YIX4|g__Bacteroides.s__Bacteroides_fragilis		70.4721635
+UniRef50_R5JV60	Major facilitator superfamily transporter	91.82736455
+UniRef50_E6STL6	Patatin|g__Bacteroides.s__Bacteroides_fragilis	47.55111745
+UniRef50_E6SRT3	Alpha 1,2 mannosidase|g__Bacteroides.s__Bacteroides_fragilis	35.95828839
+UniRef50_R5JKC4		217.86492375
+UniRef50_Q64U67|g__Bacteroides.s__Bacteroides_fragilis		49.45598417
+UniRef50_Q5L883	Glutamate  tRNA ligase	65.57377049
+UniRef50_Q8A2T6	S adenosylmethionine synthase|g__Bacteroides.s__Bacteroides_fragilis	87.48906387
+UniRef50_E6SMY0	2 dehydropantoate 2 reductase	128.20512821
+UniRef50_R6IPY9		38.53564547
+UniRef50_R6A2V4	Peptidase M23 M37 family	141.84397163
+UniRef50_R5S2N8|g__Bacteroides.s__Bacteroides_fragilis		110.37527594
+UniRef50_R6ZLJ1		44.44444444
+UniRef50_F5XA19	DNA topoisomerase III	101.01010101
+UniRef50_Q64N26|g__Bacteroides.s__Bacteroides_fragilis		37.11952487
+UniRef50_R5JC25	5 formyltetrahydrofolate cyclo ligase	427.35042735
+UniRef50_R7EDB9	L fucose	93.89671362
+UniRef50_R5R936	tRNA rRNA methyltransferase|g__Bacteroides.s__Bacteroides_fragilis	169.20473773
+UniRef50_F0R3K0	DNA mismatch repair protein MutS domain protein|g__Bacteroides.s__Bacteroides_fragilis	60.06006006
+UniRef50_R5Y371		83.96305626
+UniRef50_G4QII0	D isomer specific 2 hydroxyacid dehydrogenase, NAD binding protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	117.37089202
+UniRef50_R6HXI9|g__Bacteroides.s__Bacteroides_fragilis		197.23865878
+UniRef50_R6XYG2	Signal transduction histidine kinase	203.87550501
+UniRef50_G8UMN4	Prephenate dehydrogenase|g__Bacteroides.s__Bacteroides_stercoris	160.25641026
+UniRef50_A0M4G1	2 dehydro 3 deoxyphosphooctonate aldolase	152.90519878
+UniRef50_R6ILE4|g__Bacteroides.s__Bacteroides_thetaiotaomicron		241.54589372
+UniRef50_F3ZTW8|g__Bacteroides.s__Bacteroides_stercoris		51.75983437
+UniRef50_R5M3D3	Peptidase S9A B C family catalytic domain protein	96.89942952
+UniRef50_R5K6W5|g__Bacteroides.s__Bacteroides_fragilis		97.75171065
+UniRef50_Q838L2	L rhamnose isomerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	90.33423668
+UniRef50_R7GXK8	F5 8 type C domain protein	53.24813632
+UniRef50_R5JL81	Glycosyl hydrolase family 3 N terminal domain containing protein|g__Bacteroides.s__Bacteroides_fragilis	49.52947003
+UniRef50_A6L997	Protein translocase subunit SecA	62.89308176
+UniRef50_Q64RA9|g__Bacteroides.s__Bacteroides_fragilis		71.37758744
+UniRef50_P0AFF4	Nucleoside permease NupG|g__Bacteroides.s__Bacteroides_thetaiotaomicron	93.10986965
+UniRef50_R5JPZ4|g__Bacteroides.s__Bacteroides_fragilis		546.44808743
+UniRef50_A0A015QGK3	Response regulator|g__Bacteroides.s__Bacteroides_fragilis	26.49708532
+UniRef50_I3YKX4	RND family efflux transporter, MFP subunit	96.06147935
+UniRef50_C6IHZ2	HsdR family type I site specific deoxyribonuclease|g__Bacteroides.s__Bacteroides_fragilis	35.95828839
+UniRef50_F0R4Q8	Phosphoribosyltransferase|g__Bacteroides.s__Bacteroides_fragilis	146.84287812
+UniRef50_R7LDI0	Glycoside hydrolase family 92	147.49262537
+UniRef50_R6DAL5		41.8760469
+UniRef50_R6ZPB5|g__Bacteroides.s__Bacteroides_fragilis		204.49897751
+UniRef50_R5NZJ0	Export membrane protein SecD|g__Bacteroides.s__Bacteroides_fragilis	104.38413361
+UniRef50_F4CFG9	Coagulation factor 5 8 type domain protein	63.61323155
+UniRef50_Q64XL0	ATP binding protein	179.21146953
+UniRef50_R6ADV9|g__Bacteroides.s__Bacteroides_fragilis		63.37135615
+UniRef50_A6LBU3	tRNA lysidine synthase|g__Bacteroides.s__Bacteroides_fragilis	86.35578584
+UniRef50_Q8A883	Spermidine putrescine import ATP binding protein PotA|g__Bacteroides.s__Bacteroides_fragilis	81.30081301
+UniRef50_A9B436	30S ribosomal protein S4|g__Bacteroides.s__Bacteroides_fragilis	219.29824561
+UniRef50_E6STC7	Mannan endo 1,4 beta mannosidase	102.56410256
+UniRef50_E6SRS6	Transcriptional regulator, AraC family	97.46588694
+UniRef50_F5XA48	Conjugative transposon protein TraM|g__Bacteroides.s__Bacteroides_fragilis	82.30452675
+UniRef50_E1WTU6|g__Bacteroides.s__Bacteroides_fragilis		76.45259939
+UniRef50_F6B6L3	Biotin and thiamin synthesis associated|g__Bacteroides.s__Bacteroides_fragilis	78.80220646
+UniRef50_C7M5I0	TonB dependent receptor	34.11804845
+UniRef50_R5JB40	PAS domain S box protein|g__Bacteroides.s__Bacteroides_fragilis	37.87878788
+UniRef50_Q8A8H3	Outer membrane protein, OmpA family	183.15018315
+UniRef50_A6L3W6		62.89308176
+UniRef50_Q8AA13	Thiamine phosphate synthase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	208.33333333
+UniRef50_R7NQ15	Gluconate 5 dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	153.13935681
+UniRef50_W4UTT1	Chaperone protein HtpG	105.4019104
+UniRef50_R6HMP2|g__Bacteroides.s__Bacteroides_fragilis		63.13131313
+UniRef50_Q8A1F7	Elongation factor P|g__Bacteroides.s__Bacteroides_fragilis	239.80815348
+UniRef50_R7J8P5		229.88505747
+UniRef50_E6SMY0	2 dehydropantoate 2 reductase|g__Bacteroides.s__Bacteroides_fragilis	128.20512821
+UniRef50_R7EGT0|g__Bacteroides.s__Bacteroides_fragilis		52.65929437
+UniRef50_R7CTU0	Glycoside hydrolase family 15|g__Bacteroides.s__Bacteroides_thetaiotaomicron	95.23809524
+UniRef50_Q8A4V8	50S ribosomal protein L19|g__Bacteroides.s__Bacteroides_stercoris	490.19607843
+UniRef50_R5VAG8	DNA directed RNA polymerase subunit beta	27.3000273
+UniRef50_R6BST1	2 oxoglutarate oxidoreductase gamma subunit	248.75621891
+UniRef50_F0R632	Long chain fatty acid  CoA ligase	131.50062443
+UniRef50_W4PIV4	DNA topoisomerase III|g__Bacteroides.s__Bacteroides_fragilis	49.97501249
+UniRef50_R6ZUC7|g__Bacteroides.s__Bacteroides_thetaiotaomicron		39.96802558
+UniRef50_R5RLW5|g__Bacteroides.s__Bacteroides_fragilis		54.02485143
+UniRef50_Q64YV7	Arylsulfatase	76.27765065
+UniRef50_R5EV05|g__Bacteroides.s__Bacteroides_fragilis		61.2745098
+UniRef50_R7JAU1|g__Bacteroides.s__Bacteroides_fragilis		462.96296296
+UniRef50_R6TIJ6	Signal recognition particle protein	170.5029838
+UniRef50_R7CTU0	Glycoside hydrolase family 15	95.23809524
+UniRef50_R7AGL7|g__Bacteroides.s__Bacteroides_fragilis		113.76564278
+UniRef50_R6LK37	Inosine 5 monophosphate dehydrogenase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	75.24454477
+UniRef50_Q5LEK9|g__Bacteroides.s__Bacteroides_fragilis		119.04761905
+UniRef50_Q8A3Z3	Alkyl hydroperoxide reductase subunit F	71.37758744
+UniRef50_A6L2B2|g__Bacteroides.s__Bacteroides_fragilis		164.20361248
+UniRef50_Q64WK8|g__Bacteroides.s__Bacteroides_fragilis		89.36550492
+UniRef50_F4C3G9	HSP90 family protein|g__Bacteroides.s__Bacteroides_fragilis	61.84291899
+UniRef50_R5GF68	4 hydroxy tetrahydrodipicolinate synthase	134.40860215
+UniRef50_E6SN55	Abortive infection protein|g__Bacteroides.s__Bacteroides_stercoris	141.84397163
+UniRef50_E1WS50	Ferritin|g__Bacteroides.s__Bacteroides_stercoris	300.3003003
+UniRef50_Q64YI6	Chaperone protein DnaK|g__Bacteroides.s__Bacteroides_fragilis	138.88888889
+UniRef50_A0A015TE87	TonB linked outer membrane , SusC RagA family protein 	134.27324606
+UniRef50_Q5LF90|g__Bacteroides.s__Bacteroides_thetaiotaomicron		148.80952381
+UniRef50_R5V1X6		55.3709856
+UniRef50_F0R4V5|g__Bacteroides.s__Bacteroides_fragilis		58.99705015
+UniRef50_R5K5B2	Mutator family transposase|g__Bacteroides.s__Bacteroides_fragilis	94.6969697
+UniRef50_T2KHY1	Ribonucleoside diphosphate reductase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	41.8760469
+UniRef50_R5Y1M5	Excinuclease ABC subunit A	74.65472191
+UniRef50_A6L6J6|g__Bacteroides.s__Bacteroides_fragilis		115.34025375
+UniRef50_C6XV67	Glycosidase PH1107 related|g__Bacteroides.s__Bacteroides_stercoris	111.85682327
+UniRef50_B2RMI0	Probable dual specificity RNA methyltransferase RlmN|g__Bacteroides.s__Bacteroides_fragilis	112.99435028
+UniRef50_R5RWI8	Thiol	104.82180294
+UniRef50_R5Y5R7	Nucleotide sugar dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	92.85051068
+UniRef50_R5KU76|g__Bacteroides.s__Bacteroides_fragilis		133.33333333
+UniRef50_E1WMC2|g__Bacteroides.s__Bacteroides_fragilis		775.19379845
+UniRef50_R7AR96|g__Bacteroides.s__Bacteroides_fragilis		35.12469266
+UniRef50_E6SQN8	Two component, sigma54 specific, transcriptional regulator, Fis family	84.17508418
+UniRef50_R6JF08|g__Bacteroides.s__Bacteroides_thetaiotaomicron		66.13756614
+UniRef50_R5CR06	TonB dependent receptor plug domain protein|g__Bacteroides.s__Bacteroides_stercoris	44.80286738
+UniRef50_Q64NG8	Type I restriction modification system DNA methylase|g__Bacteroides.s__Bacteroides_fragilis	123.00123001
+UniRef50_F0R3K0	DNA mismatch repair protein MutS domain protein	60.06006006
+UniRef50_Q8Z389	UDP N acetyl D mannosamine dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	94.96676163
+UniRef50_R5JQ34	RecQ family ATP dependent DNA helicase|g__Bacteroides.s__Bacteroides_fragilis	113.96011396
+UniRef50_Q64NX2		462.96296296
+UniRef50_R5SPN7	Sigma 70 family RNA polymerase sigma factor|g__Bacteroides.s__Bacteroides_fragilis	140.64697609
+UniRef50_R5NGW5	Hydrolase carbon nitrogen family	143.98848092
+UniRef50_F5X8M5	Precorrin 3 methylase precorrin 8X methylmutase|g__Bacteroides.s__Bacteroides_fragilis	158.73015873
+UniRef50_A0M4G1	2 dehydro 3 deoxyphosphooctonate aldolase|g__Bacteroides.s__Bacteroides_fragilis	152.90519878
+UniRef50_R5JB40	PAS domain S box protein	37.87878788
+UniRef50_R6ZLJ1|g__Bacteroides.s__Bacteroides_fragilis		44.44444444
+UniRef50_Q8AAP9	Sulfate adenylyltransferase subunit 1|g__Bacteroides.s__Bacteroides_thetaiotaomicron	152.90519878
+UniRef50_F2IEZ0		33.43363424
+UniRef50_F0S6F8	Glycosyl hydrolase family 88|g__Bacteroides.s__Bacteroides_thetaiotaomicron	186.74136321
+UniRef50_E1WRZ6|g__Bacteroides.s__Bacteroides_fragilis		85.2514919
+UniRef50_R5U065	Helix turn helix domain containing protein AraC type|g__Bacteroides.s__Bacteroides_fragilis	133.33333333
+UniRef50_R6FD83	Outer membrane protein OMP85 family|g__Bacteroides.s__Bacteroides_fragilis	136.23978202
+UniRef50_D6CYD6	Outer membrane cobalamin receptor protein	66.93440428
+UniRef50_E4T7Z2	Glycosyl transferase family 2	75.93014427
+UniRef50_W0ERH5	Conjugate transposon protein|g__Bacteroides.s__Bacteroides_fragilis	83.12551953
+UniRef50_R5JQA5|g__Bacteroides.s__Bacteroides_fragilis		83.12551953
+UniRef50_R6JIE4		34.08316292
+UniRef50_R5J471		117.78563015
+UniRef50_R5CA64	Phosphate selective porin O and P|g__Bacteroides.s__Bacteroides_stercoris	114.15525114
+UniRef50_E1WVW3|g__Bacteroides.s__Bacteroides_fragilis		137.17421125
+UniRef50_R6W8Y7	Efflux transporter RND family MFP subunit|g__Bacteroides.s__Bacteroides_fragilis	91.82736455
+UniRef50_Q8A3Z3	Alkyl hydroperoxide reductase subunit F|g__Bacteroides.s__Bacteroides_fragilis	71.37758744
+UniRef50_A6KWE7	RNA polymerase ECF type sigma factor|g__Bacteroides.s__Bacteroides_thetaiotaomicron	250.62656642
+UniRef50_E4TAG3	Ribosomal RNA small subunit methyltransferase I|g__Bacteroides.s__Bacteroides_thetaiotaomicron	190.47619048
+UniRef50_D6CWL4	Beta fructosidases 	59.41770648
+UniRef50_D6D2H5	Site specific recombinase XerD|g__Bacteroides.s__Bacteroides_fragilis	118.62396204
+UniRef50_E6SMV1	DNA alkylation repair enzyme|g__Bacteroides.s__Bacteroides_fragilis	182.14936248
+UniRef50_Q7MU77	Phosphoglycerate kinase|g__Bacteroides.s__Bacteroides_fragilis	90.09009009
+UniRef50_R5U065	Helix turn helix domain containing protein AraC type	133.33333333
+UniRef50_H1YHY6	ABC transporter related protein|g__Bacteroides.s__Bacteroides_fragilis	49.16420846
+UniRef50_R5RA11	Amino acid adenylation	73.26007326
+UniRef50_R6V757	N acetylgalactosamine 6 sulfatase	72.46376812
+UniRef50_F3PEE8	Fibronectin type III domain protein|g__Bacteroides.s__Bacteroides_fragilis	36.23188406
+UniRef50_R6ALV2	Transglycosylase SLT domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	80.7102502
+UniRef50_B2RH83	Glycine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	71.83908046
+UniRef50_K0WJ22	Uracil xanthine permease xanthine permease|g__Bacteroides.s__Bacteroides_fragilis	85.03401361
+UniRef50_R5IFB4		98.03921569
+UniRef50_A6L6Q8|g__Bacteroides.s__Bacteroides_fragilis		161.81229773
+UniRef50_R6FM99|g__Bacteroides.s__Bacteroides_fragilis		64.5994832
+UniRef50_R5FRG3|g__Bacteroides.s__Bacteroides_fragilis		87.2600349
+UniRef50_Q64ML4	Two component system sensor histidine kinase response regulator hybrid|g__Bacteroides.s__Bacteroides_fragilis	38.35826621
+UniRef50_F5IX22		181.15942029
+UniRef50_R5UGF8	PP loop domain protein|g__Bacteroides.s__Bacteroides_fragilis	166.66666667
+UniRef50_R6VGJ6|g__Bacteroides.s__Bacteroides_fragilis		235.29411765
+UniRef50_Q89ZI2	O GlcNAcase BT_4395|g__Bacteroides.s__Bacteroides_fragilis	48.30917874
+UniRef50_R5NSH2	Amidophosphoribosyltransferase|g__Bacteroides.s__Bacteroides_fragilis	79.55449483
+UniRef50_R6J8D2|g__Bacteroides.s__Bacteroides_fragilis		303.03030303
+UniRef50_R5CEI1	Transporter gate domain protein|g__Bacteroides.s__Bacteroides_fragilis	92.33610342
+UniRef50_R6IE27		88.88888889
+UniRef50_R5J471|g__Bacteroides.s__Bacteroides_fragilis		117.78563015
+UniRef50_R6WA31	Peptidase|g__Bacteroides.s__Bacteroides_fragilis	36.83241252
+UniRef50_I8UY04|g__Bacteroides.s__Bacteroides_fragilis		386.1003861
+UniRef50_F0R8F4|g__Bacteroides.s__Bacteroides_fragilis		194.93177388
+UniRef50_R5J4A1|g__Bacteroides.s__Bacteroides_fragilis		62.89308176
+UniRef50_Q6LMU2	Protein RecA|g__Bacteroides.s__Bacteroides_thetaiotaomicron	112.99435028
+UniRef50_R6BST1	2 oxoglutarate oxidoreductase gamma subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron	248.75621891
+UniRef50_R7CXK0	Deoxyribose phosphate aldolase	132.80212483
+UniRef50_R5JKJ0|g__Bacteroides.s__Bacteroides_fragilis		68.30601093
+UniRef50_R5NSH2	Amidophosphoribosyltransferase	79.55449483
+UniRef50_R7H225		152.03364503
+UniRef50_G8UN22	Glycosyltransferase, group 1 family protein|g__Bacteroides.s__Bacteroides_fragilis	103.19917441
+UniRef50_R5JC25	5 formyltetrahydrofolate cyclo ligase|g__Bacteroides.s__Bacteroides_stercoris	427.35042735
+UniRef50_D1KAI8|g__Bacteroides.s__Bacteroides_stercoris		641.02564103
+UniRef50_R6E1I6|g__Bacteroides.s__Bacteroides_fragilis		84.60236887
+UniRef50_R5UXH6|g__Bacteroides.s__Bacteroides_fragilis		215.05376344
+UniRef50_Q5LI58|g__Bacteroides.s__Bacteroides_fragilis		135.50135501
+UniRef50_K1FGY4|g__Bacteroides.s__Bacteroides_fragilis		86.35578584
+UniRef50_R5V1E5|g__Bacteroides.s__Bacteroides_fragilis		187.2659176
+UniRef50_R6HVF1	Sialate O acetylesterase|g__Bacteroides.s__Bacteroides_fragilis	104.00416017
+UniRef50_B5Y9A7	Glutamate formiminotransferase|g__Bacteroides.s__Bacteroides_stercoris	267.73761714
+UniRef50_Q64QS1|g__Bacteroides.s__Bacteroides_fragilis		80.7102502
+UniRef50_R6IPY9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		38.53564547
+UniRef50_A0A015PUG3|g__Bacteroides.s__Bacteroides_fragilis		26.10284521
+UniRef50_R5G7Y9	Riboflavin synthase alpha subunit|g__Bacteroides.s__Bacteroides_fragilis	220.75055188
+UniRef50_J0S1M2	ATPase associated with various cellular activities AAA_3|g__Bacteroides.s__Bacteroides_stercoris	118.20330969
+UniRef50_S6CE85	O acetylhomoserine O acetylserine sulfhydrylase	88.4173298
+UniRef50_Q8AB77	Integrase|g__Bacteroides.s__Bacteroides_fragilis	207.03933747
+UniRef50_R7NTA9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		110.37527594
+UniRef50_Q64VZ2	Beta glucanase	148.14814815
+UniRef50_R7E276	MbeB like domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	93.6329588
+UniRef50_R7J412	Pyruvate flavodoxin oxidoreductase|g__Bacteroides.s__Bacteroides_fragilis	58.73715125
+UniRef50_R6M7Y6	Transketolase thiamine diphosphate binding domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	53.76344086
+UniRef50_R6KNV0	Thioredoxin|g__Bacteroides.s__Bacteroides_thetaiotaomicron	512.82051282
+UniRef50_R7GYR7	Acyl [acyl carrier protein] UDP N acetylglucosami ne O acyltransferase|g__Bacteroides.s__Bacteroides_stercoris	159.48963317
+UniRef50_A5ZLI2|g__Bacteroides.s__Bacteroides_fragilis		680.27210884
+UniRef50_Q2S6G8	tRNA uridine 5 carboxymethylaminomethyl modification enzyme MnmG	57.87037037
+UniRef50_D3IEN1		168.35016835
+UniRef50_B7UZU0	Na translocating NADH quinone reductase subunit D|g__Bacteroides.s__Bacteroides_fragilis	207.03933747
+UniRef50_Q04IA2	Glucose 6 phosphate isomerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	84.17508418
+UniRef50_R6ZB11|g__Bacteroides.s__Bacteroides_fragilis		150.15015015
+UniRef50_R5GUG1|g__Bacteroides.s__Bacteroides_fragilis		86.58008658
+UniRef50_F7LUS6|g__Bacteroides.s__Bacteroides_fragilis		1234.56790123
+UniRef50_A6L0S2	Transposase|g__Bacteroides.s__Bacteroides_fragilis	276.24309392
+UniRef50_R6TIJ6	Signal recognition particle protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	170.5029838
+UniRef50_E6SPF4	Sulfatase|g__Bacteroides.s__Bacteroides_fragilis	76.80491551
+UniRef50_Q64ML4	Two component system sensor histidine kinase response regulator hybrid	38.35826621
+UniRef50_R7J8G7|g__Bacteroides.s__Bacteroides_stercoris		207.03933747
+UniRef50_Q64WL2	IS66 family transposase|g__Bacteroides.s__Bacteroides_fragilis	65.6167979
+UniRef50_A6LEZ7	3 dehydroquinate synthase|g__Bacteroides.s__Bacteroides_fragilis	109.64912281
+UniRef50_A6LCF8	Glycoside hydrolase family 92|g__Bacteroides.s__Bacteroides_thetaiotaomicron	93.89969397
+UniRef50_R6CMZ9		77.16049383
+UniRef50_R5J064		60.60606061
+UniRef50_Q8A8H3	Outer membrane protein, OmpA family|g__Bacteroides.s__Bacteroides_stercoris	183.15018315
+UniRef50_E6STM7|g__Bacteroides.s__Bacteroides_fragilis		157.9778831
+UniRef50_G8UQN8	Xaa His dipeptidase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	76.45259939
+UniRef50_R5RWI8	Thiol	104.82180294
+UniRef50_E1WWS2|g__Bacteroides.s__Bacteroides_fragilis		91.32420091
+UniRef50_R5M3D3	Peptidase S9A B C family catalytic domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	48.52013586
+UniRef50_K8WDS7|g__Bacteroides.s__Bacteroides_fragilis		101.62601626
+UniRef50_R5U2A2|g__Bacteroides.s__Bacteroides_fragilis		95.1022349
+UniRef50_Q5LFL8|g__Bacteroides.s__Bacteroides_fragilis		34.72222222
+UniRef50_Q7UER7	Sulfatase 1|g__Bacteroides.s__Bacteroides_fragilis	69.3000693
+UniRef50_R6XFW2	Phosphatidate cytidylyltransferase	144.92753623
+UniRef50_Q64RZ1|g__Bacteroides.s__Bacteroides_fragilis		111.48272018
+UniRef50_F2IEW3|g__Bacteroides.s__Bacteroides_fragilis		92.85051068
+UniRef50_R5JPP6		134.58950202
+UniRef50_UPI000470128B	antitermination protein NusB|g__Bacteroides.s__Bacteroides_thetaiotaomicron	157.9778831
+UniRef50_E4T5E0	DNA polymerase III subunit beta|g__Bacteroides.s__Bacteroides_thetaiotaomicron	102.56410256
+UniRef50_R7KYE3	PAS domain S box protein	39.03200625
+UniRef50_R6DE50|g__Bacteroides.s__Bacteroides_fragilis		69.73500697
+UniRef50_R6FFL5	Hydrogenase accessory protein HypB|g__Bacteroides.s__Bacteroides_thetaiotaomicron	167.7852349
+UniRef50_E1WQV3		217.86492375
+UniRef50_D8DYA3	Type I restriction modification system, M subunit|g__Bacteroides.s__Bacteroides_fragilis	74.4047619
+UniRef50_R7DL47	Methionine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	211.64021164
+UniRef50_R6ZB50|g__Bacteroides.s__Bacteroides_fragilis		73.26007326
+UniRef50_Q5LB92|g__Bacteroides.s__Bacteroides_fragilis		85.03401361
+UniRef50_A5FFH5	Bacteroides conjugative transposon MobC BfmC like protein|g__Bacteroides.s__Bacteroides_fragilis	107.61373704
+UniRef50_R6LFD7|g__Bacteroides.s__Bacteroides_fragilis		411.52263374
+UniRef50_R6XYG2	Signal transduction histidine kinase|g__Bacteroides.s__Bacteroides_fragilis	102.24948875
+UniRef50_R6X4P3|g__Bacteroides.s__Bacteroides_stercoris		71.37758744
+UniRef50_R6Z955		57.07762557
+UniRef50_R6YQJ2|g__Bacteroides.s__Bacteroides_fragilis		61.84291899
+UniRef50_Q8A861	L Ala D L Glu epimerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	99.8003992
+UniRef50_R5TVB0	Outer membrane protein assembly complex YaeT protein|g__Bacteroides.s__Bacteroides_fragilis	40.20908725
+UniRef50_R5RWD0	Penicillin binding protein|g__Bacteroides.s__Bacteroides_fragilis	136.98630137
+UniRef50_R6CX98|g__Bacteroides.s__Bacteroides_fragilis		173.61111111
+UniRef50_R7KML3	Two component system sensor histidine kinase response regulator	25.85983967
+UniRef50_E1WS08|g__Bacteroides.s__Bacteroides_fragilis		246.91358025
+UniRef50_R6FAB3	TonB dependent receptor	35.12469266
+UniRef50_Q8A294	Putative K stimulated pyrophosphate energized sodium pump|g__Bacteroides.s__Bacteroides_thetaiotaomicron	48.66180049
+UniRef50_A6LGY9	Mobilization protein BmgB|g__Bacteroides.s__Bacteroides_thetaiotaomicron	187.61726079
+UniRef50_F0R5K9|g__Bacteroides.s__Bacteroides_fragilis		92.08103131
+UniRef50_F9D3S7	M20A family peptidase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	108.93246187
+UniRef50_Q8A9Y3	Two component system response regulator|g__Bacteroides.s__Bacteroides_fragilis	190.47619048
+UniRef50_F9D717	Plasmid transfer protein|g__Bacteroides.s__Bacteroides_fragilis	71.68458781
+UniRef50_R5RND9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		421.94092827
+UniRef50_R5RG59		30.95017023
+UniRef50_C7PM21	Transporter, hydrophobe amphiphile efflux 1  family	32.74394237
+UniRef50_A0A015TX37	FecR family protein|g__Bacteroides.s__Bacteroides_fragilis	238.94862605
+UniRef50_R6C179	Bacterial extracellular solute binding protein	83.33333333
+UniRef50_R5MLH6	Glycosyl hydrolase family 20 catalytic domain protein	91.95402299
+UniRef50_A6L4L7	ATP synthase subunit beta|g__Bacteroides.s__Bacteroides_thetaiotaomicron	73.0994152
+UniRef50_A6KYA8|g__Bacteroides.s__Bacteroides_stercoris		176.99115044
+UniRef50_Q8A7B0	Aminoacyl histidine dipeptidase|g__Bacteroides.s__Bacteroides_stercoris	76.27765065
+UniRef50_R6VFY5|g__Bacteroides.s__Bacteroides_fragilis		133.33333333
+UniRef50_A0A016K0A0	ABC transporter family protein	49.45598417
+UniRef50_R6ZRN7|g__Bacteroides.s__Bacteroides_fragilis		199.6007984
+UniRef50_I0GVS7|g__Bacteroides.s__Bacteroides_fragilis		438.73008239
+UniRef50_D6CYD6	Outer membrane cobalamin receptor protein|g__Bacteroides.s__Bacteroides_fragilis	66.93440428
+UniRef50_R5RF34		526.31578947
+UniRef50_R5PGW4	MATE efflux family protein	80.51529791
+UniRef50_P0AFF4	Nucleoside permease NupG	93.10986965
+UniRef50_D5BAW2	Sodium	64.72491909
+UniRef50_E1WJZ3		93.10986965
+UniRef50_R6L253	ATPase histidine kinase DNA gyrase B HSP90 domain protein	72.46376812
+UniRef50_R6DE90		94.42870633
+UniRef50_E5X1B6	Mutator family transposase|g__Bacteroides.s__Bacteroides_fragilis	219.29824561
+UniRef50_A7UXQ1|g__Bacteroides.s__Bacteroides_fragilis		169.20473773
+UniRef50_R6F6V6		99.05981491
+UniRef50_B3CBX4	Dinuclear metal center protein, YbgI family|g__Bacteroides.s__Bacteroides_fragilis	105.82010582
+UniRef50_G8UJ73|g__Bacteroides.s__Bacteroides_fragilis		243.30900243
+UniRef50_Q64PD8	Competence protein|g__Bacteroides.s__Bacteroides_fragilis	56.88282139
+UniRef50_A6KY55	Conserved protein found in conjugate transposon|g__Bacteroides.s__Bacteroides_fragilis	87.95074758
+UniRef50_R6XEE9	DHHA1 domain protein	113.37868481
+UniRef50_R7AR96		35.12469266
+UniRef50_R7NX49	LysM repeat domain containing protein|g__Bacteroides.s__Bacteroides_fragilis	61.72839506
+UniRef50_W6PQ03	Membrane protein, putative|g__Bacteroides.s__Bacteroides_stercoris	62.18905473
+UniRef50_H1XZP6	Glycosyl transferase, family 4, conserved region containing protein|g__Bacteroides.s__Bacteroides_fragilis	124.84394507
+UniRef50_J9FUX1	Ribose phosphate pyrophosphokinase	239.80815348
+UniRef50_F0R6R3	Glycoside hydrolase family protein	194.55252918
+UniRef50_Q64TB1	Decarboxylating precorrin 6y C5,15 methyltransferase	86.58008658
+UniRef50_R6YPZ0		96.33911368
+UniRef50_R6A758	Purine or other phosphorylase family 1|g__Bacteroides.s__Bacteroides_thetaiotaomicron	274.3484225
+UniRef50_Q64XN0|g__Bacteroides.s__Bacteroides_fragilis		223.71364653
+UniRef50_P0AC90	GDP mannose 4,6 dehydratase|g__Bacteroides.s__Bacteroides_fragilis	108.22510823
+UniRef50_R6Z583|g__Bacteroides.s__Bacteroides_fragilis		112.23344557
+UniRef50_Q2RZU6	tRNA nucleotidyltransferase poly polymerase family protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	147.81966001
+UniRef50_E6STC7	Mannan endo 1,4 beta mannosidase|g__Bacteroides.s__Bacteroides_fragilis	102.56410256
+UniRef50_F2IEZ0|g__Bacteroides.s__Bacteroides_fragilis		33.43363424
+UniRef50_Q64WI5	Tyrosine type site specific recombinase|g__Bacteroides.s__Bacteroides_fragilis	128.7001287
+UniRef50_D1KAI8		641.02564103
+UniRef50_R5PJG7|g__Bacteroides.s__Bacteroides_fragilis		490.19607843
+UniRef50_R5RBW7|g__Bacteroides.s__Bacteroides_fragilis		80.32128514
+UniRef50_E6SWH2|g__Bacteroides.s__Bacteroides_fragilis		222.71714922
+UniRef50_A0A016L6F5	His Kinase A domain protein	25.72016461
+UniRef50_K1G5S0|g__Bacteroides.s__Bacteroides_fragilis		478.46889952
+UniRef50_A0A015XVP2	Clostripain family protein|g__Bacteroides.s__Bacteroides_fragilis	96.33911368
+UniRef50_D5EZC2	CBS transporter associated domain protein	180.66847335
+UniRef50_R5JD19|g__Bacteroides.s__Bacteroides_fragilis		396.82539683
+UniRef50_Q64MV0|g__Bacteroides.s__Bacteroides_fragilis		574.71264368
+UniRef50_R6YY65|g__Bacteroides.s__Bacteroides_fragilis		36.87315634
+UniRef50_R7J023	LAO AO transport system ATPase|g__Bacteroides.s__Bacteroides_fragilis	106.15711253
+UniRef50_R6JL42	Glycosyl hydrolase family 76|g__Bacteroides.s__Bacteroides_fragilis	76.80491551
+UniRef50_R7H225|g__Bacteroides.s__Bacteroides_thetaiotaomicron		76.10350076
+UniRef50_E6SNW2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		228.31050228
+UniRef50_R7KML3	Two component system sensor histidine kinase response regulator|g__Bacteroides.s__Bacteroides_thetaiotaomicron	25.85983967
+UniRef50_R5J064|g__Bacteroides.s__Bacteroides_thetaiotaomicron		60.60606061
+UniRef50_R6HWG1|g__Bacteroides.s__Bacteroides_fragilis		172.71157168
+UniRef50_R6ZB13	AraC family transcriptional regulator|g__Bacteroides.s__Bacteroides_fragilis	59.95203837
+UniRef50_R5RK45		47.1475719
+UniRef50_R6TIU0	Alpha 1 2 mannosidase	47.21435316
+UniRef50_Q8A9Z7|g__Bacteroides.s__Bacteroides_fragilis		56.6893424
+UniRef50_P12848	Ribonucleoside diphosphate reductase large subunit	1.09359622
+UniRef50_R5C341|g__Bacteroides.s__Bacteroides_fragilis		287.35632184
+UniRef50_R6LIV7	Transcriptional regulator effector binding domain protein	282.48587571
+UniRef50_Q2S6J2	Uridylate kinase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	178.25311943
+UniRef50_A6LH84	Ribonuclease R	99.87655706
+UniRef50_Q8A241	Two component system sensor histidine kinase response regulator, hybrid |g__Bacteroides.s__Bacteroides_fragilis	26.04166667
+UniRef50_Q64XL0	ATP binding protein|g__Bacteroides.s__Bacteroides_fragilis	179.21146953
+UniRef50_R5VKI6|g__Bacteroides.s__Bacteroides_thetaiotaomicron		56.30630631
+UniRef50_R7P593|g__Bacteroides.s__Bacteroides_thetaiotaomicron		260.41666667
+UniRef50_E4T1P1	C4 dicarboxylate anaerobic carrier	69.15629322
+UniRef50_R7L055	Beta hexosaminidase|g__Bacteroides.s__Bacteroides_fragilis	107.00909577
+UniRef50_R6RWC3	Phosphatidate cytidylyltransferase|g__Bacteroides.s__Bacteroides_fragilis	123.9157373
+UniRef50_E1WTU6		76.45259939
+UniRef50_R7DFS4|g__Bacteroides.s__Bacteroides_fragilis		64.85084306
+UniRef50_Q5LCG0		76.80491551
+UniRef50_R6FAN6|g__Bacteroides.s__Bacteroides_thetaiotaomicron		99.20634921
+UniRef50_W4US16	Alanine  tRNA ligase|g__Bacteroides.s__Bacteroides_stercoris	121.3592233
+UniRef50_R6HJM3|g__Bacteroides.s__Bacteroides_fragilis		38.62495172
+UniRef50_Q64NF0	Transposase for insertion sequence element IS21 like	72.93946025
+UniRef50_I3Z8F2	DNA RNA helicase, superfamily II|g__Bacteroides.s__Bacteroides_fragilis	90.33423668
+UniRef50_Q67JV0	50S ribosomal protein L16	350.87719298
+UniRef50_R6Z3C2|g__Bacteroides.s__Bacteroides_fragilis		140.99612745
+UniRef50_A6L531	Lon protease	43.06632214
+UniRef50_B2UML1	Aminotransferase class I and II|g__Bacteroides.s__Bacteroides_fragilis	60.38647343
+UniRef50_R5KHY4	2 oxoglutarate	116.14401858
+UniRef50_Q5LEJ2|g__Bacteroides.s__Bacteroides_fragilis		358.42293907
+UniRef50_D6D2H5	Site specific recombinase XerD	118.62396204
+UniRef50_R6IRX6	Two component system sensor protein histidine kinase	110.37527594
+UniRef50_G4QII0	D isomer specific 2 hydroxyacid dehydrogenase, NAD binding protein|g__Bacteroides.s__Bacteroides_stercoris	117.37089202
+UniRef50_D9RRB5	Alpha amylase, catalytic domain protein	58.78894768
+UniRef50_A0A016BJA8	TonB linked outer membrane , SusC RagA family protein	96.37014054
+UniRef50_R6LGE0|g__Bacteroides.s__Bacteroides_fragilis		141.24293785
+UniRef50_Q8A069	Beta galactosidase I|g__Bacteroides.s__Bacteroides_thetaiotaomicron	35.57452864
+UniRef50_R6K7N0|g__Bacteroides.s__Bacteroides_fragilis		110.37527594
+UniRef50_I9AMW1|g__Bacteroides.s__Bacteroides_fragilis		93.37068161
+UniRef50_R6FM99|g__Bacteroides.s__Bacteroides_thetaiotaomicron		64.5994832
+UniRef50_R6MJS6	Tetracycline resistance element regulator RteA|g__Bacteroides.s__Bacteroides_fragilis	46.42525534
+UniRef50_Q5L8K8	GTPase Der|g__Bacteroides.s__Bacteroides_fragilis	85.91065292
+UniRef50_R6MQF6	Mobilization protein BmpH|g__Bacteroides.s__Bacteroides_fragilis	164.20361248
+UniRef50_A6L050	2,3 bisphosphoglycerate independent phosphoglycerate mutase|g__Bacteroides.s__Bacteroides_fragilis	73.26007326
+UniRef50_E1WVX2|g__Bacteroides.s__Bacteroides_fragilis		32.80839895
+UniRef50_R5I929	Exodeoxyribonuclease VII large subunit|g__Bacteroides.s__Bacteroides_fragilis	91.57509158
+UniRef50_R6LIV7	Transcriptional regulator effector binding domain protein|g__Bacteroides.s__Bacteroides_fragilis	141.24293785
+UniRef50_W4UTT1	Chaperone protein HtpG|g__Bacteroides.s__Bacteroides_stercoris	52.65929437
+UniRef50_Q650R8		60.38647343
+UniRef50_A0A015PEX2	Starch binding associating with outer membrane family protein|g__Bacteroides.s__Bacteroides_fragilis	58.27505828
+UniRef50_R5MRY4	Transposase IS4 family|g__Bacteroides.s__Bacteroides_fragilis	132.27513228
+UniRef50_R6HYK5	N acetylglucosamine 6 phosphate deacetylase|g__Bacteroides.s__Bacteroides_fragilis	98.32841691
+UniRef50_R6IDA1	Mechanosensitive ion channel family protein	91.07468124
+UniRef50_R6XEE9	DHHA1 domain protein|g__Bacteroides.s__Bacteroides_fragilis	113.37868481
+UniRef50_A6LGN1	Glycoside hydrolase family 78|g__Bacteroides.s__Bacteroides_thetaiotaomicron	38.98635478
+UniRef50_B1ZNE5	50S ribosomal protein L2	148.14814815
+UniRef50_A6L0Q5|g__Bacteroides.s__Bacteroides_fragilis		178.25311943
+UniRef50_R6XM86	DNA repair protein radA|g__Bacteroides.s__Bacteroides_stercoris	164.20361248
+UniRef50_Q7UER7	Sulfatase 1	69.3000693
+UniRef50_R6J859	TonB dependent receptor	69.95452956
+UniRef50_R6PKV8	ATP dependent DNA helicase PcrA|g__Bacteroides.s__Bacteroides_thetaiotaomicron	45.1059991
+UniRef50_R6L7R7	Phosphate transporter family protein|g__Bacteroides.s__Bacteroides_stercoris	47.75549188
+UniRef50_A7UXS8	Site specific recombinase, phage integrase family|g__Bacteroides.s__Bacteroides_fragilis	93.37068161
+UniRef50_Q8A624	ATP dependent 6 phosphofructokinase 2|g__Bacteroides.s__Bacteroides_stercoris	120.33694344
+UniRef50_R5JPW7	TolC family type I secretion outer membrane protein|g__Bacteroides.s__Bacteroides_stercoris	79.74481659
+UniRef50_F9D1I7|g__Bacteroides.s__Bacteroides_fragilis		114.94252874
+UniRef50_R7NU49	Aspartokinase I homoserine dehydrogenase	87.60402979
+UniRef50_E1WLE0|g__Bacteroides.s__Bacteroides_thetaiotaomicron		161.03059581
+UniRef50_E4W2B0	Toxin antitoxin system, toxin component domain protein|g__Bacteroides.s__Bacteroides_fragilis	154.32098765
+UniRef50_Q7MWM7	UDP N acetylmuramoyl L alanyl D glutamate  2,6 diaminopimelate ligase|g__Bacteroides.s__Bacteroides_fragilis	152.90519878
+UniRef50_R7DJ00|g__Bacteroides.s__Bacteroides_fragilis		98.61932939
+UniRef50_W4PF59	Undecaprenyl phosphate galactosephosphotransferase	226.75736961
+UniRef50_R5NF97	Transcriptional regulator AraC family|g__Bacteroides.s__Bacteroides_fragilis	141.84397163
+UniRef50_R7DPS8	PAS domain S box protein|g__Bacteroides.s__Bacteroides_fragilis	56.88282139
+UniRef50_Q5L9V6|g__Bacteroides.s__Bacteroides_fragilis		50.50505051
+UniRef50_A6LCK4	Galactokinase|g__Bacteroides.s__Bacteroides_fragilis	99.50248756
+UniRef50_R5G0E3		112.23344557
+UniRef50_Q64PP4		1123.59550562
+UniRef50_E1WUS9|g__Bacteroides.s__Bacteroides_fragilis		165.83747927
+UniRef50_R5BFK2	Hsp20 alpha crystallin family protein|g__Bacteroides.s__Bacteroides_stercoris	350.87719298
+UniRef50_B7BEQ3|g__Bacteroides.s__Bacteroides_fragilis		59.84440455
+UniRef50_Q8A294	Putative K stimulated pyrophosphate energized sodium pump|g__Bacteroides.s__Bacteroides_fragilis	48.66180049
+UniRef50_E6SN55	Abortive infection protein	141.84397163
+UniRef50_A0A016H2M6|g__Bacteroides.s__Bacteroides_fragilis		671.1409396
+UniRef50_K1RLH9	Membrane protein containing DUF304, prokaryotic transmembrane adjacent region|g__Bacteroides.s__Bacteroides_fragilis	183.15018315
+UniRef50_R6E821|g__Bacteroides.s__Bacteroides_fragilis		85.14261388
+UniRef50_W4UTT1	Chaperone protein HtpG|g__Bacteroides.s__Bacteroides_fragilis	52.74261603
+UniRef50_R5V6X2|g__Bacteroides.s__Bacteroides_fragilis		79.93605116
+UniRef50_R5I929	Exodeoxyribonuclease VII large subunit	91.57509158
+UniRef50_R6XVK0	Signal recognition particle receptor FtsY|g__Bacteroides.s__Bacteroides_stercoris	123.45679012
+UniRef50_E6SUV3	dTDP 4 dehydrorhamnose reductase|g__Bacteroides.s__Bacteroides_fragilis	134.95276653
+UniRef50_D6D2P5	Superfamily II DNA and RNA helicases	31.44654088
+UniRef50_B6YQ01	50S ribosomal protein L11|g__Bacteroides.s__Bacteroides_fragilis	340.13605442
+UniRef50_R7PBK8	Transporter	164.20361248
+UniRef50_R7KJT4|g__Bacteroides.s__Bacteroides_fragilis		370.37037037
+UniRef50_W4PA70	Isoleucyl tRNA synthetase	29.94908655
+UniRef50_K1G015|g__Bacteroides.s__Bacteroides_fragilis		32.42542153
+UniRef50_D6D2I5	DNA binding domain, excisionase family|g__Bacteroides.s__Bacteroides_fragilis	132.80212483
+UniRef50_E4T325	CDP glucose 4,6 dehydratase	102.88065844
+UniRef50_G8UMA0	Zinc ribbon domain protein|g__Bacteroides.s__Bacteroides_fragilis	148.14814815
+UniRef50_R5RWD0	Penicillin binding protein	136.98630137
+UniRef50_F4C8Z3	TonB dependent receptor	32.74394237
+UniRef50_R7DV69|g__Bacteroides.s__Bacteroides_fragilis		392.15686275
+UniRef50_R6J859	TonB dependent receptor|g__Bacteroides.s__Bacteroides_fragilis	69.95452956
+UniRef50_F2KYX6	PUA domain protein	97.18172983
+UniRef50_R5JCW3|g__Bacteroides.s__Bacteroides_fragilis		40.6504065
+UniRef50_G8UMG2	ABC 3 transport family protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	151.51515152
+UniRef50_P38674	Ketol acid reductoisomerase, mitochondrial|g__Bacteroides.s__Bacteroides_stercoris	111.85682327
+UniRef50_D6D2P8|g__Bacteroides.s__Bacteroides_fragilis		70.0280112
+UniRef50_Q64YV7	Arylsulfatase|g__Bacteroides.s__Bacteroides_fragilis	76.27765065
+UniRef50_Q64N18	Two component system sensor histidine kinase response regulator hybrid	25.77984016
+UniRef50_F3ZSI0	TonB dependent receptor|g__Bacteroides.s__Bacteroides_fragilis	31.68567807
+UniRef50_E1WQW0|g__Bacteroides.s__Bacteroides_fragilis		82.10180624
+UniRef50_Q7NLS3	UPF0145 protein gll1048|g__Bacteroides.s__Bacteroides_fragilis	584.79532164
+UniRef50_P0AC90	GDP mannose 4,6 dehydratase|g__Bacteroides.s__Bacteroides_stercoris	107.87486516
+UniRef50_R7DMI0|g__Bacteroides.s__Bacteroides_thetaiotaomicron		208.33333333
+UniRef50_R5PGW4	MATE efflux family protein|g__Bacteroides.s__Bacteroides_fragilis	80.51529791
+UniRef50_A6L0Y0	Glycoside hydrolase family 32, candidate levanase|g__Bacteroides.s__Bacteroides_fragilis	58.1733566
+UniRef50_F5X8M5	Precorrin 3 methylase precorrin 8X methylmutase	158.73015873
+UniRef50_E1WUP5|g__Bacteroides.s__Bacteroides_fragilis		96.61835749
+UniRef50_R7LDI0	Glycoside hydrolase family 92|g__Bacteroides.s__Bacteroides_fragilis	147.49262537
+UniRef50_W0ESC1	Phospholipase|g__Bacteroides.s__Bacteroides_fragilis	160.25641026
+UniRef50_R5M715	Creatinase|g__Bacteroides.s__Bacteroides_fragilis	197.23865878
+UniRef50_R7EKR5|g__Bacteroides.s__Bacteroides_fragilis		275.48209366
+UniRef50_Q12VL9	Cytidine diphosphoglucose 4,6 dehydratase|g__Bacteroides.s__Bacteroides_fragilis	105.15247108
+UniRef50_W4UUV5	Recombination inhibitory protein MutS2|g__Bacteroides.s__Bacteroides_fragilis	42.57130694
+UniRef50_A0A015ZQR0|g__Bacteroides.s__Bacteroides_fragilis		277.77777778
+UniRef50_R5DBP2|g__Bacteroides.s__Bacteroides_fragilis		34.15300546
+UniRef50_Q5LGW9	Alpha N acetylgalactosaminidase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	90.09009009
+UniRef50_Q64XH5	Two component system sensor histidine kinase	57.07762557
+UniRef50_R7PA29	Malonyl CoA acyl carrier protein transacylase|g__Bacteroides.s__Bacteroides_fragilis	135.50135501
+UniRef50_Q64NF0	Transposase for insertion sequence element IS21 like|g__Bacteroides.s__Bacteroides_fragilis	72.93946025
+UniRef50_A6L370|g__Bacteroides.s__Bacteroides_fragilis		156.99286846
+UniRef50_I8UY04		386.1003861
+UniRef50_R6NQK2	Cyclic nucleotide binding domain protein	52.41090147
+UniRef50_P52043	Propionyl CoA	222.22222222
+UniRef50_X5D7K7	Transcriptional regulator|g__Bacteroides.s__Bacteroides_thetaiotaomicron	303.03030303
+UniRef50_Q5LI41	Acetate kinase|g__Bacteroides.s__Bacteroides_stercoris	191.02196753
+UniRef50_I9AZ92|g__Bacteroides.s__Bacteroides_fragilis		234.74178404
+UniRef50_R5VAG8	DNA directed RNA polymerase subunit beta|g__Bacteroides.s__Bacteroides_fragilis	27.3000273
+UniRef50_W4PIV4	DNA topoisomerase III	49.97501249
+UniRef50_Q2RZU6	tRNA nucleotidyltransferase poly polymerase family protein	147.81966001
+UniRef50_R5TXC7		133.33333333
+UniRef50_R5JBX4		107.61541949
+UniRef50_R6A2W6	Trigger factor tig	82.91873964
+UniRef50_R5JGD3|g__Bacteroides.s__Bacteroides_fragilis		106.83760684
+UniRef50_E4T734	Phosphoesterase PA phosphatase related protein|g__Bacteroides.s__Bacteroides_fragilis	210.97046414
+UniRef50_R5JMV2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		47.75549188
+UniRef50_Q64QG5	AraC family transcriptional regulator	139.47001395
+UniRef50_A0A016N3Q8	Starch binding associating with outer membrane family protein|g__Bacteroides.s__Bacteroides_fragilis	76.27765065
+UniRef50_E1WRM5|g__Bacteroides.s__Bacteroides_fragilis		146.84287812
+UniRef50_R5U4F7	MATE efflux family protein	87.48906387
+UniRef50_R6K8G4|g__Bacteroides.s__Bacteroides_fragilis		110.74197121
+UniRef50_E1WQE2|g__Bacteroides.s__Bacteroides_fragilis		87.48906387
+UniRef50_R6SI90|g__Bacteroides.s__Bacteroides_fragilis		180.18018018
+UniRef50_F0R4T1	Integral membrane sensor hybrid histidine kinase	45.66210046
+UniRef50_Q64N26		37.11952487
+UniRef50_P15623	Glutamine synthetase|g__Bacteroides.s__Bacteroides_stercoris	49.01960784
+UniRef50_P9WQK2|g__Bacteroides.s__Bacteroides_fragilis		66.26905235
+UniRef50_R5JMV2|g__Bacteroides.s__Bacteroides_stercoris		47.41583689
+UniRef50_Q5LC41	Membrane protein insertase YidC|g__Bacteroides.s__Bacteroides_thetaiotaomicron	58.58230814
+UniRef50_W0EU49	Molecular chaperone DnaJ|g__Bacteroides.s__Bacteroides_fragilis	114.94252874
+UniRef50_R7EFC2		70.1754386
+UniRef50_I3YK46	Bacteroides conjugative transposon TraK protein|g__Bacteroides.s__Bacteroides_fragilis	632.91139241
+UniRef50_E6ST80|g__Bacteroides.s__Bacteroides_fragilis		358.42293907
+UniRef50_F3ZPA3	Transcriptional regulator, MarR family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	336.7003367
+UniRef50_A0A015MYV1	Type IV secretory system Conjugative DNA transfer family protein|g__Bacteroides.s__Bacteroides_fragilis	64.35006435
+UniRef50_E1WV94		52.24660397
+UniRef50_E1WUV2|g__Bacteroides.s__Bacteroides_fragilis		84.60236887
+UniRef50_E6SN84	Beta N acetylhexosaminidase|g__Bacteroides.s__Bacteroides_fragilis	52.00208008
+UniRef50_E6SRS6	Transcriptional regulator, AraC family|g__Bacteroides.s__Bacteroides_fragilis	97.46588694
+UniRef50_Q6LMU2	Protein RecA	112.99435028
+UniRef50_K0CZ06	Glycosyl hydrolase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	94.96676163
+UniRef50_R6T2Y9	Transcriptional regulator|g__Bacteroides.s__Bacteroides_thetaiotaomicron	133.33333333
+UniRef50_I3YIZ4	Restriction endonuclease S subunit	195.07291809
+UniRef50_C6IHZ2	HsdR family type I site specific deoxyribonuclease	35.95828839
+UniRef50_I8ZU81|g__Bacteroides.s__Bacteroides_fragilis		136.89253936
+UniRef50_R5JPP6|g__Bacteroides.s__Bacteroides_fragilis		134.58950202
+UniRef50_R6YY65		36.87315634
+UniRef50_A6L012	Biosynthetic arginine decarboxylase|g__Bacteroides.s__Bacteroides_stercoris	57.37234653
+UniRef50_Q9HTD7	Aspartate ammonia lyase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	77.88161994
+UniRef50_R5LYQ6|g__Bacteroides.s__Bacteroides_fragilis		107.87486516
+UniRef50_R7DL47	Methionine  tRNA ligase	211.64021164
+UniRef50_W8F0R1	Copper translocating P type ATPase	55.64830273
+UniRef50_R6ZUC7		39.96802558
+UniRef50_R7GXK8	F5 8 type C domain protein|g__Bacteroides.s__Bacteroides_fragilis	53.24813632
+UniRef50_R7CXK0	Deoxyribose phosphate aldolase|g__Bacteroides.s__Bacteroides_fragilis	132.80212483
+UniRef50_R5UMJ2|g__Bacteroides.s__Bacteroides_fragilis		187.2659176
+UniRef50_A6L0Y0	Glycoside hydrolase family 32, candidate levanase	115.9434317
+UniRef50_R5AL42|g__Bacteroides.s__Bacteroides_fragilis		71.22507123
+UniRef50_R5JV60	Major facilitator superfamily transporter|g__Bacteroides.s__Bacteroides_fragilis	91.82736455
+UniRef50_Q7MUD3	Isoleucine  tRNA ligase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	29.94908655
+UniRef50_R6W358|g__Bacteroides.s__Bacteroides_fragilis		139.47001395
+UniRef50_R6YQJ2		61.84291899
+UniRef50_R6JBG2	RNA polymerase ECF type sigma factor|g__Bacteroides.s__Bacteroides_stercoris	220.75055188
+UniRef50_Q8AB57	UPF0313 protein BT_0254	58.37711617
+UniRef50_R6ZAV9	SusC RagA family TonB linked outer membrane protein	30.80714726
+UniRef50_Q11QB8	30S ribosomal protein S3|g__Bacteroides.s__Bacteroides_fragilis	341.88034188
+UniRef50_C4ZE38|g__Bacteroides.s__Bacteroides_fragilis		411.52263374
+UniRef50_R5CHZ7	MATE efflux family protein	179.21146953
+UniRef50_Q6ADC9	50S ribosomal protein L20	497.51243781
+UniRef50_F3ZRK2	Tyrosine recombinase XerC	136.61202186
+UniRef50_P44681	Ribosome binding ATPase YchF	104.82180294
+UniRef50_Q64X97	Two component system sensor histidine kinase|g__Bacteroides.s__Bacteroides_fragilis	39.44773176
+UniRef50_F4C906	RagB SusD domain containing protein|g__Bacteroides.s__Bacteroides_fragilis	62.6566416
+UniRef50_A7ZFS8		8.8162402
+UniRef50_R5CR17	Lipid A disaccharide synthase	101.31712259
+UniRef50_R5RAS6|g__Bacteroides.s__Bacteroides_fragilis		192.67822736
+UniRef50_A0A015MLD6	MMPL family protein 	66.66726667
+UniRef50_R7E2E7|g__Bacteroides.s__Bacteroides_stercoris		59.10165485
+UniRef50_R6YYH8|g__Bacteroides.s__Bacteroides_fragilis		72.07207207
+UniRef50_C3Q7Y6|g__Bacteroides.s__Bacteroides_fragilis		330.0330033
+UniRef50_G8UL18	TonB linked outer membrane protein, SusC RagA family|g__Bacteroides.s__Bacteroides_fragilis	33.00330033
+UniRef50_R6L8R3	Aldose 1 epimerase|g__Bacteroides.s__Bacteroides_fragilis	105.48523207
+UniRef50_R7EJ51|g__Bacteroides.s__Bacteroides_thetaiotaomicron		129.70168612
+UniRef50_R5RHT5|g__Bacteroides.s__Bacteroides_fragilis		43.97537379
+UniRef50_D6D518	Myo inositol 1 phosphate synthase	87.71929825
+UniRef50_K1GG56|g__Bacteroides.s__Bacteroides_fragilis		158.73015873
+UniRef50_R5S220		175.20836211
+UniRef50_R6YBT5	Gliding motility associated protein GldE	83.12551953
+UniRef50_R7DK98	ATP binding protein Mrp Nbp35 family|g__Bacteroides.s__Bacteroides_fragilis	104.49320794
+UniRef50_I8ZU81		136.89253936
+UniRef50_D6D8E2	Fucose 4 O acetylase and related acetyltransferases|g__Bacteroides.s__Bacteroides_fragilis	113.37868481
+UniRef50_A5FGS7	Probable transcriptional regulatory protein Fjoh_2560	170.06802721
+UniRef50_Q59219	Intracellular exo alpha L arabinofuranosidase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	143.36917563
+UniRef50_R5GBZ4	ABC transporter related protein|g__Bacteroides.s__Bacteroides_fragilis	135.50135501
+UniRef50_R6CMZ9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		77.16049383
+UniRef50_C9LKR8		66.53359947
+UniRef50_R7JQ95		46.42525534
+UniRef50_F0SDG2	Glycosyl hydrolase family 88|g__Bacteroides.s__Bacteroides_thetaiotaomicron	107.18113612
+UniRef50_E4T1P1	C4 dicarboxylate anaerobic carrier|g__Bacteroides.s__Bacteroides_fragilis	69.15629322
+UniRef50_B5D0L7|g__Bacteroides.s__Bacteroides_fragilis		294.98525074
+UniRef50_E5X1B6	Mutator family transposase	219.29824561
+UniRef50_B6YRK7	Phosphoribosylaminoimidazole succinocarboxamide synthase|g__Bacteroides.s__Bacteroides_fragilis	126.26262626
+UniRef50_A6L0S2	Transposase	276.24309392
+UniRef50_Q8A2E8	Ribonuclease 3|g__Bacteroides.s__Bacteroides_thetaiotaomicron	106.49627263
+UniRef50_A6L0N6	Conserved protein found in conjugate transposon|g__Bacteroides.s__Bacteroides_fragilis	212.15448607
+UniRef50_I3YIW7	DNA binding protein, excisionase family	125.31328321
+UniRef50_Q7UQD2	UPF0365 protein RB6389|g__Bacteroides.s__Bacteroides_thetaiotaomicron	117.37089202
+UniRef50_Q8A1M0|g__Bacteroides.s__Bacteroides_fragilis		132.80212483
+UniRef50_R6SEZ6	dTDP glucose 4,6 dehydratase|g__Bacteroides.s__Bacteroides_stercoris	101.01010101
+UniRef50_F9Z6V3	DUF234 DEXX box ATPase|g__Bacteroides.s__Bacteroides_fragilis	163.39869281
+UniRef50_R7KLA8|g__Bacteroides.s__Bacteroides_stercoris		84.60236887
+UniRef50_R6JDJ4	Transcription termination factor Rho|g__Bacteroides.s__Bacteroides_thetaiotaomicron	49.52947003
+UniRef50_R5C323	Phosphate binding protein	150.82956259
+UniRef50_R6V688|g__Bacteroides.s__Bacteroides_fragilis		42.30118443
+UniRef50_R5R963	L serine dehydratase|g__Bacteroides.s__Bacteroides_fragilis	94.42870633
+UniRef50_R5S3H1	Relaxase mobilization nuclease domain protein|g__Bacteroides.s__Bacteroides_fragilis	273.22404372
+UniRef50_Q64QH6|g__Bacteroides.s__Bacteroides_fragilis		35.0140056
+UniRef50_E6SSM2	Transcriptional regulator, AraC family	149.47683109
+UniRef50_R5JCW3		40.6504065
+UniRef50_A0A015TE87	TonB linked outer membrane , SusC RagA family protein |g__Bacteroides.s__Bacteroides_thetaiotaomicron	67.13662303
+UniRef50_R7CYV8|g__Bacteroides.s__Bacteroides_thetaiotaomicron		50.35246727
+UniRef50_R6V714	Transmembrane permease|g__Bacteroides.s__Bacteroides_thetaiotaomicron	130.20833333
+UniRef50_A0A015MLD6	MMPL family protein |g__Bacteroides.s__Bacteroides_stercoris	33.43363424
+UniRef50_D2QFV1	Phosphoribosylaminoimidazolecarboxamide formyltransferase IMP cyclohydrolase	72.78020378
+UniRef50_P44776	L fucose permease	84.60236887
+UniRef50_R5NW37|g__Bacteroides.s__Bacteroides_thetaiotaomicron		97.46588694
+UniRef50_Q7W4T6	Holliday junction ATP dependent DNA helicase RuvB|g__Bacteroides.s__Bacteroides_fragilis	113.76564278
+UniRef50_F9D1D7	Aminopeptidase C |g__Bacteroides.s__Bacteroides_thetaiotaomicron	96.61835749
+UniRef50_I3YJC1	Plasmid recombination enzyme	73.0994152
+UniRef50_F0R4S9	Copper amine oxidase domain containing protein|g__Bacteroides.s__Bacteroides_fragilis	177.61989343
+UniRef50_R6A9G6|g__Bacteroides.s__Bacteroides_fragilis		127.71392082
+UniRef50_A6LC45|g__Bacteroides.s__Bacteroides_fragilis		59.63029219
+UniRef50_Q9TMM9	Elongation factor Tu, apicoplast|g__Bacteroides.s__Bacteroides_fragilis	96.61835749
+UniRef50_R5RES8|g__Bacteroides.s__Bacteroides_fragilis		58.89281508
+UniRef50_R5JK30	Competence protein ComEA helix hairpin helix repeat region|g__Bacteroides.s__Bacteroides_fragilis	50.6585613
+UniRef50_A2U077	Methylmalonyl CoA mutase large subunit|g__Bacteroides.s__Bacteroides_fragilis	50.05005005
+UniRef50_D2QQN2	Resolvase domain protein	217.86492375
+UniRef50_D6D0X5	Translation factor SUA5	241.54589372
+UniRef50_Q64RZ2|g__Bacteroides.s__Bacteroides_fragilis		131.2335958
+UniRef50_R5RQZ7|g__Bacteroides.s__Bacteroides_fragilis		328.40722496
+UniRef50_Q8A684	1 deoxy D xylulose 5 phosphate reductoisomerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	97.75171065
+UniRef50_Q5L9W0|g__Bacteroides.s__Bacteroides_fragilis		280.11204482
+UniRef50_A6LGN1	Glycoside hydrolase family 78	38.98635478
+UniRef50_R9HCE8		94.42870633
+UniRef50_R7J836|g__Bacteroides.s__Bacteroides_fragilis		165.01650165
+UniRef50_R6LDX1	ADP ribosylglycohydrolase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	156.49452269
+UniRef50_F6B6L3	Biotin and thiamin synthesis associated	78.80220646
+UniRef50_Q5LEQ5	Translation initiation factor IF 3|g__Bacteroides.s__Bacteroides_fragilis	396.82539683
+UniRef50_UPI00047A8A86	hypothetical protein	9.41807386
+UniRef50_R7JAP3	Glutaminyl tRNA synthetase	125.78616352
+UniRef50_R7AJD7|g__Bacteroides.s__Bacteroides_fragilis		107.87486516
+UniRef50_Q2S6G8	tRNA uridine 5 carboxymethylaminomethyl modification enzyme MnmG|g__Bacteroides.s__Bacteroides_fragilis	57.87037037
+UniRef50_K1FGY4		86.35578584
+UniRef50_R6L7R7	Phosphate transporter family protein	142.99358712
+UniRef50_G7SQ06	Cell wall associated hydrolase|g__Bacteroides.s__Bacteroides_fragilis	803.21285141
+UniRef50_R6PKV8	ATP dependent DNA helicase PcrA	45.1059991
+UniRef50_E1WS63|g__Bacteroides.s__Bacteroides_fragilis		93.37068161
+UniRef50_R7DGZ2|g__Bacteroides.s__Bacteroides_fragilis		333.33333333
+UniRef50_R5S6E5		78.24726135
+UniRef50_R6HMP2		63.13131313
+UniRef50_R5G0E3|g__Bacteroides.s__Bacteroides_fragilis		112.23344557
+UniRef50_R6W5V6|g__Bacteroides.s__Bacteroides_fragilis		123.45679012
+UniRef50_R7DGZ2		333.33333333
+UniRef50_R7KY15	AraC type transcription regulator|g__Bacteroides.s__Bacteroides_fragilis	144.92753623
+UniRef50_E1WKD8|g__Bacteroides.s__Bacteroides_fragilis		88.4173298
+UniRef50_A6L1D7	Penicillin binding protein 2|g__Bacteroides.s__Bacteroides_fragilis	58.58230814
+UniRef50_R5JIF8|g__Bacteroides.s__Bacteroides_fragilis		48.37929366
+UniRef50_A0A016LVA7	Glycosyl transferase 2 family protein	123.00123001
+UniRef50_R5CNZ4|g__Bacteroides.s__Bacteroides_thetaiotaomicron		317.46031746
+UniRef50_F0R5I4|g__Bacteroides.s__Bacteroides_fragilis		193.79844961
+UniRef50_R7NX00|g__Bacteroides.s__Bacteroides_fragilis		205.76131687
+UniRef50_R5RIT6		87.03220191
+UniRef50_R5R8E8	Kelch repeat containing protein	78.74015748
+UniRef50_E1WQE1	Putative exported lipoprotein|g__Bacteroides.s__Bacteroides_fragilis	80.7102502
+UniRef50_E8REP5	Peptidase U32	59.63029219
+UniRef50_Q5L8L7	ATP dependent Clp protease ATP binding subunit ClpX	182.39888215
+UniRef50_E8REP5	Peptidase U32|g__Bacteroides.s__Bacteroides_fragilis	59.63029219
+UniRef50_F9CZX7	DNA repair protein RecN|g__Bacteroides.s__Bacteroides_stercoris	66.13756614
+UniRef50_R5RCC8|g__Bacteroides.s__Bacteroides_fragilis		91.82736455
+UniRef50_I1YRT3	Phosphoglucomutase phosphomannomutase, alpha beta alpha domain I|g__Bacteroides.s__Bacteroides_fragilis	62.6566416
+UniRef50_R7NT28	TIGR00255 family protein|g__Bacteroides.s__Bacteroides_fragilis	133.33333333
+UniRef50_D4WJ09	Putative 3 deoxy D manno octulosonic acid transferase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	93.10986965
+UniRef50_F9CZX7	DNA repair protein RecN	66.13756614
+UniRef50_R5ZWQ4	Isocitrate dehydrogenase [NADP]	96.89922481
+UniRef50_E4VR96|g__Bacteroides.s__Bacteroides_fragilis		704.22535211
+UniRef50_Q64VH3	Alkaline phosphatase	201.40986908
+UniRef50_I3YNC5	DNA RNA helicase, superfamily II, SNF2 family|g__Bacteroides.s__Bacteroides_fragilis	35.05082369
+UniRef50_F4C3G9	HSP90 family protein	61.84291899
+UniRef50_A0A016FV57|g__Bacteroides.s__Bacteroides_fragilis		193.79844961
+UniRef50_R6ADV9		63.37135615
+UniRef50_R6JBG2	RNA polymerase ECF type sigma factor	220.75055188
+UniRef50_Q64ZZ3|g__Bacteroides.s__Bacteroides_fragilis		243.30900243
+UniRef50_Q11PK9	Cysteine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	75.4147813
+UniRef50_Q64WV4|g__Bacteroides.s__Bacteroides_fragilis		155.76323988
+UniRef50_E1WRZ0|g__Bacteroides.s__Bacteroides_fragilis		666.66666667
+UniRef50_R6HJM3		38.62495172
+UniRef50_B0TGQ8	Dihydroorotate dehydrogenase B ), catalytic subunit|g__Bacteroides.s__Bacteroides_fragilis	131.2335958
+UniRef50_R6ZFF9		119.47431302
+UniRef50_E1WVZ0|g__Bacteroides.s__Bacteroides_fragilis		512.82051282
+UniRef50_W0EUW5	Transport energizing protein, ExbD TolR family|g__Bacteroides.s__Bacteroides_fragilis	199.6007984
+UniRef50_R5RIT6|g__Bacteroides.s__Bacteroides_fragilis		87.03220191
+UniRef50_R6LDX1	ADP ribosylglycohydrolase	156.49452269
+UniRef50_Q64Y93		65.23157208
+UniRef50_R5RHT5		43.97537379
+UniRef50_F0R3K8|g__Bacteroides.s__Bacteroides_fragilis		137.17421125
+UniRef50_E1WW09	Putative transmembrane protein|g__Bacteroides.s__Bacteroides_fragilis	111.48272018
+UniRef50_Q64VD1|g__Bacteroides.s__Bacteroides_fragilis		214.62363235
+UniRef50_D5EH68	NAD dependent epimerase dehydratase|g__Bacteroides.s__Bacteroides_stercoris	123.9157373
+UniRef50_Q8GBW6	Methylmalonyl CoA carboxyltransferase 12S subunit|g__Bacteroides.s__Bacteroides_fragilis	72.15007215
+UniRef50_R5RHL6|g__Bacteroides.s__Bacteroides_fragilis		50.50505051
+UniRef50_R5V1Q8|g__Bacteroides.s__Bacteroides_thetaiotaomicron		43.06632214
+UniRef50_R7EQT9	Single stranded DNA specific exonuclease RecJ	63.73486297
+UniRef50_R5LZJ6|g__Bacteroides.s__Bacteroides_fragilis		71.22507123
+UniRef50_A5FGS7	Probable transcriptional regulatory protein Fjoh_2560|g__Bacteroides.s__Bacteroides_stercoris	170.06802721
+UniRef50_E4T325	CDP glucose 4,6 dehydratase|g__Bacteroides.s__Bacteroides_fragilis	102.88065844
+UniRef50_E1WQV3|g__Bacteroides.s__Bacteroides_fragilis		217.86492375
+UniRef50_I9B0J2|g__Bacteroides.s__Bacteroides_fragilis		404.8582996
+UniRef50_P44776	L fucose permease|g__Bacteroides.s__Bacteroides_fragilis	84.60236887
+UniRef50_R7DHB1|g__Bacteroides.s__Bacteroides_fragilis		162.60162602
+UniRef50_R6FDT4|g__Bacteroides.s__Bacteroides_fragilis		584.79532164
+UniRef50_A0A015TE87	TonB linked outer membrane , SusC RagA family protein |g__Bacteroides.s__Bacteroides_fragilis	67.13662303
+UniRef50_R7L382	Redox active disulfide protein 2|g__Bacteroides.s__Bacteroides_fragilis	1234.56790123
+UniRef50_Q7UIA7	3 isopropylmalate dehydratase large subunit|g__Bacteroides.s__Bacteroides_fragilis	80.32128514
+UniRef50_R7HMB1		308.64197531
+UniRef50_D6CZF2	DNA binding domain, excisionase family|g__Bacteroides.s__Bacteroides_fragilis	104.82180294
+UniRef50_R5GUG1		163.38500209
+UniRef50_R7DNV5|g__Bacteroides.s__Bacteroides_fragilis		116.55011655
+UniRef50_UPI000468D029	glutamine synthetase|g__Bacteroides.s__Bacteroides_stercoris	98.03921569
+UniRef50_W4UYD9	RND multidrug efflux transporter|g__Bacteroides.s__Bacteroides_stercoris	34.68609088
+UniRef50_A6L0H6|g__Bacteroides.s__Bacteroides_fragilis		44.38526409
+UniRef50_F0R4Q8	Phosphoribosyltransferase	146.84287812
+UniRef50_D6D8E2	Fucose 4 O acetylase and related acetyltransferases	113.37868481
+UniRef50_F9D137	ABC type transport system involved in cytochrome c biogenesis, permease component	157.2327044
+UniRef50_R7PF44	ABC transporter ATP binding protein|g__Bacteroides.s__Bacteroides_fragilis	76.27765065
+UniRef50_D6CZF2	DNA binding domain, excisionase family	104.82180294
+UniRef50_Q7UQD2	UPF0365 protein RB6389	117.37089202
+UniRef50_R5AW74|g__Bacteroides.s__Bacteroides_fragilis		208.33333333
+UniRef50_A0A016E1L4	Glycosyl transferases group 1 family protein|g__Bacteroides.s__Bacteroides_fragilis	49.09180167
+UniRef50_I3YR12		218.81838074
+UniRef50_H1XZP6	Glycosyl transferase, family 4, conserved region containing protein	124.84394507
+UniRef50_R5LYI2|g__Bacteroides.s__Bacteroides_fragilis		431.03448276
+UniRef50_F9Z819	Phosphoadenosine phosphosulfate reductase	88.4173298
+UniRef50_F4KKX0	Radical SAM domain protein|g__Bacteroides.s__Bacteroides_fragilis	106.83760684
+UniRef50_F9D3S7	M20A family peptidase|g__Bacteroides.s__Bacteroides_fragilis	109.64912281
+UniRef50_R5C552|g__Bacteroides.s__Bacteroides_stercoris		203.66598778
+UniRef50_W4UMH5	Pyruvate,phosphate dikinase	77.7907429
+UniRef50_E1WRW8|g__Bacteroides.s__Bacteroides_fragilis		79.17656374
+UniRef50_R6Z955|g__Bacteroides.s__Bacteroides_fragilis		57.07762557
+UniRef50_R5R887		46.75081814
+UniRef50_P15623	Glutamine synthetase	49.01960784
+UniRef50_R6DFM3	Aspartokinase|g__Bacteroides.s__Bacteroides_fragilis	85.47008547
+UniRef50_R7DPS8	PAS domain S box protein	56.88282139
+UniRef50_R5CR17	Lipid A disaccharide synthase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	101.31712259
+UniRef50_F0R927	Phosphate specific transport system accessory protein PhoU|g__Bacteroides.s__Bacteroides_fragilis	185.18518519
+UniRef50_F0R8H2	ParB like partition protein	63.97952655
+UniRef50_C6XV67	Glycosidase PH1107 related	111.85682327
+UniRef50_R6AKM5|g__Bacteroides.s__Bacteroides_fragilis		483.09178744
+UniRef50_Q8A7K8	Replicative DNA helicase	80.90614887
+UniRef50_Q5LGX1	Possible outer membrane protein|g__Bacteroides.s__Bacteroides_fragilis	61.16207951
+UniRef50_Q2JDK2	Elongation factor 4	60.53268765
+UniRef50_W4PA70	Isoleucyl tRNA synthetase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	29.94908655
+UniRef50_UPI00047A8A86	hypothetical protein|unclassified	9.41807386
+UniRef50_F5YJJ6	2 oxoglutarate oxidoreductase, alpha subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron	135.50135501
+UniRef50_Q8A800	Diaminopimelate decarboxylase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	197.8239367
+UniRef50_R7DWI3|g__Bacteroides.s__Bacteroides_fragilis		42.5170068
+UniRef50_R7E5Y3	Ribonucleoside diphosphate reductase|g__Bacteroides.s__Bacteroides_fragilis	40.45307443
+UniRef50_Q8A8J6	Glyoxalase family like protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	340.13605442
+UniRef50_R5ASI6|g__Bacteroides.s__Bacteroides_fragilis		64.5994832
+UniRef50_T2KHY1	Ribonucleoside diphosphate reductase	83.7520938
+UniRef50_R6G902|g__Bacteroides.s__Bacteroides_fragilis		252.52525253
+UniRef50_R7GYR7	Acyl [acyl carrier protein] UDP N acetylglucosami ne O acyltransferase	159.48963317
+UniRef50_R6SEZ6	dTDP glucose 4,6 dehydratase	101.01010101
+UniRef50_D4IMY8	Transposase IS116 IS110 IS902 family	406.50406504
+UniRef50_R5PPB4|g__Bacteroides.s__Bacteroides_fragilis		81.30081301
+UniRef50_Q5LCG0|g__Bacteroides.s__Bacteroides_fragilis		76.80491551
+UniRef50_R7NK73|g__Bacteroides.s__Bacteroides_fragilis		85.2514919
+UniRef50_W4US16	Alanine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	40.50222762
+UniRef50_R6A2W6	Trigger factor tig|g__Bacteroides.s__Bacteroides_fragilis	82.91873964
+UniRef50_Q8A7B0	Aminoacyl histidine dipeptidase	152.20779492
+UniRef50_R6CMB9|g__Bacteroides.s__Bacteroides_fragilis		121.21212121
+UniRef50_T2KHY1	Ribonucleoside diphosphate reductase|g__Bacteroides.s__Bacteroides_stercoris	41.8760469
+UniRef50_R5RWK5|g__Bacteroides.s__Bacteroides_fragilis		134.40860215
+UniRef50_R5F9D0	Carboxynorspermidine decarboxylase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	101.01010101
+UniRef50_R5ZWQ4	Isocitrate dehydrogenase [NADP]|g__Bacteroides.s__Bacteroides_stercoris	96.89922481
+UniRef50_C7M5I0	TonB dependent receptor|g__Bacteroides.s__Bacteroides_stercoris	34.11804845
+UniRef50_Q64VH3	Alkaline phosphatase|g__Bacteroides.s__Bacteroides_fragilis	201.40986908
+UniRef50_R6JGW7	Metallo beta lactamase domain protein|g__Bacteroides.s__Bacteroides_stercoris	204.49897751
+UniRef50_F0SDG2	Glycosyl hydrolase family 88	107.18113612
+UniRef50_K1GG56		158.73015873
+UniRef50_R5R936	tRNA rRNA methyltransferase	169.20473773
+UniRef50_R5VD83|g__Bacteroides.s__Bacteroides_fragilis		28.12939522
+UniRef50_Q64N18	Two component system sensor histidine kinase response regulator hybrid|g__Bacteroides.s__Bacteroides_fragilis	25.77984016
+UniRef50_T2KQD4	Na+ transporting methylmalonyl CoA oxaloacetate decarboxylase, beta subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron	98.91196835
+UniRef50_Q64QG5	AraC family transcriptional regulator|g__Bacteroides.s__Bacteroides_fragilis	139.47001395
+UniRef50_R6DEB0|g__Bacteroides.s__Bacteroides_fragilis		55.55555556
+UniRef50_R5IHM4|g__Bacteroides.s__Bacteroides_fragilis		32.02049312
+UniRef50_R5JDF9		31.9284802
+UniRef50_R6YVB9|g__Bacteroides.s__Bacteroides_fragilis		102.56410256
+UniRef50_F3ZNG1	Heavy metal translocating P type ATPase|g__Bacteroides.s__Bacteroides_fragilis	142.33012679
+UniRef50_R6JHV8	Transporter anaerobic C4 dicarboxylate uptake  family protein	86.13264427
+UniRef50_Q8A392		287.35632184
+UniRef50_E1WVN3	Putative LPS biosynthesis related polysaccharide transporter flippase|g__Bacteroides.s__Bacteroides_fragilis	83.96305626
+UniRef50_R5FJB9	Conjugative transposon TraN protein|g__Bacteroides.s__Bacteroides_fragilis	361.04874815
+UniRef50_R7IN27	Aconitate hydratase|g__Bacteroides.s__Bacteroides_fragilis	95.51098376
+UniRef50_R6A0Z5	FeS assembly protein SufD|g__Bacteroides.s__Bacteroides_stercoris	83.7520938
+UniRef50_G8UMR7	Prevent host death family protein	67.34006734
+UniRef50_C3QR17|g__Bacteroides.s__Bacteroides_fragilis		152.90519878
+UniRef50_A6KZP1	Flotillin like protein|g__Bacteroides.s__Bacteroides_fragilis	67.75067751
+UniRef50_W4PF59	Undecaprenyl phosphate galactosephosphotransferase|g__Bacteroides.s__Bacteroides_fragilis	226.75736961
+UniRef50_Q650K7	Tyrosine  tRNA ligase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	87.48906387
+UniRef50_R5V1X6|g__Bacteroides.s__Bacteroides_fragilis		55.3709856
+UniRef50_E4T7Y9	SpoIID LytB domain protein|g__Bacteroides.s__Bacteroides_fragilis	82.91873964
+UniRef50_Q64Y93|g__Bacteroides.s__Bacteroides_fragilis		65.23157208
+UniRef50_R5V1N1	SusC RagA family TonB linked outer membrane protein	33.26679973
+UniRef50_R6YBT5	Gliding motility associated protein GldE|g__Bacteroides.s__Bacteroides_stercoris	83.12551953
+UniRef50_E6ST83	Integrase family protein|g__Bacteroides.s__Bacteroides_fragilis	87.2600349
+UniRef50_P70882	Tetracycline resistance protein TetQ|g__Bacteroides.s__Bacteroides_fragilis	112.61261261
+UniRef50_G8UNX0	Outer membrane efflux protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	74.23904974
+UniRef50_H1YHY6	ABC transporter related protein	49.16420846
+UniRef50_R6ZV72		160.25641026
+UniRef50_B5F621	Mannonate dehydratase|g__Bacteroides.s__Bacteroides_fragilis	94.42870633
+UniRef50_Q7MWM7	UDP N acetylmuramoyl L alanyl D glutamate  2,6 diaminopimelate ligase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	76.98229407
+UniRef50_R5S0C0|g__Bacteroides.s__Bacteroides_fragilis		246.91358025
+UniRef50_D5EYI2	Maltodextrin phosphorylase|g__Bacteroides.s__Bacteroides_fragilis	41.40786749
+UniRef50_R5IHM4		32.02049312
+UniRef50_F5YJJ6	2 oxoglutarate oxidoreductase, alpha subunit	135.50135501
+UniRef50_E1WRR5|g__Bacteroides.s__Bacteroides_fragilis		110.0110011
+UniRef50_R7AJ32|g__Bacteroides.s__Bacteroides_fragilis		78.6163522
+UniRef50_F3ZTK2	Alkyl hydroperoxide reductase  Thiol specific antioxidant  Mal allergen|g__Bacteroides.s__Bacteroides_stercoris	282.48587571
+UniRef50_R5RQ58|g__Bacteroides.s__Bacteroides_fragilis		128.7001287
+UniRef50_K9WRF1|g__Bacteroides.s__Bacteroides_fragilis		59.63029219
+UniRef50_Q7W4T6	Holliday junction ATP dependent DNA helicase RuvB|g__Bacteroides.s__Bacteroides_stercoris	113.37868481
+UniRef50_A6KWE7	RNA polymerase ECF type sigma factor	250.62656642
+UniRef50_Q5LCF4	CinA like protein|g__Bacteroides.s__Bacteroides_fragilis	92.33610342
+UniRef50_R6A758	Purine or other phosphorylase family 1	274.3484225
+UniRef50_G4QII0	D isomer specific 2 hydroxyacid dehydrogenase, NAD binding protein	234.74178404
+UniRef50_R6ZV72|g__Bacteroides.s__Bacteroides_thetaiotaomicron		160.25641026
+UniRef50_Q5LCF4	CinA like protein	92.33610342
+UniRef50_R6IG72	Acyltransferase|g__Bacteroides.s__Bacteroides_fragilis	99.50248756
+UniRef50_H8KPI4	RagB SusD family protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	74.57121551
+UniRef50_A6L997	Protein translocase subunit SecA|g__Bacteroides.s__Bacteroides_fragilis	62.89308176
+UniRef50_Q64V13|g__Bacteroides.s__Bacteroides_fragilis		46.6853408
+UniRef50_A7GH10	Hydroxylamine reductase|g__Bacteroides.s__Bacteroides_fragilis	67.75067751
+UniRef50_E1WUP1|g__Bacteroides.s__Bacteroides_fragilis		68.87052342
+UniRef50_J9R6J8	Acetylornithine deacetylase Succinyl diaminopimelate desuccinylase related deacylase|g__Bacteroides.s__Bacteroides_fragilis	82.30452675
+UniRef50_R6CYT6|g__Bacteroides.s__Bacteroides_fragilis		68.72852234
+UniRef50_D6CZH6	Site specific DNA methylase|g__Bacteroides.s__Bacteroides_fragilis	127.2264631
+UniRef50_F0R4T0	Two component, sigma54 specific, transcriptional regulator, Fis family|g__Bacteroides.s__Bacteroides_fragilis	170.5029838
+UniRef50_D4IMY8	Transposase IS116 IS110 IS902 family|g__Bacteroides.s__Bacteroides_fragilis	406.50406504
+UniRef50_R7JAP3	Glutaminyl tRNA synthetase|g__Bacteroides.s__Bacteroides_fragilis	62.89308176
+UniRef50_W4PWJ1	ATP dependent Clp protease ATP binding subunit ClpA|g__Bacteroides.s__Bacteroides_thetaiotaomicron	42.08754209
+UniRef50_R5JKJ0		68.30601093
+UniRef50_R6M7Y6	Transketolase thiamine diphosphate binding domain protein|g__Bacteroides.s__Bacteroides_stercoris	53.76344086
+UniRef50_R7JCR6|g__Bacteroides.s__Bacteroides_thetaiotaomicron		212.31422505
+UniRef50_UPI000470128B	antitermination protein NusB	157.9778831
+UniRef50_P76085	Phenylacetate coenzyme A ligase|g__Bacteroides.s__Bacteroides_fragilis	87.03220191
+UniRef50_F0QZF1	Bacteroides conjugation system ATPase, TraG family|g__Bacteroides.s__Bacteroides_fragilis	83.96305626
+UniRef50_R5U190|g__Bacteroides.s__Bacteroides_fragilis		32.33107016
+UniRef50_R6MQF6	Mobilization protein BmpH	164.20361248
+UniRef50_R6D8F5	Solute	71.22507123
+UniRef50_Q67JV0	50S ribosomal protein L16|g__Bacteroides.s__Bacteroides_fragilis	350.87719298
+UniRef50_R5MIK0	Pyridoxamine 5 phosphate oxidase family protein|g__Bacteroides.s__Bacteroides_fragilis	387.59689922
+UniRef50_D2QQN2	Resolvase domain protein|g__Bacteroides.s__Bacteroides_fragilis	217.86492375
+UniRef50_Q7MUW1	UDP N acetylglucosamine 1 carboxyvinyltransferase|g__Bacteroides.s__Bacteroides_fragilis	86.58008658
+UniRef50_D5BAW2	Sodium	64.72491909
+UniRef50_R6DAL5|g__Bacteroides.s__Bacteroides_stercoris		41.8760469
+UniRef50_Q4UY06	Sulfate adenylyltransferase subunit 2|g__Bacteroides.s__Bacteroides_thetaiotaomicron	131.75230567
+UniRef50_UPI000468D029	glutamine synthetase|g__Bacteroides.s__Bacteroides_fragilis	98.03921569
+UniRef50_W4PWJ1	ATP dependent Clp protease ATP binding subunit ClpA	84.01626326
+UniRef50_F9D1I7		114.94252874
+UniRef50_R6JHE8	Efflux transporter RND family MFP subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron	105.48523207
+UniRef50_R7DDM5|g__Bacteroides.s__Bacteroides_fragilis		164.20361248
+UniRef50_A6KY76|g__Bacteroides.s__Bacteroides_stercoris		628.93081761
+UniRef50_Q64XV3|g__Bacteroides.s__Bacteroides_thetaiotaomicron		287.35632184
+UniRef50_E6WX55	Xylose isomerase	81.9000819
+UniRef50_Q5L8G1	Putative transmembrane protein	192.67822736
+UniRef50_Q8A6E7|g__Bacteroides.s__Bacteroides_fragilis		70.77140835
+UniRef50_D6D584	Arylsulfatase A and related enzymes	77.16049383
+UniRef50_Q5LJ70	tRNA 2 methylthio N dimethylallyladenosine synthase|g__Bacteroides.s__Bacteroides_fragilis	81.69934641
+UniRef50_R6C179	Bacterial extracellular solute binding protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	83.33333333
+UniRef50_R7EQT9	Single stranded DNA specific exonuclease RecJ|g__Bacteroides.s__Bacteroides_thetaiotaomicron	63.73486297
+UniRef50_B0NV90|g__Bacteroides.s__Bacteroides_stercoris		217.86492375
+UniRef50_I8VZ80|g__Bacteroides.s__Bacteroides_fragilis		793.65079365
+UniRef50_F0S6F8	Glycosyl hydrolase family 88	186.74136321
+UniRef50_C6Y1P9	Alpha L fucosidase|g__Bacteroides.s__Bacteroides_fragilis	79.93605116
+UniRef50_R5TVB0	Outer membrane protein assembly complex YaeT protein	80.36972982
+UniRef50_Q8A6G5	UPF0324 membrane protein BT_1919	112.99435028
+UniRef50_Q5L7R8|g__Bacteroides.s__Bacteroides_fragilis		86.80555556
+UniRef50_R5U9S4	RNA polymerase sigma 70 factor	183.15018315
+UniRef50_R5W7L0	Sodium hydrogen exchanger	75.93014427
+UniRef50_R6XM86	DNA repair protein radA|g__Bacteroides.s__Bacteroides_fragilis	164.20361248
+UniRef50_A6L1D7	Penicillin binding protein 2	58.58230814
+UniRef50_E1WSY5|g__Bacteroides.s__Bacteroides_fragilis		118.62396204
+UniRef50_W4UMH5	Pyruvate,phosphate dikinase|g__Bacteroides.s__Bacteroides_fragilis	77.7907429
+UniRef50_F3ZUS7	ATP synthase subunit a|g__Bacteroides.s__Bacteroides_stercoris	97.46588694
+UniRef50_F4LMG6	Phosphoenolpyruvate phosphomutase|g__Bacteroides.s__Bacteroides_fragilis	83.12551953
+UniRef50_R5CHZ7	MATE efflux family protein|g__Bacteroides.s__Bacteroides_fragilis	179.21146953
+UniRef50_R5MQ02|g__Bacteroides.s__Bacteroides_fragilis		141.84397163
+UniRef50_R5IFB4|g__Bacteroides.s__Bacteroides_fragilis		98.03921569
+UniRef50_E5WY75|g__Bacteroides.s__Bacteroides_fragilis		110.0110011
+UniRef50_R5R8E8	Kelch repeat containing protein|g__Bacteroides.s__Bacteroides_fragilis	78.74015748
+UniRef50_R5JR93	Alanine racemase	42.62574595
+UniRef50_F0R149	Beta lactamase domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	152.90519878
+UniRef50_D6D499	Sulfatase	142.45014245
+UniRef50_F0R8X8	Tetracycline regulation of excision, RteC|g__Bacteroides.s__Bacteroides_fragilis	219.29824561
+UniRef50_D6D8P2	Outer membrane transport energization protein TonB |g__Bacteroides.s__Bacteroides_stercoris	186.21973929
+UniRef50_F9Z581	Acriflavin resistance protein	33.43363424
+UniRef50_G7SQ06	Cell wall associated hydrolase	803.21285141
+UniRef50_D6CWL4	Beta fructosidases |g__Bacteroides.s__Bacteroides_thetaiotaomicron	59.41770648
+UniRef50_R6ZRJ3|g__Bacteroides.s__Bacteroides_fragilis		156.49452269
+UniRef50_R5GUG1|g__Bacteroides.s__Bacteroides_stercoris		76.80491551
+UniRef50_D6D711	Site specific recombinase XerD|g__Bacteroides.s__Bacteroides_fragilis	175.00995155
+UniRef50_R7E8L2|g__Bacteroides.s__Bacteroides_fragilis		187.2659176
+UniRef50_Q64UX0|g__Bacteroides.s__Bacteroides_fragilis		34.18803419
+UniRef50_R6Z2A5|g__Bacteroides.s__Bacteroides_stercoris		144.92753623
+UniRef50_R5K2Q8|g__Bacteroides.s__Bacteroides_thetaiotaomicron		176.36684303
+UniRef50_C7PM21	Transporter, hydrophobe amphiphile efflux 1  family|g__Bacteroides.s__Bacteroides_fragilis	32.74394237
+UniRef50_Q8A0X3	TonB	59.52380952
+UniRef50_Q8A392|g__Bacteroides.s__Bacteroides_thetaiotaomicron		287.35632184
+UniRef50_R6FBS9	Valine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	80.61265619
+UniRef50_R5YXY8|g__Bacteroides.s__Bacteroides_fragilis		305.81039755
+UniRef50_R6XBT3	Pyruvate kinase|g__Bacteroides.s__Bacteroides_stercoris	76.45259939
+UniRef50_R5C5X4|g__Bacteroides.s__Bacteroides_stercoris		54.46623094
+UniRef50_A6LDU4	Excisionase in mobilizable transposon, xis protein	456.62100457
+UniRef50_R5F9D0	Carboxynorspermidine decarboxylase	101.01010101
+UniRef50_W4P8H9	ATP dependent DNA helicase RecG|g__Bacteroides.s__Bacteroides_fragilis	51.36106831
+UniRef50_L9LVN7	Transposase, mutator family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	144.92753623
+UniRef50_T2N9I9	Conjugative transposon TraJ protein|g__Bacteroides.s__Bacteroides_fragilis	116.95906433
+UniRef50_C1A930	50S ribosomal protein L27|g__Bacteroides.s__Bacteroides_fragilis	833.33333333
+UniRef50_A6L0J2|g__Bacteroides.s__Bacteroides_fragilis		181.15942029
+UniRef50_R6Y7H1	Efflux transporter RND family MFP subunit|g__Bacteroides.s__Bacteroides_fragilis	91.07468124
+UniRef50_R6ZUL7|g__Bacteroides.s__Bacteroides_fragilis		45.91368228
+UniRef50_A6L6Q8		161.81229773
+UniRef50_R7JJL0	4 phosphoerythronate dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	129.70168612
+UniRef50_Q58903		190.47619048
+UniRef50_R6FC26|g__Bacteroides.s__Bacteroides_fragilis		69.15629322
+UniRef50_T2KQD4	Na+ transporting methylmalonyl CoA oxaloacetate decarboxylase, beta subunit	197.8239367
+UniRef50_R7KL80|g__Bacteroides.s__Bacteroides_fragilis		232.28803717
+UniRef50_R7DWI3		42.5170068
+UniRef50_R6BPS6	Putrescine transport system permease potI|g__Bacteroides.s__Bacteroides_fragilis	156.49452269
+UniRef50_D5EZC2	CBS transporter associated domain protein|g__Bacteroides.s__Bacteroides_fragilis	90.33423668
+UniRef50_R7IZ37		58.07200929
+UniRef50_R6W8Y7	Efflux transporter RND family MFP subunit	91.82736455
+UniRef50_I4BA63	H+transporting two sector ATPase alpha beta subunit central region	62.18905473
+UniRef50_Q12VL9	Cytidine diphosphoglucose 4,6 dehydratase	105.15247108
+UniRef50_R6NQK2	Cyclic nucleotide binding domain protein|g__Bacteroides.s__Bacteroides_stercoris	52.41090147
+UniRef50_W0EUW5	Transport energizing protein, ExbD TolR family	199.6007984
+UniRef50_R6V714	Transmembrane permease	130.20833333
+UniRef50_R6FQ77|g__Bacteroides.s__Bacteroides_fragilis		138.88888889
+UniRef50_A0A016FAQ7	N 6 DNA Methylase family protein |g__Bacteroides.s__Bacteroides_fragilis	17.65536723
+UniRef50_K1RLH9	Membrane protein containing DUF304, prokaryotic transmembrane adjacent region	183.15018315
+UniRef50_E1WUR9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		68.44626968
+UniRef50_R5NYT6	Hydrophobic domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	82.91873964
+UniRef50_R5NGW5	Hydrolase carbon nitrogen family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	71.99424046
+UniRef50_Q9JS61	Dihydroxy acid dehydratase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	60.49606776
+UniRef50_F9Z3F4	Epidermal growth factor receptor  L domain|g__Bacteroides.s__Bacteroides_fragilis	51.51983514
+UniRef50_R9I8K3|g__Bacteroides.s__Bacteroides_fragilis		88.88888889
+UniRef50_Q64MX0|g__Bacteroides.s__Bacteroides_fragilis		45.72473708
+UniRef50_R6ZAV1|g__Bacteroides.s__Bacteroides_fragilis		613.49693252
+UniRef50_D6D0X5	Translation factor SUA5|g__Bacteroides.s__Bacteroides_thetaiotaomicron	241.54589372
+UniRef50_R5JKC4|g__Bacteroides.s__Bacteroides_stercoris		217.86492375
+UniRef50_I9AUI8|g__Bacteroides.s__Bacteroides_fragilis		165.42597188
+UniRef50_A4BWH2	Chaperone protein DnaK	56.49717514
+UniRef50_R6AHC9|g__Bacteroides.s__Bacteroides_stercoris		819.67213115
+UniRef50_F3ZSI0	TonB dependent receptor	31.68567807
+UniRef50_R6MHI2	Mobilization protein|g__Bacteroides.s__Bacteroides_fragilis	79.74481659
+UniRef50_Q64W76	ABC transporter permease	89.36550492
+UniRef50_I1YT44	DNA mismatch repair protein MutS|g__Bacteroides.s__Bacteroides_fragilis	40.55150041
+UniRef50_F7MB89|g__Bacteroides.s__Bacteroides_fragilis		184.16206262
+UniRef50_R6JL42	Glycosyl hydrolase family 76	76.80491551
+UniRef50_Q8A069	Beta galactosidase I	35.57452864
+UniRef50_R6D8F5	Solute	142.60265866
+UniRef50_R5VB06		44.56327986
+UniRef50_X5E207	Conjugal transfer protein|g__Bacteroides.s__Bacteroides_fragilis	606.06060606
+UniRef50_Q64TB1	Decarboxylating precorrin 6y C5,15 methyltransferase|g__Bacteroides.s__Bacteroides_fragilis	86.58008658
+UniRef50_Q64XN0		223.71364653
+UniRef50_R5S220|g__Bacteroides.s__Bacteroides_stercoris		87.48906387
+UniRef50_D6D499	Sulfatase|g__Bacteroides.s__Bacteroides_fragilis	142.45014245
+UniRef50_R5UXB6|g__Bacteroides.s__Bacteroides_stercoris		216.45021645
+UniRef50_R7EFC2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		70.1754386
+UniRef50_R6CUU5|g__Bacteroides.s__Bacteroides_fragilis		250.62656642
+UniRef50_Q5LHD7	5 nucleotidase SurE|g__Bacteroides.s__Bacteroides_fragilis	161.81229773
+UniRef50_C8WK91	Ribonucleoside diphosphate reductase|g__Bacteroides.s__Bacteroides_fragilis	42.19409283
+UniRef50_F0R3K7|g__Bacteroides.s__Bacteroides_fragilis		100.70493454
+UniRef50_R5M6Z7	Peptidase U32 family	59.52380952
+UniRef50_F2KYX6	PUA domain protein|g__Bacteroides.s__Bacteroides_fragilis	97.18172983
+UniRef50_R5TXC7|g__Bacteroides.s__Bacteroides_thetaiotaomicron		133.33333333
+UniRef50_R7H225|g__Bacteroides.s__Bacteroides_fragilis		75.93014427
+UniRef50_F0R4T0	Two component, sigma54 specific, transcriptional regulator, Fis family	170.5029838
+UniRef50_P9WQK2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		64.97725796
+UniRef50_Q9RZP0	Potassium transporting ATPase B chain|g__Bacteroides.s__Bacteroides_fragilis	52.65929437
+UniRef50_R7DK98	ATP binding protein Mrp Nbp35 family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	105.48523207
+UniRef50_D6D2P5	Superfamily II DNA and RNA helicases|g__Bacteroides.s__Bacteroides_fragilis	31.44654088
+UniRef50_R6Z2N6|g__Bacteroides.s__Bacteroides_thetaiotaomicron		205.76131687
+UniRef50_F9D3S7	M20A family peptidase	218.58158468
+UniRef50_R6J8D2		303.03030303
+UniRef50_R5Y371|g__Bacteroides.s__Bacteroides_stercoris		83.96305626
+UniRef50_R6AS24	Zinc dependent metalloproteinase lipoprotein BF0631 family	86.13264427
+UniRef50_R7ACY8	Dyp type peroxidase	249.68789014
+UniRef50_R5W193|g__Bacteroides.s__Bacteroides_stercoris		85.91065292
+UniRef50_R7PCK6	Acyltransferase	100.1001001
+UniRef50_A4BWH2	Chaperone protein DnaK|g__Bacteroides.s__Bacteroides_fragilis	56.49717514
+UniRef50_E6SUV3	dTDP 4 dehydrorhamnose reductase	134.95276653
+UniRef50_W8F6N7	ATP dependent DNA helicase RecQ|g__Bacteroides.s__Bacteroides_fragilis	60.38647343
+UniRef50_Q650K4	4 deoxy L threo 5 hexosulose uronate ketol isomerase|g__Bacteroides.s__Bacteroides_stercoris	144.3001443
+UniRef50_G8UNX0	Outer membrane efflux protein	74.23904974
+UniRef50_R5JP39	PfkB family carbohydrate kinase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	119.04761905
+UniRef50_F3ZSW9|g__Bacteroides.s__Bacteroides_fragilis		113.76564278
+UniRef50_R5AK03|g__Bacteroides.s__Bacteroides_fragilis		41.00041
+UniRef50_R6HVF1	Sialate O acetylesterase	104.00416017
+UniRef50_P9WQK2		131.24631031
+UniRef50_R5M6Z7	Peptidase U32 family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	59.52380952
+UniRef50_Q8A389	Alpha galactosidase|g__Bacteroides.s__Bacteroides_fragilis	74.57121551
+UniRef50_Q64QL9|g__Bacteroides.s__Bacteroides_fragilis		497.51243781
+UniRef50_A6L6L6	Tyrosine type site specific recombinase|g__Bacteroides.s__Bacteroides_fragilis	461.17037286
+UniRef50_C6Y1P9	Alpha L fucosidase	79.93605116
+UniRef50_D6D2F3	Predicted P loop ATPase and inactivated derivatives|g__Bacteroides.s__Bacteroides_thetaiotaomicron	55.3709856
+UniRef50_R7NU49	Aspartokinase I homoserine dehydrogenase|g__Bacteroides.s__Bacteroides_stercoris	87.60402979
+UniRef50_R6YPZ0|g__Bacteroides.s__Bacteroides_fragilis		96.33911368
+UniRef50_R5NGW5	Hydrolase carbon nitrogen family|g__Bacteroides.s__Bacteroides_fragilis	71.99424046
+UniRef50_R6V1E4|g__Bacteroides.s__Bacteroides_fragilis		179.21146953
+UniRef50_R5JDF9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		31.9284802
+UniRef50_R6A2V4	Peptidase M23 M37 family|g__Bacteroides.s__Bacteroides_fragilis	141.84397163
+UniRef50_D6CZA2	His Kinase A  domain. Histidine kinase , DNA gyrase B , and HSP90 like ATPase. Response regulator receiver domain	89.12655971
+UniRef50_R7A5K8|g__Bacteroides.s__Bacteroides_fragilis		116.55011655
+UniRef50_Q8AB57	UPF0313 protein BT_0254|g__Bacteroides.s__Bacteroides_thetaiotaomicron	58.37711617
+UniRef50_R6HYK5	N acetylglucosamine 6 phosphate deacetylase	196.65683382
+UniRef50_R6JHS2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		96.24639076
+UniRef50_R5Y1M5	Excinuclease ABC subunit A|g__Bacteroides.s__Bacteroides_stercoris	74.65472191
+UniRef50_A0A015TBG4	RNA polymerase sigma 70 factor, expansion 1 family protein	223.71364653
+UniRef50_R6XFW2	Phosphatidate cytidylyltransferase|g__Bacteroides.s__Bacteroides_fragilis	144.92753623
+UniRef50_R5MIK0	Pyridoxamine 5 phosphate oxidase family protein	387.59689922
+UniRef50_R6FAN6		99.20634921
+UniRef50_Q11YV4	tRNA  ) methyltransferase	187.2659176
+UniRef50_Q7MWA2	D alanine  D alanine ligase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	121.21212121
+UniRef50_R6KNV0	Thioredoxin	512.82051282
+UniRef50_R7KY15	AraC type transcription regulator	144.92753623
+UniRef50_Q3AUF2	Phosphoribosylglycinamide formyltransferase 2|g__Bacteroides.s__Bacteroides_fragilis	98.32841691
+UniRef50_E4T5G7|g__Bacteroides.s__Bacteroides_fragilis		61.95786865
+UniRef50_R5NSA2		262.4671916
+UniRef50_R6T1E4	Peptidase	153.60983103
+UniRef50_R6KG25|g__Bacteroides.s__Bacteroides_fragilis		152.90519878
+UniRef50_T2KQD4	Na+ transporting methylmalonyl CoA oxaloacetate decarboxylase, beta subunit|g__Bacteroides.s__Bacteroides_fragilis	98.91196835
+UniRef50_R6LHM2|g__Bacteroides.s__Bacteroides_fragilis		952.38095238
+UniRef50_R6V757	N acetylgalactosamine 6 sulfatase|g__Bacteroides.s__Bacteroides_fragilis	72.46376812
+UniRef50_W8F6N7	ATP dependent DNA helicase RecQ	60.38647343
+UniRef50_E6SQN8	Two component, sigma54 specific, transcriptional regulator, Fis family|g__Bacteroides.s__Bacteroides_fragilis	84.17508418
+UniRef50_R7E8U3	Heavy metal efflux pump CzcA family|g__Bacteroides.s__Bacteroides_thetaiotaomicron	66.46726487
+UniRef50_Q8A1M0		132.80212483
+UniRef50_D6D2I5	DNA binding domain, excisionase family	132.80212483
+UniRef50_R6E1L9	Glycerol 3 phosphate dehydrogenase	118.20330969
+UniRef50_F9D1D7	Aminopeptidase C 	96.61835749
+UniRef50_R5RWB9|g__Bacteroides.s__Bacteroides_thetaiotaomicron		68.58710562
+UniRef50_B2RJD7	Translation initiation factor IF 3|g__Bacteroides.s__Bacteroides_thetaiotaomicron	245.09803922
+UniRef50_Q64PR7	UPF0597 protein BF3772|g__Bacteroides.s__Bacteroides_fragilis	87.95074758
+UniRef50_R5EPL7|g__Bacteroides.s__Bacteroides_fragilis		79.17656374
+UniRef50_E1WUS9		165.83747927
+UniRef50_Q64XQ0	Lipoyl synthase|g__Bacteroides.s__Bacteroides_fragilis	139.47001395
+UniRef50_D6D0A5	RNA polymerase sigma factor, sigma 70 family RNA polymerase sigma 70 factor, Bacteroides expansion family 1|g__Bacteroides.s__Bacteroides_fragilis	256.41025641
+UniRef50_F9ZBK8|g__Bacteroides.s__Bacteroides_fragilis		229.88505747
+UniRef50_F0R8H2	ParB like partition protein|g__Bacteroides.s__Bacteroides_fragilis	63.97952655
+UniRef50_R6XYG2	Signal transduction histidine kinase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	101.62601626
+UniRef50_A0A016E1L4	Glycosyl transferases group 1 family protein	49.09180167
+UniRef50_Q650R8|g__Bacteroides.s__Bacteroides_fragilis		60.38647343
+UniRef50_R6A0Z5	FeS assembly protein SufD	83.7520938
+UniRef50_W0F5J4	Phosphonate ABC transporter ATP binding protein|g__Bacteroides.s__Bacteroides_fragilis	161.03059581
+UniRef50_E6SUV1	Two component transcriptional regulator, winged helix family|g__Bacteroides.s__Bacteroides_fragilis	183.15018315
+UniRef50_Q8AB77	Integrase	207.03933747
+UniRef50_Q64S67|g__Bacteroides.s__Bacteroides_fragilis		264.55026455
+UniRef50_E1WRE2|g__Bacteroides.s__Bacteroides_fragilis		114.94252874
+UniRef50_D8DYA3	Type I restriction modification system, M subunit	74.4047619
+UniRef50_R5TVB0	Outer membrane protein assembly complex YaeT protein|g__Bacteroides.s__Bacteroides_stercoris	40.16064257
+UniRef50_I1YT44	DNA mismatch repair protein MutS|g__Bacteroides.s__Bacteroides_stercoris	40.55150041
+UniRef50_R5JMV2		95.17132877
+UniRef50_E6WX55	Xylose isomerase|g__Bacteroides.s__Bacteroides_stercoris	81.9000819
+UniRef50_R5R963	L serine dehydratase	94.42870633
+UniRef50_V4ISH8|g__Bacteroides.s__Bacteroides_thetaiotaomicron		72.46376812
+UniRef50_Q8A0V3	Pyridoxine 5 phosphate synthase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	510.20408163
+UniRef50_F3ZTK2	Alkyl hydroperoxide reductase  Thiol specific antioxidant  Mal allergen	282.48587571
+UniRef50_R7E9N6|g__Bacteroides.s__Bacteroides_fragilis		186.21973929
+UniRef50_R5NF97	Transcriptional regulator AraC family	141.84397163
+UniRef50_F0R4U0	RHS repeat associated core domain	23.72479241
+UniRef50_E6SN84	Beta N acetylhexosaminidase	52.00208008
+UniRef50_F0R157	Xenobiotic transporting ATPase|g__Bacteroides.s__Bacteroides_fragilis	189.75332068
+UniRef50_A6L531	Lon protease|g__Bacteroides.s__Bacteroides_stercoris	43.06632214
+UniRef50_R5CA64	Phosphate selective porin O and P|g__Bacteroides.s__Bacteroides_thetaiotaomicron	111.85682327
+UniRef50_L9LVN7	Transposase, mutator family	144.92753623
+UniRef50_A5F5C9	Aspartate carbamoyltransferase|g__Bacteroides.s__Bacteroides_fragilis	128.7001287
+UniRef50_R6ZB13	AraC family transcriptional regulator	59.95203837
+UniRef50_R6ETZ6	Pyruvate phosphate dikinase PEP pyruvate binding domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	35.42330854
+UniRef50_E4VR96		704.22535211
+UniRef50_R6KNY1		71.32667618
+UniRef50_R5JBX4|g__Bacteroides.s__Bacteroides_stercoris		53.59056806
+UniRef50_R5RF34|g__Bacteroides.s__Bacteroides_fragilis		526.31578947
+UniRef50_R5JP39	PfkB family carbohydrate kinase|g__Bacteroides.s__Bacteroides_fragilis	119.04761905
+UniRef50_R5JPW7	TolC family type I secretion outer membrane protein	79.74481659
+UniRef50_F9Z819	Phosphoadenosine phosphosulfate reductase|g__Bacteroides.s__Bacteroides_fragilis	88.4173298
+UniRef50_K0CZ06	Glycosyl hydrolase	94.96676163
+UniRef50_Q5L8L7	ATP dependent Clp protease ATP binding subunit ClpX|g__Bacteroides.s__Bacteroides_fragilis	91.07468124
+UniRef50_C3PFR3	ATP synthase subunit alpha|g__Bacteroides.s__Bacteroides_fragilis	69.73500697
+UniRef50_B2RIW6	Polyribonucleotide nucleotidyltransferase|g__Bacteroides.s__Bacteroides_stercoris	49.97501249
+UniRef50_Q8A746|g__Bacteroides.s__Bacteroides_fragilis		546.44808743
+UniRef50_R5PDQ4|g__Bacteroides.s__Bacteroides_fragilis		174.52006981
+UniRef50_R5CEI1	Transporter gate domain protein	92.33610342
+UniRef50_A0A015MLD6	MMPL family protein |g__Bacteroides.s__Bacteroides_fragilis	33.23363244
+UniRef50_F9Z9S3|g__Bacteroides.s__Bacteroides_fragilis		113.76564278
+UniRef50_D6D8P2	Outer membrane transport energization protein TonB 	186.21973929
+UniRef50_I1YRT3	Phosphoglucomutase phosphomannomutase, alpha beta alpha domain I	62.6566416
+UniRef50_Q650C4|g__Bacteroides.s__Bacteroides_fragilis		497.51243781
+UniRef50_J9FUX1	Ribose phosphate pyrophosphokinase|g__Bacteroides.s__Bacteroides_fragilis	239.80815348
+UniRef50_R5BDA2|g__Bacteroides.s__Bacteroides_thetaiotaomicron		59.52380952
+UniRef50_E1WTF9|g__Bacteroides.s__Bacteroides_fragilis		71.99424046
+UniRef50_E6STL6	Patatin	47.55111745
+UniRef50_R5UXH6		215.05376344
+UniRef50_P12848	Ribonucleoside diphosphate reductase large subunit|unclassified	1.09359622
+UniRef50_I9PRS5|g__Bacteroides.s__Bacteroides_fragilis		92.85051068
+UniRef50_A7UXS8	Site specific recombinase, phage integrase family	93.37068161
+UniRef50_Q9TMM9	Elongation factor Tu, apicoplast	96.61835749
+UniRef50_I3YJC1	Plasmid recombination enzyme|g__Bacteroides.s__Bacteroides_fragilis	73.0994152
+UniRef50_R6KNY1|g__Bacteroides.s__Bacteroides_stercoris		71.32667618
+UniRef50_F9Z6V3	DUF234 DEXX box ATPase	163.39869281
+UniRef50_R5U9H7|g__Bacteroides.s__Bacteroides_stercoris		222.22222222
+UniRef50_R7ACY8	Dyp type peroxidase|g__Bacteroides.s__Bacteroides_fragilis	249.68789014
+UniRef50_R7DK98	ATP binding protein Mrp Nbp35 family	209.97844001
+UniRef50_R7LCZ8	YitT family protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	128.7001287
+UniRef50_R5PDQ4		174.52006981
+UniRef50_B6YS11	Diaminopimelate epimerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	152.90519878
+UniRef50_R5C323	Phosphate binding protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	150.82956259
+UniRef50_R5S220|g__Bacteroides.s__Bacteroides_fragilis		87.71929825
+UniRef50_Q8A6E7|g__Bacteroides.s__Bacteroides_stercoris		70.77140835
+UniRef50_R5W1I4|g__Bacteroides.s__Bacteroides_thetaiotaomicron		101.31712259
+UniRef50_E5X3X8|g__Bacteroides.s__Bacteroides_fragilis		358.42293907
+UniRef50_R7L055	Beta hexosaminidase	107.00909577
+UniRef50_R6J655|g__Bacteroides.s__Bacteroides_fragilis		361.40979689
+UniRef50_R6LHM2		952.38095238
+UniRef50_F0R4T1	Integral membrane sensor hybrid histidine kinase|g__Bacteroides.s__Bacteroides_fragilis	45.66210046
+UniRef50_R6L253	ATPase histidine kinase DNA gyrase B HSP90 domain protein|g__Bacteroides.s__Bacteroides_fragilis	72.46376812
+UniRef50_R5V2J4|g__Bacteroides.s__Bacteroides_fragilis		82.91873964
+UniRef50_R5TX52	Major facilitator superfamily MFS_1	80.7102502
+UniRef50_E1WRP6|g__Bacteroides.s__Bacteroides_fragilis		476.19047619
+UniRef50_R6MHA9	PPIC type PPIASE domain protein	81.9000819
+UniRef50_F3ZRK2	Tyrosine recombinase XerC|g__Bacteroides.s__Bacteroides_thetaiotaomicron	136.61202186
+UniRef50_P14407	Fumarate hydratase class I, anaerobic|g__Bacteroides.s__Bacteroides_fragilis	66.8002672
+UniRef50_R5JR93	Alanine racemase|g__Bacteroides.s__Bacteroides_fragilis	42.62574595
+UniRef50_E1WRX3	Putative ATP dependent endonuclease protein|g__Bacteroides.s__Bacteroides_fragilis	63.73486297
+UniRef50_W4PWJ1	ATP dependent Clp protease ATP binding subunit ClpA|g__Bacteroides.s__Bacteroides_fragilis	41.92872117
+UniRef50_R5JBX4|g__Bacteroides.s__Bacteroides_fragilis		54.02485143
+UniRef50_A6LIN4|g__Bacteroides.s__Bacteroides_fragilis		174.52006981
+UniRef50_R6FM99		129.19896641
+UniRef50_Q8A7B0	Aminoacyl histidine dipeptidase|g__Bacteroides.s__Bacteroides_fragilis	75.93014427
+UniRef50_C8WK91	Ribonucleoside diphosphate reductase	42.19409283
+UniRef50_R7PBD0|g__Bacteroides.s__Bacteroides_fragilis		91.07468124
+UniRef50_R7CYV8		151.05740181
+UniRef50_Q6ADC9	50S ribosomal protein L20|g__Bacteroides.s__Bacteroides_stercoris	497.51243781
+UniRef50_Q64Y92|g__Bacteroides.s__Bacteroides_fragilis		99.8003992
+UniRef50_R7EJ51		129.70168612
+UniRef50_R5ETA7	Arylsulfatase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	70.4721635
+UniRef50_R7KYE3	PAS domain S box protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	39.03200625
+UniRef50_R6X4P3		71.37758744
+UniRef50_R7E8L2		187.2659176
+UniRef50_G8UL18	TonB linked outer membrane protein, SusC RagA family	33.00330033
+UniRef50_R5CR06	TonB dependent receptor plug domain protein	44.80286738
+UniRef50_R7EI38	Magnesium transporter|g__Bacteroides.s__Bacteroides_thetaiotaomicron	83.96305626
+UniRef50_I3YQK0	Acetyltransferase |g__Bacteroides.s__Bacteroides_fragilis	205.76131687
+UniRef50_G8UQN8	Xaa His dipeptidase	76.45259939
+UniRef50_R5CB12	Glycoside hydrolase family 92|g__Bacteroides.s__Bacteroides_fragilis	45.53734062
+UniRef50_A6L2I3	Phenylalanine  tRNA ligase alpha subunit|g__Bacteroides.s__Bacteroides_stercoris	112.99435028
+UniRef50_V4ISH8		72.46376812
+UniRef50_G8UN22	Glycosyltransferase, group 1 family protein	103.19917441
+UniRef50_R7KSU0|g__Bacteroides.s__Bacteroides_thetaiotaomicron		71.83908046
+UniRef50_R6DE90|g__Bacteroides.s__Bacteroides_fragilis		94.42870633
+UniRef50_R5EYM3		245.09803922
+UniRef50_R5TX52	Major facilitator superfamily MFS_1|g__Bacteroides.s__Bacteroides_thetaiotaomicron	80.7102502
+UniRef50_F9Z581	Acriflavin resistance protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	33.43363424
+UniRef50_I3YKX4	RND family efflux transporter, MFP subunit|g__Bacteroides.s__Bacteroides_fragilis	96.06147935
+UniRef50_O83092	Ribonucleoside diphosphate reductase subunit beta|g__Bacteroides.s__Bacteroides_fragilis	111.11111111
+UniRef50_R6M7Y6	Transketolase thiamine diphosphate binding domain protein	161.29032258
+UniRef50_Q64NX2|g__Bacteroides.s__Bacteroides_stercoris		462.96296296
+UniRef50_R7JJE2		33.36670003
+UniRef50_E1WJZ3|g__Bacteroides.s__Bacteroides_fragilis		93.10986965
+UniRef50_D6D711	Site specific recombinase XerD	175.00995155
+UniRef50_R7E5Y3	Ribonucleoside diphosphate reductase	40.45307443
+UniRef50_R7NTA9		110.37527594
+UniRef50_Q8AA27	Methionine aminopeptidase	141.84397163
+UniRef50_W8F0R1	Copper translocating P type ATPase|g__Bacteroides.s__Bacteroides_fragilis	55.64830273
+UniRef50_E6SRR3	Cobaltochelatase CobN subunit	41.40786749
+UniRef50_Q650Q6	Ferrichrome iron receptor	44.15011038
+UniRef50_R5V7Y5		99.10802775
+UniRef50_R5K2F7|g__Bacteroides.s__Bacteroides_fragilis		105.15247108
+UniRef50_R6C5B4	3 5 bisphosphate nucleotidase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	152.20700152
+UniRef50_R5J3V8|g__Bacteroides.s__Bacteroides_fragilis		57.67012687
+UniRef50_A6L9Y0|g__Bacteroides.s__Bacteroides_fragilis		1960.78431373
+UniRef50_I3Z8F2	DNA RNA helicase, superfamily II	90.33423668
+UniRef50_R7DKK4		96.89922481
+UniRef50_A6LEU2	UDP N acetylmuramate  L alanine ligase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	79.74481659
+UniRef50_Q8A7K8	Replicative DNA helicase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	80.90614887
+UniRef50_Q8A4V8	50S ribosomal protein L19	490.19607843
+UniRef50_R7J8P5|g__Bacteroides.s__Bacteroides_thetaiotaomicron		229.88505747
+UniRef50_R5RXW9|g__Bacteroides.s__Bacteroides_fragilis		116.14401858
+UniRef50_R5GCJ0	Phospholipase D Transphosphatidylase	77.51937984
+UniRef50_Q64QY2|g__Bacteroides.s__Bacteroides_fragilis		497.51243781
+UniRef50_R7PB68|g__Bacteroides.s__Bacteroides_fragilis		73.0994152
+UniRef50_R5DBP2		34.15300546
+UniRef50_D6CZA2	His Kinase A  domain. Histidine kinase , DNA gyrase B , and HSP90 like ATPase. Response regulator receiver domain|g__Bacteroides.s__Bacteroides_fragilis	89.12655971
+UniRef50_R6F6V6|g__Bacteroides.s__Bacteroides_fragilis		99.05981491
+UniRef50_P30143|g__Bacteroides.s__Bacteroides_fragilis		162.60162602
+UniRef50_G8THU4	Threonine  tRNA ligase	55.8347292
+UniRef50_R5JQ34	RecQ family ATP dependent DNA helicase	113.96011396
+UniRef50_R6YXF3|g__Bacteroides.s__Bacteroides_fragilis		37.87878788
+UniRef50_R6Z0B0	Exonuclease SbcC	70.4721635
+UniRef50_R7CWX9	SusD family protein|g__Bacteroides.s__Bacteroides_fragilis	61.38735421
+UniRef50_I8UZ19		38.40245776
+UniRef50_R6ZUL7		45.91368228
+UniRef50_R5CQ73	RND transporter HAE1 HME family permease protein|g__Bacteroides.s__Bacteroides_fragilis	34.68609088
+UniRef50_R5RFN3|g__Bacteroides.s__Bacteroides_fragilis		555.55555556
+UniRef50_R5V7Y5|g__Bacteroides.s__Bacteroides_thetaiotaomicron		99.10802775
+UniRef50_E4TAG3	Ribosomal RNA small subunit methyltransferase I	190.47619048
+UniRef50_E6SRR3	Cobaltochelatase CobN subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron	41.40786749
+UniRef50_R7DKK4|g__Bacteroides.s__Bacteroides_stercoris		96.89922481
+UniRef50_B2RK67	UDP glucose 6 dehydrogenase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	171.82130584
+UniRef50_R6XVK0	Signal recognition particle receptor FtsY	123.45679012
+UniRef50_R5F938	Radical SAM domain protein|g__Bacteroides.s__Bacteroides_stercoris	160.25641026
+UniRef50_Q5LEQ5	Translation initiation factor IF 3	396.82539683
+UniRef50_P30143		162.60162602
+UniRef50_A0A015QWI4	Alpha 2 macroglobulin family protein 	18.36547291
+UniRef50_Q5LB92		85.03401361
+UniRef50_F0R632	Long chain fatty acid  CoA ligase|g__Bacteroides.s__Bacteroides_fragilis	131.50062443
+UniRef50_R7AN00|g__Bacteroides.s__Bacteroides_fragilis		28.44141069
+UniRef50_Q8A0X3	TonB|g__Bacteroides.s__Bacteroides_thetaiotaomicron	59.52380952
+UniRef50_R7H840|g__Bacteroides.s__Bacteroides_fragilis		584.79532164
+UniRef50_R5R887|g__Bacteroides.s__Bacteroides_fragilis		46.75081814
+UniRef50_Q5L883	Glutamate  tRNA ligase|g__Bacteroides.s__Bacteroides_stercoris	65.57377049
+UniRef50_R6JEH2	CDP diacylglycerol glycerol 3 phosphate 3 phosphatidyltransferase related protein|g__Bacteroides.s__Bacteroides_fragilis	394.47731755
+UniRef50_F4KKX0	Radical SAM domain protein	106.83760684
+UniRef50_A0A015YH91|g__Bacteroides.s__Bacteroides_fragilis		645.16129032
+UniRef50_R6JDG7|g__Bacteroides.s__Bacteroides_fragilis		138.6025349
+UniRef50_R7EVE7|g__Bacteroides.s__Bacteroides_fragilis		80.7102502
+UniRef50_D9RRB5	Alpha amylase, catalytic domain protein|g__Bacteroides.s__Bacteroides_fragilis	58.78894768
+UniRef50_F3ZRN0	Major facilitator superfamily MFS_1|g__Bacteroides.s__Bacteroides_fragilis	87.03220191
+UniRef50_B5D0T6|g__Bacteroides.s__Bacteroides_fragilis		265.25198939
+UniRef50_A6L0Y0	Glycoside hydrolase family 32, candidate levanase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	57.7700751
+UniRef50_A6LH84	Ribonuclease R|g__Bacteroides.s__Bacteroides_fragilis	50.12531328
+UniRef50_E1WU70|g__Bacteroides.s__Bacteroides_fragilis		93.6329588
+UniRef50_R9I8K3		88.88888889
+UniRef50_R5S0C0		246.91358025
+UniRef50_Q8A7T2	Biotin biosynthesis bifunctional protein BioAB|g__Bacteroides.s__Bacteroides_fragilis	47.68717215
+UniRef50_F2KVV0	DNA gyrase topoisomerase IV, A subunit|g__Bacteroides.s__Bacteroides_fragilis	120.04801921
+UniRef50_R5RY27		81.4995925
+UniRef50_B4SSU7	Nitrilase cyanide hydratase and apolipoprotein N acyltransferase|g__Bacteroides.s__Bacteroides_fragilis	136.05442177
+UniRef50_R6XM86	DNA repair protein radA	328.40722496
+UniRef50_Q64R34		72.62164125
+UniRef50_A6LC45		59.63029219
+UniRef50_R6Z0B0	Exonuclease SbcC|g__Bacteroides.s__Bacteroides_fragilis	70.4721635
+UniRef50_B6YQ88	30S ribosomal protein S7|g__Bacteroides.s__Bacteroides_fragilis	305.81039755
+UniRef50_R6Y770	Ribulose phosphate 3 epimerase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	199.6007984
+UniRef50_R7NWG3|g__Bacteroides.s__Bacteroides_thetaiotaomicron		170.06802721
+UniRef50_I0GVS7		438.73008239
+UniRef50_R6AS24	Zinc dependent metalloproteinase lipoprotein BF0631 family|g__Bacteroides.s__Bacteroides_fragilis	86.13264427
+UniRef50_Q5L8G1	Putative transmembrane protein|g__Bacteroides.s__Bacteroides_fragilis	192.67822736
+UniRef50_R6ZP96|g__Bacteroides.s__Bacteroides_fragilis		165.83747927
+UniRef50_A6KY02|g__Bacteroides.s__Bacteroides_fragilis		41.35649297
+UniRef50_F9D3C0	DNA topoisomerase  subunit B	58.07200929
+UniRef50_F0R3R2|g__Bacteroides.s__Bacteroides_stercoris		166.66666667
+UniRef50_D4WJ09	Putative 3 deoxy D manno octulosonic acid transferase	93.10986965
+UniRef50_R5RCC8		91.82736455
+UniRef50_Q8ZFX5	Histidinol dehydrogenase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	88.18342152
+UniRef50_R7PE88	Methylglyoxal synthase|g__Bacteroides.s__Bacteroides_stercoris	271.00271003
+UniRef50_D6D0A5	RNA polymerase sigma factor, sigma 70 family RNA polymerase sigma 70 factor, Bacteroides expansion family 1	256.41025641
+UniRef50_F0R8Y7|g__Bacteroides.s__Bacteroides_fragilis		160.25641026
+UniRef50_Q8A389	Alpha galactosidase	74.57121551
+UniRef50_Q64R13|g__Bacteroides.s__Bacteroides_fragilis		4000.0
+UniRef50_D3R5Q5	O acetyl L homoserine sulfhydrolase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	87.95074758
+UniRef50_E4T7Y9	SpoIID LytB domain protein	82.91873964
+UniRef50_R9HCE8|g__Bacteroides.s__Bacteroides_fragilis		94.42870633
+UniRef50_R5F938	Radical SAM domain protein	160.25641026
+UniRef50_G8ULP5|g__Bacteroides.s__Bacteroides_fragilis		150.48908954
+UniRef50_A6LH84	Ribonuclease R|g__Bacteroides.s__Bacteroides_stercoris	49.75124378
+UniRef50_R5UB74|g__Bacteroides.s__Bacteroides_fragilis		81.30081301
+UniRef50_Q5L877|g__Bacteroides.s__Bacteroides_fragilis		98.91196835
+UniRef50_F0R3Q0	Relaxase mobilization nuclease family protein|g__Bacteroides.s__Bacteroides_fragilis	180.18149633
+UniRef50_F9Z9I7|g__Bacteroides.s__Bacteroides_fragilis		57.67012687
+UniRef50_R6JI98	Dihydrolipoyl dehydrogenase|g__Bacteroides.s__Bacteroides_stercoris	82.50825083
+UniRef50_R5RH59|g__Bacteroides.s__Bacteroides_fragilis		411.52263374
+UniRef50_R5W1I4		101.31712259
+UniRef50_Q64YI6	Chaperone protein DnaK	138.88888889
+UniRef50_W4UUV5	Recombination inhibitory protein MutS2	42.57130694
+UniRef50_A6L0Q1|g__Bacteroides.s__Bacteroides_stercoris		122.1001221
+UniRef50_R5UB74		81.30081301
+UniRef50_E1WVX1|g__Bacteroides.s__Bacteroides_fragilis		16.67500417
+UniRef50_Q650Q6	Ferrichrome iron receptor|g__Bacteroides.s__Bacteroides_fragilis	44.15011038
+UniRef50_A7ZFS8|unclassified		8.8162402
+UniRef50_Q89ZC3	7 carboxy 7 deazaguanine synthase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	501.25313283
+UniRef50_R7CYV8|g__Bacteroides.s__Bacteroides_fragilis		100.70493454
+UniRef50_R7DK62|g__Bacteroides.s__Bacteroides_thetaiotaomicron		41.61464836
+UniRef50_R5RG59|g__Bacteroides.s__Bacteroides_fragilis		30.95017023
+UniRef50_R7IZ37|g__Bacteroides.s__Bacteroides_fragilis		58.07200929
+UniRef50_Q8AA27	Methionine aminopeptidase|g__Bacteroides.s__Bacteroides_fragilis	141.84397163
+UniRef50_Q11UF9	Peptidyl prolyl cis trans isomerase	163.39869281
+UniRef50_R6L7R7	Phosphate transporter family protein|g__Bacteroides.s__Bacteroides_fragilis	95.23809524
+UniRef50_R7NW91|g__Bacteroides.s__Bacteroides_fragilis		71.53075823
+UniRef50_R6ZAV1		613.49693252
+UniRef50_F3ZPA3	Transcriptional regulator, MarR family	336.7003367
+UniRef50_R6DCV2	Type I site specific deoxyribonuclease|g__Bacteroides.s__Bacteroides_fragilis	33.56831151
+UniRef50_R5EYM3|g__Bacteroides.s__Bacteroides_fragilis		245.09803922
+UniRef50_G8THU4	Threonine  tRNA ligase|g__Bacteroides.s__Bacteroides_stercoris	55.8347292
+UniRef50_D4IL09	Transposase and inactivated derivatives|g__Bacteroides.s__Bacteroides_fragilis	218.80693142
+UniRef50_L0G144|g__Bacteroides.s__Bacteroides_fragilis		82.91873964
+UniRef50_R7NTP3	Glutamine dependent carbamyl phosphate synthetase|g__Bacteroides.s__Bacteroides_fragilis	32.55208333
+UniRef50_E1WW09	Putative transmembrane protein	111.48272018
+UniRef50_R5PMA9	CzcA family heavy metal efflux pump|g__Bacteroides.s__Bacteroides_fragilis	33.73819163
+UniRef50_Q64W76	ABC transporter permease|g__Bacteroides.s__Bacteroides_fragilis	89.36550492
+UniRef50_E4T7Z2	Glycosyl transferase family 2|g__Bacteroides.s__Bacteroides_fragilis	75.93014427
+UniRef50_Q64XH5	Two component system sensor histidine kinase|g__Bacteroides.s__Bacteroides_fragilis	57.07762557
+UniRef50_W6PQ03	Membrane protein, putative|g__Bacteroides.s__Bacteroides_thetaiotaomicron	31.00775194
+UniRef50_I8UZ19|g__Bacteroides.s__Bacteroides_thetaiotaomicron		38.40245776
+UniRef50_A6L3W6|g__Bacteroides.s__Bacteroides_thetaiotaomicron		62.89308176
+UniRef50_E1WRL5|g__Bacteroides.s__Bacteroides_fragilis		653.59477124
+UniRef50_X5D7K7	Transcriptional regulator	303.03030303
+UniRef50_Q8D1X9	Phosphoenolpyruvate carboxykinase [ATP]|g__Bacteroides.s__Bacteroides_fragilis	205.76131687
+UniRef50_F4C8Z3	TonB dependent receptor|g__Bacteroides.s__Bacteroides_fragilis	32.74394237
+UniRef50_Q8ZFX5	Histidinol dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	87.95074758
+UniRef50_R6SFG3|g__Bacteroides.s__Bacteroides_thetaiotaomicron		320.51282051
+UniRef50_A6L5Q4|g__Bacteroides.s__Bacteroides_fragilis		169.20473773
+UniRef50_R6JHV8	Transporter anaerobic C4 dicarboxylate uptake  family protein|g__Bacteroides.s__Bacteroides_fragilis	86.13264427
+UniRef50_A6LGA2	Leucine  tRNA ligase|g__Bacteroides.s__Bacteroides_fragilis	37.28560776
+UniRef50_R5V1E5		187.2659176
+UniRef50_R5RIY3|g__Bacteroides.s__Bacteroides_fragilis		80.90614887
+UniRef50_R7PF44	ABC transporter ATP binding protein	76.27765065
+UniRef50_P55253	Glucose 1 phosphate thymidylyltransferase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	135.50135501
+UniRef50_R7DJ50	DNA polymerase III alpha subunit|g__Bacteroides.s__Bacteroides_fragilis	53.37603416
+UniRef50_R6ZDL2		40.16064257
+UniRef50_R7EH57	Transcription repair coupling factor|g__Bacteroides.s__Bacteroides_fragilis	30.97893432
+UniRef50_F3ZUS7	ATP synthase subunit a	97.46588694
+UniRef50_W4UYD9	RND multidrug efflux transporter	34.68609088
+UniRef50_R5SQC5|g__Bacteroides.s__Bacteroides_fragilis		42.57130694
+UniRef50_E6SWH2		222.71714922
+UniRef50_Q2JDK2	Elongation factor 4|g__Bacteroides.s__Bacteroides_fragilis	60.53268765
+UniRef50_R6ZQ01|g__Bacteroides.s__Bacteroides_stercoris		90.57971014
+UniRef50_C9LKR8|g__Bacteroides.s__Bacteroides_fragilis		66.53359947
+UniRef50_C3Q7Y6		330.0330033
+UniRef50_R6TIU0	Alpha 1 2 mannosidase|g__Bacteroides.s__Bacteroides_fragilis	47.21435316
+UniRef50_Q64WI5	Tyrosine type site specific recombinase	128.7001287
+UniRef50_R6L8R3	Aldose 1 epimerase	105.48523207
+UniRef50_D6CZH6	Site specific DNA methylase	127.2264631
+UniRef50_D5EZC2	CBS transporter associated domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	90.33423668
+UniRef50_R7PBK8	Transporter|g__Bacteroides.s__Bacteroides_fragilis	164.20361248
+UniRef50_Q5L8K8	GTPase Der	85.91065292
+UniRef50_R6FNM5		1612.90322581
+UniRef50_R6FAB3	TonB dependent receptor|g__Bacteroides.s__Bacteroides_fragilis	35.12469266
+UniRef50_E1WUR5|g__Bacteroides.s__Bacteroides_fragilis		952.38095238
+UniRef50_I3YR12|g__Bacteroides.s__Bacteroides_fragilis		218.81838074
+UniRef50_K1G4X4|g__Bacteroides.s__Bacteroides_fragilis		91.07468124
+UniRef50_R6E1I6		84.60236887
+UniRef50_R5W193|g__Bacteroides.s__Bacteroides_thetaiotaomicron		87.48906387
+UniRef50_R6E1L9	Glycerol 3 phosphate dehydrogenase|g__Bacteroides.s__Bacteroides_fragilis	118.20330969
+UniRef50_K1G5S0		478.46889952
+UniRef50_R6WA31	Peptidase	36.83241252
+UniRef50_R5PHV4|g__Bacteroides.s__Bacteroides_fragilis		85.91065292
+UniRef50_R6DCV2	Type I site specific deoxyribonuclease	33.56831151
+UniRef50_D6D584	Arylsulfatase A and related enzymes|g__Bacteroides.s__Bacteroides_thetaiotaomicron	77.16049383
+UniRef50_E6ST83	Integrase family protein	87.2600349
+UniRef50_A0A016K0A0	ABC transporter family protein|g__Bacteroides.s__Bacteroides_fragilis	49.45598417
+UniRef50_E1WW25|g__Bacteroides.s__Bacteroides_fragilis		39.63535474
+UniRef50_R6YYH8		72.07207207
+UniRef50_I3YIW7	DNA binding protein, excisionase family|g__Bacteroides.s__Bacteroides_fragilis	125.31328321
+UniRef50_R5AW16	Hydrophobe amphiphile efflux 1  family RND transporter|g__Bacteroides.s__Bacteroides_stercoris	67.34006734
+UniRef50_Q64X97	Two component system sensor histidine kinase	39.44773176
+UniRef50_Q5LIJ7	UDP N acetylglucosamine  N acetylmuramyl  pyrophosphoryl undecaprenol N acetylglucosamine transferase|g__Bacteroides.s__Bacteroides_fragilis	100.70493454
+UniRef50_E1WRW8		79.17656374
+UniRef50_A0A015TBG4	RNA polymerase sigma 70 factor, expansion 1 family protein|g__Bacteroides.s__Bacteroides_fragilis	223.71364653
+UniRef50_R5AW16	Hydrophobe amphiphile efflux 1  family RND transporter	67.34006734
+UniRef50_A4CN78	Queuine tRNA ribosyltransferase|g__Bacteroides.s__Bacteroides_thetaiotaomicron	101.93679918
+UniRef50_K1FAD2		103.19917441
+UniRef50_R6MJS6	Tetracycline resistance element regulator RteA	46.42525534
+UniRef50_F9D137	ABC type transport system involved in cytochrome c biogenesis, permease component|g__Bacteroides.s__Bacteroides_fragilis	157.2327044
+UniRef50_R5S6E5|g__Bacteroides.s__Bacteroides_fragilis		78.24726135
+UniRef50_D3R5Q5	O acetyl L homoserine sulfhydrolase	87.95074758
+UniRef50_R5J3V8		57.67012687
+UniRef50_R6XBT3	Pyruvate kinase	152.90519878
+UniRef50_E4T5E0	DNA polymerase III subunit beta	102.56410256
+UniRef50_Q64NN7|g__Bacteroides.s__Bacteroides_fragilis		438.59649123
+UniRef50_D3QZF7	UDP N acetylglucosamine 2 epimerase|g__Bacteroides.s__Bacteroides_fragilis	98.91196835
+UniRef50_F3ZNG1	Heavy metal translocating P type ATPase	142.33012679
+UniRef50_D3IEN1|g__Bacteroides.s__Bacteroides_thetaiotaomicron		168.35016835
+UniRef50_Q11YV4	tRNA  ) methyltransferase|g__Bacteroides.s__Bacteroides_fragilis	187.2659176
+UniRef50_R6M7Y6	Transketolase thiamine diphosphate binding domain protein|g__Bacteroides.s__Bacteroides_fragilis	53.76344086
+UniRef50_I3YIZ4	Restriction endonuclease S subunit|g__Bacteroides.s__Bacteroides_fragilis	195.07291809
+UniRef50_R7DDM5		164.20361248
+UniRef50_R6ZI80|g__Bacteroides.s__Bacteroides_fragilis		44.38526409
+UniRef50_E1WRX3	Putative ATP dependent endonuclease protein	63.73486297
+UniRef50_A6KY02		41.35649297
+UniRef50_R6YXC4	PSP1 C terminal domain protein|g__Bacteroides.s__Bacteroides_fragilis	153.25670498
+UniRef50_G8UMA0	Zinc ribbon domain protein	148.14814815
+UniRef50_R7IYZ7|g__Bacteroides.s__Bacteroides_thetaiotaomicron		617.28395062
+UniRef50_R6IDA1	Mechanosensitive ion channel family protein|g__Bacteroides.s__Bacteroides_fragilis	91.07468124
+UniRef50_D6D7U9	SusD family|g__Bacteroides.s__Bacteroides_fragilis	67.47638327
+UniRef50_W4P4S0	DNA primase TraC|g__Bacteroides.s__Bacteroides_fragilis	56.40157924
+UniRef50_R5VB06|g__Bacteroides.s__Bacteroides_fragilis		44.56327986
+UniRef50_R7JQ95|g__Bacteroides.s__Bacteroides_thetaiotaomicron		46.42525534
+UniRef50_R6LIV7	Transcriptional regulator effector binding domain protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron	141.24293785
+UniRef50_R7EH57	Transcription repair coupling factor	30.97893432
+UniRef50_E1WV94|g__Bacteroides.s__Bacteroides_fragilis		52.24660397
+UniRef50_R5K3I7	TonB dependent Receptor Plug domain containing protein	89.28571429
+UniRef50_R5KU63|g__Bacteroides.s__Bacteroides_fragilis		180.18018018
+UniRef50_R6D686	MgtC family protein|g__Bacteroides.s__Bacteroides_fragilis	192.67822736
+UniRef50_E1WSC2|g__Bacteroides.s__Bacteroides_fragilis		50.58168943
+UniRef50_G8UNW7	ABC transporter, ATP binding protein	21.92982456
+UniRef50_A6L552	DNA repair protein|g__Bacteroides.s__Bacteroides_fragilis	336.7003367
+UniRef50_Q8A9Y3	Two component system response regulator	190.47619048
+UniRef50_E4T1A7	Pyruvate phosphate dikinase PEP pyruvate binding protein|g__Bacteroides.s__Bacteroides_fragilis	35.46099291
+UniRef50_F4CFG9	Coagulation factor 5 8 type domain protein|g__Bacteroides.s__Bacteroides_fragilis	63.61323155
+UniRef50_I0K5J6	Phosphomannomutase|g__Bacteroides.s__Bacteroides_fragilis	242.13075061
+UniRef50_R6Z2A5		144.92753623
+UniRef50_R5GF68	4 hydroxy tetrahydrodipicolinate synthase|g__Bacteroides.s__Bacteroides_fragilis	134.40860215
+UniRef50_Q2RZH4	Thymidine kinase|g__Bacteroides.s__Bacteroides_fragilis	222.22222222
+UniRef50_I4BA63	H+transporting two sector ATPase alpha beta subunit central region|g__Bacteroides.s__Bacteroides_thetaiotaomicron	62.18905473
+UniRef50_R5MQ02		141.84397163
+UniRef50_U5Q7A5	Spore coat polysaccharide biosynthesis protein spsK|g__Bacteroides.s__Bacteroides_thetaiotaomicron	143.06151645
+UniRef50_R5W193		173.39971679
+UniRef50_A0A015QWI4	Alpha 2 macroglobulin family protein |g__Bacteroides.s__Bacteroides_fragilis	18.36547291
+UniRef50_F5XA19	DNA topoisomerase III|g__Bacteroides.s__Bacteroides_fragilis	101.01010101
+UniRef50_R5RES4	Beta galactosidase|g__Bacteroides.s__Bacteroides_fragilis	103.19917441
+UniRef50_K1FAD2|g__Bacteroides.s__Bacteroides_fragilis		103.19917441
+UniRef50_E4T1A7	Pyruvate phosphate dikinase PEP pyruvate binding protein	35.46099291
+UniRef50_B7ADK8|g__Bacteroides.s__Bacteroides_fragilis		42.08754209
