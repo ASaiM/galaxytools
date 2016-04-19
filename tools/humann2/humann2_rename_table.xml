@@ -48,6 +48,20 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_table" value=""/>
+            <param name="names" value="" />
+            <param name='simplify' value=""/>
+            <param name="file" value=""/>
+            <output name="output_table" file="" />
+        </test>
+        <test>
+            <param name="input_table" value=""/>
+            <param name="names" value="" />
+            <param name='simplify' value=""/>
+            <param name="file" value=""/>
+            <output name="output_table" file="" />
+        </test>
     </tests>
 
     <help><![CDATA[
