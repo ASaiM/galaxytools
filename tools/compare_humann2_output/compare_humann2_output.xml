@@ -54,9 +54,9 @@
     <tests>
         <test>
             <param name="samples_0|sample_name" value="sample1"/>
-            <param name="samples_0|input" value="29_gene_families_humann2.tabular"/>
+            <param name="samples_0|input" value="humann2_m8_pathabundance_cmp_renormalized.tsv"/>
             <param name="samples_1|sample_name" value="sample2"/>
-            <param name="samples_1|input" value="humann2_fasta_gene_families.tsv"/>
+            <param name="samples_1|input" value="humann2_fasta_pathabundance_relab_renormalized.csv"/>
             <param name="charact_nb" value="10"/>
             <output name="more_abundant_output_file" file="more_abundant_output.tabular"/>
             <output name="similar_output_file" file="similar_output.tabular"/>
