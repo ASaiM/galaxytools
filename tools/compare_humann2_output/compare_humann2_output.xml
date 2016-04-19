@@ -58,9 +58,9 @@
             <param name="samples_1|sample_name" value="sample2"/>
             <param name="samples_1|input" value="humann2_fasta_gene_families.tsv"/>
             <param name="charact_nb" value="10"/>
-            <output name="more_abundant_output_file" file="More_abundant_output.tabular"/>
-            <output name="similar_output_file" file="Similar_output.tabular"/>
-            <output name="log" file="Log_output.txt"/>
+            <output name="more_abundant_output_file" file="more_abundant_output.tabular"/>
+            <output name="similar_output_file" file="similar_output.tabular"/>
+            <output name="log" file="log_output.txt"/>
             <output_collection name="specific_files" type="list">
                 <element name="specific_to_sample1" file="specific_to_sample1_output.txt" />
                 <element name="specific_to_sample2" file="specific_to_sample2_output.txt" />
