@@ -53,17 +53,17 @@
 
     <tests>
         <test>
-            <param name="samples_0|sample_name" value="fastq"/>
+            <param name="samples_0|sample_name" value="sample1"/>
             <param name="samples_0|input" value="humann2_fastq_gene_families.tsv"/>
-            <param name="samples_1|sample_name" value="fasta"/>
+            <param name="samples_1|sample_name" value="sample2"/>
             <param name="samples_1|input" value="humann2_fasta_gene_families.tsv"/>
             <param name="charact_nb" value="10"/>
-            <output name="more_abundant_output_file" file="output_test_More_abundant.tabular"/>
-            <output name="similar_output_file" file="output_test_Similar.tabular"/>
-            <output name="log" file="output_test_Log.txt"/>
+            <output name="more_abundant_output_file" file="More_abundant_output.tabular.tabular"/>
+            <output name="similar_output_file" file="Similar_output.tabular"/>
+            <output name="log" file="Log_output.txt"/>
             <output_collection name="specific_files" type="list">
-                <element name="specific_to_fastq" file="output_specific_to_fastq.txt" />
-                <element name="specific_to_fasta" file="output_specific_to_fasta.txt" />
+                <element name="specific_to_fastq" file="specific_to_sample1_output.txt" />
+                <element name="specific_to_fasta" file="specific_to_sample2_output.txt" />
             </output_collection>
         </test>
     </tests>
