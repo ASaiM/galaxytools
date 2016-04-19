@@ -47,6 +47,15 @@
     </outputs>
 
     <tests>
+        <test>
+            <inputs>
+            <param name="input_gene" value=""/>
+            <param name="input_pathway" value=""/>
+            <param name="gene_mapping" value=""/>
+            <param name="pathway_mapping" value=""/>
+            <param name="remove_taxonomy" value=""/>
+            <output name="output_table" file="" /> 
+        </test>
     </tests>
 
     <help><![CDATA[
