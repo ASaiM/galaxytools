@@ -36,6 +36,7 @@
     <tests>
         <test>
             <param name="input_file" value="humann2_input.fasta"/>
+            <output name="report" file="" />
         </test>
     </tests>
 
