@@ -15,7 +15,7 @@
     <package name="patsy" version="0.4.1">
         <repository name="package_python_2_7_patsy_0_4_1" owner="bebatut" prior_installation_required="True" />
     </package>
-    <package name="statsmodels" version="0.1.4">
+    <package name="statsmodels" version="0.6.1">
         <install version="1.0">
             <actions>
                 <action type="setup_python_environment">
