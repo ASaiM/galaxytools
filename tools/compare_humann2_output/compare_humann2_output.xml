@@ -62,8 +62,8 @@
             <output name="similar_output_file" file="output_test_Similar.tabular"/>
             <output name="log" file="output_test_Log.txt"/>
             <output_collection name="specific_files" type="list">
-                <element name="samples_0|specific_files" file="output_specific_to_fastq.txt" />
-                <element name="samples_1|specific_files" file="output_specific_to_fasta.txt" />
+                <element name="output_specific_to_fastq" file="output_specific_to_fastq.txt" />
+                <element name="output_specific_to_fasta" file="output_specific_to_fasta.txt" />
             </output_collection>
         </test>
     </tests>
