@@ -52,6 +52,15 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="samples_0|sample_name" value=""/>
+            <param name="samples_0|input" value=""/>
+            <param name="charact_nb" value=""/>
+            <output name="more_abundant_output_file" file=""/>
+            <output name="similar_output_file" file=""/>
+            <output name="log" file=""/>
+      
+        </test>
     </tests>
 
     <help><![CDATA[
