@@ -13,7 +13,7 @@
         <install version="1.0">
             <actions>
                 <action type="shell_command"><![CDATA[
-                    hg clone https://hg@bitbucket.org/CibioCM/export2graphlan
+                    hg clone -r d6c10c1 https://hg@bitbucket.org/CibioCM/export2graphlan
                 ]]></action>
                 <action type="move_file">
                     <source>export2graphlan.py</source>
