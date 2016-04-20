@@ -64,44 +64,22 @@
     </inputs>
 
     <outputs>
-        <data name="output_file" format="text"
-            label="${tool.name} on ${on_string}: Wilcox test result" />
+        <data name="output_file" format="txt"  label="${tool.name} on ${on_string}: Wilcox test result" />
     </outputs>
 
     <tests>
         <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="true" />
-            <param name="column2_id" value="3" />
-            <param name="paired" value="FALSE" />
-            <param name="alternative" value="two.sided" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
+            <param name="input_file" ftype="tabular" value="input_file.txt"/>
+            <param name="header" value="TRUE"/>
+            <param name="column1_id" value="3"/>
+            <param name="add_column_test" value="true"/>
+            <param name="column2_id" value="4"/>
+            <param name="paired" value="FALSE"/>
+            <param name="alternative" value="two.sided"/>
+            <param name="mu" value="0"/>
+            <param name="exact" value="FALSE"/>
             <param name="correct" value="TRUE"/>
-            <output name="output_file" file="two_sided_two_columns_test_output.txt" />
-        </test>
-        <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="false" />
-            <param name="alternative" value="two.sided" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
-            <param name="correct" value="TRUE"/>
-            <output name="output_file" file="two_sided_one_column_test_output.txt" />
-        </test>
-        <test>
-            <param name="input_file" value="input_file.txt" />
-            <param name="column1_id" value="2" />
-            <param name="test" value="true" />
-            <param name="column2_id" value="3" />
-            <param name="paired" value="FALSE" />
-            <param name="alternative" value="greater" />
-            <param name="mu" value="0" />
-            <param name="exact" value="FALSE" />
-            <param name="correct" value="TRUE"/>
-            <output name="output_file" file="greated_two_columns_test_output.txt" />
+            <output name="output_file" file="two_sided_one_column_test_output.txt"/>
         </test>
     </tests>
 

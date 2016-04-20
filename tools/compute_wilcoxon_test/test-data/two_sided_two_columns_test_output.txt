@@ -1,6 +1,6 @@
-statistic	36655
+statistic	981
 parameter	parameter
-p.value	1.12464846657677e-22
+p.value	0.916918193979449
 null.value	0
 alternative	two.sided
 method	Wilcoxon rank sum test with continuity correction
