@@ -73,7 +73,7 @@
             <param name="header" value="TRUE"/>
             <param name="column1_id" value="3"/>
             <param name="add_column_test" value="true"/>
-            <param name="column2_id" value="4"/>
+            <param name="column2_id" value="5"/>
             <param name="paired" value="FALSE"/>
             <param name="alternative" value="two.sided"/>
             <param name="mu" value="0"/>
