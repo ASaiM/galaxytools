@@ -88,7 +88,7 @@
 
     <tests>
         <test>
-            <param name="input_file" value="input_file_test.txt" />
+            <param name="input_file" value="input_file.txt" />
             <param name="header" value="FALSE" />
             <param name="output_format" value="pdf" />    
             <param name="x_column_id" value="2" />
@@ -105,20 +105,19 @@
             <param name="left_margin" value="5" />
             <param name="top_margin" value="1" />
             <param name="right_margin" value="1" />
-            <output name="output_pdf_file" file="output_test.pdf" />
+            <output name="output_pdf_file" file="output_file.pdf" />
         </test>
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool plot a generic X-Y plot from a tabular file into different format files given different customizable parameters:
+This tool plot a generic X-Y plot:
 
-        .. image:: $PATH_TO_IMAGES/output.png
-           :scale: 50 %
+.. image:: $PATH_TO_IMAGES/output.png
+   :scale: 50 %
 
-        This tool relies on R's plot function.
-
+This tool relies on R's plot function. The input file must be a tabular file with at least two data columns. The output image is customizable (margin, legend positions, ...) and can be export in different format. 
     ]]></help>
 
     <citations>

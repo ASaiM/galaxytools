@@ -1,4 +1,3 @@
-	SRR072232	SRR072233
 Peptidoglycan glycosyltransferase	0.000161727	0.0118886
 4Fe 4S ferredoxin iron sulfur binding domain containing protein	0.000868638	0.000531762
 glutamine synthetase	2.69312e-06	5.73862e-06

@@ -1,4 +1,4 @@
-<tool id="export2graphlan" name="Export to GraPhlAn" version="0.1.0">
+<tool id="export2graphlan" name="Export to GraPhlAn" version="0.19">
 
     <description></description>
 
@@ -6,7 +6,7 @@
         <requirement type="package" version="0.16">pandas</requirement>
         <requirement type="package" version="0.16">scipy</requirement>
         <requirement type="package" version="1.4">matplotlib</requirement>
-        <requirement type="package" version="1.0">export2graphlan</requirement>
+        <requirement type="package" version="0.19">export2graphlan</requirement>
     </requirements>
 
     <stdio>
