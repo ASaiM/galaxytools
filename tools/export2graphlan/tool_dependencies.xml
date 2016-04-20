@@ -9,11 +9,11 @@
     <package name="matplotlib" version="1.4">
         <repository name="package_python_2_7_matplotlib_1_4" owner="iuc" />
     </package>
-    <package name="export2graphlan" version="1.0">
+    <package name="export2graphlan" version="0.19">
         <install version="1.0">
             <actions>
                 <action type="shell_command"><![CDATA[
-                    hg clone https://hg@bitbucket.org/CibioCM/export2graphlan
+                    hg clone -r d6c10c1 https://hg@bitbucket.org/CibioCM/export2graphlan
                 ]]></action>
                 <action type="move_file">
                     <source>export2graphlan.py</source>
