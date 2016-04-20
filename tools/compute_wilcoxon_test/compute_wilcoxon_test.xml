@@ -20,9 +20,9 @@
             --output_file $output_file
             --column1_id $column1_id
 
-            #if $add_data.test == 'true':
-                --column2_id $add_data.column2_id
-                --paired $add_data.paired
+            #if $add_column.add_column_test == "true":
+                --column2_id $add_column.column2_id
+                --paired $add_column.paired
             #end if
 
             --alternative "$alternative"
@@ -40,9 +40,9 @@
   
         <param name="column1_id" type="data_column" data_ref="input_file" label="Column containing data" multiple="false" numerical="true" help="(--column1_id)"/>
 
-        <conditional name="add_data">
-            <param name="test" label="Add a new column?" type="select" help="(--alternative)">
-                <option value="true" selected="True">Yes</option>
+        <conditional name="add_column">
+            <param name="add_column_test" label="Add a new column?" type="select" help="(--alternative)">
+                <option value="true" selected="true">Yes</option>
                 <option value="false">No</option>
             </param>
             <when value="true">
