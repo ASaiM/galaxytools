@@ -1,5 +1,5 @@
 <tool id="compare_humann2_output" name="Compare outputs of HUMAnN2 for several samples" version="0.1.0">
-    <description>and extract information</description>
+    <description>and extract similar and specific information</description>
 
     <requirements>
     </requirements>
