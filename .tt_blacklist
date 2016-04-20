@@ -8,7 +8,3 @@ tools/graphlan
 tools/humann2
 tools/metaphlan2
 tools/normalize_dataset
-tools/plot_barplot
-tools/plot_generic_x_y_plot
-tools/plot_grouped_barplot
-tools/rdptools
