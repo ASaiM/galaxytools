@@ -79,7 +79,7 @@
             <param name="mu" value="0"/>
             <param name="exact" value="FALSE"/>
             <param name="correct" value="TRUE"/>
-            <output name="output_file" file="two_sided_one_column_test_output.txt"/>
+            <output name="output_file" file="two_sided_two_columns_test_output.txt"/>
         </test>
     </tests>
 
