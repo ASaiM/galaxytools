@@ -16,6 +16,7 @@
     <command><![CDATA[
         Rscript $__tool_directory__/compute_wilcoxon_test.R
             --input_file $input_file
+	    --header $header
             --output_file $output_file
             --column1_id $column1_id
 
@@ -35,6 +36,8 @@
     <inputs>
         <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns and header in first line (--input_file)"/>
 
+        <param name="header" type="boolean" truevalue="TRUE" falsevalue="FALSE" checked="false" label="Header in first line?" help="(--header)"/>
+  
         <param name="column1_id" type="data_column" data_ref="input_file" label="Column containing data" multiple="false" numerical="true" help="(--column1_id)"/>
 
         <conditional name="add_data">
