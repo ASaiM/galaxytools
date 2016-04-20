@@ -1,0 +1,7 @@
+categories: 
+  - Tool Dependency Packages
+description: "HUMAnN2 is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data."
+homepage_url: http://huttenhower.sph.harvard.edu/humann2
+name: package_humann2_0_6_1
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/packages/package_humann2_0_6_1
