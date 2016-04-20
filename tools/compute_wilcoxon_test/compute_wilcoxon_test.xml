@@ -66,16 +66,40 @@
     </outputs>
 
     <tests>
-        <param name="input_file" value="input_file.txt" />
-        <param name="column1_id" value="2" />
-        <param name="test" value="true" />
-        <param name="column2_id" value="3" />
-        <param name="paired" value="TRUE" />
-        <param name="alternative" value="two.sided" />
-        <param name="mu" value="0" />
-        <param name="exact" value="FALSE" />
-        <param name="correct" value="TRUE"/>
-        <output name="output_file" value="output_file.txt" />
+        <test>
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="column1_id" value="2" />
+            <param name="test" value="true" />
+            <param name="column2_id" value="3" />
+            <param name="paired" value="FALSE" />
+            <param name="alternative" value="two.sided" />
+            <param name="mu" value="0" />
+            <param name="exact" value="FALSE" />
+            <param name="correct" value="TRUE"/>
+            <output name="output_file" file="output_test_true_twoSided.txt" />
+        </test>
+        <test>
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="column1_id" value="2" />
+            <param name="test" value="false" />
+            <param name="alternative" value="two.sided" />
+            <param name="mu" value="0" />
+            <param name="exact" value="FALSE" />
+            <param name="correct" value="TRUE"/>
+            <output name="output_file" file="output_test_false_twoSided.txt" />
+        </test>
+        <test>
+            <param name="input_file" value="input_file_test.txt" />
+            <param name="column1_id" value="2" />
+            <param name="test" value="true" />
+            <param name="column2_id" value="3" />
+            <param name="paired" value="FALSE" />
+            <param name="alternative" value="greater" />
+            <param name="mu" value="0" />
+            <param name="exact" value="FALSE" />
+            <param name="correct" value="TRUE"/>
+            <output name="output_file" file="output_test_true_greater.txt" />
+        </test>
     </tests>
 
     <help><![CDATA[
