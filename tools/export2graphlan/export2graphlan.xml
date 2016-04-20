@@ -192,10 +192,10 @@ export2graphlan.py -v
             <param name="fperc" value=""/>
             <param name="stop" value=""/>
             <param name="ftop" value=""/>
-            <output name="annotation" file="output_annotation.txt"/>
-            <output name="tree" file="output_tree.txt"/>
+            <output name="annotation" file="annotation_output.txt"/>
+            <output name="tree" file="tree_output.txt"/>
         </test>
-    </tests>
+    </tests
 
     <help><![CDATA[
 
