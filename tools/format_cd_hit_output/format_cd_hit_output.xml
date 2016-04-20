@@ -73,16 +73,14 @@
 
     <tests>
         <test>
-            <param name="input_representative_sequences" 
-                value="input_representative_sequences.fasta"/>
-            <param name="rename_representative_sequences.test" value="yes"/>
-            <param name="input_cluster_info" value="input_cluster_info.txt"/>
-            <param name="extract_category_distribution.test" value="yes"/>
-            <param name="input_mapping_file" value="input_mapping.txt"/>
-            <output name="output_representative_sequences" 
-                file="output_representative_sequences.fasta"/>
-            <output name="output_category_distribution" 
-                file="output_category_distribution.txt"/>
+            <param name="input_cluster_info" value=""/>
+            <param name="rename_representative_sequences.test" value="true"/>
+            <param name="input_representative_sequences" value=""/>
+            <param name="extract_category_distribution.test" value="true"/>
+            <param name="input_mapping" value=""/>
+            <param name="number_sum" value="true"/>
+            <output name="output_representative_sequences" file=""/>
+            <output name="output_category_distribution" file=""/>
         </test>
     </tests>
 
