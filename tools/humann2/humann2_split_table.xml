@@ -35,8 +35,8 @@
 
     <tests>
         <test>
-            <param name="input_file" value="humann2_input.fasta"/>
-            <output name="report" file="" />
+            <param name="input_file" values="gene_families_humann2_output.tabular,gene_select_humann2_output.tabular"/>
+            <output name="report" file="humann2_joined_table.tsv" />
         </test>
     </tests>
 
