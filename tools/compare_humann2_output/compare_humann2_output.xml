@@ -1,5 +1,5 @@
 <tool id="compare_humann2_output" name="Compare outputs of HUMAnN2 for several samples" version="0.1.0">
-    <description>and extract information</description>
+    <description>and extract similar and specific information</description>
 
     <requirements>
     </requirements>
@@ -54,16 +54,16 @@
     <tests>
         <test>
             <param name="samples_0|sample_name" value="sample1"/>
-            <param name="samples_0|input" value="humann2_m8_pathabundance_cmp_renormalized.tsv"/>
+            <param name="samples_0|input" value="sample_1_pathway_abundances.tabular"/>
             <param name="samples_1|sample_name" value="sample2"/>
-            <param name="samples_1|input" value="humann2_fasta_pathabundance_relab_renormalized.csv"/>
+            <param name="samples_1|input" value="sample_2_pathway_abundances.tabular"/>
             <param name="charact_nb" value="10"/>
-            <output name="more_abundant_output_file" file="more_abundant_output.tabular"/>
-            <output name="similar_output_file" file="similar_output.tabular"/>
-            <output name="log" file="log_output.txt"/>
+            <output name="more_abundant_output_file" file="more_abundant_pathways.tabular"/>
+            <output name="similar_output_file" file="sample_similar_pathways.tabular"/>
+            <output name="log" file="sample_comparison_log.txt"/>
             <output_collection name="specific_files" type="list">
-                <element name="specific_to_sample1" file="specific_to_sample1_output.txt" />
-                <element name="specific_to_sample2" file="specific_to_sample2_output.txt" />
+                <element name="specific_to_sample1" file="sample_1_specific_pathways.txt" />
+                <element name="specific_to_sample2" file="sample_2_specific_pathways.txt" />
             </output_collection>
         </test>
     </tests>
@@ -76,7 +76,7 @@ This tool compare HUMANnN2 outputs with gene families or pathways and their rela
   * Similar gene families or pathways between the samples and the relative abundances of these similar characteristics
 
   * Most abundant gene families or pathways for each sample and the corresponding relative abundance in all samples
-  
+
   * Specific gene families and pathways for each samples and the relative abundances of these specific characteristics
 
     ]]></help>
