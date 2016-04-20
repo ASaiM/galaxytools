@@ -3,7 +3,6 @@ tools/compare_humann2_output
 tools/compute_wilcoxon_test
 tools/extract_sequence_file
 tools/format_cd_hit_output
-tools/format_metaphlan2_output
 tools/graphlan
 tools/group_humann2_uniref_abundances_to_GO
 tools/humann2
