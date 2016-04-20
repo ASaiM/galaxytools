@@ -55,10 +55,11 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool format output file of MetaPhlan2 containing community content (abundance) at all taxonomic levels (from kingdom to strains).
-        9 files are generated: one file per taxonomic levels with abundance for corresponding clades and one file combining all taxonomic levels and corresponding abundances.
+This tool format output file of MetaPhlan2 containing community content (abundance) at all taxonomic levels (from kingdom to strains).
+
+9 files are generated: one file per taxonomic levels with abundance for corresponding clades and one file combining all taxonomic levels and corresponding abundances.
     ]]></help>
 
     <citations>
