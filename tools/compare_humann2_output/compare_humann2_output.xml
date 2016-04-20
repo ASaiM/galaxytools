@@ -52,15 +52,32 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="samples_0|sample_name" value="sample1"/>
+            <param name="samples_0|input" value="humann2_m8_pathabundance_cmp_renormalized.tsv"/>
+            <param name="samples_1|sample_name" value="sample2"/>
+            <param name="samples_1|input" value="humann2_fasta_pathabundance_relab_renormalized.csv"/>
+            <param name="charact_nb" value="10"/>
+            <output name="more_abundant_output_file" file="more_abundant_output.tabular"/>
+            <output name="similar_output_file" file="similar_output.tabular"/>
+            <output name="log" file="log_output.txt"/>
+            <output_collection name="specific_files" type="list">
+                <element name="specific_to_sample1" file="specific_to_sample1_output.txt" />
+                <element name="specific_to_sample2" file="specific_to_sample2_output.txt" />
+            </output_collection>
+        </test>
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool compare HUMANnN2 outputs with gene families or pathways relative abundances of several samples and extract several files:
+This tool compare HUMANnN2 outputs with gene families or pathways and their relative abundances between several samples. Several files are extracted:
 
-        - Similar gene families or pathways between the samples and the relative abundances and these similar characteristics
-        - Most abundant gene families or pathways for each sample and the corresponding relative abundance in all samples
+  * Similar gene families or pathways between the samples and the relative abundances of these similar characteristics
+
+  * Most abundant gene families or pathways for each sample and the corresponding relative abundance in all samples
+  
+  * Specific gene families and pathways for each samples and the relative abundances of these specific characteristics
 
     ]]></help>
 

@@ -243,11 +243,13 @@ HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absenc
 
 Usually, a single file is the input. It must be one of the following types:
 
-- filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format)
-- alignment file (sam, bam or blastm8 format)
-- gene table file (tsv or biom format)
+ - filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format)
+ - alignment file (sam, bam or blastm8 format)
+ - gene table file (tsv or biom format)
 
 A file with taxonomic profiles can also be given to be use to select pangenomes in ChocoPhlan database.
+
+Needed databases have to be manually downloaded once to be used. For more information, check `tool-data` files.
 
 ----- 
 
@@ -255,9 +257,9 @@ A file with taxonomic profiles can also be given to be use to select pangenomes 
 
 HUMAnN creates three output files:
 
-- Gene family abundance
-- Pathway abundance
-- Pathway coverage
+ - Gene family abundance
+ - Pathway abundance
+ - Pathway coverage
 
     ]]></help>
 

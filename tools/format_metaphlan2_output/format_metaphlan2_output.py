@@ -50,7 +50,10 @@ def format_metaphlan2_output(args):
             output_file.write("abundance\n")
             levels_number = 8
 
-            for line in input_file.readlines()[1:]:
+            for line in input_file.readlines():
+                if line.startswith("#"):
+                    continue
+
                 split_line = line[:-1].split('\t')
                 all_taxo = split_line[0]
                 abundance = split_line[1]
