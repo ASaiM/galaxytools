@@ -103,10 +103,9 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool compute a Wilcoxon test with R's wilcox.test function.
-
+This tool compute a Wilcoxon test with R's wilcox.test function.
     ]]></help>
 
     <citations>
