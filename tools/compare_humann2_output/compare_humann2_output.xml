@@ -62,8 +62,8 @@
             <output name="similar_output_file" file="sample_similar_pathways.tabular"/>
             <output name="log" file="sample_comparison_log.txt"/>
             <output_collection name="specific_files" type="list">
-                <element name="specific_to_sample1" file="sample_0_specific_pathways.txt" />
-                <element name="specific_to_sample2" file="sample_1_specific_pathways.txt" />
+                <element name="specific_to_sample1" file="sample_1_specific_pathways.txt" />
+                <element name="specific_to_sample2" file="sample_2_specific_pathways.txt" />
             </output_collection>
         </test>
     </tests>
