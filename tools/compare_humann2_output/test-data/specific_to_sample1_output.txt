@@ -1,2 +1,0 @@
-id	name	abundances
-PWY-6151	S adenosyl L methionine cycle I|unclassified	6984130.0
