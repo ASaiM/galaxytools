@@ -6,20 +6,20 @@
     <package name="humann2" version="0.5.0">
         <repository name="package_humann2_0_5_0" owner="bebatut" />
     </package>
-    <package name="goatools" version="0.5.9">
-        <repository name="package_goatools_0_5_9" owner="bebatut" />
+    <package name="goatools" version="0.6.4">
+        <repository name="package_goatools_0_6_4" owner="bebatut" />
     </package>
-    <package name="group_humann2_uniref_abundances_to_GO" version="1.0.0">
+    <package name="group_humann2_uniref_abundances_to_go" version="1.2.0">
         <install version="1.0">
             <actions>
-                <action type="download_by_url">https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO/archive/v1.0.0.zip</action>
+                <action type="download_by_url">https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO/archive/v1.2.0.zip</action>
                 <action type="move_directory_files">
                     <source_directory>.</source_directory>
                     <destination_directory>$INSTALL_DIR/</destination_directory>
                 </action>
                 <action type="set_environment">
                     <environment_variable name="GROUP_UNIREF_GO_DIR" action="set_to">$INSTALL_DIR/</environment_variable>
-                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR/bin</environment_variable>
+                    <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR</environment_variable>
                 </action>
             </actions>
         </install>

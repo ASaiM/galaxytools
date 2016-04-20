@@ -1,11 +1,11 @@
-<tool id="group_humann2_uniref_abundances_to_go" name="Group HUMAnN2 UniRef50 abundances" version="1.0.0">
+<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances of UniRef50 gene families obtained with HUMAnN2" version="1.2.0">
     <description>to Gene Ontology (GO) slim terms</description>
 
     <requirements>
         <requirement type="package" version="1.9">numpy</requirement>
         <requirement type="package" version="0.5.0">humann2</requirement>
-        <requirement type="package" version="0.5.9">goatools</requirement>
-        <requirement type="package" version="1.0.0">group_humann2_uniref_abundances_to_GO</requirement>
+        <requirement type="package" version="0.6.4">goatools</requirement>
+        <requirement type="package" version="1.2.0">group_humann2_uniref_abundances_to_go</requirement>
     </requirements>
 
     <stdio>
@@ -23,7 +23,7 @@
     <version_command></version_command>
 
     <command><![CDATA[
-        \${GROUP_UNIREF_GO_DIR}/group_to_GO_abundances.sh
+        group_humann2_uniref_abundances_to_GO.sh
             -i $humann2_gene_families_abundance 
             -m $molecular_function_abundance
             -b $biological_process_abundance
@@ -124,18 +124,18 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        HUMAnN2 is a pipeline to profile the presence/absence and abundance of microbial pathways in community of microbiota sequencing data. One output is a file with UniRef50 gene family abundances. HUMAnN2 proposes a script to regroup Uniref50 to GO, but used GO terms are too precise to get a broad overview of the ontology content.
+HUMAnN2 is a pipeline to profile the presence/absence and abundance of microbial pathways in community of microbiota sequencing data. One output is a file with UniRef50 gene family abundances. HUMAnN2 proposes a script to regroup Uniref50 to GO, but used GO terms are too precise to get a broad overview of the ontology content.
 
-        The tool described here contains scripts to group UniRef50 abundances obtained using main HUMANn2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
+The tool described here contains scripts to group UniRef50 abundances obtained using main HUMANn2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
 
-        More information on `GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
+More information on `GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
 
     ]]></help>
 
     <citations>
-        <citation type="doi">10.5281/zenodo.46401</citation>
+        <citation type="doi">10.5281/zenodo.49952</citation>
         <citation type="doi">10.5281/zenodo.31628</citation>
     </citations>
 </tool>

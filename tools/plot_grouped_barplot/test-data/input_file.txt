@@ -1,4 +1,3 @@
-	SRR072232	SRR072233
 Replication initiation protein, truncated	0.195633	0.0431745
 Resolvase, putative	0.00060098	0.183306
 UniRef50_Q8CU99	0.173071	0.0296448
