@@ -76,7 +76,7 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" file="output_test_true_twoSided.text" />
+            <output name="output_file" file="output_test_true_twoSided.txt" />
         </test>
         <test>
             <param name="input_file" value="input_file_test.txt" />
@@ -86,7 +86,7 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" file="output_test_false_twoSided.text" />
+            <output name="output_file" file="output_test_false_twoSided.txt" />
         </test>
         <test>
             <param name="input_file" value="input_file_test.txt" />
@@ -98,7 +98,7 @@
             <param name="mu" value="0" />
             <param name="exact" value="FALSE" />
             <param name="correct" value="TRUE"/>
-            <output name="output_file" file="output_test_true_greater.text" />
+            <output name="output_file" file="output_test_true_greater.txt" />
         </test>
     </tests>
 
