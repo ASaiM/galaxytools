@@ -69,12 +69,15 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool compare HUMANnN2 outputs with gene families or pathways relative abundances of several samples and extract several files:
+This tool compare HUMANnN2 outputs with gene families or pathways and their relative abundances between several samples. Several files are extracted:
 
-        - Similar gene families or pathways between the samples and the relative abundances and these similar characteristics
-        - Most abundant gene families or pathways for each sample and the corresponding relative abundance in all samples
+  * Similar gene families or pathways between the samples and the relative abundances of these similar characteristics
+
+  * Most abundant gene families or pathways for each sample and the corresponding relative abundance in all samples
+  
+  * Specific gene families and pathways for each samples and the relative abundances of these specific characteristics
 
     ]]></help>
 
