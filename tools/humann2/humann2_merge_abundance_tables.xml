@@ -1,4 +1,4 @@
-<tool id="humann2_merge_abundance_tables" name="Merge HUMAnN2 gene and pathway abundance tables" version="0.1.0">
+<tool id="humann2_merge_abundance_tables" name="Merge HUMAnN2 gene and pathway abundance tables" version="0.6.1">
     <description></description>
 
     <macros>
