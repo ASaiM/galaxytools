@@ -1,4 +1,4 @@
-<tool id="humann2_rna_dna_norm" name="Combine metagenomic and metatranscriptomic HUMAnN2 data" version="0.5.0">
+<tool id="humann2_rna_dna_norm" name="Combine metagenomic and metatranscriptomic HUMAnN2 data" version="0.6.1">
     <description></description>
 
     <macros>

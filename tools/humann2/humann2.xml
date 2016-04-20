@@ -1,4 +1,4 @@
-<tool id="humann2" name="HUMAnN2" version="0.5.0">
+<tool id="humann2" name="HUMAnN2" version="0.6.1">
     <description>to profile the presence/absence and abundance of microbial pathways</description>
 
     <macros>

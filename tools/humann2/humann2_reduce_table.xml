@@ -1,4 +1,4 @@
-<tool id="humann2_reduce_table" name="Reduce HUMAnN2 table" version="0.5.0">
+<tool id="humann2_reduce_table" name="Reduce HUMAnN2 table" version="0.6.1">
     <description></description>
 
     <macros>
