@@ -41,7 +41,7 @@
                         <package name="wget" version="3.2" />
                     </repository>
 
-                    <package md5sum="2d5f1f9319dbf59850bf92cfa71e92ee">https://pypi.python.org/packages/source/g/goatools/goatools-0.5.9.tar.gz</package>
+                    <package md5sum="0f0b5ff462b3b965ba38c44830652ea0">https://pypi.python.org/packages/source/g/goatools/goatools-0.6.4.tar.gz</package>
                 </action>
 
                 <action type="set_environment">
