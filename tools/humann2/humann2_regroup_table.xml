@@ -1,4 +1,4 @@
-<tool id="humann2_regroup_table" name="Regroup HUMAnN2 table features" version="0.5.0">
+<tool id="humann2_regroup_table" name="Regroup HUMAnN2 table features" version="0.6.1">
     <description></description>
 
     <macros>
