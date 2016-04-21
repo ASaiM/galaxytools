@@ -9,12 +9,16 @@ option_specification = matrix(c(
   'paired','f',2,'logical',
   'exact','g',2,'logical',
   'correct','h',2, 'logical',
-  'mu','i',2,'integer'
+  'mu','i',2,'integer',
+  'header','y',2,'logical'
 ), byrow=TRUE, ncol=4);
 
 options = getopt(option_specification);
 
-data = read.table(options$input_file, sep = '\t', h = T)
+header = TRUE
+if(!is.null(options$header)) header = options$header
+
+data = read.table(options$input_file, sep = '\t', h = header)
 
 column1_id = 1
 if(!is.null(options$column1_id)) column1_id = options$column1_id

@@ -1,6 +1,0 @@
-statistic	36655
-parameter	parameter
-p.value	5.62324233288384e-23
-null.value	0
-alternative	greater
-method	Wilcoxon rank sum test with continuity correction
