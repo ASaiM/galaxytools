@@ -16,12 +16,13 @@
     <command><![CDATA[
         Rscript $__tool_directory__/compute_wilcoxon_test.R
             --input_file $input_file
+	    --header $header
             --output_file $output_file
             --column1_id $column1_id
 
-            #if $add_data.test == 'true':
-                --column2_id $add_data.column2_id
-                --paired $add_data.paired
+            #if $add_column.add_column_test == "true":
+                --column2_id $add_column.column2_id
+                --paired $add_column.paired
             #end if
 
             --alternative "$alternative"
@@ -35,11 +36,13 @@
     <inputs>
         <param name="input_file" type="data" format="tabular,tsv,csv" label="Input file" help="File in tabular format with tab-separated columns and header in first line (--input_file)"/>
 
+        <param name="header" type="boolean" truevalue="TRUE" falsevalue="FALSE" checked="false" label="Header in first line?" help="(--header)"/>
+  
         <param name="column1_id" type="data_column" data_ref="input_file" label="Column containing data" multiple="false" numerical="true" help="(--column1_id)"/>
 
-        <conditional name="add_data">
-            <param name="test" label="Add a new column?" type="select" help="(--alternative)">
-                <option value="true" selected="True">Yes</option>
+        <conditional name="add_column">
+            <param name="add_column_test" label="Add a new column?" type="select" help="(--alternative)">
+                <option value="true" selected="true">Yes</option>
                 <option value="false">No</option>
             </param>
             <when value="true">
@@ -50,7 +53,7 @@
         </conditional>
 
         <param name="alternative" label="Alternative hypothesis" type="select" help="(--alternative)">
-            <option value="two.sided" selected="True">Two sided</option>
+            <option value="two.sided" selected="true">Two sided</option>
             <option value="greater">Greater</option>
             <option value="less">Less</option>
         </param>
@@ -61,28 +64,29 @@
     </inputs>
 
     <outputs>
-        <data name="output_file" format="text"
-            label="${tool.name} on ${on_string}: Wilcox test result" />
+        <data name="output_file" format="txt"  label="${tool.name} on ${on_string}: Wilcox test result" />
     </outputs>
 
     <tests>
-        <param name="input_file" value="input_file.txt" />
-        <param name="column1_id" value="2" />
-        <param name="test" value="true" />
-        <param name="column2_id" value="3" />
-        <param name="paired" value="TRUE" />
-        <param name="alternative" value="two.sided" />
-        <param name="mu" value="0" />
-        <param name="exact" value="FALSE" />
-        <param name="correct" value="TRUE"/>
-        <output name="output_file" value="output_file.txt" />
+        <test>
+            <param name="input_file" ftype="tabular" value="input_file.txt"/>
+            <param name="header" value="TRUE"/>
+            <param name="column1_id" value="3"/>
+            <param name="add_column_test" value="true"/>
+            <param name="column2_id" value="5"/>
+            <param name="paired" value="FALSE"/>
+            <param name="alternative" value="two.sided"/>
+            <param name="mu" value="0"/>
+            <param name="exact" value="FALSE"/>
+            <param name="correct" value="TRUE"/>
+            <output name="output_file" file="two_sided_two_columns_test_output.txt"/>
+        </test>
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool compute a Wilcoxon test with R's wilcox.test function.
-
+This tool compute a Wilcoxon test with R's wilcox.test function.
     ]]></help>
 
     <citations>

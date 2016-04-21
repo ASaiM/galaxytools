@@ -1,0 +1,7 @@
+categories: 
+  - Tool Dependency Packages
+description: "Contains a tool dependency definition that downloads and compiles version 0.6.4 of python goatools package as well as scripts"
+name: package_goatools_0_6_4
+homepage_url: https://github.com/tanghaibao/goatools
+owner: bebatut
+remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/packages/package_goatools_0_6_4
