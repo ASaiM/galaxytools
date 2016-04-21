@@ -76,7 +76,7 @@
             <param name="function" value="mean"/>
             <param name="test" value="true"/>
             <param name="groups" value="uniref50_ko"/>
-            <output name="output_table" file="humann2_regrouped_table_sum_uniref50_ec.tsv"/>
+            <output name="output_table" file="humann2_regrouped_table_mean_uniref50_ko.tsv"/>
         </test>
     </tests>
 
