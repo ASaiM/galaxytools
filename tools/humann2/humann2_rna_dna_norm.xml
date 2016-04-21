@@ -62,9 +62,9 @@
             <param name="input_rna" value=""/>
             <param name="test" value=""/>
             <param name="log_base" value="2" />
-            <data name="smoothed_dna" file="" />
-            <data name="smoothed_rna" file="" />
-            <data name="normalized_rna" file="" />
+            <output name="smoothed_dna" file="" />
+            <output name="smoothed_rna" file="" />
+            <output name="normalized_rna" file="" />
         </test>
     </tests>
 

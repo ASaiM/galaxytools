@@ -16,24 +16,73 @@
 
     <command><![CDATA[
         humann2_merge_abundance_tables
-            --input-genes $input_gene
-            --input-pathways $input_pathway
-            --gene-mapping $gene_mapping
-            --pathway-mapping $pathway-mapping
+
+            #if $input_gene_selection.input_gene_selection_test:
+                --input-genes $input_gene
+            #end if 
+
+            #if $input_pathway_selection.input_pathway_selection_test:
+                --input-pathways $input_pathway
+            #end if 
+
+            #if $gene_mapping_selection.gene_mapping_selection_test:
+                --gene-mapping $gene_mapping
+            #end if 
+
+            #if $pathway_mapping_selection.pathway_mapping_selection_test:
+                --pathway-mapping $pathway-mapping
+            #end if 
+
             $remove_taxonomy
                                   
             -o $output_table
     ]]></command>
 
     <inputs>
-        <param name="input_gene" type="data" format="tsv" label="Gene family or EC 
-            abundance file" help="(--input-genes)"/>
-        <param name="input_pathway" type="data" format="tsv" label="Pathway 
-            abundance file" help="(--input-pathways)"/>
-        <param name="gene_mapping" type="data" format="tsv" label="Gene family 
-            to reaction mapping file" help="(--gene-mapping)"/>
-        <param name="pathway_mapping" type="data" format="tsv" label="Reaction to 
-            pathway mapping file" help="(--pathway-mapping)"/>
+        <conditional name="input_gene_selection">
+            <param name='input_gene_selection_test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use a gene file?" 
+                help=""/>
+                <when value="true">
+                    <param name="input_gene" type="data" format="tsv" label="Gene family or EC 
+                        abundance file" help="(--input-genes)"/>
+                </when>
+                <when value="false">
+                </when>
+        </conditional>
+        <conditional name="input_pathway_selection">
+            <param name='input_pathway_selection_test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use a pathway file?" 
+                help=""/>
+                <when value="true">
+                    <param name="input_pathway" type="data" format="tsv" label="Pathway 
+                        abundance file" help="(--input-pathways)"/>
+                </when>
+                <when value="false">
+                </when>
+        </conditional>  
+        <conditional name="gene_mapping_selection">
+            <param name='gene_mapping_selection_test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use a gene mapping file?" 
+                help=""/>
+                <when value="true">
+                    <param name="gene_mapping" type="data" format="tsv" label="Gene family 
+                        to reaction mapping file" help="(--gene-mapping)"/>
+                </when>
+                <when value="false">
+                </when>
+        </conditional>
+        <conditional name="pathway_mapping_selection">
+            <param name='pathway_mapping_selection_test' type='boolean' checked="false" truevalue='true' 
+                falsevalue='false' label="Use a pathway mapping file?" 
+                help=""/>
+                <when value="true">
+                    <param name="pathway_mapping" type="data" format="tsv" label="Reaction to 
+                        pathway mapping file" help="(--pathway-mapping)"/>
+                </when>
+                <when value="false">
+                </when>
+        </conditional>
         <param name='remove_taxonomy' type='boolean' checked="false" 
             truevalue='--remove-taxonomy' falsevalue='' 
             label="Remove the taxonomy from the output file?" 
@@ -48,12 +97,13 @@
 
     <tests>
         <test>
-            <inputs>
+            <param name="input_gene_selection_test" value="truetrue"/>
             <param name="input_gene" value=""/>
+            <param name="input_pathway_selection_test" value=""/>
             <param name="input_pathway" value=""/>
-            <param name="gene_mapping" value=""/>
-            <param name="pathway_mapping" value=""/>
-            <param name="remove_taxonomy" value=""/>
+            <param name="gene_mapping_selection_test" value="false"/>
+            <param name="pathway_mapping_selection" value="false"/>
+            <param name="remove_taxonomy" value="false"/>
             <output name="output_table" file="" /> 
         </test>
     </tests>
