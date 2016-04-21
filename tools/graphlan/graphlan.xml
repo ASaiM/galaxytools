@@ -102,7 +102,7 @@ graphlan.py -v
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" value="output_image.png" />
+            <output file="png_output_image" value="output_image.png" />
         </test>
     </tests>
 
