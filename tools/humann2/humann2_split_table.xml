@@ -21,7 +21,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="tsv,biom" 
+        <param name="input_file" type="data" format="tsv,biom" multiple="true" 
             label="Gene/pathway table to read" help=""/>
     </inputs>
 
