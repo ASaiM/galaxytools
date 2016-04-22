@@ -118,7 +118,7 @@ graphlan.py -v
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" file="output_image.pdf" />
+            <output name="pdf_output_image" file="output_image.pdf" />
         </test>
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
@@ -126,7 +126,7 @@ graphlan.py -v
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" file="output_image.ps" />
+            <output name="ps_output_image" file="output_image.ps" />
         </test>
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
@@ -134,7 +134,7 @@ graphlan.py -v
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" file="output_image.eps" />
+            <output name="eps_output_image" file="output_image.eps" />
         </test>
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
@@ -142,7 +142,7 @@ graphlan.py -v
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" file="output_image.svg" />
+            <output name="svg_output_image" file="output_image.svg" />
         </test>
     </tests>
 
