@@ -192,8 +192,8 @@ export2graphlan.py -v
             <param name="fperc" value=""/>
             <param name="stop" value=""/>
             <param name="ftop" value=""/>
-            <output name="annotation" file="output_annotation.txt"/>
-            <output name="tree" file="output_tree.txt"/>
+            <output name="annotation" file="annotation_output.txt"/>
+            <output name="tree" file="tree_output.txt"/>
         </test>
     </tests>
 
@@ -201,7 +201,11 @@ export2graphlan.py -v
 
 **What it does**
 
-export2graphlan is a conversion software tool for producing both annotation and tree file for GraPhlAn. In particular, the annotation file tries to highlight specific sub-trees deriving automatically from input file what nodes are important. For more information, check the 
+export2graphlan is a conversion software tool for producing both annotation and tree file for GraPhlAn. It can convert MetaPhlAn, LEfSe, and/or HUMAnN output to GraPhlAn input format
+
+In particular, the annotation file tries to highlight specific sub-trees deriving automatically from input file what nodes are important. 
+
+For more information, check the 
 `user manual <https://bitbucket.org/CibioCM/export2graphlan/overview/>`_.
 
     ]]></help>

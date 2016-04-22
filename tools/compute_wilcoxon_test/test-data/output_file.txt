@@ -1,6 +1,0 @@
-statistic	22435
-parameter	parameter
-p.value	2.0527634209064e-29
-null.value	0
-alternative	two.sided
-method	Wilcoxon signed rank test with continuity correction

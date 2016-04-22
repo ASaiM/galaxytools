@@ -4,16 +4,16 @@
         <repository name="package_python_2_7_10" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="fisher" version="0.1.4">
-        <repository name="package_python_2_7_fisher_0_1_4" owner="bebatut" prior_installation_required="True" />
+        <repository name="package_python_2_7_fisher_0_1_4" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="statsmodels" version="0.6.1">
-        <repository name="package_python_2_7_statsmodels_0_6_1" owner="bebatut" prior_installation_required="True" />
+        <repository name="package_python_2_7_statsmodels_0_6_1" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="xlsxwriter" version="0.8.5">
-        <repository name="package_python_2_7_xlsxwriter_0_8_5" owner="bebatut" prior_installation_required="True" />
+        <repository name="package_python_2_7_xlsxwriter_0_8_5" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="wget" version="3.2">
-        <repository name="package_python_2_7_wget_3_2" owner="bebatut" prior_installation_required="True" />
+        <repository name="package_python_2_7_wget_3_2" owner="iuc" prior_installation_required="True" />
     </package>
     <package name="goatools" version="0.6.4">
         <install version="1.0">
@@ -28,20 +28,20 @@
                     <repository name="package_python_2_7_10" owner="iuc">
                        <package name="python" version="2.7.10" />
                     </repository>
-                    <repository name="package_python_2_7_fisher_0_1_4" owner="bebatut">
+                    <repository name="package_python_2_7_fisher_0_1_4" owner="iuc">
                         <package name="fisher" version="0.1.4" />
                     </repository>
-                    <repository name="package_python_2_7_statsmodels_0_6_1" owner="bebatut">
+                    <repository name="package_python_2_7_statsmodels_0_6_1" owner="iuc">
                         <package name="statsmodels" version="0.6.1" />
                     </repository>
-                    <repository name="package_python_2_7_xlsxwriter_0_8_5" owner="bebatut">
+                    <repository name="package_python_2_7_xlsxwriter_0_8_5" owner="iuc">
                         <package name="xlsxwriter" version="0.8.5" />
                     </repository>
-                    <repository name="package_python_2_7_wget_3_2" owner="bebatut">
+                    <repository name="package_python_2_7_wget_3_2" owner="iuc">
                         <package name="wget" version="3.2" />
                     </repository>
 
-                    <package md5sum="2d5f1f9319dbf59850bf92cfa71e92ee">https://pypi.python.org/packages/source/g/goatools/goatools-0.5.9.tar.gz</package>
+                    <package md5sum="0f0b5ff462b3b965ba38c44830652ea0">https://pypi.python.org/packages/source/g/goatools/goatools-0.6.4.tar.gz</package>
                 </action>
 
                 <action type="set_environment">
