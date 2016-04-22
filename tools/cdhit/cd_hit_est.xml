@@ -43,52 +43,19 @@
     <data format="fasta" name="fasta_out" label="${tool.name} on ${on_string}: representatives.fasta" from_work_dir="rep_seq"/>
   </outputs>
   
-  <tests>
-   <test>
-     <!-- Expect 3 clusters: 0,1,2 -->
-     <param name="fasta_in" value="cd_hit_est_in.fa" />
-     <param name="similarity" value="0.9"/>
-     <param name="wordsize" value="8"/>
-     <param name="strand" value="true"/>
-     <!-- conditionals in macros -->
-     <param name="settings" value="no"/>
-     <param name="tuning" value="default"/>
-     <output name="clusters_out">
-         <assert_contents>
-             <has_text text=">Cluster 0" />
-             <!-- There should not be a Cluster 3 -->
-             <not_has_text text="Cluster 3" />
-             <has_text_matching expression="F12Fcsw_481739" />
-         </assert_contents>
-     </output>
-     <output name="fasta_out">
-         <assert_contents>
-             <has_text_matching expression="^>[MF]\d\dFcsw_\d*" />
-         </assert_contents>
-     </output>
-   </test>
-   <test>
-     <!-- tighter constraints should yield more clusters -->
-     <param name="fasta_in" value="cd_hit_est_in.fa" />
-     <param name="similarity" value="0.95"/>
-     <param name="wordsize" value="9"/>
-     <param name="strand" value="true"/>
-     <!-- conditionals in macros -->
-     <param name="settings" value="no"/>
-     <param name="tuning" value="default"/>
-     <output name="clusters_out">
-         <assert_contents>
-             <has_text text=">Cluster 4" />
-             <has_text_matching expression=">F12Fcsw_481739" />
-         </assert_contents>
-     </output>
-     <output name="fasta_out">
-         <assert_contents>
-             <has_text_matching expression="^>[MF]\d\dFcsw_\d*" />
-         </assert_contents>
-     </output>
-   </test>
-  </tests>
+    <tests>
+      <test>
+        <param name="fasta_in" value="cd_hit_est_in.fa" />
+        <param name="similarity" value="0.9"/>
+        <param name="wordsize" value="8"/>
+        <param name="strand" value="false"/>
+        <!-- conditionals in macros -->
+        <param name="settings" value="no"/>
+        <param name="tuning" value="default"/>
+        <output name="clusters_out" file="est_clusters_output.txt"/>
+        <output name="fasta_out" file="est_fasta_output.fasta"/>
+      </test>
+    </tests>
 
   <help><![CDATA[
 **What it does**
