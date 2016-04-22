@@ -41,46 +41,19 @@
   </outputs>
 
   <tests>
-    <test>
-       <param name="fasta_in" value="cd_hit_protein_in.fasta" />
-       <param name="similarity" value="0.9"/>
-       <param name="wordsize" value="5"/>
-       <!-- conditionals in macros -->
-       <param name="settings" value="no"/>
-       <param name="tuning" value="default"/>
-       <output name="clusters_out">
-           <assert_contents>
-               <has_text text="Cluster 0" />
-               <!--
-               <has_text_matching expression=">sp.P00338-2.LDHA_HU" />
-               -->
-           </assert_contents>
-       </output>
-       <output name="fasta_out">
-           <assert_contents>
-               <has_text_matching expression=">sp.P19858.LDHA_BOVIN" />
-           </assert_contents>
-       </output>
-    </test>
-    <test>
-      <param name="fasta_in" value="cd_hit_protein_in.fasta" />
-      <param name="similarity" value="0.8" />
-      <param name="wordsize" value="5" />
-     <!-- conditionals in macros -->
-      <param name="settings" value="no"/>
-      <param name="tuning" value="default"/>
-      <output name="clusters_out">
-        <assert_contents>
-      <has_text text="Cluster 0" />
-      <not_has_text text="Cluster 4" />
-        </assert_contents>
-      </output>
-      <output name="fasta_out">
-        <assert_contents>
-        <has_text_matching expression=">sp.P00340.LDHA_CHICK" />
-        </assert_contents>
-      </output>
-    </test>
+   <tests>
+      <test>
+        <param name="fasta_in" value="cd_hit_est_in.fa" />
+        <param name="similarity" value="0.9"/>
+        <param name="wordsize" value="8"/>
+        <param name="strand" value="false"/>
+        <!-- conditionals in macros -->
+        <param name="settings" value="no"/>
+        <param name="tuning" value="default"/>
+        <output name="clusters_out" file="est_clusters_output.txt"/>
+        <output name="fasta_out" file="est_fasta_output.fasta"/>
+      </test>
+    </tests>
   </tests>
 
   <help><![CDATA[
