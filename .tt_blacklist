@@ -1,4 +1,3 @@
-tools/cdhit
 tools/extract_sequence_file
 tools/format_cd_hit_output
 tools/graphlan
