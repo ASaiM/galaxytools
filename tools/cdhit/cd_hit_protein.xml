@@ -51,7 +51,7 @@
       <param name="cluster_type" value="false"/>
       <param name="tuning" value="default"/>
       <output name="clusters_out" file="protein_clusters_output.txt"/>
-      <output name="fasta_out" file="est_fasta_output.fasta"/>
+      <output name="fasta_out" file="protein_fasta_output.fasta"/>
     </test>
   </tests>
 
