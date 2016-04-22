@@ -112,6 +112,7 @@ graphlan.py -v
             <param name="pad" value="2"/>
             <output name="png_output_image" file="output_image_non_modif.png" />
         </test>
+
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
             <param name="format" value="pdf"/>
@@ -121,6 +122,15 @@ graphlan.py -v
             <output name="pdf_output_image" file="output_image.pdf" />
         </test>
         <test>
+            <param name="input_tree" value="input_tree.txt"/>
+            <param name="format" value="pdf"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="pdf_output_image" file="output_image_non_modif.pdf" />
+        </test>
+
+        <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
             <param name="format" value="PS"/>
             <param name="dpi" value="100"/>
@@ -129,6 +139,15 @@ graphlan.py -v
             <output name="ps_output_image" file="output_image.ps" />
         </test>
         <test>
+            <param name="input_tree" value="input_tree.txt"/>
+            <param name="format" value="PS"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="ps_output_image" file="output_image_non_modif.ps" />
+        </test>
+
+        <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
             <param name="format" value="EPS"/>
             <param name="dpi" value="100"/>
@@ -136,6 +155,15 @@ graphlan.py -v
             <param name="pad" value="2"/>
             <output name="eps_output_image" file="output_image.eps" />
         </test>
+         <test>
+            <param name="input_tree" value="input_tree.txt"/>
+            <param name="format" value="EPS"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="eps_output_image" file="output_image_non_modif.eps" />
+        </test>
+
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
             <param name="format" value="SVG"/>
@@ -143,6 +171,14 @@ graphlan.py -v
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
             <output name="svg_output_image" file="output_image.svg" />
+        </test>
+         <test>
+            <param name="input_tree" value="input_tree.txt"/>
+            <param name="format" value="SVG"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="svg_output_image" file="output_image_non_modif.svg" />
         </test>
     </tests>
 
