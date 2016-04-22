@@ -41,7 +41,6 @@
   </outputs>
 
   <tests>
-   <tests>
       <test>
         <param name="fasta_in" value="cd_hit_est_in.fa" />
         <param name="similarity" value="0.9"/>
@@ -53,7 +52,6 @@
         <output name="clusters_out" file="est_clusters_output.txt"/>
         <output name="fasta_out" file="est_fasta_output.fasta"/>
       </test>
-    </tests>
   </tests>
 
   <help><![CDATA[
