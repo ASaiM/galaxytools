@@ -17,6 +17,7 @@
           #include source=$common_cdhit_options#
           #include source=$runtime_tuning#
 
+          -T \${GALAXY_SLOTS:-1}
     ]]></command>
 
   <inputs>
