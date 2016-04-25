@@ -82,6 +82,14 @@
             <output name="output_representative_sequences" file="rename_representative_sequences_output.fasta"/>
             <output name="output_category_distribution" file="extract_category_distribution_output.tabular"/>
         </test>
+        <test>
+            <param name="input_cluster_info" value="input_cluster_info.txt"/>
+            <param name="rename_representative_sequences_test" value="false"/>
+            <param name="extract_category_distribution_test" value="true"/>
+            <param name="input_mapping" value="input_mapping.txt"/>
+            <param name="number_sum" value="true"/>
+            <output name="output_category_distribution" file="extract_category_distribution_only_output.tabular"/>
+        </test>
     </tests>
 
     <help><![CDATA[
