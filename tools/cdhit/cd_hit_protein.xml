@@ -21,9 +21,10 @@
 
       <param name="similarity" type="float" value="0.9"  label="Similarity threshold" min=".4" max="1.0" help="Similarity threshold must be in [0.4;1.0] interval (-c)"/>
 
-      <param name="wordsize" type="integer" value="5"  label="Word size" min="2" max="5" help="Similarity threshold -> Suggested word size: 0.7 ~ 1.0 -> 5 | 0.6 ~ 0.7 -> 4 | 0.5 ~ 0.6 -> 3 | 0.4 ~ 0.5 -> 2 (-n)"/>
-        <expand macro="common_cdhit_options" />
-      </inputs>
+      <param name="wordsize" type="integer" value="5"  label="Word size" min="2" max="5" help="It is suggested to adjust word size in function of similarity threshold. 5 for threshold in [0.7;1.0] interval, 4 for [0.6;0.7], 3 for [0.5;0.6], 2 for [0.4;0.5] (-n)"/>
+
+      <expand macro="common_cdhit_options" />
+    </inputs>
 
     <outputs>
       <data format="txt" name="clusters_out" label="${tool.name} on ${on_string}: Clusters" from_work_dir="rep_seq.clstr"/>
@@ -35,7 +36,6 @@
         <param name="fasta_in" value="cd_hit_protein_in.fasta" />
         <param name="similarity" value="0.9" />
         <param name="wordsize" value="5" />
-        <!-- conditionals in macros -->
         <param name="settings" value="no"/>
         <param name="print_alignment" value="false"/>
         <param name="cluster_type" value="false"/>

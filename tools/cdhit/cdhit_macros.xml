@@ -6,45 +6,56 @@
     </xml>
 
   <template name="common_cdhit_options">
-    #if $advanced.settings == 'yes':    
+    #if $advanced.settings == 'yes':
+
       #if str($advanced.band_width) != 'None':
         -b $advanced.band_width
       #end if
+
       #if str($advanced.throw_away_len) != 'None':
         -l $advanced.throw_away_len
       #end if
+
       #if str($advanced.description_len) != 'None':
         -d $advanced.description_len
       #end if
+
       #if str($advanced.cutoff_diff_len) != 'None':
         -s $advanced.cutoff_diff_len
       #end if
+
       #if str($advanced.aa_cutoff_diff_len) != 'None':
         -S $advanced.aa_cutoff_diff_len
       #end if
+
       #if $advanced.align.style == 'local':
         -G 0
         #if str($advance.align.align_coverage_long) != 'None':
           -aL $advance.align.align_coverage_long
         #end if
+
         #if str($advance.align.align_coverage_long_control) != 'None':
           -AL $advance.align.align_coverage_long_control
         #end if
+
         #if str($advance.aling.align_coverage_short) != 'None':
           -aS $advance.align.align_coverage_short
         #end if
+
         #if str($advance.aling.align_coverage_short_control) != 'None':
           -AS $advance.align.align_coverage_short_control
         #end if
+
         #if str($advance.align.align_coverage_min) != 'None':
           -A $advance.align.aling_coverage_min
         #end if
       #end if
     #end if 
-    
+
     #if $print_alignment:
       $print_alignment
     #end if
+
     #if $cluster_type:
       $cluster_type
     #end if
@@ -60,7 +71,9 @@
         <option value="no" selected="true">No</option>
         <option value="yes">Yes</option>
       </param>
+
       <when value="no"/>
+
       <when value="yes">
         <param name="band_width" type="integer" value="20" optional="true" label="Alignment band width" min="1" help="(-b)"/>
 
@@ -71,14 +84,16 @@
         <param name="cutoff_diff_len" type="float" value="0.0" optional="true" label="Length difference cutoff" min="0.0" max="1.0" help="If set to 0.9, the shorter sequences need to be at least 90% length of the representative of the cluster (-s)"/>
 
         <param name="aa_cutoff_diff_len" type="integer" value="999999" optional="true" label="Length difference cutoff in amino acid" min="0" help="If set to 60, the length difference between the shorter sequences and the representative of the cluster can not be bigger than 60 (-S)"/>
+
         <conditional name="align">
           <param name="style" type="select" label="global or local alignments" help="Local sequence identity, calculated as : number of identical amino acids in alignment divided by the length of the alignment. You must set alignment coverage by length or fraction.">
             <option value="global" selected="true">Global</option>
             <option value="local" >Local</option>
           </param>
+
           <when value="global"/>
+
           <when value="local">
-    
 	             <param name="align_coverage_long" type="float" value="0.0" optional="true" label="Alignment coverage for the longer sequence" min="0.0" max="1.0" help="If set to 0.9, the alignment must covers 90% of the sequence (-aL)"/>
 	
 	             <param name="align_coverage_long_control" type="integer" value="99999999" optional="true" label="Alignment coverage control for the longer sequence " min="0" help="If set to 60, and the sequence's length 400,then the alignment must be at least 340 (400-60) residues (-AL)"/>
@@ -90,16 +105,12 @@
 	             <param name="align_coverage_min" type="integer" value="0" optional="true" label="Minimal alignment coverage control for the both sequences" min="0" help="Alignment must cover at least this value for both sequences (-A)"/>
           </when>
         </conditional>
-
       </when>
     </conditional>
+
     <param name="print_alignment" type="boolean" truevalue="-p 1" falsevalue="" checked="false" label="Print alignment overlap in .clstr file"/>
 
-    <param name="cluster_type" type="boolean" truevalue="-g 1" falsevalue="" checked="false" label="Slow Cluster" 
-           help="by cd-hit's default algorithm, a sequence is clustered to the first 
-        cluster that meet the threshold (fast cluster). If set the program
-        will cluster it into the most similar cluster that meet the threshold
-        (accurate but slow mode). This won't change the representatives of final clusters"/>
+    <param name="cluster_type" type="boolean" truevalue="-g 1" falsevalue="" checked="false" label="Slow Cluster" help="In cd-hit's default algorithm, a sequence is clustered to the first cluster that meet the threshold (fast cluster). If set to slow, the program will cluster it into the most similar cluster that meet the threshold (accurate but slow mode). This won't change the representatives of final clusters (-g)"/>
   </macro>
 
 </macros>
