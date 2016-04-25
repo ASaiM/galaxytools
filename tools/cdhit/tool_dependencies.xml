@@ -15,7 +15,7 @@
                 </action>
                 <action type="set_environment">
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR</environment_variable>
-                    <environment_variable name="CDHIT_SITE_OPTIONS" action="set_to">"-M 4000 -T 0"</environment_variable>
+                    <environment_variable name="CDHIT_SITE_OPTIONS" action="set_to">"-M 4000"</environment_variable>
                 </action>
             </actions>
         </install>
@@ -34,4 +34,3 @@ to match your site
         </readme>
     </package>
 </tool_dependency>
-
