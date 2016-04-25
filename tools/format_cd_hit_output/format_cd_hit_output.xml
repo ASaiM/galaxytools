@@ -80,7 +80,7 @@
             <param name="input_mapping" value="input_mapping.txt"/>
             <param name="number_sum" value="true"/>
             <output name="output_representative_sequences" file="output_representative_sequences.fasta"/>
-            <output name="output_category_distribution" file="output_category_distribution.txt"/>
+            <output name="output_category_distribution" file="output_category_distribution.tabular"/>
         </test>
     </tests>
 
