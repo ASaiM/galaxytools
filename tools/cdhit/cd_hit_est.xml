@@ -15,7 +15,6 @@
       -n $wordsize $strand
    
       #include source=$common_cdhit_options#
-      #include source=$runtime_tuning#
   ]]></command>
   
   <inputs>
