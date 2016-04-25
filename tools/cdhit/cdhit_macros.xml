@@ -5,10 +5,7 @@
       </requirements>
     </xml>
 
-  <template name="common_cdhit_options">      
-    <!-- start common cdhit  options -->
-
-    <!-- start adv. settings -->
+  <template name="common_cdhit_options">
     #if $advanced.settings == 'yes':    
       #if str($advanced.band_width) != 'None':
         -b $advanced.band_width
@@ -44,13 +41,15 @@
         #end if
       #end if
     #end if 
-    <!-- end adv. settings -->
+    
     #if $print_alignment:
       $print_alignment
     #end if
     #if $cluster_type:
       $cluster_type
     #end if
+
+    \$CDHIT_SITE_OPTIONS
 
     -T \${GALAXY_SLOTS:-1}
   </template>
