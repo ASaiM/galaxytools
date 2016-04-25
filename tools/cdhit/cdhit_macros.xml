@@ -55,9 +55,6 @@
 
   <template name="runtime_tuning">      
     #if $runtime.tuning == 'tune':
-      #if $runtime.threads_num:
-        -T $runtime.threads_num
-      #end if
       #if $runtime.memory_limit:
         -M $runtime.memory_limit
       #end if
@@ -69,7 +66,6 @@
   </template>
 
   <macro name="common_cdhit_options">
-
     <conditional name="advanced">
       <param name="settings" type="select" label="Choose adavanced settings?">
         <option value="no" selected="true">No</option>
@@ -109,7 +105,6 @@
 
       </when>
     </conditional>
-
     <param name="print_alignment" type="boolean" truevalue="-p 1" falsevalue="" checked="false" label="Print alignment overlap in .clstr file"/>
 
     <param name="cluster_type" type="boolean" truevalue="-g 1" falsevalue="" checked="false" label="Slow Cluster" 
@@ -117,7 +112,6 @@
         cluster that meet the threshold (fast cluster). If set the program
         will cluster it into the most similar cluster that meet the threshold
         (accurate but slow mode). This won't change the representatives of final clusters"/>
-
   </macro>
 
   <macro name="runtime_tuning">
@@ -137,12 +131,10 @@
   </macro>
 
   <token name="@CITATION_SECTION@">------
-
 **Citation**
 
 For the underlying tool, please cite `DePristo MA, Banks E, Poplin R, Garimella KV, Maguire JR, Hartl C, Philippakis AA, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell TJ, Kernytsky AM, Sivachenko AY, Cibulskis K, Gabriel SB, Altshuler D, Daly MJ. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011 May;43(5):491-8. &lt;http://www.ncbi.nlm.nih.gov/pubmed/21478889&gt;`_
 
 If you use this tool in Galaxy, please cite Blankenberg D, et al. *In preparation.*
-
   </token>
 </macros>
