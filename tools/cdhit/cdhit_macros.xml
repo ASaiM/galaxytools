@@ -71,29 +71,29 @@
   <macro name="common_cdhit_options">
 
     <conditional name="advanced">
-      <param name="settings" type="select" label="Use adavanced settings">
+      <param name="settings" type="select" label="Choose adavanced settings?">
         <option value="no" selected="true">No</option>
         <option value="yes">Yes</option>
       </param>
       <when value="no"/>
       <when value="yes">
-        <param name="band_width" type="integer" value="" optional="true" label="band_width of alignment (default 20)">
-          <validator type="in_range" message="alignment band_width must be greater than 0" min="1"/>
+        <param name="band_width" type="integer" value="20" optional="true" label="alignment band width">
+          <validator type="in_range" message="alignment band width must be equal or higher than 1" min="1"/>
         </param>
-        <param name="throw_away_len" type="integer" value="" optional="true" label="length of throw_away_sequences (default 10)">
-          <validator type="in_range" message="throw_away_sequences length must be greater than 0" min="1"/>
+        <param name="throw_away_len" type="integer" value="10" optional="true" label="length of throw away sequences">
+          <validator type="in_range" message="throw away sequences length must be equal or higher than 1" min="1"/>
         </param>
-        <param name="description_len" type="integer" value="" optional="true" label="length of description in .clstr file (default 20)">
+        <param name="description_len" type="integer" value="20" optional="true" label="length of the description">
           <help>if set to 0, it takes the fasta defline and stops at first space</help>
           <validator type="in_range" message="description length cannot be negative" min="0"/>
         </param>
-        <param name="cutoff_diff_len" type="float" value="" optional="true" label="length difference cutoff (default 0.0)">
+        <param name="cutoff_diff_len" type="float" value="0.0" optional="true" label="length difference cutoff">
           <help>if set to 0.9, the shorter sequences need to be at least 90% length of the representative of the cluster</help>
           <validator type="in_range" message="length difference cutoff must be between 0.0 and 1.0" min="0.0" max="1.0"/>
         </param>
-        <param name="aa_cutoff_diff_len" type="integer" value="" optional="true" label="length difference cutoff in amino acid (default 999999)">
+        <param name="aa_cutoff_diff_len" type="integer" value="999999" optional="true" label="length difference cutoff in amino acid">
           <help>if set to 60, the length difference between the shorter sequences and the representative of the cluster can not be bigger than 60</help>
-          <validator type="in_range" message="length difference cutoff in amino acid  be greater than 0" min="0"/>
+          <validator type="in_range" message="length difference cutoff in amino acid be higher than 0" min="0"/>
         </param>
         <conditional name="align">
           <param name="style" type="select" label="global or local alignments">
@@ -106,23 +106,23 @@
           <when value="global"/>
           <when value="local">
     
-	    <param name="align_coverage_long" type="float" value="" optional="true" label="alignment coverage for the longer sequence (default 0.0)">
+	    <param name="align_coverage_long" type="float" value="0.0" optional="true" label="alignment coverage for the longer sequence">
               <help>if set to 0.9, the alignment must covers 90% of the sequence</help>
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
-	    <param name="aa_align_coverage_long" type="integer" value="" optional="true" label="alignment coverage control for the longer sequence (default 99999999)" >
+	    <param name="aa_align_coverage_long" type="integer" value="99999999" optional="true" label="alignment coverage control for the longer sequence " >
               <help>if set to 60, and the length of the sequence is 400,then the alignment must be at least 340 (400-60) residues</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
-	    <param name="align_coverage_short" type="float" value="" optional="true" label="alignment coverage for the shorter sequence (default 0.0)" >
+	    <param name="align_coverage_short" type="float" value="0.0" optional="true" label="alignment coverage for the shorter sequence" >
               <help>if set to 0.9, the alignment must covers 90% of the sequence</help>
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
-	    <param name="aa_align_coverage_short" type="integer" value="" optional="true" label="alignment coverage control for the shorter sequence (default 99999999)" >
+	    <param name="aa_align_coverage_short" type="integer" value="99999999" optional="true" label="alignment coverage control for the shorter sequence" >
               <help>if set to 60, and the length of the sequence is 400, then the alignment must be at least 340 (400-60) residues</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
-	    <param name="align_coverage_min" type="integer" value="" optional="true" label="minimal alignment coverage control for the both sequences (default 0)" >
+	    <param name="align_coverage_min" type="integer" value="0" optional="true" label="minimal alignment coverage control for the both sequences" >
               <help>alignment must cover at least this value for both sequences</help>
 	      <validator type="in_range" message="coverage must be at least 0." min="0"/>
 	    </param>
@@ -150,10 +150,10 @@
       </param>
       <when value="default"/>
       <when value="tune">
-        <param name="threads_num" type="integer" value="1" optional="true" label="number of threads; with 0, all CPUs will be used. (default 1)" >
+        <param name="threads_num" type="integer" value="1" optional="true" label="number of threads; with 0, all CPUs will be used" >
           <validator type="in_range" message="input cannot be negative." min="0" />
         </param>
-        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program; 0 for unlimitted. (default 800)" >
+        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program; 0 for unlimitted" >
           <validator type="in_range" message="input cannot be negative." min="0" />
         </param>
         <param name="in_ram" type="boolean" truevalue="-B 1" falsevalue="" checked="false" label="Too big for in Memory calculation" 

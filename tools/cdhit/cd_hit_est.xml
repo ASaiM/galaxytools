@@ -20,16 +20,14 @@
   
   <inputs>
     <param name="fasta_in" type="data" format="fasta" label="EST Sequences to cluster"/>
-    <param name="similarity" type="float" value="0.9"  label="similarity threshold: .75 - 1.0, default is .9">
-      <validator type="in_range" message="sequence similarity threshold should be .75 - 1.0" min=".75" max="1.0"/>
+    <param name="similarity" type="float" value="0.9"  label="similarity threshold">
+        <help> similarity threshold is included behind 0.75 and 1.0
+        </help>
+        <validator type="in_range" message="sequence similarity threshold should be .75 - 1.0" min=".75" max="1.0"/>
     </param>
     <param name="wordsize" type="integer" value="8"  label="word size">
-      <help> Suggested word size:
-             8,9,10 for thresholds 0.90 ~ 1.0
-             7      for thresholds 0.88 ~ 0.9
-             6      for thresholds 0.85 ~ 0.88
-             5      for thresholds 0.80 ~ 0.85
-             4      for thresholds 0.75 ~ 0.8 
+      <help> similarity threshold -> suggested word size:
+              0.90 ~ 1.0 -> 8,9 or 10 | 0.88 ~ 0.9 -> 7 | 0.85 ~ 0.88 -> 6 | 0.80 ~ 0.85 -> 5 | 0.75 ~ 0.8 -> 4
       </help>
       <validator type="in_range" message="word size should be between 4 and 10" min="4" max="10"/>
     </param>

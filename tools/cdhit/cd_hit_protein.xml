@@ -18,27 +18,26 @@
           #include source=$runtime_tuning#
     ]]></command>
 
-      <inputs>
-        <param name="fasta_in" type="data" format="fasta" label="Protein Sequences to cluster"/>
-        <param name="similarity" type="float" value="0.9"  label="similarity threshold: .4 - 1.0 (default .9)">
-          <validator type="in_range" message="sequence similarity threshold should be .4 - 1.0" min=".4" max="1.0"/>
-        </param>
-        <param name="wordsize" type="integer" value="5"  label="word size (default 5)">
-          <help> Suggested word size:
-              5    for thresholds 0.7 ~ 1.0; 
-              4    for thresholds 0.6 ~ 0.7; 
-              3    for thresholds 0.5 ~ 0.6; 
-              2    for thresholds 0.4 ~ 0.5; 
+  <inputs>
+      <param name="fasta_in" type="data" format="fasta" label="Protein Sequences to cluster"/>
+      <param name="similarity" type="float" value="0.9"  label="similarity threshold">
+          <help> similarity threshold is included behind 0.4 and 1.0
+          </help>
+          <validator type="in_range" message="sequence similarity threshold should be 0.4 - 1.0" min=".4" max="1.0"/>
+      </param>
+      <param name="wordsize" type="integer" value="5"  label="word size (default 5)">
+          <help> similarity threshold -> suggested word size:
+                  0.7 ~ 1.0 -> 5 | 0.6 ~ 0.7 -> 4 | 0.5 ~ 0.6 -> 3 | 0.4 ~ 0.5 -> 2
           </help>
           <validator type="in_range" message="word size should be between 2 and 5" min="2" max="5"/>
-        </param>
-        <expand macro="common_cdhit_options" />
-        <expand macro="runtime_tuning" />
+      </param>
+          <expand macro="common_cdhit_options" />
+          <expand macro="runtime_tuning" />
       </inputs>
 
     <outputs>
         <data format="txt" name="clusters_out" label="${tool.name} on ${on_string}: clusters" from_work_dir="rep_seq.clstr"/>
-        <data format="fasta" name="fasta_out" label="${tool.name} on ${on_string}: representatives.fasta" from_work_dir="rep_seq"/>
+        <data format="fasta" name="fasta_out" label="${tool.name} on ${on_string}: representatives_fasta" from_work_dir="rep_seq"/>
     </outputs>
 
     <tests>
@@ -53,7 +52,7 @@
             <param name="tuning" value="default"/>
             <output name="clusters_out" file="protein_clusters_output.txt"/>
             <output name="fasta_out" file="protein_fasta_output.fasta"/>
-            </test>
+        </test>
     </tests>
 
     <help><![CDATA[
