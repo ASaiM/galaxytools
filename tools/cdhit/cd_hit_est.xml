@@ -68,7 +68,7 @@ cd-hit-est requires a fasta file as input.
 
 The first output is a fasta file containing representative sequences.
 
-The second output is a text file listing the mapping of sequences to the representative sequences:
+The second output is a text file listing the mapping of sequences to the representative sequences::
 
 	>Cluster 0
 	0 2799aa, >PF04998.6|RPOC2_CHLRE/275-3073... *
