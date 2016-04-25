@@ -1,78 +1,83 @@
 <tool id="cd_hit_protein" name="CD-HIT PROTEIN" version="1.3">
-    <description>Cluster a protein dataset into representative sequences</description>
-
+  <description>Cluster a protein dataset into representative sequences</description>
     <macros>
-        <import>cdhit_macros.xml</import>
+      <import>cdhit_macros.xml</import>
     </macros>
 
     <expand macro="requirements"/>
 
     <command><![CDATA[
-       cd-hit 
-          -i "$fasta_in" 
-          -o rep_seq 
-          -c $similarity 
-          -n $wordsize 
+      cd-hit 
+        -i "$fasta_in" 
+        -o rep_seq 
+        -c $similarity 
+        -n $wordsize 
 
-          #include source=$common_cdhit_options#
-          #include source=$runtime_tuning#
-
-          -T \${GALAXY_SLOTS:-1}
+        #include source=$common_cdhit_options#
+        #include source=$runtime_tuning#
     ]]></command>
 
-  <inputs>
+    <inputs>
       <param name="fasta_in" type="data" format="fasta" label="Protein Sequences to cluster" help="(-i)"/>
 
       <param name="similarity" type="float" value="0.9"  label="Similarity threshold" min=".4" max="1.0" help="Similarity threshold must be in [0.4;1.0] interval (-c)"/>
 
       <param name="wordsize" type="integer" value="5"  label="Word size" min="2" max="5" help="Similarity threshold -> Suggested word size: 0.7 ~ 1.0 -> 5 | 0.6 ~ 0.7 -> 4 | 0.5 ~ 0.6 -> 3 | 0.4 ~ 0.5 -> 2 (-n)"/>
-          <expand macro="common_cdhit_options" />
+        <expand macro="common_cdhit_options" />
       </inputs>
 
     <outputs>
-        <data format="txt" name="clusters_out" label="${tool.name} on ${on_string}: clusters" from_work_dir="rep_seq.clstr"/>
-        <data format="fasta" name="fasta_out" label="${tool.name} on ${on_string}: representatives_sequence" from_work_dir="rep_seq"/>
+      <data format="txt" name="clusters_out" label="${tool.name} on ${on_string}: Clusters" from_work_dir="rep_seq.clstr"/>
+      <data format="fasta" name="fasta_out" label="${tool.name} on ${on_string}: Representatives sequences" from_work_dir="rep_seq"/>
     </outputs>
 
     <tests>
-        <test>
-            <param name="fasta_in" value="cd_hit_protein_in.fasta" />
-            <param name="similarity" value="0.9" />
-            <param name="wordsize" value="5" />
-            <!-- conditionals in macros -->
-            <param name="settings" value="no"/>
-            <param name="print_alignment" value="false"/>
-            <param name="cluster_type" value="false"/>
-            <param name="tuning" value="default"/>
-            <output name="clusters_out" file="protein_clusters_output.txt"/>
-            <output name="fasta_out" file="protein_fasta_output.fasta"/>
-        </test>
+      <test>
+        <param name="fasta_in" value="cd_hit_protein_in.fasta" />
+        <param name="similarity" value="0.9" />
+        <param name="wordsize" value="5" />
+        <!-- conditionals in macros -->
+        <param name="settings" value="no"/>
+        <param name="print_alignment" value="false"/>
+        <param name="cluster_type" value="false"/>
+        <param name="tuning" value="default"/>
+        <output name="clusters_out" file="protein_clusters_output.txt"/>
+        <output name="fasta_out" file="protein_fasta_output.fasta"/>
+      </test>
     </tests>
 
     <help><![CDATA[
 **What it does**
+
 CD-HIT_ stands for Cluster Database at High Identity with Tolerance. The program (cd-hit) takes a fasta format sequence database as input and produces a set of 'non-redundant' (nr) representative sequences as output. In addition cd-hit outputs a cluster file, documenting the sequence 'groupies' for each nr sequence representative. The idea is to reduce the overall size of the database without removing any sequence information by only removing 'redundant' (or highly similar) sequences. This is why the resulting database is called non-redundant (nr). Essentially, cd-hit produces a set of closely related protein families from a given fasta sequence database.
+
 .. _CD-HIT: http://www.bioinformatics.org/cd-hit/
+
 ------
+
 **Inputs**
+
 cd-hit requires a protein fasta dataset as input.
+
 ------
-  **Outputs**
-  A fasta datasets containing representative sequences.
-  A text file listing the mapping of sequences to the representative sequences::
-    >Cluster 0
-    0 2799aa, >PF04998.6|RPOC2_CHLRE/275-3073... *
-    >Cluster 1
-    0 2214aa, >PF06317.1|Q6Y625_9VIRU/1-2214... at 80%
-	  1 2215aa, >PF06317.1|O09705_9VIRU/1-2215... at 84%
-    2 2217aa, >PF06317.1|Q6Y630_9VIRU/1-2217... *
-	  3 2216aa, >PF06317.1|Q6GWS6_9VIRU/1-2216... at 84%
-	  4 527aa, >PF06317.1|Q67E14_9VIRU/6-532... at 63%
-	  >Cluster 2
-	  0 2202aa, >PF06317.1|Q6UY61_9VIRU/8-2209... at 60%
-	  1 2208aa, >PF06317.1|Q6IVU4_JUNIN/1-2208... *
-	  2 2207aa, >PF06317.1|Q6IVU0_MACHU/1-2207... at 73%
-	  3 2208aa, >PF06317.1|RRPO_TACV/1-2208... at 69%
+
+**Outputs**
+
+A fasta datasets containing representative sequences.
+A text file listing the mapping of sequences to the representative sequences::
+  >Cluster 0
+  0 2799aa, >PF04998.6|RPOC2_CHLRE/275-3073... *
+  >Cluster 1
+  0 2214aa, >PF06317.1|Q6Y625_9VIRU/1-2214... at 80%
+  1 2215aa, >PF06317.1|O09705_9VIRU/1-2215... at 84%
+  2 2217aa, >PF06317.1|Q6Y630_9VIRU/1-2217... *
+  3 2216aa, >PF06317.1|Q6GWS6_9VIRU/1-2216... at 84%
+  4 527aa, >PF06317.1|Q67E14_9VIRU/6-532... at 63%
+  >Cluster 2
+  0 2202aa, >PF06317.1|Q6UY61_9VIRU/8-2209... at 60%
+  1 2208aa, >PF06317.1|Q6IVU4_JUNIN/1-2208... *
+  2 2207aa, >PF06317.1|Q6IVU0_MACHU/1-2207... at 73%
+  3 2208aa, >PF06317.1|RRPO_TACV/1-2208... at 69%
     ]]></help>
 
     <citations>

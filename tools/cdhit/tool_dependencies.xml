@@ -15,7 +15,7 @@
                 </action>
                 <action type="set_environment">
                     <environment_variable name="PATH" action="prepend_to">$INSTALL_DIR</environment_variable>
-                    <environment_variable name="CDHIT_SITE_OPTIONS" action="set_to">"-M 4000 -T 0"</environment_variable>
+                    <environment_variable name="CDHIT_SITE_OPTIONS" action="set_to">"-M 4000"</environment_variable>
                 </action>
             </actions>
         </install>
@@ -33,7 +33,4 @@ the maximum memory Mb (-M) or to limit the number of threads (-T)
 to match your site 
         </readme>
     </package>
-    <set_environment version="1.0">
-        <environment_variable name="CD_HIT_MEM_OPTIONS" action="set_to">--max_memory 6G --bflyHeapSpaceMax 6G</environment_variable>
-    </set_environment>
 </tool_dependency>

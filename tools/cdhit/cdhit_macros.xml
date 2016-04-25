@@ -2,7 +2,6 @@
   <xml name="requirements">
       <requirements>
         <requirement type="package" version="4.6.4">cd-hit</requirement>
-        <requirement type="set_environment">CD_HIT_MEM_OPTIONS</requirement>
       </requirements>
     </xml>
 
@@ -52,11 +51,13 @@
     #if $cluster_type:
       $cluster_type
     #end if
+
+    -T \${GALAXY_SLOTS:-1}
   </template>
 
   <macro name="common_cdhit_options">
     <conditional name="advanced">
-      <param name="settings" type="select" label="Choose adavanced settings?">
+      <param name="settings" type="select" label="Use advanced settings?">
         <option value="no" selected="true">No</option>
         <option value="yes">Yes</option>
       </param>
@@ -72,8 +73,7 @@
 
         <param name="aa_cutoff_diff_len" type="integer" value="999999" optional="true" label="Length difference cutoff in amino acid" min="0" help="If set to 60, the length difference between the shorter sequences and the representative of the cluster can not be bigger than 60 (-S)"/>
         <conditional name="align">
-          <param name="style" type="select" label="global or local alignments" help="Local sequence identity, calculated as : number of identical amino acids in alignment divided by the length of the alignment
-                  You must set alignment coverage by length or fraction.">
+          <param name="style" type="select" label="global or local alignments" help="Local sequence identity, calculated as : number of identical amino acids in alignment divided by the length of the alignment. You must set alignment coverage by length or fraction.">
             <option value="global" selected="true">Global</option>
             <option value="local" >Local</option>
           </param>
@@ -103,11 +103,4 @@
         (accurate but slow mode). This won't change the representatives of final clusters"/>
   </macro>
 
-  <token name="@CITATION_SECTION@">------
-**Citation**
-
-For the underlying tool, please cite `DePristo MA, Banks E, Poplin R, Garimella KV, Maguire JR, Hartl C, Philippakis AA, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell TJ, Kernytsky AM, Sivachenko AY, Cibulskis K, Gabriel SB, Altshuler D, Daly MJ. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nat Genet. 2011 May;43(5):491-8. &lt;http://www.ncbi.nlm.nih.gov/pubmed/21478889&gt;`_
-
-If you use this tool in Galaxy, please cite Blankenberg D, et al. *In preparation.*
-  </token>
 </macros>
