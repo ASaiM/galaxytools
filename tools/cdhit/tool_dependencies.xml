@@ -29,8 +29,7 @@ https://code.google.com/p/cdhit/
 https://code.google.com/p/cdhit/source/browse/README
 
 Change the CDHIT_SITE_OPTIONS variable in the installed env.sh file to adjust 
-the maximum memory Mb (-M) or to limit the number of threads (-T)
-to match your site 
+the maximum memory Mb (-M).
         </readme>
     </package>
 </tool_dependency>
