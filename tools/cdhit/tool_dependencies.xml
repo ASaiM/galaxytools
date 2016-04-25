@@ -33,5 +33,7 @@ the maximum memory Mb (-M) or to limit the number of threads (-T)
 to match your site 
         </readme>
     </package>
+    <set_environment version="1.0">
+        <environment_variable name="CD_HIT_MEM_OPTIONS" action="set_to">--max_memory 6G --bflyHeapSpaceMax 6G</environment_variable>
+    </set_environment>
 </tool_dependency>
-

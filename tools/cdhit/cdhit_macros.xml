@@ -2,6 +2,7 @@
   <xml name="requirements">
       <requirements>
         <requirement type="package" version="4.6.4">cd-hit</requirement>
+        <requirement type="set_environment">CD_HIT_MEM_OPTIONS</requirement>
       </requirements>
     </xml>
 
