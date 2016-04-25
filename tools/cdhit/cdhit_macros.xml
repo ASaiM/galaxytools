@@ -110,7 +110,7 @@
               <help>if set to 0.9, the alignment must covers 90% of the sequence</help>
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
-	    <param name="aa_align_coverage_long" type="integer" value="99999999" optional="true" label="alignment coverage control for the longer sequence " >
+	    <param name="align_coverage_long_control" type="integer" value="99999999" optional="true" label="alignment coverage control for the longer sequence " >
               <help>if set to 60, and the sequence's length 400,then the alignment must be at least 340 (400-60) residues</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
@@ -118,7 +118,7 @@
               <help>as for the longer</help>
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
-	    <param name="aa_align_coverage_short" type="integer" value="99999999" optional="true" label="alignment coverage control for the shorter sequence" >
+	    <param name="align_coverage_short_control" type="integer" value="99999999" optional="true" label="alignment coverage control for the shorter sequence" >
               <help>as for the longer</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
