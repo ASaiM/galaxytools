@@ -111,15 +111,15 @@
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
 	    <param name="aa_align_coverage_long" type="integer" value="99999999" optional="true" label="alignment coverage control for the longer sequence " >
-              <help>if set to 60, and the length of the sequence is 400,then the alignment must be at least 340 (400-60) residues</help>
+              <help>if set to 60, and the sequence's length 400,then the alignment must be at least 340 (400-60) residues</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
 	    <param name="align_coverage_short" type="float" value="0.0" optional="true" label="alignment coverage for the shorter sequence" >
-              <help>if set to 0.9, the alignment must covers 90% of the sequence</help>
+              <help>as for the longer</help>
 	      <validator type="in_range" message="input must be between 0.0 and 1.0." min="0.0" max="1.0" />
 	    </param>
 	    <param name="aa_align_coverage_short" type="integer" value="99999999" optional="true" label="alignment coverage control for the shorter sequence" >
-              <help>if set to 60, and the length of the sequence is 400, then the alignment must be at least 340 (400-60) residues</help>
+              <help>as for the longer</help>
 	      <validator type="in_range" message="input cannot be negative." min="0" />
 	    </param>
 	    <param name="align_coverage_min" type="integer" value="0" optional="true" label="minimal alignment coverage control for the both sequences" >
@@ -146,14 +146,16 @@
     <conditional name="runtime">
       <param name="tuning" type="select" label="Runtime Memory and Threads">
         <option value="default" selected="true">Use Default settings</option>
-        <option value="tune" >Set Runtime options</option>
+        <option value="options" >Set Runtime options</option>
       </param>
       <when value="default"/>
-      <when value="tune">
-        <param name="threads_num" type="integer" value="1" optional="true" label="number of threads; with 0, all CPUs will be used" >
+      <when value="options">
+        <param name="threads_num" type="integer" value="1" optional="true" label="number of threads" >
+           <help>with 0, all CPUs will be used</help>
           <validator type="in_range" message="input cannot be negative." min="0" />
         </param>
-        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program; 0 for unlimitted" >
+        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program" >
+          <help>0 for unlimitted memory</help>
           <validator type="in_range" message="input cannot be negative." min="0" />
         </param>
         <param name="in_ram" type="boolean" truevalue="-B 1" falsevalue="" checked="false" label="Too big for in Memory calculation" 
