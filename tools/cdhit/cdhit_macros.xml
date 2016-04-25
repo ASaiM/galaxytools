@@ -55,6 +55,9 @@
 
   <template name="runtime_tuning">      
     #if $runtime.tuning == 'tune':
+      #if $runtime.threads_num:
+        -T $runtime.threads_num
+      #end if
       #if $runtime.memory_limit:
         -M $runtime.memory_limit
       #end if
@@ -118,13 +121,14 @@
     <conditional name="runtime">
       <param name="tuning" type="select" label="Runtime Memory and Threads">
         <option value="default" selected="true">Use Default settings</option>
-        <option value="options" >Set Runtime options</option>
+        <option value="tune" >Set Runtime options</option>
       </param>
       <when value="default"/>
-      <when value="options">
+      <when value="tune">
+        <param name="threads_num" type="integer" value="1" optional="true" label="number of threads; with 0, all CPUs will be used. (default 1)" min="0" />
 
-        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program" min="0" help="0 for unlimitted memory"/>
-
+        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program; 0 for unlimitted. (default 800)" min="0" />
+    
         <param name="in_ram" type="boolean" truevalue="-B 1" falsevalue="" checked="false" label="Too big for in Memory calculation" help="Use for huge databases"/>
       </when>
     </conditional>
