@@ -29,7 +29,6 @@
 
     <param name="strand" type="boolean" truevalue="-r 1" falsevalue="" checked="false" label="Compare both strands"/>
     <expand macro="common_cdhit_options" />
-    <expand macro="runtime_tuning" />
   </inputs>
 
   <outputs>

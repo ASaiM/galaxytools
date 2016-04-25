@@ -54,18 +54,6 @@
     #end if
   </template>
 
-  <template name="runtime_tuning">      
-    #if $runtime.tuning == 'tune':
-      #if $runtime.memory_limit:
-        -M $runtime.memory_limit
-      #end if
-      $runtime.in_ram
-    #else
-      \$CDHIT_SITE_OPTIONS
-    #end if
-    <!-- end runtime tuning options -->
-  </template>
-
   <macro name="common_cdhit_options">
     <conditional name="advanced">
       <param name="settings" type="select" label="Choose adavanced settings?">
@@ -113,22 +101,6 @@
         cluster that meet the threshold (fast cluster). If set the program
         will cluster it into the most similar cluster that meet the threshold
         (accurate but slow mode). This won't change the representatives of final clusters"/>
-  </macro>
-
-  <macro name="runtime_tuning">
-    <conditional name="runtime">
-      <param name="tuning" type="select" label="Runtime Memory and Threads">
-        <option value="default" selected="true">Use Default settings</option>
-        <option value="options" >Set Runtime options</option>
-      </param>
-      <when value="default"/>
-      <when value="options">
-
-        <param name="memory_limit" type="integer" value="800" optional="true" label="memory limit (in MB) for the program" min="0" help="0 for unlimitted memory"/>
-
-        <param name="in_ram" type="boolean" truevalue="-B 1" falsevalue="" checked="false" label="Too big for in Memory calculation" help="Use for huge databases"/>
-      </when>
-    </conditional>
   </macro>
 
   <token name="@CITATION_SECTION@">------
