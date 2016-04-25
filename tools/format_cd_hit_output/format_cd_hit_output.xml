@@ -63,11 +63,11 @@
     <outputs>
         <data name="output_representative_sequences" format="fasta"
             label="${tool.name} on ${on_string}: Renamed representative sequences">
-            <filter>((rename_representative_sequences['test']))</filter>
+            <filter>((rename_representative_sequences['rename_representative_sequences_test']))</filter>
         </data>
         <data name="output_category_distribution" format="tabular" 
             label="${tool.name} on ${on_string}: Category distribution">
-            <filter>((extract_category_distribution['test']))</filter>
+            <filter>((extract_category_distribution['extract_category_distribution_test']))</filter>
         </data>
     </outputs>
 
