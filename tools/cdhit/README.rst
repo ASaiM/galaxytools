@@ -8,4 +8,4 @@ By default, this tool is configured to limit the memory consumption to 6G. You m
 
 to lower the maximum memory usage to 2G for example:
 
-TRINITY_MEM_OPTIONS='--max_memory 2G --bflyHeapSpaceMax 2G'
+CD_HIT_MEM_OPTIONS='--max_memory 2G --bflyHeapSpaceMax 2G'
