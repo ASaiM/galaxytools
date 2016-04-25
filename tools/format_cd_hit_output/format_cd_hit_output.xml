@@ -79,8 +79,8 @@
             <param name="extract_category_distribution_test" value="true"/>
             <param name="input_mapping" value="input_mapping.txt"/>
             <param name="number_sum" value="true"/>
-            <output name="output_representative_sequences" file="output_representative_sequences.fasta"/>
-            <output name="output_category_distribution" file="output_category_distribution.tabular"/>
+            <output name="output_representative_sequences" file="rename_representative_sequences_output.fasta"/>
+            <output name="output_category_distribution" file="extract_category_distribution_output.tabular"/>
         </test>
     </tests>
 
