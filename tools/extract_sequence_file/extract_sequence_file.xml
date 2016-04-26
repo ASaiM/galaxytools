@@ -8,19 +8,20 @@
             <option value="length">Length</option>
             <option value="description">Description</option>
         </xml>
+
         <xml name="fastq_option">
             <option value="id">Identifiant</option>
             <option value="length">Length</option>
             <option value="description">Description</option>
         </xml>
+
         <xml name="test_constrain_extraction">
-            <param name='constrained_extraction' type='boolean' checked="false" 
-                truevalue='true' falsevalue='false' label="Constrain extraction?" help=""/>
+            <param name='constrained_extraction' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Constrain extraction?" help=""/>
         </xml>
+
         <xml name="constrain_string">
             <conditional name="constraint_type">
-                <param name="type" type="select" display="radio" label="Type of 
-                    constraint" help="">
+                <param name="type" type="select" display="radio" label="Type of constraint" help="">
                     <option value="equal">Equal a value</option>
                     <option value="in">In a list</option>
                     <option value="not_in">Not in a list</option>
@@ -31,19 +32,16 @@
                     <validator type="empty_field" message="Give a value"/>
                 </when>
                 <when value="in">
-                    <param format="txt" name="value" type="data" label="List of 
-                        constraint" help="Text file with a value per line and 
-                        nothing else"/>
+                    <param format="txt" name="value" type="data" label="List of constraint" help="Text file with a value per line and nothing else"/>
                     <validator type="unspecified_build" message="Select a file"/>
                 </when>
                 <when value="not_in">
-                    <param format="txt" name="value" type="data" label="List of 
-                        constraint" help="Text file with a value per line and 
-                        nothing else"/>
+                    <param format="txt" name="value" type="data" label="List of constraint" help="Text file with a value per line and nothing else"/>
                     <validator type="unspecified_build" message="Select a file"/>
                 </when>
             </conditional>
         </xml>
+
         <xml name="constrain_number">
             <param name="type" type="select" label="Type of constraint" help="">
                 <option value="equal">Equal to </option>
@@ -53,15 +51,14 @@
                 <option value="strictly_greater">Strictly greater than </option>
             </param>
         </xml>
+
         <xml name="constraint_definitions">
             <conditional name="constraints">
                 <expand macro="test_constrain_extraction" />
                 <when value="true">
-                    <repeat name="constraint_definition" title="Constraints on 
-                        sequences" min="1">
+                    <repeat name="constraint_definition" title="Constraints on sequences" min="1">
                         <conditional name="constrained_information">
-                            <param name="info_to_constrain" type="select" 
-                                label="Information to constrain" help="">
+                            <param name="info_to_constrain" type="select" label="Information to constrain" help="">
                                 <option value="id">Identifiant</option>
                                 <option value="length">Length</option>
                             </param>
@@ -69,11 +66,9 @@
                                 <expand macro="constrain_string" />
                             </when>  
                             <when value="length">
-                                <repeat name="constraint_definition" title="Constraint 
-                                    on sequence length" min="1">
+                                <repeat name="constraint_definition" title="Constraint on sequence length" min="1">
                                     <expand macro="constrain_number" />
-                                    <param name="value" type="integer" min="0" 
-                                        max="3000" value="100" label="Value" help=""/>
+                                    <param name="value" type="integer" min="0" max="3000" value="100" label="Value" help=""/>
                                 </repeat>
                             </when>  
                         </conditional>
@@ -147,12 +142,7 @@
                 <param name="sequence_file" type="data" format="fastq" 
                     label="Sequence file" help=""/>
                 <conditional name="extraction">
-                    <param name='specific_extraction' type='boolean' 
-                        checked="false" truevalue='true' falsevalue='false'
-                        label="Extract specific information?" 
-                        help="If no is selected, a sequence file is generated. 
-                        If yes, a text file containing the wanted information is 
-                        generated"/>
+                    <param name='specific_extraction' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Extract specific information?" help="If no is selected, a sequence file is generated. If yes, a text file containing the wanted information is generated"/>
                     <when value="true">
                         <param name="to_extract" type="select" display="checkboxes" 
                             multiple="true" label="Information to extract" help="">
@@ -163,11 +153,7 @@
                     </when>
                     <when value="false">
                         <conditional name="split">
-                            <param name='split_test' type='boolean' checked="false"
-                                truevalue='true' falsevalue='false' label="Split 
-                                file into sequence and quality files?" help="If 
-                                yes is selected, a fasta and a quality file are 
-                                generated. If no, a fastq file is generated"/>
+                            <param name='split_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Split file into sequence and quality files?" help="If yes is selected, a fasta and a quality file are generated. If no, a fastq file is generated"/>
                             <when value="true">
                                 <param name="quality_format" type="select" 
                                     display="radio" label="Coding of quality 
@@ -188,11 +174,7 @@
                 <param name="sequence_file" type="data" format="fasta" 
                     label="Sequence file" help=""/>
                 <conditional name="extraction">
-                    <param name='specific_extraction' type='boolean' checked="false" 
-                        truevalue='true' falsevalue='false' label="Extract specific 
-                        information?" help="If no is selected, a sequence file is 
-                        generated. If yes, a text file containing the wanted 
-                        information is generated"/>
+                    <param name='specific_extraction' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Extract specific information?" help="If no is selected, a sequence file is generated. If yes, a text file containing the wanted information is generated"/>
                     <when value="true">
                         <param name="to_extract" type="select" display="checkboxes" 
                             multiple="true" label="Information to extract" help="">
@@ -247,17 +229,15 @@
   	</outputs>
 
   	<tests>
-  		<test>
-  			<param name="sequence_file_format.sequence_file" 
-                value="read_write_fasta_file/input_sequence_file.fasta"/>
-  			<param name="sequence_file_format.extraction.specific_extraction" 
-                value="false"/>
-            <param name="$sequence_file_format.format" value="fasta" />
-  			<output name="fasta_sequence_file" 
-                file="read_write_fasta_file/input_sequence_file.fasta"/>
-  			<output name="report_filepath" 
-                file="read_write_fasta_file/expected_output_report.txt"/>
-  		</test>
+        <test>
+            <param name="format" value="fasta"/>
+            <param name="sequence_file" value="input_sequence_file.fasta"/>
+            <param name="specific_extraction" value="true" />
+            <param name="to_extract" value="length" />
+            <param name="constrained_extraction" value="false" />
+            <output name="information_file" file="information_lenght_output.txt"/>
+            <output name="report_filepath" file="report_output.txt"/>
+        </test>
   	</tests>
 
   	<help><![CDATA[
