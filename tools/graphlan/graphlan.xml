@@ -34,13 +34,13 @@ graphlan.py -v
 
             $input_tree
 
-            #if str($format) == "png"
+            #if $format == "png"
                 $png_output_image
-            #else if str($format) == "pdf"
+            #else if $format == "pdf"
                 $pdf_output_image
-            #else if str($format) == "ps"
+            #else if $format == "ps"
                 $ps_output_image
-            #else if str($format) == "eps"
+            #else if $format == "eps"
                 $eps_output_image
             #else
                 $svg_output_image
