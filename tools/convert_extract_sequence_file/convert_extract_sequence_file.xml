@@ -1,6 +1,6 @@
-<tool id="extract_sequence_file" name="Extract" version="0.1.0">
+<tool id="convert_extract_sequence_file" name="Convert/ Extract information" version="1.0.0">
 
-	<description>from sequence file</description>
+	<description>from a sequence file, with possible constraints</description>
 
     <macros>
         <xml name="extraction_option">
@@ -30,7 +30,7 @@
 
   	<!--<command>-->
     <command><![CDATA[
-  		python $__tool_directory__/extract_sequence_file.py 
+  		python $__tool_directory__/convert_extract_sequence_file.py 
       		--input $sequence_file_format.sequence_file
 
             --custom_extraction_type $sequence_file_format.extraction.specific_extraction

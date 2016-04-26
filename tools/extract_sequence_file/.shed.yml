@@ -1,7 +1,0 @@
-categories: 
-  - Fasta Manipulation
-  - Fastq Manipulation
-description: Extract information from a sequence file
-name: extract_sequence_file
-owner: bebatut
-remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/extract_sequence_file/
