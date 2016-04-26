@@ -1,0 +1,7 @@
+categories: 
+  - Fasta Manipulation
+  - Fastq Manipulation
+description: Convert/ Extract information from a sequence file, with possible constraints
+name: convert_extract_sequence_file
+owner: bebatut
+remote_repository_ur: https://github.com/ASaiM/galaxytools/tree/master/tools/convert_extract_sequence_file

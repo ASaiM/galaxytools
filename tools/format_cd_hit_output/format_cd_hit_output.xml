@@ -6,55 +6,50 @@
         <exit_code range="1:" />
     </stdio>
 
-    <version_command><![CDATA[python -version]]></version_command>
+    <version_command>
+    </version_command>
 
     <command><![CDATA[
         python $__tool_directory__/format_cd_hit_output.py
             --input_cluster_info $input_cluster_info
 
-            #if $rename_representative_sequences.test
-                --input_representative_sequences $rename_representative_sequences.input_representative_sequences
+            #if $rename_repr_seq.rename_repr_seq_test == "true"
+                --input_representative_sequences $rename_repr_seq.input_representative_sequences
                 --output_representative_sequences $output_representative_sequences
             #end if
 
-            #if $extract_category_distribution.test
-                --input_mapping $extract_category_distribution.input_mapping
+            #if $extract_cat_distri.extract_cat_distri_test == "true"
+                --input_mapping $extract_cat_distri.input_mapping
                 --output_category_distribution $output_category_distribution
-                --number_sum $extract_category_distribution.number_sum
+                $extract_cat_distri.number_sum
             #end if
     ]]>
     </command>
 
     <inputs>
-        <param type="data" format="txt" name="input_cluster_info" label="Cluster
-            info"/>
+        <param type="data" format="txt" name="input_cluster_info" label="Cluster info" help="(--input_cluster_info)"/>
 
-        <conditional name="rename_representative_sequences">
-            <param name='test' type='boolean' checked="true" 
-                label="Rename representative sequences with the 
-                corresponding cluster name?" help=""/>
+        <conditional name="rename_repr_seq">
+            <param name='rename_repr_seq_test' type="select"                 label="Rename representative sequences with the                corresponding cluster name?" help="">
+                <option value="true" selected="true">Yes</option>
+                <option value="false">No</option>
+            </param>
             <when value="true">
                 <param type="data" format="fasta" 
                     name="input_representative_sequences"
-                    label="Representative sequences"/>
+                    label="Representative sequences" help="--input_representative_sequences)"/>
             </when>
             <when value="false" />
         </conditional>
 
-        <conditional name="extract_category_distribution">
-            <param name='test' type='boolean' checked="true" 
-                label="Extract category distribution of each 
-                cluster?" help=""/>
+        <conditional name="extract_cat_distri">
+            <param name='extract_cat_distri_test' type="select" label="Extract category distribution of each cluster?" help="">
+                <option value="true" selected="true">Yes</option>
+                <option value="false">No</option>
+            </param>
             <when value="true">
-                <param type="data" format="tabular" name="input_mapping" 
-                    label="Mapping file" help="The mapping file is a tabular 
-                    file with 2 columns. First column contains the sequence 
-                    names and the second one the corresponding category"/>
-                <param name='number_sum' type='boolean' checked="true" 
-                    label="Sum sequence number 
-                    for each category?" help="The alternative is the sum of size
-                    for sequences in each category (if the size information is
-                    available in sequence name)"/>
+                <param type="data" format="tabular,tsv,csv" name="input_mapping" label="Mapping file" help="The mapping file is a tabular file with 2 columns. First column contains the sequence    names and the second one the corresponding category (--input_mapping)"/>
+                <param name='number_sum' type='boolean' checked="true" truevalue="--number_sum 1" falsevalue="" label="Sum sequence number for each category?" help="The alternative is the sum of size for sequences in each category (if the size information is available in sequence name, --number_sum)"/>
             </when>
             <when value="false" />
         </conditional>
@@ -63,11 +58,11 @@
     <outputs>
         <data name="output_representative_sequences" format="fasta"
             label="${tool.name} on ${on_string}: Renamed representative sequences">
-            <filter>((rename_representative_sequences['test']))</filter>
+            <filter>((rename_repr_seq['rename_repr_seq_test'] == "true"))</filter>
         </data>
         <data name="output_category_distribution" format="tabular" 
             label="${tool.name} on ${on_string}: Category distribution">
-            <filter>((extract_category_distribution['test']))</filter>
+            <filter>((extract_cat_distri['extract_cat_distri_test'] == "true"))</filter>
         </data>
     </outputs>
 
