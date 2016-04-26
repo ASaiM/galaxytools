@@ -132,7 +132,7 @@ graphlan.py -v
 
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
-            <param name="format" value="PS"/>
+            <param name="format" value="ps"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
@@ -140,7 +140,7 @@ graphlan.py -v
         </test>
         <test>
             <param name="input_tree" value="input_tree.txt"/>
-            <param name="format" value="PS"/>
+            <param name="format" value="ps"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
@@ -149,7 +149,7 @@ graphlan.py -v
 
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
-            <param name="format" value="EPS"/>
+            <param name="format" value="eps"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
@@ -157,7 +157,7 @@ graphlan.py -v
         </test>
          <test>
             <param name="input_tree" value="input_tree.txt"/>
-            <param name="format" value="EPS"/>
+            <param name="format" value="eps"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
@@ -166,7 +166,7 @@ graphlan.py -v
 
         <test>
             <param name="input_tree" value="output_modified_tree.txt"/>
-            <param name="format" value="SVG"/>
+            <param name="format" value="svg"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
@@ -174,7 +174,7 @@ graphlan.py -v
         </test>
          <test>
             <param name="input_tree" value="input_tree.txt"/>
-            <param name="format" value="SVG"/>
+            <param name="format" value="svg"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
