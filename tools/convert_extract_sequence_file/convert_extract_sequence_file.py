@@ -356,7 +356,7 @@ def format_constraints(constraints):
                 constraint)
     return formatted_constraints
 
-def extract_sequence_file(args):
+def convert_extract_sequence_file(args):
     input_filepath = args.input
     file_format = args.format
     constraints = args.constraint
@@ -411,4 +411,4 @@ if __name__ == "__main__":
     parser.add_argument('--report', required=True)
     args = parser.parse_args()
 
-    extract_sequence_file(args)
+    convert_extract_sequence_file(args)

@@ -1,12 +1,12 @@
-<tool id="graphlan" name="GraPhlAn" version="1.0">
+<tool id="graphlan" name="GraPhlAn" version="0.9.7">
 
     <description>to produce graphical output of an input tree</description>
 
-    <requirements>
-        <requirement type="package" version="1.66">biopython</requirement>
-        <requirement type="package" version="1.5.1">matplotlib</requirement>
-        <requirement type="package" version="1.0.0">graphlan</requirement>
-    </requirements>
+    <macros>
+        <import>graphlan_macros.xml</import>
+    </macros>
+
+    <expand macro="requirements"/>
 
     <stdio>
     </stdio>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<macros>
+    <xml name="requirements">
+        <requirements>
+            <requirement type="package" version="1.66">biopython</requirement>
+            <requirement type="package" version="1.4">matplotlib</requirement>
+            <requirement type="package" version="0.9.7">graphlan</requirement>
+        </requirements>
+    </xml>
+</macros>
