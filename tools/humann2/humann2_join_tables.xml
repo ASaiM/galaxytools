@@ -39,7 +39,7 @@
 
     <tests>
         <test>
-            <param name="input_files" value="humann2_sam_pathcoverage.tsv,humann2_fasta_pathcoverage.tsv"/>
+            <param name="input_files" value="humann2_sam_pathcoverage.tsv;humann2_fasta_pathcoverage.tsv"/>
             <output name="joined_table" file="humann2_sam_fasta_joined_pathcoverage.tsv"/>
         </test>
     </tests>
