@@ -30,13 +30,11 @@
 
     <inputs>
         <param name="input_files" type="data" format="tsv,biom" multiple="true" 
-            label="Gene/pathway tables"
-            help=""/>
+            label="Gene/pathway tables" help=""/>
     </inputs>
 
     <outputs>
-        <data format="tsv,biom" name="joined_table" label="Joined table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv,biom" name="joined_table" label="Joined table for ${on_string} (HUMAnN2)" />
     </outputs>
 
     <tests>
@@ -47,11 +45,11 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
+Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
 
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
     ]]></help>
 
     <citations>
