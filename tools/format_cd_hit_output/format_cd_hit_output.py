@@ -54,13 +54,14 @@ def extract_cluster_info(args, mapping_info = None, categories = None):
             string = "A file with category distribution is expected but "
             string += "no mapping information are available"
             raise ValueError(string)
-        output_category_distribution_file = open(
-            args.output_category_distribution, 'w')
-        output_category_distribution_file.write('Cluster\tSequence_number')
+        output_cat_distri_file = open(args.output_category_distribution, 'w')
+        output_cat_distri_file.write('Cluster\tSequence_number')
         for category in categories:
-            output_category_distribution_file.write('\t' + category)
+            output_cat_distri_file.write('\t' + category)
 
-        output_category_distribution_file.write('\n')
+        output_cat_distri_file.write('\n')
+    else:
+        output_cat_distri_file = None
 
     with open(args.input_cluster_info,'r') as cluster_info_file:
         cluster_name = ''
@@ -71,7 +72,7 @@ def extract_cluster_info(args, mapping_info = None, categories = None):
             if line[0] == '>':
                 flush_cluster_info(cluster_name, cluster_ref_seq, ref_seq_cluster, 
                     cluster_category_distribution, categories, 
-                    output_category_distribution_file, cluster_seq_number)
+                    output_cat_distri_file, cluster_seq_number)
                 cluster_name = line[1:-1]
                 cluster_name = cluster_name.replace(' ','_') 
                 cluster_category_distribution = init_category_distribution(categories)
@@ -104,11 +105,11 @@ def extract_cluster_info(args, mapping_info = None, categories = None):
                     cluster_ref_seq = seq_name
 
         flush_cluster_info(cluster_name, cluster_ref_seq, ref_seq_cluster, 
-            cluster_category_distribution, categories, 
-            output_category_distribution_file, cluster_seq_number)
+            cluster_category_distribution, categories, output_cat_distri_file, 
+            cluster_seq_number)
 
     if args.output_category_distribution != None:
-        output_category_distribution_file.close()
+        output_cat_distri_file.close()
 
     return ref_seq_cluster
 
