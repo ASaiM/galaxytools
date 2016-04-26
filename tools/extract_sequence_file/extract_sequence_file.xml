@@ -235,29 +235,11 @@
 
 **What it does**
 
-This tool extracts information from sequence files. 
+This tool extracts information (sequences, id, length, ...) from sequence files or convert a FastQ file to Fasta file.
 
-Some constraints could be added to extraction. For example, you choose 
-to extract only sequences for which the length is greater than 30 bp.
+Some constraints could be added to extraction/conversion. For example, only sequences with more than 30 bp could be extracted. Or, a sequences whose the identifiant is in a list. 
 
-More information on `ASaiM documentation <http://asaim.readthedocs.org/>`_...
-
------
-
-**Input**
-
-The input is one file in fasta or fastq.
-
------
-
-**Outputs**
-
-The tool generates different outputs given the choosen parameters:
-
-    - a sequence file
-    - a text file
-    - a sequence file and a quality file
-
+The input is a sequence file in fasta or fastq format. The tool generates different outputs given the chosen parameters.
 ]]>
   	</help>
 
