@@ -31,7 +31,7 @@
     <inputs>
         <param type="data" format="txt" name="input_cluster_info" label="Cluster info" help="(--input_cluster_info)"/>
         <conditional name="rename_repr_seq">
-            <param name='rename_repr_seq_test' type="select" label="Rename representative sequences with the                corresponding cluster name?" help="">
+            <param name='rename_repr_seq_test' type="select" label="Rename representative sequences with the  corresponding cluster name?" help="">
                 <option value="true" selected="true">Yes</option>
                 <option value="false">No</option>
             </param>
