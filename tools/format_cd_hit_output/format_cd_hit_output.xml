@@ -1,4 +1,6 @@
-<tool id="format_cd_hit_output" name="Format cd-hit outputs" version="0.1.0">
+<tool id="format_cd_hit_output" name="Format cd-hit outputs" version="1.0.0">
+    <description>to rename representative sequences with cluster name and/or extract distribution inside clusters given a mapping file</description>
+
     <requirements>
     </requirements>
 
