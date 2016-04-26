@@ -85,7 +85,7 @@ def extract_cluster_info(args, mapping_info = None, categories = None):
 
                 if categories != None:
                     seq_count = 1
-                    if args.number_sum == 'false':
+                    if args.number_sum != None:
                         if seq_name.find('size') != -1:
                             substring = seq_name[seq_name.find('size'):-1]
                             seq_count = int(substring.split('=')[1])
@@ -94,7 +94,6 @@ def extract_cluster_info(args, mapping_info = None, categories = None):
                         raise ValueError(string)
                     category = mapping_info[seq_name]
                     cluster_category_distribution[category] += seq_count
-
                 
                 if seq_info[-1] == '*':
                     if cluster_ref_seq != '':
