@@ -40,6 +40,7 @@
             </when>
             <when value="false" />
         </conditional>
+        
         <conditional name="extract_cat_distri">
             <param name='extract_cat_distri_test' type="select" label="Extract category distribution of each cluster?" help="">
                 <option value="true" selected="true">Yes</option>
@@ -67,9 +68,9 @@
     <tests>
         <test>
             <param name="input_cluster_info" value="input_cluster_info.txt"/>
-            <param name="rename_representative_sequences_test" value="true"/>
+            <param name="rename_repr_seq_test" value="true"/>
             <param name="input_representative_sequences" value="input_representative_sequences.fasta"/>
-            <param name="extract_category_distribution_test" value="true"/>
+            <param name="extract_cat_distri_test" value="true"/>
             <param name="input_mapping" value="input_mapping.txt"/>
             <param name="number_sum" value="true"/>
             <output name="output_representative_sequences" file="rename_representative_sequences_output.fasta"/>
@@ -77,8 +78,8 @@
         </test>
         <test>
             <param name="input_cluster_info" value="input_cluster_info.txt"/>
-            <param name="rename_representative_sequences_test" value="false"/>
-            <param name="extract_category_distribution_test" value="true"/>
+            <param name="rename_repr_seq_test" value="false"/>
+            <param name="extract_cat_distri_test" value="true"/>
             <param name="input_mapping" value="input_mapping.txt"/>
             <param name="number_sum" value="true"/>
             <output name="output_category_distribution" file="extract_category_distribution_only_output.tabular"/>
