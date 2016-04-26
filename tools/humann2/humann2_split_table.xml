@@ -27,15 +27,13 @@
 
     <outputs>
         <outputs>
-            <data format="txt" name="report">
-                <discover_datasets pattern="__designation__" ext="tabular" directory="output" visible="true" />
-            </data>
+            <data format="txt" name="report" label="splited table for ${on_string} (HUMAnN2)"/>
         </outputs>
     </outputs>
 
     <tests>
         <test>
-            <param name="input_file" value="gene_families_humann2_output.tabular,gene_select_humann2_output.tabular"/>
+            <param name="input_file" value="gene_families_humann2_output.tabular"/>
             <output name="report" file="humann2_joined_table.tsv" />
         </test>
     </tests>
