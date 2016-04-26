@@ -235,8 +235,19 @@
             <param name="specific_extraction" value="true" />
             <param name="to_extract" value="length" />
             <param name="constrained_extraction" value="false" />
-            <output name="information_file" file="information_lenght_output.txt"/>
-            <output name="report_filepath" file="report_output.txt"/>
+            <output name="information_file" file="information_lenght_fasta_output.txt"/>
+            <output name="report_filepath" file="report_length_fasta_output.txt"/>
+        </test>
+        <test>
+            <param name="format" value="fastq"/>
+            <param name="sequence_file" value="input_sequence_file.fastq"/>
+            <param name="specific_extraction" value="false" />
+            <param name="split_test" value="true" />
+            <param name="quality_format" value="illumina_1_3" />
+            <param name="constrained_extraction" value="false" />
+            <output name="quality_file" file="extracted_quality_illumina_1_3_fastq_output.qual"/>
+            <output name="fasta_sequence_file_from_fastq" file="extracted_sequences_illumina_1_3_fastq_output.fasta"/>
+            <output name="report_filepath" file="report_illumina_1_3_fastq_output.txt"/>
         </test>
   	</tests>
 
