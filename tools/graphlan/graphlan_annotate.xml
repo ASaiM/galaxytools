@@ -1,12 +1,12 @@
-<tool id="graphlan_annotate" name="Modify an input tree for GraPhlAn" version="1.0">
+<tool id="graphlan_annotate" name="Modify an input tree for GraPhlAn" version="0.9.7">
 
     <description></description>
 
-    <requirements>
-        <requirement type="package" version="1.66">biopython</requirement>
-        <requirement type="package" version="1.4">matplotlib</requirement>
-        <requirement type="package" version="1.0.0">graphlan</requirement>
-    </requirements>
+    <macros>
+        <import>graphlan_macros.xml</import>
+    </macros>
+
+    <expand macro="requirements"/>
 
     <stdio>
     </stdio>
