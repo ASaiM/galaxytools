@@ -29,7 +29,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_files" type="data" format="tsv" multiple="true" label="Gene/pathway tables" help=""/>
+        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
     </inputs>
 
     <outputs>
@@ -39,7 +39,7 @@
     <tests>
         <test>
             <param name="input_files" value="humann2_fastq_pathabundance.tsv,humann2_m8_pathabundance.tsv"/>
-            <output name="joined_table" file="joined_fastq_m8_pathabundance_output.tsv"/>
+            <output name="joined_table" file="joined_fastq_m8_pathabundance_output.tsv,biom"/>
         </test>
     </tests>
 
