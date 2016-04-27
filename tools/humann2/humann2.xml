@@ -28,20 +28,17 @@
 
             --pathways $pathways
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $protein_database.input.options.tool_data_table.data])
-            #set $db = $protein_database.value
-            --protein-database $data_table[$db]
+            #if $nucleotide_db.nucleotide_db_selector == "cached"
+                --nucleotide-database \${HUMANN2_DIR}/databases/chocophlan
+            #else
+                --nucleotide-database "$nucleotide_db.history_nucleotide_db"
+            #end if
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $nucleotide_database.input.options.tool_data_table.data])
-            #set $db = $nucleotide_database.value
-            --nucleotide-database $data_table[$db]
-
-            #set $mpa_pkl_table = dict([(_[0], _[2]) for _ in $mpa_pkl.input.options.tool_data_table.data])
-            #set $mpa_pkl_db = $mpa_pkl.value
-
-            #set $bowtie2_table = dict([(_[0], _[2]) for _ in $bowtie2db.input.options.tool_data_table.data])
-            #set $bowtie2_db = $bowtie2db.value
-            --metaphlan-options="-t rel_ab --mpa_pkl $mpa_pkl_table[$mpa_pkl_db] --bowtie2db $bowtie2_table[$bowtie2_db]"
+            #if $protein_db.protein_db_selector == "cached"
+                --protein-database \${HUMANN2_DIR}/databases/uniref
+            #else
+                --protein-database "$protein_db.history_protein_db"
+            #end if
 
             --threads \${GALAXY_SLOTS:-4}
 
@@ -71,17 +68,30 @@
             <when value="false" />
         </conditional>
 
-        <param name="mpa_pkl" label="Metadata for MetaPhlAn2" type="select" >
-            <options from_data_table="metaphlan2_metadata" />
-        </param>
+        <conditional name="nucleotide_db">
+            <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
 
-        <param name="bowtie2db" label="BowTie2 database for MetaPhlAn2" type="select" >
-            <options from_data_table="metaphlan2_bowtie_db" />
-        </param>
+            <when value="cached"/>
+            <when value="history">
+                <param name="history_nucleotide_db" type="data" format="fasta" label="Nucleotide database from history"/>
+            </when>
+        </conditional>
 
-        <param name="nucleotide_database" label="Nucleotide database" type="select" >
-            <options from_data_table="humann2_nucleotide_database" />
-        </param>
+        <conditional name="protein_db">
+            <param name="protein_db_selector" type="select" label="Protein database" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
+
+            <when value="cached"/>
+            <when value="history">
+                <param name="history_protein_db" type="data" format="fasta" label="Protein database from history"/>
+            </when>
+        </conditional>
+
 
         <param name="protein_database" label="Protein database" type="select" >
             <options from_data_table="humann2_protein_database" />
