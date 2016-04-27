@@ -17,10 +17,31 @@
     <command><![CDATA[
         humann2 
             -i "$input_file"
-        
-            #if $taxonomic_profile.taxonomic_profile_test:
+            
+            #set $metaphlan_option = "-t rel_ab"
+            #if $taxonomic_profile.taxonomic_profile_test == "true":
                 --taxonomic-profile $taxonomic_profile.taxonomic_profile_file
+            #else
+
+                #if $taxonomic_profile.mpa_pkl.mpa_pkl_selector == "cached"
+                    #set $mpa_pkl_table = dict([(_[0], _[2]) for _ in $taxonomic_profile.mpa_pkl.cached_mpa_pkl.input.options.tool_data_table.data])
+                    #set $mpa_pkl_db = $taxonomic_profile.mpa_pkl.cached_mpa_pkl.value
+                    #set $metaphlan_option += " --mpa_pkl " + $mpa_pkl_table[$mpa_pkl_db]
+                #else
+                    #set $metaphlan_option += " --mpa_pkl " + $taxonomic_profile.mpa_pkl.history_mpa_pkl
+                #end if
+
+                #if $taxonomic_profile.bowtie2db.bowtie2db_selector == "cached"
+                    #set $bowtie2_table = dict([(_[0], _[2]) for _ in $taxonomic_profile.bowtie2db.cached_bowtie2db.input.options.tool_data_table.data])
+                    #set $bowtie2db_choice = $taxonomic_profile.bowtie2db.cached_bowtie2db.value
+                    #set $metaphlan_option += " --bowtie2db " + $bowtie2_table[$bowtie2db_choice]
+                #else
+                    #set $metaphlan_option += " --bowtie2db " + $taxonomic_profile.bowtie2db.history_bowtie2db
+                #end if
+
             #end if
+
+            --metaphlan-options="$metaphlan_option"
 
             --evalue $e_value
             --identity-threshold $identity
@@ -58,14 +79,47 @@
             label="Input sequence file" help=""/>
 
         <conditional name="taxonomic_profile">
-            <param name='taxonomic_profile_test' type='boolean' checked="false" truevalue='true' 
-                falsevalue='false' label="Use a custom taxonomic profile?" 
-                help="The file must have been created by MetaPhlan"/>
+            <param name='taxonomic_profile_test' type='select' label="Use a custom taxonomic profile?" help="The file must have been created by MetaPhlan2">
+                <option value="true">Yes</option>
+                <option value="false" selected="true">No</option>
+            </param> 
             <when value="true">
                 <param name="taxonomic_profile_file" type="data" format="tabular,txt" label="Taxonomic profile 
                     file" help=""/>
             </when>
-            <when value="false" />
+            <when value="false">
+                <conditional name="mpa_pkl">
+                    <param name="mpa_pkl_selector" type="select" label="Metadata for MetaPhlAn2" help="">
+                        <option value="cached" selected="true">Locally cached</option>
+                        <option value="history">From history</option>
+                    </param>
+
+                    <when value="cached">
+                        <param name="cached_mpa_pkl" label="Cached metadata" type="select">
+                        <options from_data_table="metaphlan2_metadata" />
+                        </param>
+                    </when>
+                    <when value="history">
+                        <param name="history_mpa_pkl" type="data" format="fasta" label="Metadata from history"/>
+                    </when>
+                </conditional>
+
+                <conditional name="bowtie2db">
+                    <param name="bowtie2db_selector" type="select" label="BowTie2 database for MetaPhlAn2" help="">
+                        <option value="cached" selected="true">Locally cached</option>
+                        <option value="history">From history</option>
+                    </param>
+
+                    <when value="cached">
+                        <param name="cached_bowtie2db" label="Cached BowTie2 database" type="select" >
+                        <options from_data_table="metaphlan2_bowtie_db" />
+                        </param>
+                    </when>
+                    <when value="history">
+                        <param name="history_bowtie2db" type="data" format="fasta" label="BowTie2 database from history"/>
+                    </when>
+                </conditional>
+            </when>
         </conditional>
 
         <conditional name="nucleotide_db">
