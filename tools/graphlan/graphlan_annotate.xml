@@ -50,7 +50,7 @@ graphlan_annotate.py -v
         <test>
             <param name="input_tree" value="input_tree.txt" />
             <param name="annot" value="input_annotation.txt" />
-            <output name="output_tree" file="output_intermediar_tree.txt" />
+            <output name="output_tree" file="intermediary_tree.txt" />
         </test>
     </tests>
 
