@@ -101,15 +101,7 @@ graphlan.py -v
 
     <tests>
         <test>
-            <param name="input_tree" value="input_tree.txt"/>
-            <param name="format" value="png"/>
-            <param name="dpi" value="100"/>
-            <param name="size" value="7"/>
-            <param name="pad" value="2"/>
-            <output name="png_output_image" file="output_image_non_modif.png" />
-        </test>
-        <test>
-            <param name="input_tree" value="output_modified_tree.txt"/>
+            <param name="input_tree" value="output_intermediar_tree.txt"/>
             <param name="format" value="pdf"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
