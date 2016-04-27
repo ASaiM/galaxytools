@@ -9,6 +9,10 @@
     <expand macro="requirements"/>
 
     <stdio>
+        <regex match="Warning"
+               source="stderr"
+               level="warning"
+               description="" />
     </stdio>
 
     <version_command>
