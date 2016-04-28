@@ -7,6 +7,7 @@
             <param name="to_extract" type="select" display="checkboxes" multiple="true" label="Information to extract" help="">
                 <option value="id">Identifiant</option>
                 <option value="length">Length</option>
+                <option value="description">Description</option>
                 <validator type="no_options" message="Select at least one information to extract"/>
             </param>
         </xml>

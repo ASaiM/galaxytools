@@ -42,7 +42,7 @@ def next_fasta_record(input_file):
         return None
     split_line = id_line[1:].split(' ')
     seq_id = split_line[0]
-    description = ' '.join(split_line[1:])
+    description = id_line[1:]
     new_line = get_new_line(input_file, generate_error = False)
     seq = ''
     while new_line != None:
