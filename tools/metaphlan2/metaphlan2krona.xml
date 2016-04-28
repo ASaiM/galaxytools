@@ -24,13 +24,11 @@ metaphlan2krona.py -v
     </command>
 
     <inputs>
-        <param name="input_file" type="data" format="tabular,txt" label="Input 
-            file (MetaPhlAN2 output)" help="(--profile)"/>
+        <param name="input_file" type="data" format="tabular,txt" label="Input file (MetaPhlAN2 output)" help="(--profile)"/>
     </inputs>
 
     <outputs>
-        <data format="tabular" name="krona" 
-            label="${tool.name} on ${on_string}: Krona file" />
+        <data format="tabular" name="krona" label="${tool.name} on ${on_string}: Krona file" />
     </outputs>
 
     <tests>
