@@ -146,11 +146,6 @@
             </when>
         </conditional>
 
-
-        <param name="protein_database" label="Protein database" type="select" >
-            <options from_data_table="humann2_protein_database" />
-        </param>
-
         <param name="e_value" type="float" min="0" max="10" value="1" 
             label="E-value threshold to use with the translated search" 
             help="(--evalue)"/>
