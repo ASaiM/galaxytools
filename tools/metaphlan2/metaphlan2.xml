@@ -1,23 +1,13 @@
-<tool id="metaphlan2" name="MetaPhlAn2" version="2.2.0">
+<tool id="metaphlan2" name="MetaPhlAn2" version="2.5.0">
 
     <description>to profile the composition of microbial communities</description>
 
-    <requirements>
-        <requirement type="package" version="2.2.5">bowtie2</requirement>
-        <requirement type="package" version="2.2.0">metaphlan2</requirement>
-    </requirements>
+    <macros>
+        <import>metaphlan2_macros.xml</import>
+    </macros>
 
-    <stdio>
-        <exit_code range="1:" level="fatal"   description="" />
-        <regex match="ERROR"
-               source="stderr"
-               level="fatal"
-               description="" />
-        <regex match="WARNING"
-               source="stderr"
-               level="warning"
-               description="" />
-    </stdio>
+    <expand macro="requirements"/>
+    <expand macro="stdio"/>
 
     <version_command>
 <![CDATA[
@@ -37,15 +27,23 @@ metaphlan2.py -v
 
             --input_type ${input_file.datatype.file_ext}
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $mpa_pkl.input.options.tool_data_table.data])
-            #set $db = $mpa_pkl.value
-            --mpa_pkl $data_table[$db]
+            #if $mpa_pkl.mpa_pkl_selector == "cached"
+                #set $mpa_pkl_table = dict([(_[0], _[2]) for _ in $mpa_pkl.cached_mpa_pkl.input.options.tool_data_table.data])
+                #set $mpa_pkl_db = $mpa_pkl.cached_mpa_pkl.value
+                --mpa_pkl $mpa_pkl_table[$mpa_pkl_db]
+            #else
+                --mpa_pkl $mpa_pkl.history_mpa_pkl
+            #end if
 
             --bowtie2_exe `which bowtie2`
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $bowtie2db.input.options.tool_data_table.data])
-            #set $db = $bowtie2db.value
-            --bowtie2db $data_table[$db]
+            #if $bowtie2db.bowtie2db_selector == "cached"
+                #set $bowtie2_table = dict([(_[0], _[2]) for _ in $bowtie2db.cached_bowtie2db.input.options.tool_data_table.data])
+                #set $bowtie2db_choice = $bowtie2db.cached_bowtie2db.value
+                --bowtie2db $bowtie2_table[$bowtie2db_choice]
+            #else
+                --bowtie2db $bowtie2db.history_bowtie2db
+            #end if
 
             --no_map
 
@@ -81,13 +79,37 @@ metaphlan2.py -v
     <inputs>
         <param name="input_file" type="data" format="fastq,fasta,sam,bowtie2out" label="Input file" help=""/>
 
-        <param name="mpa_pkl" label="Metadata" type="select" >
-            <options from_data_table="metaphlan2_metadata" />
-        </param>
+        <conditional name="mpa_pkl">
+            <param name="mpa_pkl_selector" type="select" label="Metadata" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
 
-        <param name="bowtie2db" label="BowTie2 database" type="select" >
-            <options from_data_table="metaphlan2_bowtie_db" />
-        </param>
+            <when value="cached">
+                <param name="cached_mpa_pkl" label="Cached metadata" type="select">
+                <options from_data_table="metaphlan2_metadata" />
+                </param>
+            </when>
+            <when value="history">
+                <param name="history_mpa_pkl" type="data" format="fasta" label="Metadata from history"/>
+            </when>
+        </conditional>
+
+        <conditional name="bowtie2db">
+            <param name="bowtie2db_selector" type="select" label="BowTie2 database" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
+
+            <when value="cached">
+                <param name="cached_bowtie2db" label="Cached BowTie2 database" type="select" >
+                <options from_data_table="metaphlan2_bowtie_db" />
+                </param>
+            </when>
+            <when value="history">
+                <param name="history_bowtie2db" type="data" format="fasta" label="BowTie2 database from history"/>
+            </when>
+        </conditional>
 
         <conditional name="analysis_type">
             <param name="analysis_type_select" type="select" label="Type of analysis to perform">
@@ -98,6 +120,7 @@ metaphlan2.py -v
               <option value="marker_counts">Non-normalized marker counts (use with extreme caution)</option>
               <option value="marker_pres_table">List of markers present in the sample (threshold at 1.0 if not differently specified with --pres_th</option>
             </param>
+
             <when value="rel_ab">
               <param name="taxonomic_level" type="select" label="Taxonomic level for the relative abundance output">
                 <option value="a" selected="true">All taxonomic levels</option>
@@ -110,12 +133,16 @@ metaphlan2.py -v
                 <option value="s">Species only</option>
               </param>
             </when>
+
             <when value="reads_map"/>
             <when value="clade_profiles"/>
+
             <when value="marker_ab_table">
                 <param name="nreads" type="integer" value="0" label="Total number of reads in the original metagenome" help="It is used for normalizing the length-normalized counts with the metagenome size as well. No normalization applied if the value is not specified"/>
             </when>
+
             <when value="marker_counts"/>
+
             <when value="marker_pres_table">
                 <param name="pres_th" type="integer" value="0" label=" Threshold for calling a marker present" help=""/>
             </when>
@@ -127,28 +154,31 @@ metaphlan2.py -v
 
         <param name="ignore_viruses" type='boolean' checked="true" truevalue='' falsevalue='--ignore_viruses' label="Profile viral organisms?" help="" />
         <param name="ignore_eukaryotes" type='boolean' checked="true" truevalue='' falsevalue='--ignore_eukaryotes' label="Profile eukaryotic organisms?" help="" />
+
         <param name="ignore_bacteria" type='boolean' checked="true" truevalue='' falsevalue='--ignore_bacteria' label="Profile bacteria organisms?" help="" />
+
         <param name="ignore_archaea" type='boolean' checked="true" truevalue='' falsevalue='--ignore_archaea' label="Profile archea organisms?" help="" />
 
         <param name="stat_q" type="float" value="0.1" label="Quantile value for the robust average" help=""/>
 
         <param name="sam_output" type='boolean' label="Output a sam file?" help="" />
+
         <param name="biom_output" type='boolean' label="Output a biom file?" help="" />
     </inputs>
 
     <outputs>
         <data format="tabular" name="output_file" 
             metadata="input_sequence_file" 
-            label="Profile of communities on ${on_string} (MetaPhlAn)" />
+            label="${tool.name} on ${on_string}: Community profile" />
 
         <data format="sam" name="sam_output_file" 
             metadata="input_sequence_file" 
-            label="Sam output on ${on_string} (MetaPhlAn)">
+            label="${tool.name} on ${on_string}: Sam file">
             <filter>sam_output</filter>
         </data>
         <data format="biom" name="biom_output_file" 
             metadata="input_sequence_file" 
-            label="Biom output on ${on_string} (MetaPhlAn)">
+            label="${tool.name} on ${on_string}: Biom file">
             <filter>biom_output</filter>
         </data>
     </outputs>
@@ -177,22 +207,11 @@ metaphlan2.py -v
 
 **What it does**
 
-MetaPhlAn is a computational tool for profiling the composition of microbial 
-communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun 
-sequencing data with species level resolution. For more information, check the 
-`user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
-
------
-
-**Input**
+MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
 
 Metaphlan2 takes as input a sequence file in fasta, fastq, a BowTie2 produced
 SAM file or an intermediary mapping file of the metagenome generated by a 
 previous MetaPhlAn
-
------
-
-**Parameters**
 
 Several parameters can modulate the MetaPhlAn execution
 
@@ -212,18 +231,9 @@ Several parameters can modulate the MetaPhlAn execution
 
         * Type of analyse to perform and some parameters for specific analysis type
 
------
-
-**Outputs**
 
 The main output file is a tab-separated output file of the predicted taxon 
 relative abundances.
-
-Given the choosen parameters, other output files can be:
-
-    * a sam output file
-    * a biom output fime
-    * a BowTie2 output file
 
     ]]></help>
 

@@ -7,6 +7,7 @@
             <param name="to_extract" type="select" display="checkboxes" multiple="true" label="Information to extract" help="">
                 <option value="id">Identifiant</option>
                 <option value="length">Length</option>
+                <option value="description">Description</option>
                 <validator type="no_options" message="Select at least one information to extract"/>
             </param>
         </xml>
@@ -179,7 +180,7 @@
   	</inputs>
 
   	<outputs>
-        <data format="txt" name="information_file" 
+        <data format="tabular" name="information_file" 
             label="${tool.name} on ${on_string}: Information">
             <filter>((sequence_file_format['extraction']['specific_extraction'] == "True" ))</filter>
         </data>

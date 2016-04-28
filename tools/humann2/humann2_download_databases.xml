@@ -1,0 +1,46 @@
+<tool id="humann2_download_databases" name="Download HUMAnN2 databases" version="0.6.1">
+    <description></description>
+
+    <macros>
+        <import>humann2_macros.xml</import>
+    </macros>
+
+    <expand macro="requirements"/>
+    <expand macro="stdio"/>
+
+    <version_command>
+<![CDATA[
+    humann2_databases --version
+]]>
+    </version_command>
+
+    <command><![CDATA[
+        humann2_databases
+            --download $database_selector \${HUMANN2_DIR}/databases
+            
+            > $log
+    ]]></command>
+
+    <inputs>
+        <param name="database_selector" type="select" label="Database to download" help="">
+            <option value="chocophlan full">Nucleotide</option>
+            <option value="uniref diamond">Protein</option>
+        </param>
+    </inputs>
+
+    <outputs>
+        <data format="txt" name="log" label="${tool.name} on ${on_string}: Log" />
+    </outputs>
+
+    <tests>
+    </tests>
+
+    <help><![CDATA[
+**What it does**
+
+Download HUMAnN2 databases is a tool to download needed nucleotide or protein databases. This tool must be run before using HUMAnN2.
+    ]]></help>
+
+    <citations>
+    </citations>
+</tool>

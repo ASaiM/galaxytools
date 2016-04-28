@@ -42,7 +42,7 @@ def next_fasta_record(input_file):
         return None
     split_line = id_line[1:].split(' ')
     seq_id = split_line[0]
-    description = ' '.join(split_line[1:])
+    description = id_line[1:]
     new_line = get_new_line(input_file, generate_error = False)
     seq = ''
     while new_line != None:
@@ -265,7 +265,7 @@ class Records:
         if args.custom_extraction_type == 'True':
             to_extract = args.to_extract[1:-1].split(',')
             with open(args.output_information, 'w') as output_information_file:
-                output_information_file.write('\t'.join(to_extract) + '\n')
+                #output_information_file.write('\t'.join(to_extract) + '\n')
                 for record in self.conserved_records:
                     extracted_info = record.extract_information(to_extract)
                     string_info = [str(info) for info in extracted_info]
