@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<macros>
+    <xml name="requirements">
+        <requirements>
+            <requirement type="package" version="2.2.5">bowtie2</requirement>
+            <requirement type="package" version="2.5.0">metaphlan2</requirement>
+        </requirements>
+    </xml>
+    <xml name="stdio">
+        <stdio>
+            <exit_code range="1:" level="fatal"   description="" />
+            <regex match="ERROR"
+                   source="stderr"
+                   level="fatal"
+                   description="" />
+            <regex match="WARNING"
+                   source="stderr"
+                   level="warning"
+                   description="" />
+        </stdio>
+    </xml>
+</macros>
