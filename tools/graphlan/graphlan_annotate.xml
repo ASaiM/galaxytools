@@ -9,6 +9,10 @@
     <expand macro="requirements"/>
 
     <stdio>
+        <regex match="Warning"
+               source="stderr"
+               level="warning"
+               description="" />
     </stdio>
 
     <version_command>
@@ -46,7 +50,7 @@ graphlan_annotate.py -v
         <test>
             <param name="input_tree" value="input_tree.txt" />
             <param name="annot" value="input_annotation.txt" />
-            <output name="output_tree" value="output_modified_tree.txt" />
+            <output name="output_tree" file="intermediary_tree.txt" />
         </test>
     </tests>
 

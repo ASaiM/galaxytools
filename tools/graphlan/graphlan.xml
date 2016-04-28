@@ -9,6 +9,10 @@
     <expand macro="requirements"/>
 
     <stdio>
+        <regex match="Warning"
+               source="stderr"
+               level="warning"
+               description="" />
     </stdio>
 
     <version_command>
@@ -49,11 +53,9 @@ graphlan.py -v
     </command>
 
     <inputs>
-        <param name="input_tree" type="data" format="txt" label="Input tree in 
-            PhlyloXML format" help=""/>
+        <param name="input_tree" type="data" format="txt" label="Input tree in PhlyloXML format" help=""/>
 
-        <param name='format' type="select" label="Output format"
-            help="(--format)">
+        <param name='format' type="select" label="Output format" help="(--format)">
             <option value="png" selected="true">PNG</option>
             <option value="pdf">PDF</option>
             <option value="ps">PS</option>
@@ -97,12 +99,12 @@ graphlan.py -v
 
     <tests>
         <test>
-            <param name="input_tree" value="output_modified_tree.txt"/>
-            <param name='format' value="png"/>
+            <param name="input_tree" value="intermediary_tree.txt"/>
+            <param name="format" value="pdf"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="png_output_image" value="output_image.png" />
+            <output name="pdf_output_image" file="pdf_image.pdf" />
         </test>
     </tests>
 

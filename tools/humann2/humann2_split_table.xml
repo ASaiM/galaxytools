@@ -16,8 +16,9 @@
 
     <command><![CDATA[
         humann2_split_table
-            -i "input_file"
-            -o "report"            
+            -i $input_file
+            -o "output"    
+
     ]]></command>
 
     <inputs>
@@ -26,9 +27,9 @@
     </inputs>
 
     <outputs>
-        <outputs>
-            <data format="txt" name="report" label="splited table for ${on_string} (HUMAnN2)"/>
-        </outputs>
+        <collection type="list" name="split_tables">
+            <discover_datasets pattern="__designation_and_ext__" directory="output" />
+        </collection>
     </outputs>
 
     <tests>
@@ -39,11 +40,11 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        Split HUMAnN2 table is a tool to split a gene/pathway table in table per sample.
+Split HUMAnN2 table is a tool to split a gene/pathway table in table per sample.
 
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
     ]]></help>
 
     <citations>
