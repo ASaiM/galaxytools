@@ -180,7 +180,7 @@
   	</inputs>
 
   	<outputs>
-        <data format="txt" name="information_file" 
+        <data format="tabular" name="information_file" 
             label="${tool.name} on ${on_string}: Information">
             <filter>((sequence_file_format['extraction']['specific_extraction'] == "True" ))</filter>
         </data>
