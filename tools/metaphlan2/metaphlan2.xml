@@ -27,15 +27,23 @@ metaphlan2.py -v
 
             --input_type ${input_file.datatype.file_ext}
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $mpa_pkl.input.options.tool_data_table.data])
-            #set $db = $mpa_pkl.value
-            --mpa_pkl $data_table[$db]
+            #if $mpa_pkl.mpa_pkl_selector == "cached"
+                #set $mpa_pkl_table = dict([(_[0], _[2]) for _ in $mpa_pkl.cached_mpa_pkl.input.options.tool_data_table.data])
+                #set $mpa_pkl_db = $mpa_pkl.cached_mpa_pkl.value
+                --mpa_pkl $mpa_pkl_table[$mpa_pkl_db]
+            #else
+                --mpa_pkl $mpa_pkl.history_mpa_pkl
+            #end if
 
             --bowtie2_exe `which bowtie2`
 
-            #set $data_table = dict([(_[0], _[2]) for _ in $bowtie2db.input.options.tool_data_table.data])
-            #set $db = $bowtie2db.value
-            --bowtie2db $data_table[$db]
+            #if $bowtie2db.bowtie2db_selector == "cached"
+                #set $bowtie2_table = dict([(_[0], _[2]) for _ in $bowtie2db.cached_bowtie2db.input.options.tool_data_table.data])
+                #set $bowtie2db_choice = $bowtie2db.cached_bowtie2db.value
+                --bowtie2db $bowtie2_table[$bowtie2db_choice]
+            #else
+                --bowtie2db $bowtie2db.history_bowtie2db
+            #end if
 
             --no_map
 
@@ -71,13 +79,37 @@ metaphlan2.py -v
     <inputs>
         <param name="input_file" type="data" format="fastq,fasta,sam,bowtie2out" label="Input file" help=""/>
 
-        <param name="mpa_pkl" label="Metadata" type="select" >
-            <options from_data_table="metaphlan2_metadata" />
-        </param>
+        <conditional name="mpa_pkl">
+            <param name="mpa_pkl_selector" type="select" label="Metadata" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
 
-        <param name="bowtie2db" label="BowTie2 database" type="select" >
-            <options from_data_table="metaphlan2_bowtie_db" />
-        </param>
+            <when value="cached">
+                <param name="cached_mpa_pkl" label="Cached metadata" type="select">
+                <options from_data_table="metaphlan2_metadata" />
+                </param>
+            </when>
+            <when value="history">
+                <param name="history_mpa_pkl" type="data" format="fasta" label="Metadata from history"/>
+            </when>
+        </conditional>
+
+        <conditional name="bowtie2db">
+            <param name="bowtie2db_selector" type="select" label="BowTie2 database" help="">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
+
+            <when value="cached">
+                <param name="cached_bowtie2db" label="Cached BowTie2 database" type="select" >
+                <options from_data_table="metaphlan2_bowtie_db" />
+                </param>
+            </when>
+            <when value="history">
+                <param name="history_bowtie2db" type="data" format="fasta" label="BowTie2 database from history"/>
+            </when>
+        </conditional>
 
         <conditional name="analysis_type">
             <param name="analysis_type_select" type="select" label="Type of analysis to perform">
