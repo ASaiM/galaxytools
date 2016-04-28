@@ -265,7 +265,7 @@ class Records:
         if args.custom_extraction_type == 'True':
             to_extract = args.to_extract[1:-1].split(',')
             with open(args.output_information, 'w') as output_information_file:
-                output_information_file.write('\t'.join(to_extract) + '\n')
+                #output_information_file.write('\t'.join(to_extract) + '\n')
                 for record in self.conserved_records:
                     extracted_info = record.extract_information(to_extract)
                     string_info = [str(info) for info in extracted_info]
