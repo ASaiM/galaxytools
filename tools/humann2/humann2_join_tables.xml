@@ -18,18 +18,32 @@
         `mkdir tmp_dir`
         && 
 
-        #for $file in $input_files
-            `cp $file tmp_dir`
+        #for $file in $files:
+            #if $files.select_name_file.select_name_file_test == "True":
+                --sample_name "${file.sample_name}"
+            #end if
+
+            -i $input_files
+            -i $file tmp_dir/$filename            
         #end for
 
-        && 
-        humann2_join_tables
-            -i "tmp_dir"
             -o $joined_table           
     ]]></command>
 
     <inputs>
-        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
+
+        <repeat name="files" title="Add an input file" >
+            <conditional name="select_name_file">
+                <param name='select_name_file_test' type="select" label="Choose a new name for the file?" help="">
+                    <option value="True">Yes</option>
+                    <option value="False" selected="true">No</option>
+                </param>
+                <when value="True">
+                    <param name="sample_name" type="text" label="Name of the file" help="(--sample_name)"/>
+                </when>
+            </conditional>
+            <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
+        </repeat>
     </inputs>
 
     <outputs>
@@ -38,7 +52,10 @@
 
     <tests>
         <test>
-            <param name="input_files" value="humann2_m8_pathabundance.tsv,humann2_fastq_pathabundance.tsv"/>
+            <param name="files_0|select_name_file" value="False"/>
+            <param name="files_0|input_files" value="humann2_fastq_pathabundance.tsv"/>
+            <param name="files_1|select_name_file" value="False"/>
+            <param name="files_1|input_files" value="humann2_m8_pathabundance.tsv"/>
             <output name="joined_table" file="joined_fastq_m8_pathabundance_output.tsv,biom"/>
         </test>
     </tests>
