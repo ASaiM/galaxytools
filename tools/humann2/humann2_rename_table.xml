@@ -46,13 +46,13 @@
             help="(--simplify)"/>
 
         <conditional name="select_name_file">
-            <param name='select_name_file_test' type="select" label="Use name file?" help="">
+            <param name='select_name_file_test' type="select" label="Use a custom mapping file?" help="">
                 <option value="True">Yes</option>
                 <option value="False" selected="true">No</option>
             </param>
 
             <when value="True">
-                <param name="file" type="data" format="tsv" label="Custom mapping file of feature IDs to full names" help="(--custom)"/>
+                <param name="mapping_file" type="data" format="tsv" label="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value" help="(--custom)"/>
             </when>
         </conditional>
        
@@ -69,7 +69,7 @@
             <param name="names" value="metacyc-pwy" />
             <param name='simplify' value="false"/>
             <param name="select_name_file_test" value="False"/>
-            <output name="output_table" file="" />
+            <output name="output_table" file="humann2_rename_output.tsv" />
         </test>
     </tests>
 
