@@ -19,9 +19,13 @@
             -i $input_table
             -o $output_table
 
-            --names $built_in.names
-            $built_in.simplify 
-            -c $built_in.file
+            --names $names
+            $simplify 
+
+            #if $select_name_file.select_name_file_test == "True":
+                -c $file
+            #end if
+
     ]]></command>
 
     <inputs>
@@ -36,10 +40,22 @@
             <option value="ec">Enzyme commision (EC)</option>
             <option value="uniref50">UniRef50 gene families</option>
         </param>
+
         <param name='simplify' type='boolean' checked="false" truevalue='-s' 
             falsevalue='' label="Remove non-alphanumeric characters from names?" 
             help="(--simplify)"/>
-        <param name="file" type="data" format="tsv" label="Custom mapping file of feature IDs to full names" help="(--custom)"/>
+
+        <conditional name="select_name_file">
+            <param name='select_name_file_test' type="select" label="Use name file?" help="">
+                <option value="True">Yes</option>
+                <option value="False" selected="true">No</option>
+            </param>
+
+            <when value="True">
+                <param name="file" type="data" format="tsv" label="Custom mapping file of feature IDs to full names" help="(--custom)"/>
+            </when>
+        </conditional>
+       
     </inputs>
 
     <outputs>
@@ -49,17 +65,10 @@
 
     <tests>
         <test>
-            <param name="input_table" value=""/>
-            <param name="names" value="" />
-            <param name='simplify' value=""/>
-            <param name="file" value=""/>
-            <output name="output_table" file="" />
-        </test>
-        <test>
-            <param name="input_table" value=""/>
-            <param name="names" value="" />
-            <param name='simplify' value=""/>
-            <param name="file" value=""/>
+            <param name="input_table" value="humann2_fasta_gene_families.tsv"/>
+            <param name="names" value="metacyc-pwy" />
+            <param name='simplify' value="false"/>
+            <param name="select_name_file_test" value="False"/>
             <output name="output_table" file="" />
         </test>
     </tests>
