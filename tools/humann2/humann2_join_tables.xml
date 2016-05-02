@@ -15,43 +15,31 @@
     </version_command>
 
     <command><![CDATA[
-
         `mkdir tmp_dir`
         && 
 
-        #for $file in $files.input_files
-            `cp $file tmp_dir`
+        #for $file in $input_files
+            `mv $file tmp_dir`
         #end for
 
         && 
         humann2_join_tables
-
-        #for $file in $files:
-            --sample_name "${file.sample_name}"
-            -i "tmp_dir"           
-        #end for
-
+            -i "tmp_dir"
             -o $joined_table           
     ]]></command>
 
     <inputs>
-
-        <repeat name="files" title="Add an input file" >
-            <param name="sample_name" type="text" label="Name of the file" help="(--sample_name)"/>
-            <param name="input_files" type="data" format="tsv,biom" label="Gene/pathway tables" help=""/>
-        </repeat>
+        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
     </inputs>
 
     <outputs>
-        <data format="tsv,biom" name="joined_table" label="Joined table for ${on_string} (HUMAnN2)" />
+        <data format="tsv,biom" name="joined_table" label="Joined table for 
+            ${on_string} (HUMAnN2)" />
     </outputs>
 
     <tests>
         <test>
-            <param name="files_0|sample_name" value="fastq_file"/>
-            <param name="files_0|input_files" value="humann2_fastq_pathabundance.tsv"/>
-            <param name="files_1|sample_name" value="m8_file"/>
-            <param name="files_1|input_files" value="humann2_m8_pathabundance.tsv"/>
+            <param name="files_0|input_files" value="humann2_fastq_pathabundance.tsv,humann2_m8_pathabundance.tsv"/>
             <output name="joined_table" file="joined_fastq_m8_pathabundance_output.tsv,biom"/>
         </test>
     </tests>
