@@ -20,7 +20,7 @@
         && 
 
         #for $file in $files.input_files
-            `cp $file tmp_dir/$files.sample_name`
+            `cp $file tmp_dir`
         #end for
 
         && 
@@ -28,7 +28,7 @@
 
             #for $file in $files:
                 --sample_name "${files.sample_name}"
-                -i "tmp_dir/$files.sample_name"           
+                -i "tmp_dir"           
             #end for
 
             -o $joined_table           
