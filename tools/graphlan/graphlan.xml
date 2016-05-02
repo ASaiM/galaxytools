@@ -106,6 +106,30 @@ graphlan.py -v
             <param name="pad" value="2"/>
             <output name="pdf_output_image" file="pdf_image.pdf" />
         </test>
+        <test>
+            <param name="input_tree" value="intermediary_tree.txt"/>
+            <param name="format" value="eps"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="eps_output_image" file="eps_image.eps" />
+        </test>
+        <test>
+            <param name="input_tree" value="intermediary_tree.txt"/>
+            <param name="format" value="svg"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="svg_output_image" file="svg_image.svg" />
+        </test>
+        <test>
+            <param name="input_tree" value="intermediary_tree.txt"/>
+            <param name="format" value="png"/>
+            <param name="dpi" value="100"/>
+            <param name="size" value="7"/>
+            <param name="pad" value="2"/>
+            <output name="png_output_image" file="png_image.png" />
+        </test>
     </tests>
 
     <help><![CDATA[
