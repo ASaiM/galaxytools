@@ -19,12 +19,12 @@
         `mkdir tmp_dir`
         && 
 
-
-        #for $file in $files.input_files:
-            --sample_name "${file.sample_name}"
-            -i "input_files"
-            -mv $file tmp_dir/${file.sample_name}           
-        #end for
+        python $__tool_directory__/humann2_join_table_output.py
+            #for $file in $files.input_files:
+                --sample_name "${file.sample_name}"
+                -i "input_files"
+                -mv $file tmp_dir/${file.sample_name}           
+            #end for
 
             -o $joined_table           
     ]]></command>
