@@ -1,5 +1,7 @@
 categories: 
   - Metagenomics
+  - Graphics
+  - Phylogenetics
 description: GraPhlAn is a software tool for producing high-quality circular representations of taxonomic and phylogenetic trees
 homepage_url: https://bitbucket.org/nsegata/graphlan/overview
 name: graphlan

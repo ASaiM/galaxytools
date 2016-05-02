@@ -53,7 +53,7 @@ graphlan.py -v
     </command>
 
     <inputs>
-        <param name="input_tree" type="data" format="txt" label="Input tree in PhlyloXML format" help=""/>
+        <param name="input_tree" type="data" format="txt" label="Input tree" help="The tree must be in PhlyloXML, Newick or text format."/>
 
         <param name='format' type="select" label="Output format" help="(--format)">
             <option value="png" selected="true">PNG</option>
@@ -100,22 +100,18 @@ graphlan.py -v
     <tests>
         <test>
             <param name="input_tree" value="intermediary_tree.txt"/>
-            <param name="format" value="pdf"/>
+            <param name="format" value="png"/>
             <param name="dpi" value="100"/>
             <param name="size" value="7"/>
             <param name="pad" value="2"/>
-            <output name="pdf_output_image" file="pdf_image.pdf" />
+            <output name="png_output_image" file="png_image.png" />
         </test>
     </tests>
 
     <help><![CDATA[
-
 **What it does**
 
-GraPhlAn is a software tool for producing high-quality circular 
-representations of taxonomic and phylogenetic trees. GraPhlAn focuses on 
-concise, integrative, informative, and publication-ready representations of 
-phylogenetically- and taxonomically-driven investigation.
+GraPhlAn is a software tool for producing high-quality circular representations of taxonomic and phylogenetic trees. GraPhlAn focuses on concise, integrative, informative, and publication-ready representations of phylogenetically- and taxonomically-driven investigation.
 
 For more information, check the `user manual <https://bitbucket.org/nsegata/graphlan/overview>`_.
 

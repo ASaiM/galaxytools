@@ -23,16 +23,22 @@
 
     <inputs>
         <param name="database_selector" type="select" label="Database to download" help="">
-            <option value="chocophlan full">Nucleotide</option>
-            <option value="uniref diamond">Protein</option>
+            <option value="chocophlan full">Nucleotide (ChocoPhlAn)</option>
+            <option value="uniref diamond">Protein (UniRef50)</option>
         </param>
     </inputs>
 
     <outputs>
-        <data format="txt" name="log" label="${tool.name} on ${on_string}: Log" />
+        <data format="txt" name="log" label="${tool.name}: Log" />
     </outputs>
 
     <tests>
+        <test>
+             <param name="database_selector" value="chocophlan full" />
+        </test>
+        <test>
+             <param name="database_selector" value="uniref diamond" />
+        </test>
     </tests>
 
     <help><![CDATA[

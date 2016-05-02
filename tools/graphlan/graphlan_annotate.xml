@@ -1,6 +1,6 @@
-<tool id="graphlan_annotate" name="Modify an input tree for GraPhlAn" version="0.9.7">
+<tool id="graphlan_annotate" name="Generation, personalization and annotation of tree" version="0.9.7">
 
-    <description></description>
+    <description>for GraPhlAn</description>
 
     <macros>
         <import>graphlan_macros.xml</import>
@@ -34,11 +34,9 @@ graphlan_annotate.py -v
     </command>
 
     <inputs>
-        <param name="input_tree" type="data" format="txt" label="Input tree" 
-            help="Newick, Nexus, PhyloXML or plain text"/>
+        <param name="input_tree" type="data" format="txt" label="Input tree" help="Newick, Nexus, PhyloXML or plain text"/>
 
-        <param name="annot" type="data" format="txt" label="Annotation file 
-            (Optional)" help="(--annot)" optional="True"/>
+        <param name="annot" type="data" format="txt" label="Annotation file (Optional)" help="The annotation file is a tab-delimited file listing the graphical options for clades(--annot)" optional="True"/>
     </inputs>
 
     <outputs>
@@ -55,17 +53,13 @@ graphlan_annotate.py -v
     </tests>
 
     <help><![CDATA[
-
 **What it does**
 
-GraPhlAn is a software tool for producing high-quality circular 
-representations of taxonomic and phylogenetic trees. GraPhlAn focuses on 
-concise, integrative, informative, and publication-ready representations of 
-phylogenetically- and taxonomically-driven investigation.
+GraPhlAn is a software tool for producing high-quality circular representations of taxonomic and phylogenetic trees. GraPhlAn focuses on concise, integrative, informative, and publication-ready representations of phylogenetically- and taxonomically-driven investigation.
 
-`graphlan_annotate` modifies any input tree (in any of the three standard format) 
-adding additional information regarding structural or graphical aspects of the tree 
-(like colors and style of the taxa, labels, shadows, heatmaps, ...).
+`graphlan_annotate` modifies any input tree (in any of the three standard format) adding additional information regarding structural or graphical aspects of the tree (like colors and style of the taxa, labels, shadows, heatmaps, ...).
+
+The annotation file is a tab-delimited file listing the graphical options for clades. Usually each line has three fields: the name of the clade, the name of the option, and the value to assign to the option. Lines can however have two fields (typically for "global" option not referred to a specific clade) or four fields when the external rings (a sort of circular heatmap) is specified.
 
 For more information, check the `user manual <https://bitbucket.org/nsegata/graphlan/overview>`_.
 

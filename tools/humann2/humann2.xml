@@ -1,5 +1,5 @@
 <tool id="humann2" name="HUMAnN2" version="0.6.1">
-    <description>to profile the presence/absence and abundance of microbial pathways</description>
+    <description>to profile presence/absence and abundance of microbial pathways and gene families</description>
 
     <macros>
         <import>humann2_macros.xml</import>
@@ -15,6 +15,28 @@
     </version_command>
 
     <command><![CDATA[
+        `mkdir nucleotide_db`
+
+        &&
+
+        #if $nucleotide_db.nucleotide_db_selector == "history"
+            #for $file in $nucleotide_db.history_nucleotide_db:
+                `cp $file nucleotide_db/$file.name`
+            #end for
+        #end if
+
+        &&
+
+        `mkdir protein_db`
+
+        &&
+
+        #if $protein_db.protein_db_selector == "history"
+            `diamond makedb --in $protein_db.history_protein_db --db protein_db/protein_db`
+        #end if
+
+        &&
+
         humann2 
             -i "$input_file"
             
@@ -52,13 +74,13 @@
             #if $nucleotide_db.nucleotide_db_selector == "cached"
                 --nucleotide-database \${HUMANN2_DIR}/databases/chocophlan
             #else
-                --nucleotide-database "$nucleotide_db.history_nucleotide_db"
+                --nucleotide-database nucleotide_db
             #end if
 
             #if $protein_db.protein_db_selector == "cached"
                 --protein-database \${HUMANN2_DIR}/databases/uniref
             #else
-                --protein-database "$protein_db.history_protein_db"
+                --protein-database protein_db
             #end if
 
             --threads \${GALAXY_SLOTS:-4}
@@ -125,12 +147,12 @@
         <conditional name="nucleotide_db">
             <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="">
                 <option value="cached" selected="true">Locally cached</option>
-                <option value="history">From history</option>
+                <option value="history">From history (as collection)</option>
             </param>
 
             <when value="cached"/>
             <when value="history">
-                <param name="history_nucleotide_db" type="data" format="fasta" label="Nucleotide database from history"/>
+                <param format="fasta" name="history_nucleotide_db" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must names as ^[g__].[s__]"/>
             </when>
         </conditional>
 
@@ -218,10 +240,18 @@
 
     <tests>
         <test>
-            <param name="input_file" value="humann2_input.fasta"/>
-            <param name='taxonomic_profile_test' value="false"/>
-            <param name="nucleotide_database" value="chocophlan"/>
-            <param name="protein_database" value="uniref"/>
+            <param name="input_file" value="input_sequences.fasta"/>
+            <param name='taxonomic_profile_test' value="true"/>
+            <param name="taxonomic_profile_file" value="taxonomic_profile.tabular"/>
+            <param name="nucleotide_db_selector" value="history"/>
+            <param name="history_nucleotide_db">
+                <collection type="list">
+                    <element name="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1.ffn.gz" />
+                    <element name="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1.ffn.gz" />
+                </collection>
+            </param>
+            <param name="protein_db_selector" value="history"/>
+            <param name="history_protein_db" value="reduced_uniref50.fasta"/>
             <param name="e_value" value="1"/>
             <param name="identity" value="40"/>
             <param name="prescreen" value="0.01"/>
@@ -231,63 +261,9 @@
             <param name='pick_frames' value="true"/>
             <param name='output_format' value="tsv"/>
             <param name="output_max_dec" value="10"/>
-            <output name="gene_families_tsv" file="humann2_fasta_gene_families.tsv"/>
-            <output name="pathcoverage_tsv" file="humann2_fasta_pathcoverage.tsv"/>
-            <output name="pathabundance_tsv" file="humann2_fasta_pathabundance.tsv"/>
-        </test>
-        <test>
-            <param name="input_file" value="humann2_input.fastq"/>
-            <param name='taxonomic_profile_test' value="false"/>
-            <param name="nucleotide_database" value="chocophlan"/>
-            <param name="protein_database" value="uniref"/>
-            <param name="e_value" value="1"/>
-            <param name="identity" value="40"/>
-            <param name="prescreen" value="0.01"/>
-            <param name='pathways' value="metacyc"/>
-            <param name='xipe' value="false"/>
-            <param name='minpath' value="true"/>
-            <param name='pick_frames' value="true"/>
-            <param name='output_format' value="tsv"/>
-            <param name="output_max_dec" value="10"/>
-            <output name="gene_families_tsv" file="humann2_fastq_gene_families.tsv"/>
-            <output name="pathcoverage_tsv" file="humann2_fastq_pathcoverage.tsv"/>
-            <output name="pathabundance_tsv" file="humann2_fastq_pathabundance.tsv"/>
-        </test>
-        <test>
-            <param name="input_file" value="humann2_input.m8"/>
-            <param name='taxonomic_profile_test' value="false"/>
-            <param name="nucleotide_database" value="chocophlan"/>
-            <param name="protein_database" value="uniref"/>
-            <param name="e_value" value="1"/>
-            <param name="identity" value="40"/>
-            <param name="prescreen" value="0.01"/>
-            <param name='pathways' value="metacyc"/>
-            <param name='xipe' value="false"/>
-            <param name='minpath' value="true"/>
-            <param name='pick_frames' value="true"/>
-            <param name='output_format' value="tsv"/>
-            <param name="output_max_dec" value="10"/>
-            <output name="gene_families_tsv" file="humann2_m8_gene_families.tsv"/>
-            <output name="pathcoverage_tsv" file="humann2_m8_pathcoverage.tsv"/>
-            <output name="pathabundance_tsv" file="humann2_m8_pathabundance.tsv"/>
-        </test>
-        <test>
-            <param name="input_file" value="humann2_input.sam"/>
-            <param name='taxonomic_profile_test' value="false"/>
-            <param name="nucleotide_database" value="chocophlan"/>
-            <param name="protein_database" value="uniref"/>
-            <param name="e_value" value="1"/>
-            <param name="identity" value="40"/>
-            <param name="prescreen" value="0.01"/>
-            <param name='pathways' value="metacyc"/>
-            <param name='xipe' value="false"/>
-            <param name='minpath' value="true"/>
-            <param name='pick_frames' value="true"/>
-            <param name='output_format' value="tsv"/>
-            <param name="output_max_dec" value="10"/>
-            <output name="gene_families_tsv" file="humann2_sam_gene_families.tsv"/>
-            <output name="pathcoverage_tsv" file="humann2_sam_pathcoverage.tsv"/>
-            <output name="pathabundance_tsv" file="humann2_sam_pathabundance.tsv"/>
+            <output name="gene_families_tsv" file="expected_gene_family_abundance.tsv"/>
+            <output name="pathcoverage_tsv" file="expected_pathway_abundance.tsv"/>
+            <output name="pathabundance_tsv" file="expected_pathway_coverage.tsv"/>
         </test>
     </tests>
 
