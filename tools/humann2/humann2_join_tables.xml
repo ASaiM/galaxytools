@@ -26,16 +26,10 @@
         && 
         humann2_join_tables
 
-            -i "tmp_dir"
-            -o $joined_table    
-
-
-      
-
-        #for $file in $files:
-            --sample_name "${files.sample_name}"
-            -i "tmp_dir/$files.sample_name"           
-        #end for
+            #for $file in $files:
+                --sample_name "${files.sample_name}"
+                -i "tmp_dir/$files.sample_name"           
+            #end for
 
             -o $joined_table           
     ]]></command>
