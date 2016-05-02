@@ -19,13 +19,16 @@
         `mkdir tmp_dir`
         && 
 
+        #for $file in $files.input_files
+            `cp $file tmp_dir`
+        #end for
 
+        && 
         humann2_join_tables
 
         #for $file in $files:
             --sample_name "${file.sample_name}"
-            -i $input_files
-            -cp $input_files tmp_dir/           
+            -i "tmp_dir"           
         #end for
 
             -o $joined_table           
@@ -35,7 +38,7 @@
 
         <repeat name="files" title="Add an input file" >
             <param name="sample_name" type="text" label="Name of the file" help="(--sample_name)"/>
-            <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
+            <param name="input_files" type="data" format="tsv,biom" label="Gene/pathway tables" help=""/>
         </repeat>
     </inputs>
 
