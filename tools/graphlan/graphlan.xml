@@ -53,7 +53,7 @@ graphlan.py -v
     </command>
 
     <inputs>
-        <param name="input_tree" type="data" format="txt" label="Input tree in PhlyloXML format" help=""/>
+        <param name="input_tree" type="data" format="txt" label="Input tree" help="The tree must be in PhlyloXML, Newick or text format."/>
 
         <param name='format' type="select" label="Output format" help="(--format)">
             <option value="png" selected="true">PNG</option>

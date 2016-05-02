@@ -34,11 +34,9 @@ graphlan_annotate.py -v
     </command>
 
     <inputs>
-        <param name="input_tree" type="data" format="txt" label="Input tree" 
-            help="Newick, Nexus, PhyloXML or plain text"/>
+        <param name="input_tree" type="data" format="txt" label="Input tree" help="Newick, Nexus, PhyloXML or plain text"/>
 
-        <param name="annot" type="data" format="txt" label="Annotation file 
-            (Optional)" help="(--annot)" optional="True"/>
+        <param name="annot" type="data" format="txt" label="Annotation file (Optional)" help="The annotation file is a tab-delimited file listing the graphical options for clades(--annot)" optional="True"/>
     </inputs>
 
     <outputs>
