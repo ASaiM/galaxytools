@@ -34,10 +34,12 @@
 
     <tests>
         <test>
-             <param name="database_selector" value="chocophlan full" />
+            <param name="database_selector" value="chocophlan full" />
+            <output name="log" value="nucleotide_db_download_log.txt"/>
         </test>
         <test>
-             <param name="database_selector" value="uniref diamond" />
+            <param name="database_selector" value="uniref diamond"/>
+            <output name="log" value="protein_db_download_log.txt"/>
         </test>
     </tests>
 
