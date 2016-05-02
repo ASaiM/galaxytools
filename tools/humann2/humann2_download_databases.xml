@@ -33,6 +33,12 @@
     </outputs>
 
     <tests>
+        <test>
+             <param name="database_selector" value="chocophlan full" />
+        </test>
+        <test>
+             <param name="database_selector" value="uniref diamond" />
+        </test>
     </tests>
 
     <help><![CDATA[
