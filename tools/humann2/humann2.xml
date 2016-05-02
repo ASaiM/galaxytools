@@ -240,7 +240,7 @@
 
     <tests>
         <test>
-            <param name="input_file" value="humann2_input.fasta"/>
+            <param name="input_file" value="input_sequences.fasta"/>
             <param name='taxonomic_profile_test' value="true"/>
             <param name="taxonomic_profile_file" value="taxonomic_profile.tabular"/>
             <param name="nucleotide_db_selector" value="history"/>
