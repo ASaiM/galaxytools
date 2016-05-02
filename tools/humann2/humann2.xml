@@ -262,8 +262,8 @@
             <param name='output_format' value="tsv"/>
             <param name="output_max_dec" value="10"/>
             <output name="gene_families_tsv" file="expected_gene_family_abundance.tsv"/>
-            <output name="pathcoverage_tsv" file="expected_pathway_abundance.tsv"/>
-            <output name="pathabundance_tsv" file="expected_pathway_coverage.tsv"/>
+            <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv"/>
+            <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv"/>
         </test>
     </tests>
 
