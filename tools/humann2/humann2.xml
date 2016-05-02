@@ -1,5 +1,5 @@
 <tool id="humann2" name="HUMAnN2" version="0.6.1">
-    <description>to profile the presence/absence and abundance of microbial pathways</description>
+    <description>to profile presence/absence and abundance of microbial pathways and gene families</description>
 
     <macros>
         <import>humann2_macros.xml</import>
