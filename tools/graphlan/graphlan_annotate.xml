@@ -1,6 +1,6 @@
-<tool id="graphlan_annotate" name="Modify an input tree for GraPhlAn" version="0.9.7">
+<tool id="graphlan_annotate" name="Generation, personalization and annotation of tree" version="0.9.7">
 
-    <description></description>
+    <description>for GraPhlAn</description>
 
     <macros>
         <import>graphlan_macros.xml</import>
