@@ -22,7 +22,7 @@
             #for $file in $files.input_files:
                 -i "${file.sample_name}"
                 -i "input_files"
-                -cp $file tmp_dir/${file.sample_name}           
+                -cp $file tmp_dir/\${file.sample_name}           
             #end for
 
             -o $joined_table           
