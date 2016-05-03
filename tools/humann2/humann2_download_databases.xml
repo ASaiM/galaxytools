@@ -35,9 +35,11 @@
     <tests>
         <test>
              <param name="database_selector" value="chocophlan full" />
+             <output name="log" file="humann2_download_nucleotide_output.txt"/>
         </test>
         <test>
              <param name="database_selector" value="uniref diamond" />
+             <output name="log" file="humann2_download_protein_output.txt"/>
         </test>
     </tests>
 
