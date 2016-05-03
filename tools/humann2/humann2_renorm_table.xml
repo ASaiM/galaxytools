@@ -38,14 +38,14 @@
 
     <tests>
         <test>
-            <param name="input_table" value="humann2_fasta_pathabundance.tsv"/>
+            <param name="input_table" value="expected_pathway_abundance.tsv"/>
             <param name="norm" value="cpm"/>
-            <output name="output_table" file="humann2_fasta_pathabundance_cpm_renormalized_output.tsv"/>
+            <output name="output_table" file="humann2_pathabundance_cpm_renormalized_output.tsv"/>
         </test>
         <test>
-            <param name="input_table" value="humann2_fasta_pathabundance.tsv"/>
+            <param name="input_table" value="expected_pathway_abundance.tsv"/>
             <param name="norm" value="relab"/>
-            <output name="output_table" file="humann2_fasta_pathabundance_relab_renormalized_output.tsv"/>
+            <output name="output_table" file="humann2_pathabundance_relab_renormalized_output.tsv"/>
         </test>
     </tests>
 
