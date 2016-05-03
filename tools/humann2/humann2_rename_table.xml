@@ -65,11 +65,11 @@
 
     <tests>
         <test>
-            <param name="input_table" value="humann2_fasta_gene_families.tsv"/>
+            <param name="input_table" value="expected_gene_family_abundance.tsv"/>
             <param name="names" value="metacyc-pwy" />
             <param name='simplify' value="false"/>
             <param name="select_name_file_test" value="False"/>
-            <output name="output_table" file="humann2_rename_output.tsv" />
+            <output name="output_table" file="humann2_rename_gene_family_output.tsv" />
         </test>
     </tests>
 
