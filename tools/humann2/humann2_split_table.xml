@@ -23,19 +23,20 @@
 
     <inputs>
         <param name="input_file" type="data" format="tsv,biom" multiple="true" 
-            label="Gene/pathway table to read" help=""/>
+            label="Gene/pathway table to read" help="use afile from join_table"/>
+        </param>
     </inputs>
 
     <outputs>
         <collection type="list" name="split_tables" format="tsv">
-            <discover_datasets pattern="__designation_and_ext__" directory="output" />
+            <discover_datasets pattern="__designation_and_ext__" directory="split" visible="true" />
         </collection>
     </outputs>
 
     <tests>
         <test>
-            <param name="input_file" value="gene_families_humann2_output.tabular"/>
-            <output name="report" file="humann2_split_gene_family_output.tsv" />
+            <param name="input_file" value="humann2_split_input_from_join.tsv,biom"/>
+            <output name="report" file="humann2_split_1_output.tsv,humann2_split_2_output.tsv" />
         </test>
     </tests>
 
