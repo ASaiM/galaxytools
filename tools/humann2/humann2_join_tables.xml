@@ -19,10 +19,16 @@
         `mkdir tmp_dir`
         && 
 
-            #for $file in $files.input_files:
+        #for $file in $files:
+            cp $file.input_file tmp_dir/\${file.sample_name}           
+        #end for
+
+        &&
+
+        humann2_split_table
+            #for $file in $files:
                 -i "${file.sample_name}"
-                -i "input_files"
-                -cp $file tmp_dir/\${file.sample_name}           
+                -i "input_files"           
             #end for
 
             -o $joined_table           
