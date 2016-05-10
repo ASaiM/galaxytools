@@ -15,25 +15,22 @@
     </version_command>
 
     <command><![CDATA[
-        Rscript $__tool_directory__/humann2_join_tables.R
+        Rscript $__tool_directory__/plot_grouped_barplot.R
             `mkdir tmp_dir`
             && 
 
             #for $file in $files:
-                cp $file.input_file tmp_dir/\$names           
+                cp $file.input_file tmp_dir/\${file.sample_name}           
             #end for
 
             &&
 
             humann2_split_table
                 #for $file in $files:
-                    #set $names = str{$file.sample_name}
+                    --names ${file.sample_name}
                     -i "input_files"  
-                    #set $sep=","  
                 #end for
-                #set $names = $names
 
-            --names "$names"
             -o $joined_table           
 
     ]]></command>
