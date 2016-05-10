@@ -17,7 +17,7 @@
     <command><![CDATA[
         humann2_split_table
             -i $input_file
-            -o "output"    
+            -o $split_tables    
 
     ]]></command>
 
