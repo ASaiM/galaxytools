@@ -15,7 +15,7 @@
     </version_command>
 
     <command><![CDATA[
-        Rscript $__tool_directory__/plot_grouped_barplot.R
+        Rscript $__tool_directory__/humann2_join_tables.R
             `mkdir tmp_dir`
             && 
 
