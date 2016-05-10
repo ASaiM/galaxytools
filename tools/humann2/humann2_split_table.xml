@@ -28,7 +28,7 @@
     </inputs>
 
     <outputs>
-        <collection type="list" name="split_tables" format="tsv">
+        <collection type="list" name="split_tables" format="tsv" >
             <discover_datasets pattern="__designation_and_ext__" directory="split" visible="true" />
         </collection>
     </outputs>
@@ -37,6 +37,10 @@
         <test>
             <param name="input_file" value="humann2_split_input_from_join.tsv,biom"/>
             <output name="report" file="humann2_split_1_output.tsv,humann2_split_2_output.tsv" />
+            <output_collection name="split_tables" type="list">
+                <element file="humann2_split_1_output.tsv" />
+                <element file="humann2_split_2_output.tsv" />
+            </output_collection>
         </test>
     </tests>
 
