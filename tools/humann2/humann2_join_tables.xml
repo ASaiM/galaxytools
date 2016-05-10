@@ -20,14 +20,14 @@
             && 
 
             #for $file in $files:
-                cp $file.input_file tmp_dir/\${file.sample_name}           
+                cp $file.input_file tmp_dir/\$names           
             #end for
 
             &&
 
             humann2_split_table
                 #for $file in $files:
-                    #set $names = $names + $sep +str{$file.sample_name}
+                    #set $names = str{$file.sample_name}
                     -i "input_files"  
                     #set $sep=","  
                 #end for
@@ -52,11 +52,11 @@
 
     <tests>
         <test>
-            <param name="files_0|sample_name" value="test_fastq"/>
-            <param name="files_0|input_files" value="humann2_fastq_pathabundance.tsv"/>
-            <param name="files_1|sample_name" value="test_m8"/>
-            <param name="files_1|input_files" value="humann2_m8_pathabundance.tsv"/>
-            <output name="joined_table" file="joined_fastq_m8_pathabundance_output.tsv,biom"/>
+            <param name="files_0|sample_name" value="test_abun"/>
+            <param name="files_0|input_files" value="expected_pathway_abundance.tsv"/>
+            <param name="files_1|sample_name" value="test_cov"/>
+            <param name="files_1|input_files" value="expected_pathway_coverage.tsv"/>
+            <output name="joined_table" file="join_table_output.tsv,biom"/>
         </test>
     </tests>
 
