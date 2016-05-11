@@ -15,19 +15,19 @@
     </version_command>
 
     <command><![CDATA[
-        Rscript $__tool_directory__/plot_grouped_barplot.R
+        
             `mkdir tmp_dir`
             && 
 
             #for $file in $files:
-                cp $file.input_file tmp_dir/\${file.sample_name}           
+                `cp $file.input_file tmp_dir/`           
             #end for
 
             &&
 
             humann2_split_table
                 #for $file in $files:
-                    --names ${file.sample_name}
+    
                     -i "input_files"  
                 #end for
 
@@ -38,7 +38,6 @@
     <inputs>
 
         <repeat name="files" title="Add an input file" >
-            <param name="sample_name" type="text" label="Name of the file" help="(--sample_name)"/>
             <param name="input_files" type="data" format="tsv,biom" label="Gene/pathway tables" help=""/>
         </repeat>
     </inputs>
@@ -49,9 +48,7 @@
 
     <tests>
         <test>
-            <param name="files_0|sample_name" value="test_abun"/>
             <param name="files_0|input_files" value="expected_pathway_abundance.tsv"/>
-            <param name="files_1|sample_name" value="test_cov"/>
             <param name="files_1|input_files" value="expected_pathway_coverage.tsv"/>
             <output name="joined_table" file="join_table_output.tsv,biom"/>
         </test>
