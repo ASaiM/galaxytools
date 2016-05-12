@@ -20,7 +20,7 @@
             && 
 
             #for $file in $files:
-                `cp $file.input_file tmp_dir/`           
+                `cp $file.input_files tmp_dir/`           
             #end for
 
             &&
