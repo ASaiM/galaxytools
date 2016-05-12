@@ -28,7 +28,7 @@
             humann2_split_table
                 #for $file in $files:
     
-                    -i "input_files"  
+                    -i $input_files 
                 #end for
 
             -o $joined_table           
