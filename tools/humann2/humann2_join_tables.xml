@@ -15,51 +15,37 @@
     </version_command>
 
     <command><![CDATA[
-        
-            `mkdir tmp_dir`
-            && 
-
-            #for $file in $files:
-                `cp $file.input_files tmp_dir/`           
-            #end for
-
-            &&
-
-            humann2_split_table
-                #for $file in $files:
-    
-                    -i $input_files 
-                #end for
-
+        `mkdir tmp_dir`
+        && 
+        #for $file in $input_files
+            `cp $file tmp_dir`
+        #end for
+        && 
+        humann2_join_tables
+            -i "tmp_dir"
             -o $joined_table           
-
     ]]></command>
 
     <inputs>
-
-        <repeat name="files" title="Add an input file" >
-            <param name="input_files" type="data" format="tsv,biom" label="Gene/pathway tables" help=""/>
-        </repeat>
+        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
     </inputs>
 
     <outputs>
-        <data format="tsv,biom" name="joined_table" label="Joined table for ${on_string} (HUMAnN2)" />
+        <data format="tsv,biom" name="joined_table" label="Joined table for 
+            ${on_string} (HUMAnN2)" />
     </outputs>
 
     <tests>
         <test>
-            <param name="files_0|input_files" value="expected_pathway_abundance.tsv"/>
-            <param name="files_1|input_files" value="expected_pathway_coverage.tsv"/>
+            <param name="input_files" value="expected_pathway_abundance.tsv,expected_pathway_coverage.tsv"/>
             <output name="joined_table" file="join_table_output.tsv,biom"/>
         </test>
     </tests>
 
     <help><![CDATA[
-**What it does**
-
-Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
-
-HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+        **What it does**
+        Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
+        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
     ]]></help>
 
     <citations>
