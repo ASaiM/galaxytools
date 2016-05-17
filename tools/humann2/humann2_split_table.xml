@@ -26,7 +26,7 @@
 
     <outputs>
         <collection type="list" name="split_tables">
-            <discover_datasets pattern="(?P&lt;designation&gt;.+)\.tsv" directory="output" ext="tabular" />
+            <discover_datasets pattern="(?P&lt;designation&gt;.+)\.tsv" directory="output"/>
         </collection>
     </outputs>
 
