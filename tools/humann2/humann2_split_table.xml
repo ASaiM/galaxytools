@@ -34,8 +34,8 @@
         <test>
             <param name="input_file" value="humann2_split_input_from_join.tsv"/>
             <output_collection name="split_tables" type="list">
-                <element name="humann2_Coverage" file="humann2_split_coverage_output.tabular" />
-                <element name="humann2_Abundance" file="humann2_split_abundance_output.tabular" />
+                <element file="humann2_split_coverage_output.tabular" />
+                <element file="humann2_split_abundance_output.tabular" />
             </output_collection>
         </test>
     </tests>
