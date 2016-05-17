@@ -37,9 +37,9 @@
 
     <tests>
         <test>
-            <param name="input_files" value="expected_pathway_abundance.tsv,expected_pathway_coverage.tsv"/>
+            <param name="input_files" value="expected_pathway_coverage.tsv,expected_pathway_abundance.tsv"/>
             <output name="joined_table" file="join_table_output.tsv,biom"/>
-        </test>
+        </test>expected_pathway_coverage
     </tests>
 
     <help><![CDATA[
