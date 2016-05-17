@@ -17,19 +17,16 @@
     <command><![CDATA[
         humann2_split_table
             -i $input_file
-            -o $split_tables    
-
+            -o "output"
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="tsv,biom" multiple="true" 
-            label="Gene/pathway table to read" help="use afile from join_table"/>
-        </param>
+        <param name="input_file" type="data" format="tsv,biom" label="Gene/pathway table to read" help="use a file from join_table"/>
     </inputs>
 
     <outputs>
-        <collection type="list" name="split_tables" format="tsv" >
-            <discover_datasets pattern="__designation_and_ext__" directory="split" visible="true" />
+        <collection type="list" name="split_tables">
+            <discover_datasets pattern="(?P&lt;designation&gt;.+)\.tsv" directory="output" ext="tabular" />
         </collection>
     </outputs>
 
