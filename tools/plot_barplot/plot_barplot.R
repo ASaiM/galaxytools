@@ -8,6 +8,7 @@ option_specification = matrix(c(
   'data_column', 'd', 2, 'integer',
   'names_column', 'n', 2, 'integer',
   'xlab', 'x', 2, 'character',
+  'log', 'g', 2, 'logical',
   'col', 'c', 2, 'character',
   'bottom_margin', 'b', 2, 'integer',
   'left_margin', 'l', 2, 'integer',
@@ -40,12 +41,15 @@ if(!is.null(options$xlab)) xlab = options$xlab
 col = "grey"
 if(!is.null(options$col)) col = options$col
 
+log = ""
+if(!is.null(options$log) && options$log) log = "x"
+
 plot_barplot <- function(){
     par(las=2)
     par(mar=margin)
     barplot(data[, data_column], horiz = T, xlab = xlab, 
         names.arg = data[, names_column], col = col, cex.names=0.7, 
-        cex.axis = 0.8)
+        cex.axis = 0.8, log = log)
 }
 
 if(!is.null(options$output_pdf_file)){

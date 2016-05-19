@@ -28,6 +28,7 @@
             --data_column $column_with_data
             --names_column $names_column
             --xlab "$xlab"
+            --log $log
             --col $col
             --bottom_margin $bottom_margin
             --left_margin $left_margin
@@ -50,6 +51,8 @@
         <param name="names_column" type="data_column" data_ref="input_file" multiple="false" numerical="false" label="Column containing data names?" help="(--names_column)" />
 
         <param name="xlab" type="text" value="" label="Label for x axis" help="(--xlab)"/>
+
+        <param name="log" type="boolean" truevalue="TRUE" falsevalue="FALSE" label="Log scale?" help="(--log)"/>
 
         <param name="col" label="Bar color" type="text" value= "blue" help="R color (--col)"/>
 
@@ -83,6 +86,7 @@
             <param name="names_column" value="1"/>
             <param name="xlab" value=""/>
             <param name="col" value="blue"/>
+            <param name='log' value="FALSE"/>
             <param name="bottom_margin" value="5"/>
             <param name="left_margin" value="19"/>
             <param name="top_margin" value="1"/>
@@ -96,6 +100,7 @@
             <param name="column_with_data" value="3"/>
             <param name="names_column" value="1"/>
             <param name="xlab" value=""/>
+            <param name='log' value="FALSE"/>
             <param name="col" value="red"/>
             <param name="bottom_margin" value="5"/>
             <param name="left_margin" value="19"/>
