@@ -14,7 +14,7 @@
 ]]>
     </version_command>
 
-    <command><![CDATA[
+    <command><![CDATA[   
         humann2_databases
             --download $database_selector \${HUMANN2_DIR}/databases
             
@@ -29,18 +29,10 @@
     </inputs>
 
     <outputs>
-        <data format="txt" name="log" label="${tool.name}: Log" />
+        <data format="txt" name="log" label="${tool.name}: Log" visible="true"/>
     </outputs>
 
     <tests>
-        <test>
-            <param name="database_selector" value="chocophlan full" />
-            <output name="log" value="nucleotide_db_download_log.txt"/>
-        </test>
-        <test>
-            <param name="database_selector" value="uniref diamond"/>
-            <output name="log" value="protein_db_download_log.txt"/>
-        </test>
     </tests>
 
     <help><![CDATA[
