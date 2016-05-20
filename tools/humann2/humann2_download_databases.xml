@@ -33,6 +33,14 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="database_selector" value="" />
+            <output name="log" value=""/>
+        </test>
+        <test>
+            <param name="database_selector" value=""/>
+            <output name="log" value=""/>
+        </test>
     </tests>
 
     <help><![CDATA[
