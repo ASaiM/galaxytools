@@ -36,8 +36,7 @@
     </inputs>
 
     <outputs>
-        <data format="tsv,biom" name="joined_table" label="Joined table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv" name="joined_table" label="${tool.name} on ${on_string}: Joined table" />
     </outputs>
 
     <tests>
