@@ -22,18 +22,13 @@
             --names $names
             $simplify 
 
-            #if $select_name_file.select_name_file_test == "True":
-                -c $file
-            #end if
-
+            -c $file
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
-            table" help=""/>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
 
-        <param name="names" type="select" label="Table features that 
-        can be renamed" help="(--names)">
+        <param name="names" type="select" label="Table features that can be renamed" help="(--names)">
             <option value="metacyc-rxn" selected="true">MetaCyc reactions</option>
             <option value="metacyc-pwy">MetaCyc pathways</option>
             <option value="ko">KEGG Orthogroups (KO)</option>
@@ -41,26 +36,14 @@
             <option value="uniref50">UniRef50 gene families</option>
         </param>
 
-        <param name='simplify' type='boolean' checked="false" truevalue='-s' 
-            falsevalue='' label="Remove non-alphanumeric characters from names?" 
-            help="(--simplify)"/>
+        <param name='simplify' type='boolean' checked="false" truevalue='-s' falsevalue='' label="Remove non-alphanumeric characters from names?" help="(--simplify)"/>
 
-        <conditional name="select_name_file">
-            <param name='select_name_file_test' type="select" label="Use a custom mapping file?" help="">
-                <option value="True">Yes</option>
-                <option value="False" selected="true">No</option>
-            </param>
-
-            <when value="True">
-                <param name="mapping_file" type="data" format="tsv" label="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value" help="(--custom)"/>
-            </when>
-        </conditional>
+        <param name="mapping_file" type="data" format="tsv" label="Mapping file" help="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value (--custom)"/>
        
     </inputs>
 
     <outputs>
-        <data format="tsv" name="output_table" label="Renamed table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv" name="output_table" label="${tool.name} on ${on_string}: Renamed table" />
     </outputs>
 
     <tests>

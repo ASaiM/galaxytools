@@ -22,8 +22,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
-            table" help=""/>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
 
         <param name="norm" type="select" label="Normalization scheme" help="(--norm)">
             <option value="cpm" selected="true">Copies per million</option>
@@ -32,8 +31,7 @@
     </inputs>
 
     <outputs>
-        <data format="tsv" name="output_table" label="Normalized table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv" name="output_table" label="${tool.name} on ${on_string}: Normalized table" />
     </outputs>
 
     <tests>

@@ -152,7 +152,7 @@
 
             <when value="cached"/>
             <when value="history">
-                <param format="fasta" name="history_nucleotide_db" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must names as ^[g__].[s__]"/>
+                <param format="fasta" name="history_nucleotide_db" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must be named: ^[g__].[s__]"/>
             </when>
         </conditional>
 
@@ -164,76 +164,51 @@
 
             <when value="cached"/>
             <when value="history">
-                <param name="history_protein_db" type="data" format="fasta" label="Protein database from history"/>
+                <param name="history_protein_db" type="data" format="fasta" label="Protein database from history" help=""/>
             </when>
         </conditional>
 
-        <param name="e_value" type="float" min="0" max="10" value="1" 
-            label="E-value threshold to use with the translated search" 
-            help="(--evalue)"/>
-        <param name="identity" type="integer" min="0" max="100" value="40" 
-            label="Identity threshold for alignments" help="(--identity-threshold)"/>
-        <param name="prescreen" type="float" min="0" max="1" value="0.01" 
-            label="Minimum percentage of reads matching a species" 
-            help="(--prescreen-threshold)"/>
+        <param name="e_value" type="float" min="0" max="10" value="1" label="E-value threshold to use with the translated search" help="(--evalue)"/>
+        <param name="identity" type="integer" min="0" max="100" value="40" label="Identity threshold for alignments" help="(--identity-threshold)"/>
+        <param name="prescreen" type="float" min="0" max="1" value="0.01" label="Minimum percentage of reads matching a species" help="(--prescreen-threshold)"/>
 
-        <param name='pathways' type="select" label="Database to use for pathway computations"
-            help="(--pathways)">
+        <param name='pathways' type="select" label="Database to use for pathway computations" help="(--pathways)">
             <option value="metacyc" selected="true">MetaCyc</option>
             <option value="unipathway">UniPathway</option>
         </param>
 
-        <param name='xipe' type='boolean' checked="false" truevalue='on' 
-            falsevalue='off' label="Use xipe computation?" help="(--xipe)"/>
-        <param name='minpath' type='boolean' checked="true" truevalue='on' 
-            falsevalue='off' label="Use minpath computation?" help="(--minpath)"/>
-        <param name='pick_frames' type='boolean' checked="true" truevalue='on' 
-            falsevalue='off' label="Use pick frames computation?" 
-            help="(--pick-frames)"/>
+        <param name='xipe' type='boolean' checked="false" truevalue='on' falsevalue='off' label="Use xipe computation?" help="(--xipe)"/>
+        <param name='minpath' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use minpath computation?" help="(--minpath)"/>
+        <param name='pick_frames' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use pick frames computation?" help="(--pick-frames)"/>
 
-        <param name='output_format' type="select" label="Format of the output files"
-            help="(--output-format)">
+        <param name='output_format' type="select" label="Format of the output files" help="(--output-format)">
             <option value="tsv" selected="true">TSV</option>
             <option value="biom">BIOM</option>
         </param>
-        <param name="output_max_dec" type="integer" min="0" max="100" value="10" 
-            label="Number of decimals to output" help="(--output-max-decimals)"/>
-        <param name='remove_statified_output' type='boolean' checked="false" 
-            truevalue='--remove-stratified-output' falsevalue='' 
-            label="Remove stratification from output?" help="(--remove-stratified-output)"/>
+
+        <param name="output_max_dec" type="integer" min="0" max="100" value="10" label="Number of decimals to output" help="(--output-max-decimals)"/>
+        <param name='remove_statified_output' type='boolean' checked="false" truevalue='--remove-stratified-output' falsevalue='' label="Remove stratification from output?" help="(--remove-stratified-output)"/>
     </inputs>
 
     <outputs>
-        <data format="tsv" name="gene_families_tsv" 
-            from_work_dir="output/humann2_genefamilies.tsv"
-            label="Gene families for ${on_string} (HUMAnN2)" >
+        <data format="tsv" name="gene_families_tsv" from_work_dir="output/humann2_genefamilies.tsv" label="${tool.name} on ${on_string}: Gene families and their abundance" >
             <filter>output_format == "tsv"</filter>
         </data>
-        <data format="biom" name="gene_families_biom" 
-            from_work_dir="output/humann2_genefamilies.biom"
-            label="Gene families for ${on_string} (HUMAnN2)" >
+        <data format="biom" name="gene_families_biom" from_work_dir="output/humann2_genefamilies.biom" label="${tool.name} on ${on_string}: Gene families and their abundance" >
             <filter>output_format == "biom"</filter>
         </data>
 
-        <data format="tsv" name="pathcoverage_tsv" 
-            from_work_dir="output/humann2_pathcoverage.tsv"
-            label="Pathway coverage for ${on_string} (HUMAnN2)" >
+        <data format="tsv" name="pathcoverage_tsv" from_work_dir="output/humann2_pathcoverage.tsv" label="${tool.name} on ${on_string}: Pathways and their coverage" >
             <filter>output_format == "tsv"</filter>
         </data>
-        <data format="biom" name="pathcoverage_biom" 
-            from_work_dir="output/humann2_pathcoverage.biom"
-            label="Pathway coverage for ${on_string} (HUMAnN2)" >
+        <data format="biom" name="pathcoverage_biom" from_work_dir="output/humann2_pathcoverage.biom" label="${tool.name} on ${on_string}: Pathways and their coverage" >
             <filter>output_format == "biom"</filter>
         </data>
 
-        <data format="tsv" name="pathabundance_tsv" 
-            from_work_dir="output/humann2_pathabundance.tsv"
-            label="Pathway abundance for ${on_string} (HUMAnN2)" >
+        <data format="tsv" name="pathabundance_tsv" from_work_dir="output/humann2_pathabundance.tsv" label="${tool.name} on ${on_string}: Pathways and their abundance" >
             <filter>output_format == "tsv"</filter>
         </data>
-        <data format="biom" name="pathabundance_biom" 
-            from_work_dir="output/humann2_pathabundance.biom"
-            label="Pathway abundance for ${on_string} (HUMAnN2)" >
+        <data format="biom" name="pathabundance_biom" from_work_dir="output/humann2_pathabundance.biom" label="${tool.name} on ${on_string}: Pathways and their abundance" >
             <filter>output_format == "biom"</filter>
         </data>
     </outputs>

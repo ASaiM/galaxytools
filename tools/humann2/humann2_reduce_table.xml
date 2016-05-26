@@ -23,8 +23,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
-            table" help=""/>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
 
         <param name="function" type="select" label="Function to apply" help="(--function)">
             <option value="max" selected="true">Max</option>
@@ -41,8 +40,7 @@
     </inputs>
 
     <outputs>
-        <data format="tsv" name="output_table" label="Reduced table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv" name="output_table" label="${tool.name} on ${on_string}: Reduced table" />
     </outputs>
 
     <tests>

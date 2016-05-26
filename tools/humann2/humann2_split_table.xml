@@ -21,12 +21,12 @@
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="tsv,biom" label="Gene/pathway table to read" help="use a file from join_table"/>
+        <param name="input_file" type="data" format="tsv,biom" label="Table to split into multiple tables" help="(-i)"/>
     </inputs>
 
     <outputs>
-        <collection type="list" name="split_tables" >
-            <discover_datasets pattern="__designation_and_ext__" directory="output" ext="tabular" />
+        <collection type="list" name="${tool.name} on ${on_string}: Split tables" >
+            <discover_datasets pattern="__designation_and_ext__" directory="output"/>
         </collection>
     </outputs>
 

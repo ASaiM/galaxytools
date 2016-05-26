@@ -20,7 +20,7 @@
             -o $output_table
             --function $function
 
-            #if $built_in.test:
+            #if $built_in.built_in_test == "true":
                 --groups $built_in.groups
             #else:
                 --custom $built_in.file
@@ -29,8 +29,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway 
-            table" help=""/>
+        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
 
         <param name="function" type="select" label="How to combine grouped features?" help="(--function)">
             <option value="sum" selected="true">Sum</option>
@@ -38,29 +37,29 @@
         </param>
 
         <conditional name="built_in">
-            <param name='test' type='boolean' checked="false" truevalue='true' 
-                falsevalue='false' label="Use built-in grouping options?" 
-                help=""/>
+            <param name='built_in_test' type='select' label="Use built-in grouping options?" help="">
+                <option value="true" selected="true">Yes</option>
+                <option value="false">No</option>
+            </param>
+
             <when value="true">
                 <param name="groups" type="select" label="Grouping options" help="(--groups)">
                     <option value="uniref50_ec" selected="true">Collapses UniRef50 gene families into top level enzyme commission (EC) categories (associations inferred from UniProt)</option>
                     <option value="uniref50_go">Collapses UniRef50 gene families into a subset of non-redundant, high-level Gene Ontology (GO) categories (associations inferred from UniProt and a HUMAnN2-specific parsing of the GO hierarchy)</option>
-                    <option value="uniref50_ko">Collapses UniRef50 gene fammilies into KEGG Orthogroups (KOs) (associations inferred from UniProt)</option>
+                    <option value="uniref50_ko">Collapses UniRef50 gene families into KEGG Orthogroups (KOs) (associations inferred from UniProt)</option>
                     <option value="uniref50_rxn">Collapses UniRef50 gene families into metacyc reactions (use of reaction abundances to compute the abundance and coverage of broader metabolic pathways)</option>
                 </param>
             </when>
+
             <when value="false">
                 <param name="file" type="data" format="tsv" label="Custom groups file" help="(--custom)"/>
-                <param name='reversed' type='boolean' checked="false" truevalue='--reversed' 
-                    falsevalue='' label="Is the groups file reversed?" 
-                    help="Mapping from features to groups. (--reversed)"/>
+                <param name='reversed' type='boolean' checked="false" truevalue='--reversed' falsevalue='' label="Is the groups file reversed?" help="Mapping from features to groups. (--reversed)"/>
             </when>
         </conditional>
     </inputs>
 
     <outputs>
-        <data format="tsv" name="output_table" label="Regrouped table for 
-            ${on_string} (HUMAnN2)" />
+        <data format="tsv" name="output_table" label="${tool.name} on ${on_string}: Regrouped table" />
     </outputs>
 
     <tests>
