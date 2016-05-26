@@ -57,13 +57,12 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        Rename HUMAnN2 table features is a tool for renaming table features given built-in or custom mapping.
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
 
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+Rename HUMAnN2 table features is a tool for renaming table features given a custom mapping. The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new valu
     ]]></help>
 
-    <citations>
-    </citations>
+    <expand macro="citations"/>
 </tool>

@@ -247,18 +247,25 @@
 
 HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
 
+This tool corresponds to the main tool in HUMAnN2 pipeline.
+
+**Inputs**
+
 The input is a single file corresponding either to filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format), alignment file (sam, bam or blastm8 format) or gene table file (tsv or biom format).
 
-A file with a taxonomic profile (obtained with MetaPhlan2) can also be provided to avoid first step of taxonomic profiling needed to select pangenomes in ChocoPhlan database.
+A file with a taxonomic profile (obtained with MetaPhlan2) can also be provided to avoid first step of taxonomic profiling needed to select pangenomes in protein database. 
 
-HUMAnN creates three output files with:
+HUMAnN2 uses multiple databases. Locally cached nucleotide or protein databases have to be downloaded database before using them (using the dedicated tool). Custom databases can also be used after upload. Nucleotide database have to be provided as a dataset in which each file is named following ^[g__].[s__] format.
 
- - Gene family abundance
- - Pathway abundance
- - Pathway coverage
+**Outputs**
+
+HUMAnN creates three output files:
+
+ - A file with gene families and their abundance
+ - A file with pathways and their abundance
+ - A file with pathways and their coverage
 
     ]]></help>
 
-    <citations>
-    </citations>
+    <expand macro="citations"/>
 </tool>

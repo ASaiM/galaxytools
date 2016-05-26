@@ -76,14 +76,13 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
+**What it does**
 
-        This tool merge gene and pathway abundance tables.
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
 
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+The currest tool merge a table containing gene family abundances with a table containing pathway abundances, given a gene to pathway mapping (default or custom one).
 
     ]]></help>
 
-    <citations>
-    </citations>
+    <expand macro="citations"/>
 </tool>

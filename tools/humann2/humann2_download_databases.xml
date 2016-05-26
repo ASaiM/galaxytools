@@ -37,9 +37,11 @@
 
     <help><![CDATA[
 **What it does**
+
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+
 Download HUMAnN2 databases is a tool to download needed nucleotide or protein databases. This tool must be run before using HUMAnN2.
     ]]></help>
 
-    <citations>
-    </citations>
+    <expand macro="citations"/>
 </tool>

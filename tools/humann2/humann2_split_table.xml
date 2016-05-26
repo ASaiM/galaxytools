@@ -43,11 +43,10 @@
     <help><![CDATA[
 **What it does**
 
-Split HUMAnN2 table is a tool to split a gene/pathway table in table per sample.
-
 HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+
+Split HUMAnN2 table is a tool to split a table with multiple columns. This file can have been generated with the join table tool.
     ]]></help>
 
-    <citations>
-    </citations>
+    <expand macro="citations"/>
 </tool>
