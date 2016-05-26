@@ -50,9 +50,9 @@
         <test>
             <param name="input_table" value="expected_gene_family_abundance.tsv"/>
             <param name="names" value="metacyc-pwy" />
-            <param name='simplify' value="false"/>
-            <param name="select_name_file_test" value="False"/>
-            <output name="output_table" file="humann2_rename_gene_family_output.tsv" />
+            <param name='simplify' value=""/>
+            <param name="mapping_file" value="pathway_rename_mapping.tsv"/>
+            <output name="output_table" file="renamed_metacyc_pathways.tsv" />
         </test>
     </tests>
 

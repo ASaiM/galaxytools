@@ -1,5 +1,5 @@
-<tool id="humann2_join_tables" name="Join HUMAnN2 table" version="0.6.1">
-    <description></description>
+<tool id="humann2_join_tables" name="Join" version="0.6.1">
+    <description>HUMAnN2 generated tables</description>
 
     <macros>
         <import>humann2_macros.xml</import>
@@ -43,7 +43,7 @@
         <test>
             <param name="input_tables_0|input_table" value="expected_pathway_coverage.tsv"/>
             <param name="input_tables_1|input_table" value="expected_pathway_abundance.tsv"/>
-            <output name="joined_table" file="expected_joined_table.tsv"/>
+            <output name="joined_table" file="joined_pathway_coverage_abundance.tsv"/>
         </test>
     </tests>
 

@@ -45,10 +45,10 @@
 
     <tests>
         <test>
-            <param name="input_table" value="expected_pathway_coverage.tsv"/>
+            <param name="input_table" value="expected_gene_family_abundance.tsv"/>
             <param name="function" value="max"/>
             <param name="sort" value="name"/>
-            <output name="output_table" file="humann2_reduce_expected_pathway_coverage.tsv"/>
+            <output name="output_table" file="max_reduced_gene_family_abundance.tsv"/>
         </test>
     </tests>
 
