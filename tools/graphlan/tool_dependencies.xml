@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tool_dependency>
     <package name="biopython" version="1.66">
-        <repository name="package_python_2_7_biopython_1_66" owner="iuc" />
+        <repository name="package_biopython_1_66" owner="biopython" />
     </package>
     <package name="matplotlib" version="1.4">
         <repository name="package_python_2_7_matplotlib_1_4" owner="iuc" />
