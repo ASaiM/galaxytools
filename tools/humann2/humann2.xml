@@ -255,7 +255,7 @@ The input is a single file corresponding either to filtered shotgun sequencing m
 
 A file with a taxonomic profile (obtained with MetaPhlan2) can also be provided to avoid first step of taxonomic profiling needed to select pangenomes in protein database. 
 
-HUMAnN2 uses multiple databases. Locally cached nucleotide or protein databases have to be downloaded database before using them (using the dedicated tool). Custom databases can also be used after upload. Nucleotide database have to be provided as a dataset in which each file is named following ^[g__].[s__] format.
+HUMAnN2 uses multiple databases. Locally cached nucleotide or protein databases have to be downloaded database before using them (using the dedicated tool). Custom databases can also be used after upload. Nucleotide database have to be provided as a dataset.
 
 **Outputs**
 
