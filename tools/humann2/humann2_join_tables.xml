@@ -48,9 +48,10 @@
     </tests>
 
     <help><![CDATA[
-        **What it does**
-        Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
-        HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
+**What it does**
+Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
+
+HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
     ]]></help>
 
     <citations>
