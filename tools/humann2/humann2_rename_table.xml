@@ -19,9 +19,13 @@
             -i $input_table
             -o $output_table
 
-            --names $built_in.names
-            $built_in.simplify 
-            -c $built_in.file
+            --names $names
+            $simplify 
+
+            #if $select_name_file.select_name_file_test == "True":
+                -c $file
+            #end if
+
     ]]></command>
 
     <inputs>
@@ -36,10 +40,22 @@
             <option value="ec">Enzyme commision (EC)</option>
             <option value="uniref50">UniRef50 gene families</option>
         </param>
+
         <param name='simplify' type='boolean' checked="false" truevalue='-s' 
             falsevalue='' label="Remove non-alphanumeric characters from names?" 
             help="(--simplify)"/>
-        <param name="file" type="data" format="tsv" label="Custom mapping file of feature IDs to full names" help="(--custom)"/>
+
+        <conditional name="select_name_file">
+            <param name='select_name_file_test' type="select" label="Use a custom mapping file?" help="">
+                <option value="True">Yes</option>
+                <option value="False" selected="true">No</option>
+            </param>
+
+            <when value="True">
+                <param name="mapping_file" type="data" format="tsv" label="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value" help="(--custom)"/>
+            </when>
+        </conditional>
+       
     </inputs>
 
     <outputs>
@@ -48,6 +64,13 @@
     </outputs>
 
     <tests>
+        <test>
+            <param name="input_table" value="expected_gene_family_abundance.tsv"/>
+            <param name="names" value="metacyc-pwy" />
+            <param name='simplify' value="false"/>
+            <param name="select_name_file_test" value="False"/>
+            <output name="output_table" file="humann2_rename_gene_family_output.tsv" />
+        </test>
     </tests>
 
     <help><![CDATA[

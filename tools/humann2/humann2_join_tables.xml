@@ -17,11 +17,9 @@
     <command><![CDATA[
         `mkdir tmp_dir`
         && 
-
         #for $file in $input_files
             `cp $file tmp_dir`
         #end for
-
         && 
         humann2_join_tables
             -i "tmp_dir"
@@ -29,9 +27,7 @@
     ]]></command>
 
     <inputs>
-        <param name="input_files" type="data" format="tsv,biom" multiple="true" 
-            label="Gene/pathway tables"
-            help=""/>
+        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
     </inputs>
 
     <outputs>
@@ -41,16 +37,14 @@
 
     <tests>
         <test>
-            <param name="input_files" value="humann2_sam_pathcoverage.tsv,humann2_fasta_pathcoverage.tsv"/>
-            <output name="joined_table" file="humann2_sam_fasta_joined_pathcoverage.tsv"/>
+            <param name="input_files" value="expected_pathway_coverage.tsv,expected_pathway_abundance.tsv"/>
+            <output name="joined_table" file="join_table_output.tsv,biom"/>
         </test>
     </tests>
 
     <help><![CDATA[
         **What it does**
-
         Join HUMAnN2 tables is a tool to join gene, pathway, or taxonomy tables of multiple samples in a single table.
-
         HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
     ]]></help>
 

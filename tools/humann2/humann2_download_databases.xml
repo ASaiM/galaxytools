@@ -34,18 +34,17 @@
 
     <tests>
         <test>
-            <param name="database_selector" value="chocophlan full" />
-            <output name="log" value="nucleotide_db_download_log.txt"/>
+            <param name="database_selector" value="" />
+            <output name="log" value=""/>
         </test>
         <test>
-            <param name="database_selector" value="uniref diamond"/>
-            <output name="log" value="protein_db_download_log.txt"/>
+            <param name="database_selector" value=""/>
+            <output name="log" value=""/>
         </test>
     </tests>
 
     <help><![CDATA[
 **What it does**
-
 Download HUMAnN2 databases is a tool to download needed nucleotide or protein databases. This tool must be run before using HUMAnN2.
     ]]></help>
 
