@@ -41,8 +41,9 @@
 
     <tests>
         <test>
-            <param name="input_files" value="expected_pathway_coverage.tsv,expected_pathway_abundance.tsv"/>
-            <output name="joined_table" file="join_table_output.tsv,biom"/>
+            <param name="input_tables_0|input_table" value="expected_pathway_coverage.tsv"/>
+            <param name="input_tables_1|input_table" value="expected_pathway_abundance.tsv"/>
+            <output name="joined_table" file="expected_joined_table.tsv"/>
         </test>
     </tests>
 
