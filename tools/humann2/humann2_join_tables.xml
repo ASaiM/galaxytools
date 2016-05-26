@@ -16,10 +16,13 @@
 
     <command><![CDATA[
         `mkdir tmp_dir`
+
         && 
-        #for $file in $input_files
-            `cp $file tmp_dir`
+
+        #for $table in $input_tables
+            `cp $table.input_table tmp_dir`
         #end for
+
         && 
         humann2_join_tables
             -i "tmp_dir"
@@ -27,7 +30,9 @@
     ]]></command>
 
     <inputs>
-        <param name="input_files" type="data" format="tsv,biom" multiple="true" label="Gene/pathway tables" help=""/>
+        <repeat name="input_tables" title="Gene/pathway tables to join">
+            <param name="input_table" type="data" format="tsv,tabular,biom" multiple="true" label="Gene/pathway table" help=""/>
+        </repeat>
     </inputs>
 
     <outputs>
