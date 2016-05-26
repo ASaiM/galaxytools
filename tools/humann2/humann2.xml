@@ -23,16 +23,18 @@
             #for $file in $nucleotide_db.history_nucleotide_db:
                 `cp $file nucleotide_db/$file.name`
             #end for
-        #end if
 
-        &&
+            &&
+        #end if        
 
         `mkdir protein_db`
 
         &&
 
         #if $protein_db.protein_db_selector == "history"
-            `diamond makedb --in $protein_db.history_protein_db --db protein_db/protein_db`
+            diamond makedb 
+                --in $protein_db.history_protein_db 
+                --db protein_db/protein_db
         #end if
 
         &&
