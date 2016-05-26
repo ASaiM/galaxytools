@@ -31,7 +31,7 @@
 
     <inputs>
         <repeat name="input_tables" title="Gene/pathway tables to join">
-            <param name="input_table" type="data" format="tsv,tabular,biom" multiple="true" label="Gene/pathway table" help=""/>
+            <param name="input_table" type="data" format="tsv,tabular" multiple="true" label="Gene/pathway table" help=""/>
         </repeat>
     </inputs>
 
