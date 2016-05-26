@@ -4,24 +4,26 @@ python: 2.7
 
 before_install:
   - export GALAXY_REPO=https://github.com/galaxyproject/galaxy
-  - export GALAXY_RELEASE=release_16.01
+  - export GALAXY_RELEASE=release_16.04
   - export CONDA_PREFIX=$HOME/conda
 
 install:
+  - pip install flake8
   - pip install -q click==5.1
-  - pip install -q https://github.com/galaxyproject/planemo/archive/86328a6a1fd3cc589eeb61337202c49c673ae98a.tar.gz
+  - pip install -q planemo
   - planemo conda_init --conda_prefix $CONDA_PREFIX
   - export PATH=$CONDA_PREFIX/bin:$PATH
+  - conda install -y -q conda=3.19.3
   - conda create -y -q -c bioconda --name asaim_conda numpy==1.9.2 samtools bcftools
   - source activate asaim_conda
   - planemo --version
   - echo $TRAVIS_COMMIT_RANGE
   - planemo shed_lint --report_level warn --tools --fail_level error --recursive .
   - git diff --name-only $TRAVIS_COMMIT_RANGE | xargs -n1 dirname | python filter_directories.py | sort -u > changed_repositories.list
-  #- find tools -type d -mindepth 1 -maxdepth 1 | python filter_directories.py | sort -u > changed_repositories.list
   - cat changed_repositories.list
 
 script:
+  - cd $TRAVIS_BUILD_DIR && flake8 -v --exclude=.git .
   - |
     if [ -s changed_repositories.list ]
     then
