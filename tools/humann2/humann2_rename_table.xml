@@ -48,7 +48,7 @@
 
     <tests>
         <test>
-            <param name="input_table" value="expected_gene_family_abundance.tsv"/>
+            <param name="input_table" value="expected_pathway_abundance.tsv"/>
             <param name="names" value="metacyc-pwy" />
             <param name='simplify' value=""/>
             <param name="mapping_file" value="pathway_rename_mapping.tsv"/>

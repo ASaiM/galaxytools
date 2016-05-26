@@ -32,7 +32,7 @@
 
     <tests>
         <test>
-            <param name="input_file" value="humann2_split_input_from_join.tsv"/>
+            <param name="input_file" value="joined_pathway_coverage_abundance.tsv"/>
             <output_collection name="split_tables" type="list">
                 <element name="humann2_Abundance" file="split_joined_table_abundances.tsv" />
                 <element name="humann2_Coverage" file="split_joined_table_coverage.tsv" />
