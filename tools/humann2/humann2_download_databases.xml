@@ -1,5 +1,5 @@
-<tool id="humann2_download_databases" name="Download HUMAnN2 databases" version="0.6.1">
-    <description></description>
+<tool id="humann2_download_databases" name="Download" version="0.6.1">
+    <description>HUMAnN2 databases</description>
 
     <macros>
         <import>humann2_macros.xml</import>

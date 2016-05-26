@@ -1,5 +1,5 @@
-<tool id="humann2_rename_table" name="Rename HUMAnN2 table features" version="0.6.1">
-    <description></description>
+<tool id="humann2_rename_table" name="Rename" version="0.6.1">
+    <description>features of a HUMAnN2 generated table</description>
 
     <macros>
         <import>humann2_macros.xml</import>

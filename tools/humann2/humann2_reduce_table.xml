@@ -1,5 +1,5 @@
-<tool id="humann2_reduce_table" name="Reduce HUMAnN2 table" version="0.6.1">
-    <description></description>
+<tool id="humann2_reduce_table" name="Reduce" version="0.6.1">
+    <description>a HUMAnN2 generated table</description>
 
     <macros>
         <import>humann2_macros.xml</import>

@@ -1,5 +1,5 @@
-<tool id="humann2_merge_abundance_tables" name="Merge HUMAnN2 gene and pathway abundance tables" version="0.6.1">
-    <description></description>
+<tool id="humann2_merge_abundance_tables" name="Merge" version="0.6.1">
+    <description> HUMAnN2 generated gene and pathway abundance tables</description>
 
     <macros>
         <import>humann2_macros.xml</import>

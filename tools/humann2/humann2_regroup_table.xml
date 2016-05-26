@@ -1,5 +1,5 @@
-<tool id="humann2_regroup_table" name="Regroup HUMAnN2 table features" version="0.6.1">
-    <description></description>
+<tool id="humann2_regroup_table" name="Regroup" version="0.6.1">
+    <description> a HUMAnN2 generated table by features</description>
 
     <macros>
         <import>humann2_macros.xml</import>
