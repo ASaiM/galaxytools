@@ -22,7 +22,7 @@
             --names $names
             $simplify 
 
-            -c $file
+            -c $mapping_file
     ]]></command>
 
     <inputs>
