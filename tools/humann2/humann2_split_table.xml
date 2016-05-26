@@ -25,7 +25,7 @@
     </inputs>
 
     <outputs>
-        <collection type="list" name="${tool.name} on ${on_string}: Split tables" >
+        <collection type="list" name="split_tables" label="${tool.name} on ${on_string}: Split tables">
             <discover_datasets pattern="__designation_and_ext__" directory="output"/>
         </collection>
     </outputs>
@@ -33,7 +33,7 @@
     <tests>
         <test>
             <param name="input_file" value="joined_pathway_coverage_abundance.tsv"/>
-            <output_collection name="split_tables" type="list">
+            <output_collection name="split_tables" type="list" >
                 <element name="humann2_Abundance" file="split_joined_table_abundances.tsv" />
                 <element name="humann2_Coverage" file="split_joined_table_coverage.tsv" />
             </output_collection>
