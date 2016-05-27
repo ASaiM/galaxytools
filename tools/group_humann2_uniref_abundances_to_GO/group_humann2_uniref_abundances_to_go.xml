@@ -1,5 +1,5 @@
-<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances of UniRef50 gene families obtained with HUMAnN2" version="1.2.0">
-    <description>to Gene Ontology (GO) slim terms</description>
+<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances" version="1.2.0">
+    <description> of UniRef50 gene families obtained (HUMAnN2 output) to Gene Ontology (GO) slim terms</description>
 
     <requirements>
         <requirement type="package" version="1.9">numpy</requirement>
@@ -103,12 +103,24 @@ HUMAnN2 is a pipeline to profile the presence/absence and abundance of microbial
 
 The tool described here contains scripts to group UniRef50 abundances obtained using main HUMANn2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
 
-More information on `GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
+More information on `dedicated GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
 
+**Inputs**
+
+This tool takes as input a file with UniRef50 gene family abundances generated with HUMAnN2.
+
+Several optional inputs can also be given: a custom Gene Ontology file with the core ontology, a custom slim Gene Ontology with description of slim GO terms to use and a custom mapping file which map UniRef50 gene families to GO terms.
+
+**Outputs**
+
+3 outputs are generated: abundances of GO slim terms grouped in 3 groups (molecular functions, biological processes and cellular components). 
+
+Each file is a tabular file with 3 columns: GO slim term id, name and abundance.
     ]]></help>
 
     <citations>
-        <citation type="doi">10.5281/zenodo.49952</citation>
+        <citation type="doi">10.5281/zenodo.50086</citation>
         <citation type="doi">10.5281/zenodo.31628</citation>
+        <citation type="doi">10.1371/journal.pcbi.1002358</citation>
     </citations>
 </tool>
