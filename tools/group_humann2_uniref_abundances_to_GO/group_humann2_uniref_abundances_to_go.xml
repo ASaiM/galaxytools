@@ -46,57 +46,39 @@
     ]]></command>
 
     <inputs>
-        <param name="humann2_gene_families_abundance" type="data" 
-            format="tabular,tsv,txt" 
-            label="HUMAnN2 output with UniRef50 gene family abundance" help="(-i)"/>
+        <param name="humann2_gene_families_abundance" type="data" format="tabular,tsv,txt" label="HUMAnN2 output with UniRef50 gene family abundance" help="(-i)"/>
 
         <conditional name="gene_ontology">
-            <param name='gene_ontology_test' type='boolean' checked="false" 
-                truevalue='true' falsevalue='false' 
-                label="Use a custom Gene Ontology file?" help="By default, the 
-                used Gene Ontology is the core ontology downloaded on Gene
+            <param name='gene_ontology_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Use a custom Gene Ontology file?" help="By default, the used Gene Ontology is the core ontology downloaded on Gene
                 Ontology website"/>
             <when value="true">
-                <param name="gene_ontology_file" type="data" format="txt" 
-                    label="Gene Ontology" help=""/>
+                <param name="gene_ontology_file" type="data" format="txt" label="Gene Ontology" help=""/>
             </when>
             <when value="false" />
         </conditional>
 
         <conditional name="slim_gene_ontology">
-            <param name='slim_gene_ontology_test' type='boolean' checked="false" 
-                truevalue='true' falsevalue='false' 
-                label="Use a custom slim Gene Ontology file?" help="By default, the 
-                used slim Gene Ontology is the metagenomics slim developed by
-                Jane Lomax and the InterPro group"/>
+            <param name='slim_gene_ontology_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Use a custom slim Gene Ontology file?" help="By default, the used slim Gene Ontology is the metagenomics slim developed by Jane Lomax and the InterPro group"/>
             <when value="true">
-                <param name="slim_gene_ontology_file" type="data" format="txt" 
-                    label="Slim Gene Ontology" help=""/>
+                <param name="slim_gene_ontology_file" type="data" format="txt" label="Slim Gene Ontology" help=""/>
             </when>
             <when value="false" />
         </conditional>
 
         <conditional name="uniref50_go">
-            <param name='uniref50_go_test' type='boolean' checked="false" 
-                truevalue='true' falsevalue='false' 
-                label="Use a custom correspondance between UniRef50 and precise
-                GO?" help="By default, the used correspondance is the one
+            <param name='uniref50_go_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Use a custom correspondance between UniRef50 and precise GO?" help="By default, the used correspondance is the one
                 proposed in HUMAnN2"/>
             <when value="true">
-                <param name="uniref50_go_file" type="data" format="txt" 
-                    label="Correspondance between UniRef50 and GO" help=""/>
+                <param name="uniref50_go_file" type="data" format="txt" label="Correspondance between UniRef50 and GO" help=""/>
             </when>
             <when value="false" />
         </conditional>
     </inputs>
 
     <outputs>
-        <data format="tabular" name="molecular_function_abundance" 
-            label="${tool.name} on ${on_string}: Molecular function abundance"/>
-        <data format="tabular" name="biological_process_abundance" 
-            label="${tool.name} on ${on_string}: Biological process abundance"/>
-        <data format="tabular" name="cellular_component_abundance" 
-            label="${tool.name} on ${on_string}: Cellular component abundance"/>
+        <data format="tabular" name="molecular_function_abundance" label="${tool.name} on ${on_string}: Molecular function abundance"/>
+        <data format="tabular" name="biological_process_abundance" label="${tool.name} on ${on_string}: Biological process abundance"/>
+        <data format="tabular" name="cellular_component_abundance" label="${tool.name} on ${on_string}: Cellular component abundance"/>
     </outputs>
 
     <tests>
