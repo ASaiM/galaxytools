@@ -33,8 +33,8 @@ metaphlan2krona.py -v
 
     <tests>
         <test>
-            <param name="input_file" value="metaphlan2_profiled_metagenome.txt"/>
-            <output name="krona" file="metaphlan2krona_output_file.txt"/>
+            <param name="input_file" value="community_profile.tabular"/>
+            <output name="krona" file="formatted_to_krona.tabular"/>
         </test>      
     </tests>
 
