@@ -42,10 +42,7 @@ metaphlan2krona.py -v
 
 **What it does**
 
-MetaPhlAn is a computational tool for profiling the composition of microbial 
-communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun 
-sequencing data with species level resolution. For more information, check the 
-`user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
+MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
 
 This tool format MetaPhlAn2 output for Krona.
 
