@@ -12,11 +12,11 @@
                 <action type="download_by_url">https://bitbucket.org/biobakery/metaphlan2/get/2.2.0.zip</action>
                 <action type="move_file">
                     <source>metaphlan2.py</source>
-                    <destination>$INSTALL_DIR/bin/</destination>
+                    <destination>$INSTALL_DIR/</destination>
                 </action>
                 <action type="move_directory_files">
                     <source_directory>utils/</source_directory>
-                    <destination_directory>$INSTALL_DIR/bin/</destination_directory>
+                    <destination_directory>$INSTALL_DIR/</destination_directory>
                 </action>
                 <action type="setup_python_environment">
                     <repository name="package_python_2_7_10" owner="iuc">
