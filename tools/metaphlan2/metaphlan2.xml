@@ -169,7 +169,6 @@ metaphlan2.py -v
     </tests>
 
     <help><![CDATA[
-
 **What it does**
 
 MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
@@ -180,23 +179,24 @@ Metaphlan2 takes as input a sequence file in fasta, fastq, a BowTie2 produced SA
 
 It is also possible to use custom database with clade-specific marker genes. In this case, a fasta file with marker gene sequences is required and also a file containing metadata. This file is a json file with:
 
-    {
-    "taxonomy": {
-            "taxonomy of genome1": genome1_length,
-            "taxonomy of genome2": genome2_length,
-            ...
-        }
-    "markers": {
-            "marker1_name": {
-                "clade": the clade that the marker belongs to,
-                "ext": [list of external genomes where the marker appears],
-                "len": length of the marker,
-                "score": score of the marker,
-                "taxon": the taxon of the marker
+    .. code:: 
+        {
+        "taxonomy": {
+                "taxonomy of genome1": genome1_length,
+                "taxonomy of genome2": genome2_length,
+                ...
             }
-            ...
+        "markers": {
+                "marker1_name": {
+                    "clade": the clade that the marker belongs to,
+                    "ext": [list of external genomes where the marker appears],
+                    "len": length of the marker,
+                    "score": score of the marker,
+                    "taxon": the taxon of the marker
+                }
+                ...
+            }
         }
-    }
 
 The marker names correspond to sequence name in corresponding fasta file with marker gene sequences.
 
