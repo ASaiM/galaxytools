@@ -16,7 +16,7 @@ metaphlan2.py -v
     </version_command>
 
     <command>
-<![CDATA[        
+<![CDATA[
         (which bowtie2 || exit 200)
 
         &&
@@ -26,7 +26,7 @@ metaphlan2.py -v
             &&
             bowtie2-build $db.db_sequences ref_db/ref_db
             &&
-            python $__tool_directory__/transform_json_to_pkl.py 
+            python $__tool_directory__/transform_json_to_pkl.py
                 --json_input $db_metadata
                 --pkl_output ref_db/metadata.pkl
             &&
@@ -43,7 +43,7 @@ metaphlan2.py -v
                 #set $table = dict([(_[0], _[2]) for _ in $db.cached_db.input.options.tool_data_table.data])
                 #set $db_choice = $db.cached_db.value
                 --bowtie2db $table[$db_choice]
-                --mpa_pkl $table[$db_choice].pkl
+                --mpa_pkl $table[$db_choice]".pkl"
             #else
                 --bowtie2db ref_db/ref_db
                 --mpa_pkl ref_db/metadata.pkl
@@ -53,11 +53,11 @@ metaphlan2.py -v
 
             -t $analysis_type.analysis_type_select
             #if $analysis_type.analysis_type_select == "rel_ab"
-                --tax_lev $analysis_type.taxonomic_level 
+                --tax_lev $analysis_type.taxonomic_level
             #else if $analysis_type.analysis_type_select == "marker_ab_table"
                 --nreads $analysis_type.nreads
             #else if $analysis_type.analysis_type_select == "marker_pres_table"
-                --pres_th $analysis_type.pres_th 
+                --pres_th $analysis_type.pres_th
             #end if
 
             --min_cu_len $min_cu_len
