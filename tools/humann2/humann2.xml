@@ -25,46 +25,49 @@
             #end for
 
             &&
-        #end if        
+        #end if
 
         `mkdir protein_db`
 
         &&
 
         #if $protein_db.protein_db_selector == "history"
-            diamond makedb 
-                --in $protein_db.history_protein_db 
+            diamond makedb
+                --in $protein_db.history_protein_db
                 --db protein_db/protein_db
+             &&
         #end if
 
-        &&
+        #if $taxonomic_profile.taxonomic_profile_test == "false"
+          #if $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_selector == "history"
+              `mkdir ref_db`
+              &&
+              bowtie2-build $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_sequences ref_db/ref_db
+              &&
+              python $__tool_directory__/transform_json_to_pkl.py
+                  --json_input $metaphlan2_db_metadata
+                  --pkl_output ref_db/metadata.pkl
+              &&
+          #end if
+        #end if
 
-        humann2 
+        humann2
             -i "$input_file"
-            
+
             #set $metaphlan_option = "-t rel_ab"
             #if $taxonomic_profile.taxonomic_profile_test == "true":
                 --taxonomic-profile $taxonomic_profile.taxonomic_profile_file
             #else
-
-                #if $taxonomic_profile.mpa_pkl.mpa_pkl_selector == "cached"
-                    #set $mpa_pkl_table = dict([(_[0], _[2]) for _ in $taxonomic_profile.mpa_pkl.cached_mpa_pkl.input.options.tool_data_table.data])
-                    #set $mpa_pkl_db = $taxonomic_profile.mpa_pkl.cached_mpa_pkl.value
-                    #set $metaphlan_option += " --mpa_pkl " + $mpa_pkl_table[$mpa_pkl_db]
+                #if $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_selector == "cached"
+                    #set $table = dict([(_[0], _[2]) for _ in $taxonomic_profile.metaphlan2_db_choice.cached_metaphlan2_db.input.options.tool_data_table.data])
+                    #set $db_choice = $taxonomic_profile.metaphlan2_db_choice.cached_metaphlan2_db.value
+                    #set $metaphlan_option += " --bowtie2db " + $table[$db_choice]
+                    #set $metaphlan_option += " --mpa_pkl " + $table[$db_choice] + ".pkl"
                 #else
-                    #set $metaphlan_option += " --mpa_pkl " + $taxonomic_profile.mpa_pkl.history_mpa_pkl
+                    #set $metaphlan_option += " --bowtie2db " + ref_db/ref_db
+                    #set $metaphlan_option += " --mpa_pkl " + ref_db/metadata.pkl
                 #end if
-
-                #if $taxonomic_profile.bowtie2db.bowtie2db_selector == "cached"
-                    #set $bowtie2_table = dict([(_[0], _[2]) for _ in $taxonomic_profile.bowtie2db.cached_bowtie2db.input.options.tool_data_table.data])
-                    #set $bowtie2db_choice = $taxonomic_profile.bowtie2db.cached_bowtie2db.value
-                    #set $metaphlan_option += " --bowtie2db " + $bowtie2_table[$bowtie2db_choice]
-                #else
-                    #set $metaphlan_option += " --bowtie2db " + $taxonomic_profile.bowtie2db.history_bowtie2db
-                #end if
-
             #end if
-
             --metaphlan-options="$metaphlan_option"
 
             --evalue $e_value
@@ -95,59 +98,43 @@
             --output-format $output_format
             --output-max-decimals $output_max_dec
             --output-basename "humann2"
-            $remove_statified_output            
+            $remove_statified_output
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="fastq,fasta,sam,bam,biom" 
+        <param name="input_file" type="data" format="fastq,fasta,sam,bam,biom"
             label="Input sequence file" help=""/>
 
         <conditional name="taxonomic_profile">
             <param name='taxonomic_profile_test' type='select' label="Use a custom taxonomic profile?" help="The file must have been created by MetaPhlan2">
                 <option value="true">Yes</option>
                 <option value="false" selected="true">No</option>
-            </param> 
+            </param>
             <when value="true">
-                <param name="taxonomic_profile_file" type="data" format="tabular,txt" label="Taxonomic profile 
-                    file" help=""/>
+                <param name="taxonomic_profile_file" type="data" format="tabular,txt" label="Taxonomic profile file" help=""/>
             </when>
             <when value="false">
-                <conditional name="mpa_pkl">
-                    <param name="mpa_pkl_selector" type="select" label="Metadata for MetaPhlAn2" help="">
+                <conditional name="metaphlan2_db_choice">
+                    <param name="metaphlan2_db_selector" type="select" label="Database with clade-specific marker genes" help="">
                         <option value="cached" selected="true">Locally cached</option>
                         <option value="history">From history</option>
                     </param>
 
                     <when value="cached">
-                        <param name="cached_mpa_pkl" label="Cached metadata" type="select">
-                        <options from_data_table="metaphlan2_metadata" />
+                        <param name="cached_metaphlan2_db" label="Cached database with clade-specific marker genes" type="select" >
+                          <options from_data_table="metaphlan2_db" />
                         </param>
                     </when>
                     <when value="history">
-                        <param name="history_mpa_pkl" type="data" format="fasta" label="Metadata from history"/>
-                    </when>
-                </conditional>
-
-                <conditional name="bowtie2db">
-                    <param name="bowtie2db_selector" type="select" label="BowTie2 database for MetaPhlAn2" help="">
-                        <option value="cached" selected="true">Locally cached</option>
-                        <option value="history">From history</option>
-                    </param>
-
-                    <when value="cached">
-                        <param name="cached_bowtie2db" label="Cached BowTie2 database" type="select" >
-                        <options from_data_table="metaphlan2_bowtie_db" />
-                        </param>
-                    </when>
-                    <when value="history">
-                        <param name="history_bowtie2db" type="data" format="fasta" label="BowTie2 database from history"/>
+                        <param name="metaphlan2_db_sequences" type="data" format="fasta" label="Database with clade-specific marker genes from history" help="(--bowtie2db)"/>
+                        <param name="metaphlan2_db_metadata" type="data" format="json" label="Metadata associate to the database with clade-specific marker genes from history" help="(--mpa_pkl)"/>
                     </when>
                 </conditional>
             </when>
         </conditional>
 
         <conditional name="nucleotide_db">
-            <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="">
+            <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
                 <option value="cached" selected="true">Locally cached</option>
                 <option value="history">From history (as collection)</option>
             </param>
@@ -159,7 +146,7 @@
         </conditional>
 
         <conditional name="protein_db">
-            <param name="protein_db_selector" type="select" label="Protein database" help="">
+            <param name="protein_db_selector" type="select" label="Protein database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
                 <option value="cached" selected="true">Locally cached</option>
                 <option value="history">From history</option>
             </param>
@@ -255,9 +242,29 @@ This tool corresponds to the main tool in HUMAnN2 pipeline.
 
 The input is a single file corresponding either to filtered shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format), alignment file (sam, bam or blastm8 format) or gene table file (tsv or biom format).
 
-A file with a taxonomic profile (obtained with MetaPhlan2) can also be provided to avoid first step of taxonomic profiling needed to select pangenomes in protein database. 
+A file with a taxonomic profile (obtained with MetaPhlan2) can also be provided to avoid first step of taxonomic profiling needed to select pangenomes in protein database. Otherwise, default MetaPhlAn2 or custom databases can be used for taxonomic profiling. For custom databases, a fasta file with marker gene sequences is required and also a json file containing metadata:
 
-HUMAnN2 uses multiple databases. Locally cached nucleotide or protein databases have to be downloaded database before using them (using the dedicated tool). Custom databases can also be used after upload. Nucleotide database have to be provided as a dataset.
+::
+
+  {
+    "taxonomy": {
+            "taxonomy of genome1": genome1_length,
+            "taxonomy of genome2": genome2_length,
+            ...
+        }
+    "markers": {
+            "marker1_name": {
+                "clade": the clade that the marker belongs to,
+                "ext": [list of external genomes where the marker appears],
+                "len": length of the marker,
+                "score": score of the marker,
+                "taxon": the taxon of the marker
+            }
+            ...
+        }
+  }
+
+For functional profiling, HUMAnN2 uses multiple databases. Locally cached nucleotide or protein databases have to be downloaded database before using them (using the dedicated tool). Custom databases can also be used after upload. Nucleotide database have to be provided as a dataset.
 
 **Outputs**
 
