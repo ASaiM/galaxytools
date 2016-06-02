@@ -13,7 +13,7 @@ Within the `tools` folder is one folder for each Tool released on the Galaxy Too
 
 # Installation
 
-The individual Galaxy tools, found in the `tools/` folder, must be installed into a Galaxy instance for use, generally via the Galaxy Tool Shed. 
+The individual Galaxy tools, found in the `tools/` folder, must be installed into a Galaxy instance for use, generally via the Galaxy Tool Shed.
 
 # Testing
 
@@ -27,6 +27,10 @@ See [`.travis.yml`](https://raw.githubusercontent.com/ASaiM/galaxytools/master/.
 
 Any bug can be filed in an issue [here](https://github.com/ASaiM/galaxytools/issues).
 
+# Contributing
+
+Please see [`CONTRIBUTING.md` file](https://github.com/ASaiM/galaxytools/blob/master/CONTRIBUTING.md) for details and good practices.
+
 # License
 
-ASaiM Galaxy tool wrappers are released under Apache 2 License. See the LICENSE file for details
+ASaiM Galaxy tool wrappers are released under Apache 2 License. See the [`LICENSE` file](https://github.com/ASaiM/galaxytools/blob/master/LICENSE) for details
