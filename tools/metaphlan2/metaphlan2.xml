@@ -171,7 +171,7 @@ metaphlan2.py -v
     <help><![CDATA[
 **What it does**
 
-MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
+MetaPhlAn is a computational tool to profile the structure and the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
 
 **Inputs**
 
@@ -199,11 +199,11 @@ It is also possible to use a custom database with clade-specific marker genes. I
         }
   }
 
-The marker names correspond to sequence name in corresponding fasta file with marker gene sequences.
+The marker name correspond to the corresponding sequence name in the FastA file containing marker gene sequences.
 
 **Outputs**
 
-The main output file is a tab-separated output file of the predicted taxon relative abundances.
+The main output file is a tab-separated file with the predicted taxon relative abundances.
 
     ]]></help>
 

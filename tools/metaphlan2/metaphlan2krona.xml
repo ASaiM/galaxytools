@@ -7,7 +7,7 @@
     </macros>
 
     <expand macro="requirements"/>
-    <expand macro="stdio"/>    
+    <expand macro="stdio"/>
 
     <version_command>
 <![CDATA[
@@ -16,7 +16,7 @@ metaphlan2krona.py -v
     </version_command>
 
     <command>
-<![CDATA[        
+<![CDATA[
         metaphlan2krona.py
             -p $input_file
             -k $krona
@@ -35,16 +35,16 @@ metaphlan2krona.py -v
         <test>
             <param name="input_file" value="community_profile.tabular"/>
             <output name="krona" file="formatted_to_krona.tabular"/>
-        </test>      
+        </test>
     </tests>
 
     <help><![CDATA[
 
 **What it does**
 
-MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
+MetaPhlAn is a computational tool to profile the structure and the composition of microbial communities (Bacteria, Archaea, Eukaryotes and Viruses) from metagenomic shotgun sequencing data with species level resolution. For more information, check the `user manual <https://bitbucket.org/biobakery/metaphlan2/>`_.
 
-This tool format MetaPhlAn2 output for Krona.
+This tool format MetaPhlAn2 output for Krona use.
 
     ]]></help>
 
