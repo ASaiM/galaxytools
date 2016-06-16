@@ -146,7 +146,7 @@ metaphlan2.py -v
 
     <outputs>
         <data format="tabular" name="output_file" label="${tool.name} on ${on_string}: Community profile" />
-        <data format="sam" name="sam_output_file" label="${tool.name} on ${on_string}: Sam file" />
+        <data format="sam" name="sam_output_file" label="${tool.name} on ${on_string}: SAM file" />
     </outputs>
 
     <tests>
