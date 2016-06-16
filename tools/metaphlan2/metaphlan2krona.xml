@@ -28,7 +28,7 @@ metaphlan2krona.py -v
     </inputs>
 
     <outputs>
-        <data format="tabular" name="krona" label="${tool.name} on ${on_string}: Krona file" />
+        <data format="tabular" name="krona" label="${tool.name} on ${on_string}: Formatted file for Krona" />
     </outputs>
 
     <tests>
