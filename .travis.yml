@@ -15,7 +15,7 @@ before_install:
   - export CONDA_PREFIX="$HOME/conda"
 
 install:
-  - pip install flake8
+  - pip install -q flake8 planemo
   - planemo conda_init --conda_prefix "$CONDA_PREFIX"
   - export PATH="$CONDA_PREFIX/bin:$PATH"
   - conda create -y -q -c bioconda --name iuc_conda samtools=0.1.19 bcftools
