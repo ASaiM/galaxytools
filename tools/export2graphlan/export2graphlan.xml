@@ -3,7 +3,6 @@
     <description></description>
 
     <requirements>
-        <requirement type="package" version="1.9">numpy</requirement>
         <requirement type="package" version="0.16">pandas</requirement>
         <requirement type="package" version="0.16">scipy</requirement>
         <requirement type="package" version="1.4">matplotlib</requirement>
