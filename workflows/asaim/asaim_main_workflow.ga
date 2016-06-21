@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true", 
     "annotation": "", 
     "format-version": "0.1", 
-    "name": "Single-end workflow (imported from uploaded file)", 
+    "name": "Single-end workflow", 
     "steps": {
         "0": {
             "annotation": "", 
@@ -28,7 +28,13 @@
             "tool_version": null, 
             "type": "data_input", 
             "uuid": "1a6c9bce-5a77-43a0-a39f-f07d8d53b235", 
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "output", 
+                    "uuid": "bddd2df7-ab79-49b8-ad4b-2909401d037f"
+                }
+            ]
         }, 
         "1": {
             "annotation": "", 
@@ -430,7 +436,7 @@
             "tool_errors": null, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/bebatut/metaphlan2/metaphlan2/2.5.0", 
             "tool_shed_repository": {
-                "changeset_revision": "d2448d2bf1f8", 
+                "changeset_revision": "8991e05c44e4", 
                 "name": "metaphlan2", 
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
@@ -449,7 +455,7 @@
         }, 
         "7": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "id": 7, 
             "input_connections": {
                 "input_reads": {
@@ -488,8 +494,8 @@
                 }
             ], 
             "position": {
-                "left": 1315.5, 
-                "top": 992.5
+                "left": 1282.5, 
+                "top": 1000.5
             }, 
             "post_job_actions": {
                 "ChangeDatatypeActionoutput_fastx": {
@@ -521,15 +527,15 @@
                 }
             }, 
             "tool_errors": null, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "tool_shed_repository": {
-                "changeset_revision": "3699b6b771e0", 
+                "changeset_revision": "59252ca85c74", 
                 "name": "sortmerna", 
                 "owner": "rnateam", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"\\\"--blast 3\\\"\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"rfam-5.8s-id98\\\", \\\"rfam-5s-id98\\\", \\\"silva-arc-16s-id95\\\", \\\"silva-arc-23s-id98\\\", \\\"silva-bac-16s-id90\\\", \\\"silva-bac-23s-id98\\\", \\\"silva-euk-18s-id95\\\", \\\"silva-euk-28s-id98\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
-            "tool_version": "2.1b.0", 
+            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"{\\\"aligned_blast_format\\\": \\\"1 cigar qcov qstrand\\\", \\\"__current_case__\\\": 0, \\\"aligned_blast_selector\\\": \\\"--blast\\\"}\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"rfam-5.8s-id98\\\", \\\"rfam-5s-id98\\\", \\\"silva-arc-16s-id95\\\", \\\"silva-arc-23s-id98\\\", \\\"silva-bac-16s-id90\\\", \\\"silva-bac-23s-id98\\\", \\\"silva-euk-18s-id95\\\", \\\"silva-euk-28s-id98\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
+            "tool_version": "2.1b.1", 
             "type": "tool", 
             "uuid": "8c67daea-3405-4f6d-9095-38ab2dca5077", 
             "workflow_outputs": [
@@ -615,19 +621,19 @@
             "uuid": "cd1e757e-f80e-46d0-bd39-db6fd4141316", 
             "workflow_outputs": [
                 {
-                    "label": "Relative abundance of species", 
-                    "output_name": "species_abundance_file", 
-                    "uuid": "b2da07c4-9705-4184-a8c6-2e3a73a2d60f"
-                }, 
-                {
-                    "label": "Relative abundance of all taxons", 
-                    "output_name": "all_taxo_level_abundance_file", 
-                    "uuid": "1c1be119-f48f-43ae-a68d-30c6bd1ddb30"
+                    "label": "Relative abundance of genus", 
+                    "output_name": "genus_abundance_file", 
+                    "uuid": "dec6ed8c-dc48-4d77-a57e-4e3c573a7bc6"
                 }, 
                 {
                     "label": "Relative abundance of families", 
                     "output_name": "family_abundance_file", 
                     "uuid": "2a071b54-fad1-41a4-b2d1-16e5c3aeeec7"
+                }, 
+                {
+                    "label": "Relative abundance of orders", 
+                    "output_name": "order_abundance_file", 
+                    "uuid": "30528b76-e65c-4bbd-867c-13110f860002"
                 }, 
                 {
                     "label": "Relative abundance of strains", 
@@ -650,14 +656,14 @@
                     "uuid": "9336ea75-353d-4be1-a557-82402a9d9897"
                 }, 
                 {
-                    "label": "Relative abundance of orders", 
-                    "output_name": "order_abundance_file", 
-                    "uuid": "30528b76-e65c-4bbd-867c-13110f860002"
+                    "label": "Relative abundance of species", 
+                    "output_name": "species_abundance_file", 
+                    "uuid": "b2da07c4-9705-4184-a8c6-2e3a73a2d60f"
                 }, 
                 {
-                    "label": "Relative abundance of genus", 
-                    "output_name": "genus_abundance_file", 
-                    "uuid": "dec6ed8c-dc48-4d77-a57e-4e3c573a7bc6"
+                    "label": "Relative abundance of all taxons", 
+                    "output_name": "all_taxo_level_abundance_file", 
+                    "uuid": "1c1be119-f48f-43ae-a68d-30c6bd1ddb30"
                 }
             ]
         }, 
@@ -686,8 +692,8 @@
                 }
             ], 
             "position": {
-                "left": 1780.5, 
-                "top": 535.5
+                "left": 1777.5, 
+                "top": 495.5
             }, 
             "post_job_actions": {
                 "HideDatasetActionkrona": {
@@ -699,7 +705,7 @@
             "tool_errors": null, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/bebatut/metaphlan2/metaphlan2krona/2.5.0", 
             "tool_shed_repository": {
-                "changeset_revision": "d2448d2bf1f8", 
+                "changeset_revision": "8991e05c44e4", 
                 "name": "metaphlan2", 
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
@@ -724,10 +730,6 @@
                 {
                     "description": "runtime parameter for tool Export to GraPhlAn", 
                     "name": "lefse_input"
-                }, 
-                {
-                    "description": "runtime parameter for tool Export to GraPhlAn", 
-                    "name": "lefse_output"
                 }
             ], 
             "label": null, 
@@ -743,8 +745,8 @@
                 }
             ], 
             "position": {
-                "left": 1830.5, 
-                "top": 663.5
+                "left": 1857, 
+                "top": 662.5
             }, 
             "post_job_actions": {
                 "HideDatasetActionannotation": {
@@ -761,20 +763,20 @@
             "tool_errors": null, 
             "tool_id": "toolshed.g2.bx.psu.edu/repos/bebatut/export2graphlan/export2graphlan/0.19", 
             "tool_shed_repository": {
-                "changeset_revision": "b344522045f3", 
+                "changeset_revision": "d7cf3b50a074", 
                 "name": "export2graphlan", 
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"ftop\": \"\\\"\\\"\", \"background_clades\": \"\\\"\\\"\", \"max_clade_size\": \"\\\"250\\\"\", \"def_font_size\": \"\\\"10\\\"\", \"external_annotations\": \"\\\"6,7\\\"\", \"sperc\": \"\\\"\\\"\", \"__page__\": 0, \"skip_rows\": \"\\\"\\\"\", \"title\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"metadata_rows\": \"\\\"\\\"\", \"least_biomarkers\": \"\\\"\\\"\", \"min_clade_size\": \"\\\"0\\\"\", \"annotation_legend_font_size\": \"\\\"11\\\"\", \"fperc\": \"\\\"\\\"\", \"annotations\": \"\\\"5\\\"\", \"lefse_input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"background_colors\": \"\\\"\\\"\", \"def_clade_size\": \"\\\"10\\\"\", \"stop\": \"\\\"\\\"\", \"sname_row\": \"\\\"0\\\"\", \"max_font_size\": \"\\\"12\\\"\", \"fname_row\": \"\\\"0\\\"\", \"abundance_threshold\": \"\\\"0.0\\\"\", \"title_font_size\": \"\\\"15\\\"\", \"background_levels\": \"\\\"\\\"\", \"min_font_size\": \"\\\"8\\\"\", \"most_abundant\": \"\\\"100\\\"\", \"lefse_output\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_state": "{\"ftop\": \"\\\"\\\"\", \"background_clades\": \"\\\"\\\"\", \"max_clade_size\": \"\\\"250\\\"\", \"def_font_size\": \"\\\"10\\\"\", \"external_annotations\": \"\\\"6,7\\\"\", \"sperc\": \"\\\"\\\"\", \"__page__\": 0, \"skip_rows\": \"\\\"\\\"\", \"title\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"metadata_rows\": \"\\\"\\\"\", \"least_biomarkers\": \"\\\"\\\"\", \"min_clade_size\": \"\\\"0\\\"\", \"annotation_legend_font_size\": \"\\\"11\\\"\", \"fperc\": \"\\\"\\\"\", \"annotations\": \"\\\"5\\\"\", \"lefse_input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"background_colors\": \"\\\"\\\"\", \"def_clade_size\": \"\\\"10\\\"\", \"stop\": \"\\\"\\\"\", \"sname_row\": \"\\\"0\\\"\", \"max_font_size\": \"\\\"12\\\"\", \"fname_row\": \"\\\"0\\\"\", \"abundance_threshold\": \"\\\"0.0\\\"\", \"title_font_size\": \"\\\"15\\\"\", \"input_lefse_output\": \"{\\\"input_lefse_output_test\\\": \\\"false\\\", \\\"__current_case__\\\": 1}\", \"background_levels\": \"\\\"\\\"\", \"min_font_size\": \"\\\"8\\\"\", \"most_abundant\": \"\\\"100\\\"\"}", 
             "tool_version": "0.19", 
             "type": "tool", 
-            "uuid": "d273e60d-4be8-4bdb-ab02-e1f1c53beb29", 
+            "uuid": "707df40d-dc39-460f-8815-4f47b5fd1f10", 
             "workflow_outputs": []
         }, 
         "11": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "id": 11, 
             "input_connections": {
                 "input_reads": {
@@ -822,11 +824,6 @@
                     "action_type": "HideDatasetAction", 
                     "output_name": "output_blast"
                 }, 
-                "HideDatasetActionoutput_fastx": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "output_fastx"
-                }, 
                 "HideDatasetActionoutput_log": {
                     "action_arguments": {}, 
                     "action_type": "HideDatasetAction", 
@@ -839,15 +836,15 @@
                 }
             }, 
             "tool_errors": null, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "tool_shed_repository": {
-                "changeset_revision": "3699b6b771e0", 
+                "changeset_revision": "59252ca85c74", 
                 "name": "sortmerna", 
                 "owner": "rnateam", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"\\\"--blast 3\\\"\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"silva-arc-16s-id95\\\", \\\"silva-bac-16s-id90\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
-            "tool_version": "2.1b.0", 
+            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"{\\\"aligned_blast_format\\\": \\\"1 cigar qcov qstrand\\\", \\\"__current_case__\\\": 0, \\\"aligned_blast_selector\\\": \\\"--blast\\\"}\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"silva-arc-16s-id95\\\", \\\"silva-bac-16s-id90\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
+            "tool_version": "2.1b.1", 
             "type": "tool", 
             "uuid": "b5adb309-a39d-4359-b06a-45a382523094", 
             "workflow_outputs": [
@@ -855,6 +852,11 @@
                     "label": null, 
                     "output_name": "output_other", 
                     "uuid": "e58ab8ac-c491-49f5-8702-c2ceca5bd257"
+                }, 
+                {
+                    "label": "16S rRNA/rDNA sequences", 
+                    "output_name": "output_fastx", 
+                    "uuid": "b3d2e21b-c33f-4181-b13c-91475ee469ed"
                 }
             ]
         }, 
@@ -930,11 +932,6 @@
                     "action_type": "HideDatasetAction", 
                     "output_name": "pathabundance_biom"
                 }, 
-                "HideDatasetActionpathabundance_tsv": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "pathabundance_tsv"
-                }, 
                 "HideDatasetActionpathcoverage_biom": {
                     "action_arguments": {}, 
                     "action_type": "HideDatasetAction", 
@@ -958,7 +955,13 @@
             "tool_version": "0.6.1", 
             "type": "tool", 
             "uuid": "b4337c91-4972-43ba-9a35-837ffba65ac3", 
-            "workflow_outputs": []
+            "workflow_outputs": [
+                {
+                    "label": null, 
+                    "output_name": "pathabundance_tsv", 
+                    "uuid": "10601e7b-c627-48f0-8102-a639da077281"
+                }
+            ]
         }, 
         "13": {
             "annotation": "", 
@@ -985,8 +988,8 @@
                 }
             ], 
             "position": {
-                "left": 2146.5, 
-                "top": 500.5
+                "left": 2135.5, 
+                "top": 443.5
             }, 
             "post_job_actions": {}, 
             "tool_errors": null, 
@@ -1068,7 +1071,7 @@
         }, 
         "15": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "id": 15, 
             "input_connections": {
                 "input_reads": {
@@ -1107,7 +1110,7 @@
                 }
             ], 
             "position": {
-                "left": 2044, 
+                "left": 2042, 
                 "top": 846.5
             }, 
             "post_job_actions": {
@@ -1128,27 +1131,27 @@
                 }
             }, 
             "tool_errors": null, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.0", 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
             "tool_shed_repository": {
-                "changeset_revision": "3699b6b771e0", 
+                "changeset_revision": "59252ca85c74", 
                 "name": "sortmerna", 
                 "owner": "rnateam", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"\\\"\\\"\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"silva-euk-18s-id95\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
-            "tool_version": "2.1b.0", 
+            "tool_state": "{\"__page__\": 0, \"aligned_fastx\": \"{\\\"aligned_fastx_selector\\\": \\\"--fastx\\\", \\\"other\\\": \\\"true\\\", \\\"__current_case__\\\": 0}\", \"aligned_sam\": \"{\\\"aligned_sam_selector\\\": \\\"\\\", \\\"__current_case__\\\": 1}\", \"log\": \"\\\"false\\\"\", \"input_reads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"mismatch\": \"\\\"-3\\\"\", \"sequencing_type\": \"{\\\"sequencing_type_selector\\\": \\\"not_paired\\\", \\\"__current_case__\\\": 0}\", \"ambiguous_letter\": \"\\\"-3\\\"\", \"aligned_blast\": \"{\\\"aligned_blast_format\\\": \\\"1 cigar qcov qstrand\\\", \\\"__current_case__\\\": 0, \\\"aligned_blast_selector\\\": \\\"--blast\\\"}\", \"databases_type\": \"{\\\"databases_selector\\\": \\\"cached\\\", \\\"input_databases\\\": [\\\"silva-euk-18s-id95\\\"], \\\"__current_case__\\\": 0}\", \"match\": \"\\\"2\\\"\", \"gap_open\": \"\\\"5\\\"\", \"report\": \"{\\\"report_best\\\": {\\\"report_best_min_lis\\\": \\\"2\\\", \\\"__current_case__\\\": 0, \\\"report_best_type\\\": \\\"1\\\"}, \\\"__current_case__\\\": 0, \\\"report_type\\\": \\\"best\\\"}\", \"e_value\": \"\\\"1.0\\\"\", \"strand_search\": \"\\\"\\\"\", \"gap_ext\": \"\\\"2\\\"\"}", 
+            "tool_version": "2.1b.1", 
             "type": "tool", 
             "uuid": "277286d9-be59-4748-b044-9b5aedcf5352", 
             "workflow_outputs": [
                 {
-                    "label": "18S rRNA/rDNA sequences", 
-                    "output_name": "output_fastx", 
-                    "uuid": "0968d171-ef3e-48fc-9f4e-83b4f2519fe2"
-                }, 
-                {
                     "label": "Other rRNA/rDNA sequences", 
                     "output_name": "output_other", 
                     "uuid": "4e98fa0e-68be-4876-b780-189c211db5b2"
+                }, 
+                {
+                    "label": "18S rRNA/rDNA sequences", 
+                    "output_name": "output_fastx", 
+                    "uuid": "0968d171-ef3e-48fc-9f4e-83b4f2519fe2"
                 }
             ]
         }, 
@@ -1189,8 +1192,8 @@
                 }
             ], 
             "position": {
-                "left": 2000, 
-                "top": 1073.5
+                "left": 2051, 
+                "top": 1063.5
             }, 
             "post_job_actions": {
                 "HideDatasetActionpathway_output_file": {
@@ -1355,7 +1358,7 @@
             ], 
             "position": {
                 "left": 1944.5, 
-                "top": 1653
+                "top": 1652
             }, 
             "post_job_actions": {
                 "HideDatasetActionout_file1": {
@@ -1594,11 +1597,6 @@
                     "action_type": "HideDatasetAction", 
                     "output_name": "eps_output_image"
                 }, 
-                "HideDatasetActionpng_output_image": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "png_output_image"
-                }, 
                 "HideDatasetActionps_output_image": {
                     "action_arguments": {}, 
                     "action_type": "HideDatasetAction", 
@@ -1627,6 +1625,11 @@
                     "label": "GraPhlAn representation of taxonomic profile (PDF)", 
                     "output_name": "pdf_output_image", 
                     "uuid": "22624606-7ce2-4ec0-93fc-a0d8060e6a21"
+                }, 
+                {
+                    "label": "GraPhlAn representation of taxonomic profile (PDF)", 
+                    "output_name": "png_output_image", 
+                    "uuid": "5e4a7fcd-4eee-44a4-940a-4143fa31d172"
                 }
             ]
         }, 
@@ -1686,7 +1689,7 @@
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"xlab\": \"\\\"Relative abundance of species (percentage)\\\"\", \"__page__\": 0, \"bottom_margin\": \"\\\"5\\\"\", \"abline\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"color\": \"\\\"grey25\\\"\", \"lim\": \"\\\"false\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"ylog\": \"\\\"true\\\"\", \"y_column_id\": \"\\\"7\\\"\", \"left_margin\": \"\\\"5\\\"\", \"header\": \"\\\"false\\\"\", \"pch\": \"\\\"21\\\"\", \"__rerun_remap_job_id__\": null, \"ylab\": \"\\\"Relative abundances of found gene families for species (percentage)\\\"\", \"x_column_id\": \"\\\"4\\\"\", \"xlog\": \"\\\"true\\\"\"}", 
+            "tool_state": "{\"xlab\": \"\\\"Relative abundance of species (percentage)\\\"\", \"__page__\": 0, \"bottom_margin\": \"\\\"5\\\"\", \"abline\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"color\": \"\\\"grey25\\\"\", \"lim\": \"\\\"false\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"ylog\": \"\\\"true\\\"\", \"y_column_id\": \"\\\"7\\\"\", \"left_margin\": \"\\\"5\\\"\", \"header\": \"\\\"true\\\"\", \"pch\": \"\\\"21\\\"\", \"__rerun_remap_job_id__\": null, \"ylab\": \"\\\"Relative abundances of found gene families for species (percentage)\\\"\", \"x_column_id\": \"\\\"4\\\"\", \"xlog\": \"\\\"true\\\"\"}", 
             "tool_version": "0.1.0", 
             "type": "tool", 
             "uuid": "2c45f06e-fb1f-4454-84f0-37316101bb96", 
@@ -1803,7 +1806,7 @@
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"xlab\": \"\\\"Relative abundance of species (percentage)\\\"\", \"__page__\": 0, \"bottom_margin\": \"\\\"5\\\"\", \"abline\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"color\": \"\\\"grey25\\\"\", \"lim\": \"\\\"false\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"ylog\": \"\\\"true\\\"\", \"y_column_id\": \"\\\"7\\\"\", \"left_margin\": \"\\\"5\\\"\", \"header\": \"\\\"false\\\"\", \"pch\": \"\\\"21\\\"\", \"__rerun_remap_job_id__\": null, \"ylab\": \"\\\"Relative abundances of found pathways for species (percentage)\\\"\", \"x_column_id\": \"\\\"4\\\"\", \"xlog\": \"\\\"true\\\"\"}", 
+            "tool_state": "{\"xlab\": \"\\\"Relative abundance of species (percentage)\\\"\", \"__page__\": 0, \"bottom_margin\": \"\\\"5\\\"\", \"abline\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"color\": \"\\\"grey25\\\"\", \"lim\": \"\\\"false\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"ylog\": \"\\\"true\\\"\", \"y_column_id\": \"\\\"7\\\"\", \"left_margin\": \"\\\"5\\\"\", \"header\": \"\\\"true\\\"\", \"pch\": \"\\\"21\\\"\", \"__rerun_remap_job_id__\": null, \"ylab\": \"\\\"Relative abundances of found pathways for species (percentage)\\\"\", \"x_column_id\": \"\\\"4\\\"\", \"xlog\": \"\\\"true\\\"\"}", 
             "tool_version": "0.1.0", 
             "type": "tool", 
             "uuid": "1333b84c-662f-4d6c-a716-a403732ac741", 
@@ -2568,7 +2571,7 @@
             ], 
             "position": {
                 "left": 3130.5, 
-                "top": 1553
+                "top": 1552
             }, 
             "post_job_actions": {
                 "HideDatasetActionoutput_png_file": {
@@ -2726,7 +2729,7 @@
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"xlab\": \"\\\"Abundance of molecular functions\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"19\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/home/cidam/Berenice/asaim/framework/lib/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\\\"\", \"col\": \"\\\"blue3\\\"\"}", 
+            "tool_state": "{\"xlab\": \"\\\"Abundance of molecular functions\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"19\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"col\": \"\\\"blue3\\\"\"}", 
             "tool_version": "0.1.0", 
             "type": "tool", 
             "uuid": "a44d81df-386b-4c19-b941-86b621716cfe", 
@@ -2794,7 +2797,7 @@
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"xlab\": \"\\\"Abundance of biological processes\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"15\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/home/cidam/Berenice/asaim/framework/lib/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\\\"\", \"col\": \"\\\"forestgreen\\\"\"}", 
+            "tool_state": "{\"xlab\": \"\\\"Abundance of biological processes\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"15\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"col\": \"\\\"forestgreen\\\"\"}", 
             "tool_version": "0.1.0", 
             "type": "tool", 
             "uuid": "769b9791-8cce-4373-865f-e28caaa818f8", 
@@ -2862,7 +2865,7 @@
                 "owner": "bebatut", 
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             }, 
-            "tool_state": "{\"xlab\": \"\\\"Abundance of cellular components\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"15\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/home/cidam/Berenice/asaim/framework/lib/galaxy-dev/tool-data/shared/ucsc/chrom/?.len\\\"\", \"col\": \"\\\"tomato\\\"\"}", 
+            "tool_state": "{\"xlab\": \"\\\"Abundance of cellular components\\\"\", \"bottom_margin\": \"\\\"5\\\"\", \"log\": \"\\\"false\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": 0, \"names_column\": \"\\\"2\\\"\", \"output_format\": \"\\\"pdf\\\"\", \"right_margin\": \"\\\"1\\\"\", \"top_margin\": \"\\\"1\\\"\", \"left_margin\": \"\\\"15\\\"\", \"column_with_data\": \"\\\"3\\\"\", \"header\": \"\\\"true\\\"\", \"__rerun_remap_job_id__\": null, \"col\": \"\\\"tomato\\\"\"}", 
             "tool_version": "0.1.0", 
             "type": "tool", 
             "uuid": "de4a7906-86af-4119-a125-a39911fa5f1c", 
@@ -2875,5 +2878,5 @@
             ]
         }
     }, 
-    "uuid": "efbce0b0-4772-4cfd-a8f7-9494bafc4059"
+    "uuid": "f507ea94-e9a0-4f0a-bc62-f7059fc93e30"
 }
