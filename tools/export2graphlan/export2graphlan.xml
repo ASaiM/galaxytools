@@ -177,6 +177,7 @@ export2graphlan.py -v
     <tests>
         <test>
             <param name="lefse_input" value="input_profile.tabular"/>
+            <param name="input_lefse_output_test" value="no" />
             <param name="annotations" value=""/>
             <param name="external_annotations" value=""/>
             <param name="background_levels" value=""/>
