@@ -127,43 +127,26 @@ export2graphlan.py -v
         <param name="background_colors" type="text" label="List of color to use for the shaded background (Optional)" help="Colors can be either in RGB or HSV (using a semi-colon to separate values, surrounded with ()). The different colors must be in comma-separated form (--background_colors)" optional="True"/>
 
         <param name="title" type="text" label="Title of the GraPhlAn plot (Optional)" help="(--title)" optional="True"/>
-
         <param name="title_font_size" type="integer" value="15" label="Title font size" help="(--title_font_size)"/>
-
         <param name="def_clade_size" type="integer" value="10" label="Default size for clades that are not found as biomarkers" help="(--def_clade_size)"/>
-
         <param name="min_clade_size" type="integer" value="20" label="Minimum value of clades that are biomarkers" help="(--min_clade_size)"/>
-
         <param name="max_clade_size" type="integer" value="200" label="Maximum value of clades that are biomarkers" help="(--max_clade_size)"/>
-
         <param name="def_font_size" type="integer" value="10" label="Default font size" help="(--def_font_size)"/>
-
         <param name="min_font_size" type="integer" value="8" label="Minimum font size" help="(--min_font_size)"/>
-
         <param name="max_font_size" type="integer" value="12" label="Maximum font size" help="(--max_font_size)"/>
-
         <param name="annotation_legend_font_size" type="integer" value="10" label="Font size for the annotation legend" help="(--annotation_legend_font_size)"/>
-
         <param name="abundance_threshold" type="float" value="20.0" label="Minimun abundance value for a clade to be annotated" help="(--abundance_threshold)"/>
-
         <param name="most_abundant" type="integer" label="Number of clades to highlight (Optional)" help="(--most_abundant)" optional="True"/>
 
         <param name="least_biomarkers" type="integer" label="Minimum number of biomarkers to extract (Optional)" help=" The taxonomy is parsed, and the level is choosen in order to have at least the specified number of biomarkers(--least_biomarkers)" optional="True"/>
 
         <param name="fname_row" type="integer" value="0" label="Row number containing the names of the features" help="-1 specifies that no names are present in the matrix (--fname_row)"/>
-
         <param name="sname_row" type="integer" value="0" label="Row number containing the names of the samples" help="-1 specifies that no names are present in the matrix (--sname_row)"/>
-
         <param name="metadata_rows" type="integer" label="Row number to use as metadata (Optional)" help="(--metadata_rows)" optional="True"/>
-
         <param name="skip_rows" type="text" label="Row number to skip from the input file" help="The row numbers ar indexed to 0 and comma separated (--skip_rows)" optional="True"/>
-
         <param name="sperc" type="float" label="Percentile of sample value distribution for sample selection (Optional)" help="(--sperc)" optional="True"/>
-
         <param name="fperc" type="float" label="Percentile of feature value distribution for sample selection (Optional)" help="(--fperc)" optional="True"/>
-
         <param name="stop" type="integer" label="Number of top samples to select (Optional)" help="The order is based on percentile specified by --sperc (--stop)" optional="True"/>
-
         <param name="ftop" type="integer" label="Number of top features to select (Optional)" help="The order is based on percentile specified by --fperc (--ftop)" optional="True"/>
     </inputs>
 
