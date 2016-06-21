@@ -19,12 +19,12 @@ export2graphlan.py -v
     </version_command>
 
     <command>
-<![CDATA[        
+<![CDATA[
         export2graphlan.py
             -i $lefse_input
 
-            #if $lefse_output
-                -o lefse_output
+            #if $input_lefse_output.input_lefse_output_test == "true"
+                -o $input_lefse_output.lefse_output
             #end if
 
             -t $tree
@@ -104,7 +104,17 @@ export2graphlan.py -v
     <inputs>
         <param name="lefse_input" type="data" format="tabular,txt,tsv" label="Input file" help="Identical to LEfSe input file (--lefse_input)"/>
 
-        <param name="lefse_output" type="data" format="tabular" label="Input file corresponding to LEfSe output file (Optional)" help="(--lefse_output)" optional="True"/>
+        <conditional name="input_lefse_output">
+            <param name="input_lefse_output_test" type="select" label="Use a LEfSe output file as input?" help="">
+                <option value="true">Yes</option>
+                <option value="false" selected="true">No</option>
+            </param>
+
+            <when value="true">
+                <param name="lefse_output" type="data" format="tabular" label="Input file corresponding to LEfSe output file" help="(--lefse_output)"/>
+            </when>
+            <when value="false"/>
+        </conditional>
 
         <param name="annotations" type="text" label="List which levels should be annotated in the tree (Optional)" help="The levels must be in comma-separated form (--annotations)" optional="True"/>
 
