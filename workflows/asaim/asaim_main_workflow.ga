@@ -1,6 +1,6 @@
 {
     "a_galaxy_workflow": "true", 
-    "annotation": "", 
+    "annotation": "HUMAnN2 databases have to be downloaded before running this workflow. It must be done once. Check the documentation or the README file for more information", 
     "format-version": "0.1", 
     "name": "Single-end workflow", 
     "steps": {
@@ -38,86 +38,8 @@
         }, 
         "1": {
             "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/humann2/humann2_download_databases/0.6.1", 
-            "id": 1, 
-            "input_connections": {}, 
-            "inputs": [], 
-            "label": null, 
-            "name": "Download", 
-            "outputs": [
-                {
-                    "name": "log", 
-                    "type": "txt"
-                }
-            ], 
-            "position": {
-                "left": 1196.5, 
-                "top": 1478.5
-            }, 
-            "post_job_actions": {
-                "HideDatasetActionlog": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "log"
-                }
-            }, 
-            "tool_errors": null, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/bebatut/humann2/humann2_download_databases/0.6.1", 
-            "tool_shed_repository": {
-                "changeset_revision": "bcd414bb721b", 
-                "name": "humann2", 
-                "owner": "bebatut", 
-                "tool_shed": "toolshed.g2.bx.psu.edu"
-            }, 
-            "tool_state": "{\"database_selector\": \"\\\"chocophlan full\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}", 
-            "tool_version": "0.6.1", 
-            "type": "tool", 
-            "uuid": "8775d0cc-b929-4adf-bb6b-90075fb88539", 
-            "workflow_outputs": []
-        }, 
-        "2": {
-            "annotation": "", 
-            "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/humann2/humann2_download_databases/0.6.1", 
-            "id": 2, 
-            "input_connections": {}, 
-            "inputs": [], 
-            "label": null, 
-            "name": "Download", 
-            "outputs": [
-                {
-                    "name": "log", 
-                    "type": "txt"
-                }
-            ], 
-            "position": {
-                "left": 1195.5, 
-                "top": 1555.5
-            }, 
-            "post_job_actions": {
-                "HideDatasetActionlog": {
-                    "action_arguments": {}, 
-                    "action_type": "HideDatasetAction", 
-                    "output_name": "log"
-                }
-            }, 
-            "tool_errors": null, 
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/bebatut/humann2/humann2_download_databases/0.6.1", 
-            "tool_shed_repository": {
-                "changeset_revision": "bcd414bb721b", 
-                "name": "humann2", 
-                "owner": "bebatut", 
-                "tool_shed": "toolshed.g2.bx.psu.edu"
-            }, 
-            "tool_state": "{\"database_selector\": \"\\\"uniref diamond\\\"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}", 
-            "tool_version": "0.6.1", 
-            "type": "tool", 
-            "uuid": "011bc824-f08c-4cec-a664-9d131bd837fe", 
-            "workflow_outputs": []
-        }, 
-        "3": {
-            "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/prinseq/prinseq/0.1.0", 
-            "id": 3, 
+            "id": 1, 
             "input_connections": {
                 "seq_type|input_singles": {
                     "id": 0, 
@@ -227,13 +149,13 @@
                 }
             ]
         }, 
-        "4": {
+        "2": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/convert_extract_sequence_file/convert_extract_sequence_file/1.0.0", 
-            "id": 4, 
+            "id": 2, 
             "input_connections": {
                 "sequence_file_format|sequence_file": {
-                    "id": 3, 
+                    "id": 1, 
                     "output_name": "good_sequence_file"
                 }
             }, 
@@ -328,13 +250,13 @@
             "uuid": "fda8605c-66b0-4081-a7b2-53cae18b1d77", 
             "workflow_outputs": []
         }, 
-        "5": {
+        "3": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/vsearch/vsearch_dereplication/1.9.7.0", 
-            "id": 5, 
+            "id": 3, 
             "input_connections": {
                 "infile": {
-                    "id": 4, 
+                    "id": 2, 
                     "output_name": "fasta_sequence_file_from_fastq"
                 }
             }, 
@@ -387,13 +309,13 @@
                 }
             ]
         }, 
-        "6": {
+        "4": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/metaphlan2/metaphlan2/2.5.0", 
-            "id": 6, 
+            "id": 4, 
             "input_connections": {
                 "input_file": {
-                    "id": 5, 
+                    "id": 3, 
                     "output_name": "outfile"
                 }
             }, 
@@ -453,13 +375,13 @@
                 }
             ]
         }, 
-        "7": {
+        "5": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
-            "id": 7, 
+            "id": 5, 
             "input_connections": {
                 "input_reads": {
-                    "id": 5, 
+                    "id": 3, 
                     "output_name": "outfile"
                 }
             }, 
@@ -546,13 +468,13 @@
                 }
             ]
         }, 
-        "8": {
+        "6": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/format_metaphlan2_output/format_metaphlan2_output/0.1.0", 
-            "id": 8, 
+            "id": 6, 
             "input_connections": {
                 "input_file": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -621,9 +543,9 @@
             "uuid": "cd1e757e-f80e-46d0-bd39-db6fd4141316", 
             "workflow_outputs": [
                 {
-                    "label": "Relative abundance of genus", 
-                    "output_name": "genus_abundance_file", 
-                    "uuid": "dec6ed8c-dc48-4d77-a57e-4e3c573a7bc6"
+                    "label": "Relative abundance of all taxons", 
+                    "output_name": "all_taxo_level_abundance_file", 
+                    "uuid": "1c1be119-f48f-43ae-a68d-30c6bd1ddb30"
                 }, 
                 {
                     "label": "Relative abundance of families", 
@@ -646,9 +568,9 @@
                     "uuid": "68733f39-a6a5-46bf-ac4f-b15bb1566807"
                 }, 
                 {
-                    "label": "Relative abundance of classes", 
-                    "output_name": "class_abundance_file", 
-                    "uuid": "31325879-e367-466f-8104-0930dceb5721"
+                    "label": "Relative abundance of species", 
+                    "output_name": "species_abundance_file", 
+                    "uuid": "b2da07c4-9705-4184-a8c6-2e3a73a2d60f"
                 }, 
                 {
                     "label": "Relative abundance of kingdoms", 
@@ -656,24 +578,24 @@
                     "uuid": "9336ea75-353d-4be1-a557-82402a9d9897"
                 }, 
                 {
-                    "label": "Relative abundance of species", 
-                    "output_name": "species_abundance_file", 
-                    "uuid": "b2da07c4-9705-4184-a8c6-2e3a73a2d60f"
+                    "label": "Relative abundance of classes", 
+                    "output_name": "class_abundance_file", 
+                    "uuid": "31325879-e367-466f-8104-0930dceb5721"
                 }, 
                 {
-                    "label": "Relative abundance of all taxons", 
-                    "output_name": "all_taxo_level_abundance_file", 
-                    "uuid": "1c1be119-f48f-43ae-a68d-30c6bd1ddb30"
+                    "label": "Relative abundance of genus", 
+                    "output_name": "genus_abundance_file", 
+                    "uuid": "dec6ed8c-dc48-4d77-a57e-4e3c573a7bc6"
                 }
             ]
         }, 
-        "9": {
+        "7": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/metaphlan2/metaphlan2krona/2.5.0", 
-            "id": 9, 
+            "id": 7, 
             "input_connections": {
                 "input_file": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -716,13 +638,13 @@
             "uuid": "682f15a7-8347-486e-8d9d-8312cb7408a6", 
             "workflow_outputs": []
         }, 
-        "10": {
+        "8": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/export2graphlan/export2graphlan/0.19", 
-            "id": 10, 
+            "id": 8, 
             "input_connections": {
                 "lefse_input": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -774,13 +696,13 @@
             "uuid": "707df40d-dc39-460f-8815-4f47b5fd1f10", 
             "workflow_outputs": []
         }, 
-        "11": {
+        "9": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
-            "id": 11, 
+            "id": 9, 
             "input_connections": {
                 "input_reads": {
-                    "id": 7, 
+                    "id": 5, 
                     "output_name": "output_fastx"
                 }
             }, 
@@ -849,28 +771,28 @@
             "uuid": "b5adb309-a39d-4359-b06a-45a382523094", 
             "workflow_outputs": [
                 {
-                    "label": null, 
-                    "output_name": "output_other", 
-                    "uuid": "e58ab8ac-c491-49f5-8702-c2ceca5bd257"
-                }, 
-                {
                     "label": "16S rRNA/rDNA sequences", 
                     "output_name": "output_fastx", 
                     "uuid": "b3d2e21b-c33f-4181-b13c-91475ee469ed"
+                }, 
+                {
+                    "label": null, 
+                    "output_name": "output_other", 
+                    "uuid": "e58ab8ac-c491-49f5-8702-c2ceca5bd257"
                 }
             ]
         }, 
-        "12": {
+        "10": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/humann2/humann2/0.6.1", 
-            "id": 12, 
+            "id": 10, 
             "input_connections": {
                 "input_file": {
-                    "id": 7, 
+                    "id": 5, 
                     "output_name": "output_other"
                 }, 
                 "taxonomic_profile|taxonomic_profile_file": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -963,13 +885,13 @@
                 }
             ]
         }, 
-        "13": {
+        "11": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.6.0", 
-            "id": 13, 
+            "id": 11, 
             "input_connections": {
                 "type_of_data|input": {
-                    "id": 9, 
+                    "id": 7, 
                     "output_name": "krona"
                 }
             }, 
@@ -1012,17 +934,17 @@
                 }
             ]
         }, 
-        "14": {
+        "12": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/graphlan/graphlan_annotate/0.9.7", 
-            "id": 14, 
+            "id": 12, 
             "input_connections": {
                 "annot": {
-                    "id": 10, 
+                    "id": 8, 
                     "output_name": "annotation"
                 }, 
                 "input_tree": {
-                    "id": 10, 
+                    "id": 8, 
                     "output_name": "tree"
                 }
             }, 
@@ -1069,13 +991,13 @@
             "uuid": "5d048fb7-5307-46ae-8170-3731549eb104", 
             "workflow_outputs": []
         }, 
-        "15": {
+        "13": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1", 
-            "id": 15, 
+            "id": 13, 
             "input_connections": {
                 "input_reads": {
-                    "id": 11, 
+                    "id": 9, 
                     "output_name": "output_other"
                 }
             }, 
@@ -1144,28 +1066,28 @@
             "uuid": "277286d9-be59-4748-b044-9b5aedcf5352", 
             "workflow_outputs": [
                 {
-                    "label": "Other rRNA/rDNA sequences", 
-                    "output_name": "output_other", 
-                    "uuid": "4e98fa0e-68be-4876-b780-189c211db5b2"
-                }, 
-                {
                     "label": "18S rRNA/rDNA sequences", 
                     "output_name": "output_fastx", 
                     "uuid": "0968d171-ef3e-48fc-9f4e-83b4f2519fe2"
+                }, 
+                {
+                    "label": "Other rRNA/rDNA sequences", 
+                    "output_name": "output_other", 
+                    "uuid": "4e98fa0e-68be-4876-b780-189c211db5b2"
                 }
             ]
         }, 
-        "16": {
+        "14": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/combine_metaphlan2_humann2/combine_metaphlan2_humann2/0.1.0", 
-            "id": 16, 
+            "id": 14, 
             "input_connections": {
                 "humann2_file": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "gene_families_tsv"
                 }, 
                 "metaphlan2_file": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -1222,17 +1144,17 @@
                 }
             ]
         }, 
-        "17": {
+        "15": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/combine_metaphlan2_humann2/combine_metaphlan2_humann2/0.1.0", 
-            "id": 17, 
+            "id": 15, 
             "input_connections": {
                 "humann2_file": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "pathabundance_tsv"
                 }, 
                 "metaphlan2_file": {
-                    "id": 6, 
+                    "id": 4, 
                     "output_name": "output_file"
                 }
             }, 
@@ -1289,13 +1211,13 @@
                 }
             ]
         }, 
-        "18": {
+        "16": {
             "annotation": "", 
             "content_id": "Grep1", 
-            "id": 18, 
+            "id": 16, 
             "input_connections": {
                 "input": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "gene_families_tsv"
                 }
             }, 
@@ -1332,13 +1254,13 @@
             "uuid": "47f559ce-c401-4b2c-b687-eababd8bf9f4", 
             "workflow_outputs": []
         }, 
-        "19": {
+        "17": {
             "annotation": "", 
             "content_id": "Grep1", 
-            "id": 19, 
+            "id": 17, 
             "input_connections": {
                 "input": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "gene_families_tsv"
                 }
             }, 
@@ -1375,13 +1297,13 @@
             "uuid": "7dc48a62-6534-43aa-9ab3-1532d86d1166", 
             "workflow_outputs": []
         }, 
-        "20": {
+        "18": {
             "annotation": "", 
             "content_id": "Grep1", 
-            "id": 20, 
+            "id": 18, 
             "input_connections": {
                 "input": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "pathabundance_tsv"
                 }
             }, 
@@ -1418,13 +1340,13 @@
             "uuid": "56b2f313-ca1d-4551-aec9-8d3c0a5513cb", 
             "workflow_outputs": []
         }, 
-        "21": {
+        "19": {
             "annotation": "", 
             "content_id": "Grep1", 
-            "id": 21, 
+            "id": 19, 
             "input_connections": {
                 "input": {
-                    "id": 12, 
+                    "id": 10, 
                     "output_name": "pathabundance_tsv"
                 }
             }, 
@@ -1461,13 +1383,13 @@
             "uuid": "8d0d9166-88af-41cf-8604-54b510b645d6", 
             "workflow_outputs": []
         }, 
-        "22": {
+        "20": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/graphlan/graphlan/0.9.7", 
-            "id": 22, 
+            "id": 20, 
             "input_connections": {
                 "input_tree": {
-                    "id": 14, 
+                    "id": 12, 
                     "output_name": "output_tree"
                 }
             }, 
@@ -1547,13 +1469,13 @@
                 }
             ]
         }, 
-        "23": {
+        "21": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/graphlan/graphlan/0.9.7", 
-            "id": 23, 
+            "id": 21, 
             "input_connections": {
                 "input_tree": {
-                    "id": 14, 
+                    "id": 12, 
                     "output_name": "output_tree"
                 }
             }, 
@@ -1633,13 +1555,13 @@
                 }
             ]
         }, 
-        "24": {
+        "22": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 24, 
+            "id": 22, 
             "input_connections": {
                 "input_file": {
-                    "id": 16, 
+                    "id": 14, 
                     "output_name": "gene_families_output_file"
                 }
             }, 
@@ -1701,13 +1623,13 @@
                 }
             ]
         }, 
-        "25": {
+        "23": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/remove_beginning/Remove beginning1/1.0.0", 
-            "id": 25, 
+            "id": 23, 
             "input_connections": {
                 "input": {
-                    "id": 16, 
+                    "id": 14, 
                     "output_name": "gene_families_output_file"
                 }
             }, 
@@ -1750,13 +1672,13 @@
             "uuid": "e99e9621-ee58-4ea2-8b34-abb56f01c55f", 
             "workflow_outputs": []
         }, 
-        "26": {
+        "24": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 26, 
+            "id": 24, 
             "input_connections": {
                 "input_file": {
-                    "id": 17, 
+                    "id": 15, 
                     "output_name": "pathway_output_file"
                 }
             }, 
@@ -1818,13 +1740,13 @@
                 }
             ]
         }, 
-        "27": {
+        "25": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/remove_beginning/Remove beginning1/1.0.0", 
-            "id": 27, 
+            "id": 25, 
             "input_connections": {
                 "input": {
-                    "id": 17, 
+                    "id": 15, 
                     "output_name": "pathway_output_file"
                 }
             }, 
@@ -1867,13 +1789,13 @@
             "uuid": "bc0102e2-8785-41d3-90cd-5e711fa0a1d9", 
             "workflow_outputs": []
         }, 
-        "28": {
+        "26": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/group_humann2_uniref_abundances_to_go/group_humann2_uniref_abundances_to_go/1.2.0", 
-            "id": 28, 
+            "id": 26, 
             "input_connections": {
                 "humann2_gene_families_abundance": {
-                    "id": 19, 
+                    "id": 17, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -1934,13 +1856,13 @@
             "uuid": "a13e1a91-b4a9-457a-b713-cd69f4eb8b9f", 
             "workflow_outputs": []
         }, 
-        "29": {
+        "27": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/normalize_dataset/normalize_dataset/0.1.0", 
-            "id": 29, 
+            "id": 27, 
             "input_connections": {
                 "input_file": {
-                    "id": 19, 
+                    "id": 17, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -1983,13 +1905,13 @@
                 }
             ]
         }, 
-        "30": {
+        "28": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/normalize_dataset/normalize_dataset/0.1.0", 
-            "id": 30, 
+            "id": 28, 
             "input_connections": {
                 "input_file": {
-                    "id": 20, 
+                    "id": 18, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2032,13 +1954,13 @@
                 }
             ]
         }, 
-        "31": {
+        "29": {
             "annotation": "", 
             "content_id": "Grouping1", 
-            "id": 31, 
+            "id": 29, 
             "input_connections": {
                 "input1": {
-                    "id": 25, 
+                    "id": 23, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2075,13 +1997,13 @@
                 }
             ]
         }, 
-        "32": {
+        "30": {
             "annotation": "", 
             "content_id": "Grouping1", 
-            "id": 32, 
+            "id": 30, 
             "input_connections": {
                 "input1": {
-                    "id": 27, 
+                    "id": 25, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2118,13 +2040,13 @@
                 }
             ]
         }, 
-        "33": {
+        "31": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/normalize_dataset/normalize_dataset/0.1.0", 
-            "id": 33, 
+            "id": 31, 
             "input_connections": {
                 "input_file": {
-                    "id": 28, 
+                    "id": 26, 
                     "output_name": "molecular_function_abundance"
                 }
             }, 
@@ -2167,13 +2089,13 @@
                 }
             ]
         }, 
-        "34": {
+        "32": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/normalize_dataset/normalize_dataset/0.1.0", 
-            "id": 34, 
+            "id": 32, 
             "input_connections": {
                 "input_file": {
-                    "id": 28, 
+                    "id": 26, 
                     "output_name": "biological_process_abundance"
                 }
             }, 
@@ -2216,13 +2138,13 @@
                 }
             ]
         }, 
-        "35": {
+        "33": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/normalize_dataset/normalize_dataset/0.1.0", 
-            "id": 35, 
+            "id": 33, 
             "input_connections": {
                 "input_file": {
-                    "id": 28, 
+                    "id": 26, 
                     "output_name": "cellular_component_abundance"
                 }
             }, 
@@ -2265,13 +2187,13 @@
                 }
             ]
         }, 
-        "36": {
+        "34": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 36, 
+            "id": 34, 
             "input_connections": {
                 "input_file": {
-                    "id": 31, 
+                    "id": 29, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2333,13 +2255,13 @@
                 }
             ]
         }, 
-        "37": {
+        "35": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 37, 
+            "id": 35, 
             "input_connections": {
                 "input_file": {
-                    "id": 31, 
+                    "id": 29, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2401,13 +2323,13 @@
                 }
             ]
         }, 
-        "38": {
+        "36": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 38, 
+            "id": 36, 
             "input_connections": {
                 "input_file": {
-                    "id": 31, 
+                    "id": 29, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2469,13 +2391,13 @@
                 }
             ]
         }, 
-        "39": {
+        "37": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 39, 
+            "id": 37, 
             "input_connections": {
                 "input_file": {
-                    "id": 32, 
+                    "id": 30, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2537,13 +2459,13 @@
                 }
             ]
         }, 
-        "40": {
+        "38": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 40, 
+            "id": 38, 
             "input_connections": {
                 "input_file": {
-                    "id": 32, 
+                    "id": 30, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2605,13 +2527,13 @@
                 }
             ]
         }, 
-        "41": {
+        "39": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_generic_x_y_plot/plot_generic_x_y_plot/0.1.0", 
-            "id": 41, 
+            "id": 39, 
             "input_connections": {
                 "input_file": {
-                    "id": 32, 
+                    "id": 30, 
                     "output_name": "out_file1"
                 }
             }, 
@@ -2673,13 +2595,13 @@
                 }
             ]
         }, 
-        "42": {
+        "40": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_barplot/plot_barplot/0.1.0", 
-            "id": 42, 
+            "id": 40, 
             "input_connections": {
                 "input_file": {
-                    "id": 33, 
+                    "id": 31, 
                     "output_name": "output_file"
                 }
             }, 
@@ -2741,13 +2663,13 @@
                 }
             ]
         }, 
-        "43": {
+        "41": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_barplot/plot_barplot/0.1.0", 
-            "id": 43, 
+            "id": 41, 
             "input_connections": {
                 "input_file": {
-                    "id": 34, 
+                    "id": 32, 
                     "output_name": "output_file"
                 }
             }, 
@@ -2809,13 +2731,13 @@
                 }
             ]
         }, 
-        "44": {
+        "42": {
             "annotation": "", 
             "content_id": "toolshed.g2.bx.psu.edu/repos/bebatut/plot_barplot/plot_barplot/0.1.0", 
-            "id": 44, 
+            "id": 42, 
             "input_connections": {
                 "input_file": {
-                    "id": 35, 
+                    "id": 33, 
                     "output_name": "output_file"
                 }
             }, 
@@ -2878,5 +2800,5 @@
             ]
         }
     }, 
-    "uuid": "f507ea94-e9a0-4f0a-bc62-f7059fc93e30"
+    "uuid": "b2d928d0-74d0-4545-afb4-fc1c4501baec"
 }
