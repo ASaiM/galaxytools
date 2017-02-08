@@ -5,62 +5,72 @@
         <import>humann2_macros.xml</import>
     </macros>
 
-    <expand macro="requirements"/>
+    <expand macro="requirements">
+        <requirement type="package" version="2.2.5">bowtie2</requirement>
+        <requirement type="package" version="2.5.0">metaphlan2</requirement>
+        <requirement type="package" version="0.7.10">diamond</requirement>
+        <requirement type="package" version="2.24">rapsearch</requirement>
+    </expand>
     <expand macro="stdio"/>
 
-    <version_command>
-<![CDATA[
-    humann2 --version
-]]>
+    <version_command><![CDATA[ humann2 --version ]]>
     </version_command>
 
     <command><![CDATA[
-        `mkdir nucleotide_db`
+        mkdir nucleotide_db
 
         &&
 
         #if $nucleotide_db.nucleotide_db_selector == "history"
-            #for $file in $nucleotide_db.history_nucleotide_db:
-                `cp $file nucleotide_db/$file.name`
+            #for $file in $nucleotide_db.nucleotide_database:
+                cp '$file' 'nucleotide_db/$file.name'
             #end for
 
             &&
         #end if
 
-        `mkdir protein_db`
+        mkdir protein_db
 
         &&
 
         #if $protein_db.protein_db_selector == "history"
             diamond makedb
-                --in $protein_db.history_protein_db
-                --db protein_db/protein_db
+                --in '$protein_db.protein_database'
+                --db 'protein_db/protein_db'
              &&
         #end if
 
         #if $taxonomic_profile.taxonomic_profile_test == "false"
           #if $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_selector == "history"
-              `mkdir ref_db`
+              mkdir ref_db
               &&
-              bowtie2-build $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_sequences ref_db/ref_db
+              bowtie2-build '$taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_sequences ref_db/ref_db'
               &&
-              python $__tool_directory__/transform_json_to_pkl.py
-                  --json_input $metaphlan2_db_metadata
-                  --pkl_output ref_db/metadata.pkl
+              python '$__tool_directory__/transform_json_to_pkl.py'
+                  --json_input '$metaphlan2_db_metadata'
+                  --pkl_output 'ref_db/metadata.pkl'
               &&
           #end if
         #end if
 
         humann2
-            -i "$input_file"
+            --input '$input'
+            -o 'output'
+
+            $bypass_prescreen
+            $bypass_nucleotide_index
+            $bypass_translated_search
+            $bypass_nucleotide_search
+
+            --annotation-gene-index $annotation_gene_index
 
             #set $metaphlan_option = "-t rel_ab"
-            #if $taxonomic_profile.taxonomic_profile_test == "true":
-                --taxonomic-profile $taxonomic_profile.taxonomic_profile_file
+            #if $taxo_profile.taxonomic_profile_test == "true":
+                --taxonomic-profile '$taxo_profile.taxonomic_profile'
             #else
-                #if $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_selector == "cached"
-                    #set $table = dict([(_[0], _[2]) for _ in $taxonomic_profile.metaphlan2_db_choice.cached_metaphlan2_db.input.options.tool_data_table.data])
-                    #set $db_choice = $taxonomic_profile.metaphlan2_db_choice.cached_metaphlan2_db.value
+                #if $taxo_profile.metaphlan2_db_choice.metaphlan2_db_selector == "cached"
+                    #set $table = dict([(_[0], _[2]) for _ in $taxo_profile.metaphlan2_db_choice.cached_metaphlan2_db.input.options.tool_data_table.data])
+                    #set $db_choice = $taxo_profile.metaphlan2_db_choice.cached_metaphlan2_db.value
                     #set $metaphlan_option += " --bowtie2db " + $table[$db_choice]
                     #set $metaphlan_option += " --mpa_pkl " + $table[$db_choice] + ".pkl"
                 #else
@@ -70,40 +80,90 @@
             #end if
             --metaphlan-options="$metaphlan_option"
 
-            --evalue $e_value
-            --identity-threshold $identity
-            --prescreen-threshold $prescreen
-
-            --pathways $pathways
-
             #if $nucleotide_db.nucleotide_db_selector == "cached"
-                --nucleotide-database \${HUMANN2_DIR}/databases/chocophlan
+                --nucleotide-database '\${HUMANN2_DIR}/databases/chocophlan'
             #else
                 --nucleotide-database nucleotide_db
             #end if
 
             #if $protein_db.protein_db_selector == "cached"
-                --protein-database \${HUMANN2_DIR}/databases/uniref
+                --protein-database '\${HUMANN2_DIR}/databases/uniref'
             #else
                 --protein-database protein_db
             #end if
 
-            --threads \${GALAXY_SLOTS:-4}
+            #if $id_mapping
+                --id-mapping '$id_mapping'
+            #end if
 
-            --xipe $xipe
-            --minpath $minpath
-            --pick-frames $pick_frames
+            --evalue '$evalue'
+            --search-mode '$search_mode'
+            --threads '\${GALAXY_SLOTS:-4}'
+            --prescreen-threshold '$prescreen_threshold'
+            --identity-threshold '$identity_threshold'
+            --translated-subject-coverage-threshold '$translated-subject-coverage-threshold'
+            --translated_query-coverage-threshold '$translated-query-coverage-threshold'
+            --translated-alignment '$translated_alignment'
+            --xipe '$xipe'
+            --minpath '$minpath'
+            --pick-frames '$pick_frames'
+            --gap-fill '$gap_fill'
 
-            -o "output"
-            --output-format $output_format
-            --output-max-decimals $output_max_dec
-            --output-basename "humann2"
+            --output-format '$output_format'
+            --output-max-decimals '$output_max_dec'
+            --output-basename 'humann2'
             $remove_statified_output
+            $remove_column_description_output
+
+
+            --pathways '$pathways'
+            
+            
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="fastq,fasta,sam,bam,biom"
-            label="Input sequence file" help=""/>
+        <param argument="--input" type="data" format="fastq,fasta,sam,bam,biom" label="Input sequence file" help=""/>
+
+        <param name='bypass_prescreen' argument='--bypass-prescreen' type='boolean' checked="false" truevalue='--bypass-prescreen' falsevalue='' label="Bypass the prescreen step and run on the full ChocoPhlAn database?"/>
+        <param name='bypass_nucleotide_index' argument='--bypass-nucleotide-index' type='boolean' checked="false" truevalue='--bypass-nucleotide-index' falsevalue='' label="Bypass the nucleotide index step and run on the indexed ChocoPhlAn database?"/>
+        <param name='bypass_translated_search' argument='--bypass-translated-search' type='boolean' checked="false" truevalue='--bypass-translated-search' falsevalue='' label="Bypass the translated search step?"/>
+        <param name='bypass_nucleotide_search' argument='--bypass-nucleotide-search' type='boolean' checked="false" truevalue='--bypass-translated-search' falsevalue='' label="Bypass the nucleotide search steps?"/>
+
+        <conditional name="nucleotide_db">
+            <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history (as collection)</option>
+            </param>
+
+            <when value="cached"/>
+            <when value="history">
+                <param format="fasta" name="nucleotide_database" argument="--nucleotide-database" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must be named: ^[g__].[s__]"/>
+            </when>
+        </conditional>
+
+        <param name="annotation_gene_index" argument="--annotation-gene-index" type="integer" value="8" label="Index of the gene in the sequence annotation"/>
+
+        <conditional name="protein_db">
+            <param name="protein_db_selector" type="select" label="Protein database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
+                <option value="cached" selected="true">Locally cached</option>
+                <option value="history">From history</option>
+            </param>
+
+            <when value="cached"/>
+            <when value="history">
+                <param name="protein_database" argument="--protein-database" type="data" format="fasta" label="Protein database from history"/>
+            </when>
+        </conditional>
+
+        <param argument="--evalue" type="float" value="1" label="E-value threshold to use with the translated search"/>
+        <param name="search_mode" argument="--search-mode" type="select" label="Search for uniref50 or uniref90 gene families?">
+            <option value="uniref50" selected="true">uniref50</option>
+            <option value="uniref90">uniref90</option>
+        </param>
+        <param name="prescreen_threshold" argument="--prescreen-threshold" type="float" value="0.01" label="Minimum percentage of reads matching a species"/>
+        <param name="identity_threshold" argument="--identity-threshold" type="float" value="50" label="Identity threshold for alignments"/>
+        <param name="translated_subject_coverage_threshold" argument="--translated-subject-coverage-threshold" type="float" value="50" label="Subject coverage threshold for translated alignments"/>
+        <param name="translated_query_coverage_threshold" argument="--translated-query-coverage-threshold" type="float" value="50" label="Subject coverage threshold for translated alignments"/>
 
         <conditional name="taxonomic_profile">
             <param name='taxonomic_profile_test' type='select' label="Use a custom taxonomic profile?" help="The file must have been created by MetaPhlan2">
@@ -111,7 +171,7 @@
                 <option value="false" selected="true">No</option>
             </param>
             <when value="true">
-                <param name="taxonomic_profile_file" type="data" format="tabular,txt" label="Taxonomic profile file" help=""/>
+                <param name="taxonomic_profile" argument="--taxonomic-profile" type="data" format="tabular,txt" label="Taxonomic profile file" help=""/>
             </when>
             <when value="false">
                 <conditional name="metaphlan2_db_choice">
@@ -133,50 +193,27 @@
             </when>
         </conditional>
 
-        <conditional name="nucleotide_db">
-            <param name="nucleotide_db_selector" type="select" label="Nucleotide database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
-                <option value="cached" selected="true">Locally cached</option>
-                <option value="history">From history (as collection)</option>
-            </param>
-
-            <when value="cached"/>
-            <when value="history">
-                <param format="fasta" name="history_nucleotide_db" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must be named: ^[g__].[s__]"/>
-            </when>
-        </conditional>
-
-        <conditional name="protein_db">
-            <param name="protein_db_selector" type="select" label="Protein database" help="For locally cached databases, you need first to execute the tool to download HUMAnN2 databases">
-                <option value="cached" selected="true">Locally cached</option>
-                <option value="history">From history</option>
-            </param>
-
-            <when value="cached"/>
-            <when value="history">
-                <param name="history_protein_db" type="data" format="fasta" label="Protein database from history" help=""/>
-            </when>
-        </conditional>
-
-        <param name="e_value" type="float" min="0" max="10" value="1" label="E-value threshold to use with the translated search" help="(--evalue)"/>
-        <param name="identity" type="integer" min="0" max="100" value="40" label="Identity threshold for alignments" help="(--identity-threshold)"/>
-        <param name="prescreen" type="float" min="0" max="1" value="0.01" label="Minimum percentage of reads matching a species" help="(--prescreen-threshold)"/>
+        <param name="id-mapping" argument="--id-mapping" type="data" format="tsv" label="id mapping file for alignments" optional="True"/>
+        <param name='translated_alignment' argument="--translated-alignment" type="select" label="Software to use for translated alignment" help="(--pathways)">
+            <option value="rapsearch" selected="true">Rapsearch</option>
+            <option value="diamond">Diamond</option>
+        </param>
+        <param argument='--xipe' type='boolean' checked="false" truevalue='on' falsevalue='off' label="Use xipe computation?"/>
+        <param argument='--minpath' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use minpath computation?"/>
+        <param name='pick_frames' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use pick frames computation?" argument="--pick-frames"/>
+        <param name='gap_fill' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use gap fill computation?" argument="--gap-fill"/>
+        <param name='output_format' type="select" label="Format of the output files" argument="--output-format">
+            <option value="tsv" selected="true">TSV</option>
+            <option value="biom">BIOM</option>
+        </param>
+        <param name="output_max_dec" type="integer" value="10" label="Number of decimals to output" argument="--output-max-decimals"/>
+        <param name='remove_statified_output' type='boolean' checked="false" truevalue='--remove-stratified-output' falsevalue='' label="Remove stratification from output?" argument="--remove-stratified-output"/>
+        <param name='remove_column_description_output' type='boolean' checked="false" truevalue='--remove-column-description-output' falsevalue='' label="Remove stratification from output?" argument="--remove-column-description-output"/>
 
         <param name='pathways' type="select" label="Database to use for pathway computations" help="(--pathways)">
             <option value="metacyc" selected="true">MetaCyc</option>
             <option value="unipathway">UniPathway</option>
         </param>
-
-        <param name='xipe' type='boolean' checked="false" truevalue='on' falsevalue='off' label="Use xipe computation?" help="(--xipe)"/>
-        <param name='minpath' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use minpath computation?" help="(--minpath)"/>
-        <param name='pick_frames' type='boolean' checked="true" truevalue='on' falsevalue='off' label="Use pick frames computation?" help="(--pick-frames)"/>
-
-        <param name='output_format' type="select" label="Format of the output files" help="(--output-format)">
-            <option value="tsv" selected="true">TSV</option>
-            <option value="biom">BIOM</option>
-        </param>
-
-        <param name="output_max_dec" type="integer" min="0" max="100" value="10" label="Number of decimals to output" help="(--output-max-decimals)"/>
-        <param name='remove_statified_output' type='boolean' checked="false" truevalue='--remove-stratified-output' falsevalue='' label="Remove stratification from output?" help="(--remove-stratified-output)"/>
     </inputs>
 
     <outputs>
@@ -204,27 +241,39 @@
 
     <tests>
         <test>
-            <param name="input_file" value="input_sequences.fasta"/>
-            <param name='taxonomic_profile_test' value="true"/>
-            <param name="taxonomic_profile_file" value="taxonomic_profile.tabular"/>
+            <param name="input" value="input_sequences.fasta"/>
+            <param name='bypass_prescreen' value=''/>
+            <param name='bypass_nucleotide_index' value=''/>
+            <param name='bypass_translated_search' value=''/>
+            <param name='bypass_nucleotide_search' value=''/>
             <param name="nucleotide_db_selector" value="history"/>
-            <param name="history_nucleotide_db">
+            <param name="nucleotide_database">
                 <collection type="list">
                     <element name="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1.ffn.gz" />
                     <element name="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1.ffn.gz" />
                 </collection>
             </param>
+            <param name="annotation_gene_index" value="8" />
             <param name="protein_db_selector" value="history"/>
-            <param name="history_protein_db" value="reduced_uniref50.fasta"/>
-            <param name="e_value" value="1"/>
-            <param name="identity" value="40"/>
-            <param name="prescreen" value="0.01"/>
-            <param name='pathways' value="metacyc"/>
-            <param name='xipe' value="false"/>
-            <param name='minpath' value="true"/>
-            <param name='pick_frames' value="true"/>
+            <param name="protein_database" value="reduced_uniref50.fasta"/>
+            <param name="--evalue" value="1"/>
+            <param name="search_mode" value="uniref50"/>
+            <param name="prescreen_threshold" value="0.01"/>
+            <param name="identity_threshold" value="50"/>
+            <param name="translated_subject_coverage_threshold" value="50"/>
+            <param name="translated_query_coverage_threshold" value="50"/>
+            <param name='taxonomic_profile_test' value="true"/>
+            <param name="taxonomic_profile" value="taxonomic_profile.tabular"/>
+            <param name='translated_alignment' value="diamond"/>
+            <param name='--xipe' value='off'/>
+            <param name='--minpath' value='on'/>
+            <param name='pick_frames' value='on'/>
+            <param name='gap_fill' value='off'/>
             <param name='output_format' value="tsv"/>
             <param name="output_max_dec" value="10"/>
+            <param name='remove_statified_output' value=''/>
+            <param name='remove_column_description_output' value=''/>
+            <param name='pathways' value="metacyc"/>
             <output name="gene_families_tsv" file="expected_gene_family_abundance.tsv"/>
             <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv"/>
             <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv"/>
