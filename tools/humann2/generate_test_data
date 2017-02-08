@@ -1,0 +1,29 @@
+#/usr/bin/env bash
+
+
+humann2 \
+    --input 'test-data/input_sequences.fasta' \
+    -o 'humann2_output' \
+    --annotation-gene-index 8 \
+    --taxonomic-profile 'test-data/taxonomic_profile.tabular' \
+    --metaphlan-options="-t rel_ab" \
+    --nucleotide-database 'test-data/' \
+    --protein-database 'test-data/' \
+    --evalue '1' \
+    --search-mode 'uniref50' \
+    --prescreen-threshold '0.01' \
+    --identity-threshold '50' \
+    --translated-subject-coverage-threshold '50' \
+    --translated-query-coverage-threshold '50' \
+    --translated-alignment 'diamond' \
+    --xipe 'off' \
+    --minpath 'on' \
+    --pick-frames 'on' \
+    --gap-fill 'off' \
+    --output-format 'tsv' \
+    --output-max-decimals '10' \
+    --output-basename 'humann2' \
+    --pathways 'metacyc'
+cp humann2_output/humann2_genefamilies.tsv test-data/xpected_gene_family_abundance.tsv
+cp humann2_output/humann2_pathabundance.tsv test-data/expected_pathway_abundance.tsv
+cp humann2_output/humann2_pathcoverage.tsv test-data/expected_pathway_coverage.tsv
