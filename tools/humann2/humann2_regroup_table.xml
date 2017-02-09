@@ -16,14 +16,14 @@
 
     <command><![CDATA[
         humann2_regroup_table
-            --input $input_table
-            -o $output_table
-            --function $function
+            --input '$input'
+            -o '$output_table'
+            --function '$function'
 
             #if $built_in.built_in_test == "true":
-                --groups $built_in.gene_family_groups.groups
+                --groups '$built_in.gene_family_groups.groups'
             #else:
-                --custom $built_in.custom
+                --custom '$built_in.custom'
                 $built_in.reversed
             #end if  
 
@@ -98,7 +98,7 @@
             <output name="output_table" file="regrouped_gene_families_to_infogo1000.tsv"/>
         </test>
         <test>
-            <param name="input_table" value="demo_genefamilies.tsv"/>
+            <param name="input" value="demo_genefamilies.tsv"/>
             <param name="function" value="mean"/>
             <param name="built_in_test" value="true"/>
             <param name="gene_family_type" value="uniref90"/>
@@ -108,8 +108,8 @@
             <output name="output_table" file="regrouped_gene_families_to_ko.tsv"/>
         </test>
         <test>
-            <param name="input_table" value="demo_genefamilies.tsv"/>
-            <param name="function" value="mean"/>
+            <param name="input" value="demo_genefamilies.tsv"/>
+            <param name="function" value="sum"/>
             <param name="built_in_test" value="true"/>
             <param name="gene_family_type" value="uniref90"/>
             <param name="groups" value="uniref90_rxn"/>
