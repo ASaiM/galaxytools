@@ -47,3 +47,17 @@ humann2_regroup_table \
     --groups 'uniref90_rxn' \
     --ungrouped 'Y' \
     --protected 'Y'
+
+humann2_renorm_table \
+    --input 'test-data/demo_pathabundance.tsv' \
+    -o 'test-data/cpm_community_renormalized_pathway_abundance.tsv' \
+    --units 'cpm' \
+    --mode 'community' \
+    --special 'n'
+
+humann2_renorm_table \
+    --input 'test-data/demo_pathabundance.tsv' \
+    -o 'test-data/relab_levelwise_renormalized_pathway_abundance.tsv' \
+    --units 'relab' \
+    --mode 'levelwise' \
+    --special 'y'
