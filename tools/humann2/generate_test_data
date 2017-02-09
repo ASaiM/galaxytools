@@ -73,3 +73,9 @@ humann2_merge_abundance_tables \
     --input-genes 'test-data/demo_genefamilies.tsv' \
     --input-pathways 'test-data/demo_pathabundance.tsv' \
     -o 'test-data/merged_gene_families_pathways_abundances.tsv' 
+
+humann2_reduce_table \
+    --input 'test-data/demo_genefamilies.tsv' \
+    -o 'test-data/max_reduced_gene_family_abundance.tsv' \
+    --function 'max' \
+    --sort-by 'name'
