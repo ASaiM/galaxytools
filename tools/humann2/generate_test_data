@@ -79,3 +79,8 @@ humann2_reduce_table \
     -o 'test-data/max_reduced_gene_family_abundance.tsv' \
     --function 'max' \
     --sort-by 'name'
+
+humann2_rename_table \
+    --input 'test-data/demo_genefamilies.tsv' \
+    -o 'test-data/renamed_genefamilies.tsv' \
+    --names 'metacyc-pwy'
