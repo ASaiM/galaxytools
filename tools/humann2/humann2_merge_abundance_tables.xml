@@ -17,31 +17,29 @@
     <command><![CDATA[
         humann2_merge_abundance_tables
 
-            --input-genes $input_gene
-            --input-pathways $input_pathway
+            --input-genes '$input_gene'
+            --input-pathways '$input_pathway'
 
             #if $gene_mapping_selection.gene_mapping_selection_test == "true":
-                --gene-mapping $gene_mapping
+                --gene-mapping '$gene_mapping'
             #end if 
 
             #if $pathway_mapping_selection.pathway_mapping_selection_test == "true":
-                --pathway-mapping $pathway-mapping
+                --pathway-mapping '$pathway-mapping'
             #end if 
 
             $remove_taxonomy
                                   
-            -o $output_table
+            -o '$output_table'
     ]]></command>
 
     <inputs>
-        <param name="input_gene" type="data" format="tsv" label="Gene family or EC abundance file" help="(--input-genes)"/>
-
-        <param name="input_pathway" type="data" format="tsv" label="Pathway abundance file" help="(--input-pathways)"/>
-
+        <param name="input_gene" type="data" format="tsv" label="Gene family or EC abundance file" argument="--input-genes"/>
+        <param name="input_pathway" type="data" format="tsv" label="Pathway abundance file" argument="--input-pathways"/>
         <conditional name="gene_mapping_selection">
             <param name='gene_mapping_selection_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Use a gene mapping file?" help=""/>
                 <when value="true">
-                    <param name="gene_mapping" type="data" format="tsv" label="Gene family to reaction mapping file" help="(--gene-mapping)"/>
+                    <param name="gene_mapping" type="data" format="tsv" label="Gene family to reaction mapping file" argument="--gene-mapping"/>
                 </when>
                 <when value="false">
                 </when>
@@ -49,13 +47,12 @@
         <conditional name="pathway_mapping_selection">
             <param name='pathway_mapping_selection_test' type='boolean' checked="false" truevalue='true' falsevalue='false' label="Use a pathway mapping file?" help=""/>
                 <when value="true">
-                    <param name="pathway_mapping" type="data" format="tsv" label="Reaction to pathway mapping file" help="(--pathway-mapping)"/>
+                    <param name="pathway_mapping" type="data" format="tsv" label="Reaction to pathway mapping file" argument="--pathway-mapping"/>
                 </when>
                 <when value="false">
                 </when>
         </conditional>
-
-        <param name='remove_taxonomy' type='boolean' checked="false" truevalue='--remove-taxonomy' falsevalue='' label="Remove the taxonomy from the output file?" help="(--remove-taxonomy)"/>
+        <param name='remove_taxonomy' type='boolean' checked="false" truevalue='--remove-taxonomy' falsevalue='' label="Remove the taxonomy from the output file?" argument="--remove-taxonomy"/>
     </inputs>
 
     <outputs>
