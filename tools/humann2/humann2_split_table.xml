@@ -16,12 +16,28 @@
 
     <command><![CDATA[
         humann2_split_table
-            -i $input_file
-            -o "output"
+            --input '$input'
+            -o 'output'
+            #if $taxonomy_index
+                --taxonomy_index $taxonomy_index
+            #end if
+            #if $taxonomy_level
+                --taxonomy_level $taxonomy_level
+            #end if
     ]]></command>
 
     <inputs>
-        <param name="input_file" type="data" format="tsv,biom" label="Table to split into multiple tables" help="(-i)"/>
+        <param argument="--input" type="data" format="tsv,biom" label="Gene table to split"/>
+        <param argument="--taxonomy_index" type="text" label="Index of the gene in the taxonomy data" optional="true"/>
+        <param argument="--taxonomy_level" type="select" label="Level of taxonomy for the output" optional="true" help="if input is from picrust metagenome_contributions.py">
+            <option value="Kingdom">Kingdom</option>
+            <option value="Phylum">Phylum</option>
+            <option value="Class">Class</option>
+            <option value="Order">Order</option>
+            <option value="Family">Family</option>
+            <option value="Genus">Genus</option>
+            <option value="Species">Species</option>
+        </param>
     </inputs>
 
     <outputs>
@@ -45,7 +61,7 @@
 
 HUMAnN is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. `Read more about the tool <http://huttenhower.sph.harvard.edu/humann2/manual>`_.
 
-Split HUMAnN2 table is a tool to split a table with multiple columns. This file can have been generated with the join table tool.
+Split HUMAnN2 table is a tool to split a gene table with multiple columns. This file can have been generated with the join table tool.
     ]]></help>
 
     <expand macro="citations"/>
