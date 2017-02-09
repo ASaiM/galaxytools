@@ -24,7 +24,7 @@
 
     <inputs>
         <param argument="--input" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
-        <param arugment="--function" type="select" label="Function to apply">
+        <param argument="--function" type="select" label="Function to apply">
             <option value="max" selected="true">Max</option>
             <option value="sum">Sum</option>
             <option value="mean">Mean</option>
