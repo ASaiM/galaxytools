@@ -1,6 +1,5 @@
 #/usr/bin/env bash
 
-
 humann2 \
     --input 'test-data/input_sequences.fasta' \
     -o 'humann2_output' \
@@ -24,6 +23,27 @@ humann2 \
     --output-max-decimals '10' \
     --output-basename 'humann2' \
     --pathways 'metacyc'
-cp humann2_output/humann2_genefamilies.tsv test-data/xpected_gene_family_abundance.tsv
-cp humann2_output/humann2_pathabundance.tsv test-data/expected_pathway_abundance.tsv
-cp humann2_output/humann2_pathcoverage.tsv test-data/expected_pathway_coverage.tsv
+
+humann2_regroup_table \
+    --input 'test-data/demo_genefamilies.tsv' \
+    -o 'test-data/regrouped_gene_families_to_infogo1000.tsv' \
+    --function 'sum' \
+    --groups 'uniref90_infogo1000' \
+    --ungrouped 'Y' \
+    --protected 'Y'
+
+humann2_regroup_table \
+    --input 'test-data/demo_genefamilies.tsv' \
+    -o 'test-data/regrouped_gene_families_to_ko.tsv' \
+    --function 'mean' \
+    --groups 'uniref90_ko' \
+    --ungrouped 'Y' \
+    --protected 'Y'
+
+humann2_regroup_table \
+    --input 'test-data/demo_genefamilies.tsv' \
+    -o 'test-data/regrouped_gene_families_to_rxn.tsv' \
+    --function 'sum' \
+    --groups 'uniref90_rxn' \
+    --ungrouped 'Y' \
+    --protected 'Y'
