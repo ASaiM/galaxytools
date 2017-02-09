@@ -3,7 +3,7 @@
     <xml name="requirements">
         <requirements>
             <requirement type="package" version="0.9.9">humann2</requirement>
-            </yield>
+            <yield/>
         </requirements>
     </xml>
     <xml name="stdio">

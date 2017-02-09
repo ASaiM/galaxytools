@@ -8,7 +8,7 @@
     <expand macro="requirements">
         <requirement type="package" version="2.2.5">bowtie2</requirement>
         <requirement type="package" version="2.5.0">metaphlan2</requirement>
-        <requirement type="package" version="0.7.10">diamond</requirement>
+        <requirement type="package" version="0.8.24">diamond</requirement>
         <requirement type="package" version="2.24">rapsearch</requirement>
     </expand>
     <expand macro="stdio"/>
@@ -18,19 +18,15 @@
 
     <command><![CDATA[
         mkdir nucleotide_db
-
         &&
 
         #if $nucleotide_db.nucleotide_db_selector == "history"
             #for $file in $nucleotide_db.nucleotide_database:
-                cp '$file' 'nucleotide_db/$file.name'
+                cp '$file' 'nucleotide_db/$file.name' &&
             #end for
-
-            &&
         #end if
 
         mkdir protein_db
-
         &&
 
         #if $protein_db.protein_db_selector == "history"
@@ -40,11 +36,11 @@
              &&
         #end if
 
-        #if $taxonomic_profile.taxonomic_profile_test == "false"
-          #if $taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_selector == "history"
+        #if $taxo_profile.taxonomic_profile_test == "false"
+          #if $taxo_profile.metaphlan2_db_choice.metaphlan2_db_selector == "history"
               mkdir ref_db
               &&
-              bowtie2-build '$taxonomic_profile.metaphlan2_db_choice.metaphlan2_db_sequences ref_db/ref_db'
+              bowtie2-build '$taxo_profile.metaphlan2_db_choice.metaphlan2_db_sequences ref_db/ref_db'
               &&
               python '$__tool_directory__/transform_json_to_pkl.py'
                   --json_input '$metaphlan2_db_metadata'
@@ -98,11 +94,12 @@
 
             --evalue '$evalue'
             --search-mode '$search_mode'
-            --threads '\${GALAXY_SLOTS:-4}'
-            --prescreen-threshold '$prescreen_threshold'
+            --threads \${GALAXY_SLOTS:-4}
+            --memory-use minimum
+	    --prescreen-threshold '$prescreen_threshold'
             --identity-threshold '$identity_threshold'
-            --translated-subject-coverage-threshold '$translated-subject-coverage-threshold'
-            --translated_query-coverage-threshold '$translated-query-coverage-threshold'
+            --translated-subject-coverage-threshold '$translated_subject_coverage_threshold'
+            --translated-query-coverage-threshold '$translated_query_coverage_threshold'
             --translated-alignment '$translated_alignment'
             --xipe '$xipe'
             --minpath '$minpath'
@@ -165,7 +162,7 @@
         <param name="translated_subject_coverage_threshold" argument="--translated-subject-coverage-threshold" type="float" value="50" label="Subject coverage threshold for translated alignments"/>
         <param name="translated_query_coverage_threshold" argument="--translated-query-coverage-threshold" type="float" value="50" label="Subject coverage threshold for translated alignments"/>
 
-        <conditional name="taxonomic_profile">
+        <conditional name="taxo_profile">
             <param name='taxonomic_profile_test' type='select' label="Use a custom taxonomic profile?" help="The file must have been created by MetaPhlan2">
                 <option value="true">Yes</option>
                 <option value="false" selected="true">No</option>
@@ -193,7 +190,7 @@
             </when>
         </conditional>
 
-        <param name="id-mapping" argument="--id-mapping" type="data" format="tsv" label="id mapping file for alignments" optional="True"/>
+        <param name="id_mapping" argument="--id-mapping" type="data" format="tsv" label="id mapping file for alignments" optional="True"/>
         <param name='translated_alignment' argument="--translated-alignment" type="select" label="Software to use for translated alignment" help="(--pathways)">
             <option value="rapsearch" selected="true">Rapsearch</option>
             <option value="diamond">Diamond</option>
@@ -256,7 +253,7 @@
             <param name="annotation_gene_index" value="8" />
             <param name="protein_db_selector" value="history"/>
             <param name="protein_database" value="reduced_uniref50.fasta"/>
-            <param name="--evalue" value="1"/>
+            <param name="evalue" value="1"/>
             <param name="search_mode" value="uniref50"/>
             <param name="prescreen_threshold" value="0.01"/>
             <param name="identity_threshold" value="50"/>
@@ -265,8 +262,8 @@
             <param name='taxonomic_profile_test' value="true"/>
             <param name="taxonomic_profile" value="taxonomic_profile.tabular"/>
             <param name='translated_alignment' value="diamond"/>
-            <param name='--xipe' value='off'/>
-            <param name='--minpath' value='on'/>
+            <param name='xipe' value='off'/>
+            <param name='minpath' value='on'/>
             <param name='pick_frames' value='on'/>
             <param name='gap_fill' value='off'/>
             <param name='output_format' value="tsv"/>
@@ -274,7 +271,12 @@
             <param name='remove_statified_output' value=''/>
             <param name='remove_column_description_output' value=''/>
             <param name='pathways' value="metacyc"/>
-            <output name="gene_families_tsv" file="expected_gene_family_abundance.tsv"/>
+            <output name="gene_families_tsv">
+		<assert_contents>
+                    <has_text text="UniRef50_R5IH84|g__Bacteroides.s__Bacteroides_stercoris" />
+		    <has_text text="UniRef50_R5RH80: TPR-repeat-containing protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UniRef50_A0A016I611: Prophage LambdaSa1, N-acetylmuramoyl-L-alanine amidase, family 4|g__Bacteroides.s__Bacteroides_stercoris"/>
+                </assert_contents>
             <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv"/>
             <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv"/>
         </test>
