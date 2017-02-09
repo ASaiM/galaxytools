@@ -272,13 +272,24 @@
             <param name='remove_column_description_output' value=''/>
             <param name='pathways' value="metacyc"/>
             <output name="gene_families_tsv">
-		<assert_contents>
+                <assert_contents>
                     <has_text text="UniRef50_R5IH84|g__Bacteroides.s__Bacteroides_stercoris" />
-		    <has_text text="UniRef50_R5RH80: TPR-repeat-containing protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UniRef50_R5RH80: TPR-repeat-containing protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
                     <has_text text="UniRef50_A0A016I611: Prophage LambdaSa1, N-acetylmuramoyl-L-alanine amidase, family 4|g__Bacteroides.s__Bacteroides_stercoris"/>
                 </assert_contents>
-            <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv"/>
-            <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv"/>
+            </output>
+            <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv">
+                <assert_contents>
+                    <has_text text="UNMAPPED" />
+                    <has_text text="UNINTEGRATED" />
+                </assert_contents>
+            </output>
+            <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv">
+                <assert_contents>
+                    <has_text text="UNMAPPED" />
+                    <has_text text="UNINTEGRATED" />
+                </assert_contents>
+            </output>
         </test>
     </tests>
 
