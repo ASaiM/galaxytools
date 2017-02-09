@@ -84,3 +84,10 @@ humann2_rename_table \
     --input 'test-data/demo_genefamilies.tsv' \
     -o 'test-data/renamed_genefamilies.tsv' \
     --names 'metacyc-pwy'
+
+mkdir split_table_tmp_dir
+humann2_split_table \
+    --input 'test-data/joined_pathway_coverage_abundance.tsv' \
+    -o 'split_table_tmp_dir'
+cp 'split_table_tmp_dir/demo_Abundance.tsv' 'test-data/'
+cp 'split_table_tmp_dir/demo_Coverage.tsv' 'test-data/'

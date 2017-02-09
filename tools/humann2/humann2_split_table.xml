@@ -19,10 +19,10 @@
             --input '$input'
             -o 'output'
             #if $taxonomy_index
-                --taxonomy_index $taxonomy_index
+                --taxonomy_index '$taxonomy_index'
             #end if
             #if $taxonomy_level
-                --taxonomy_level $taxonomy_level
+                --taxonomy_level '$taxonomy_level'
             #end if
     ]]></command>
 
@@ -48,10 +48,10 @@
 
     <tests>
         <test>
-            <param name="input_file" value="joined_pathway_coverage_abundance.tsv"/>
+            <param name="input" value="joined_pathway_coverage_abundance.tsv"/>
             <output_collection name="split_tables" type="list" >
-                <element name="humann2_Abundance" file="split_joined_table_abundances.tsv" />
-                <element name="humann2_Coverage" file="split_joined_table_coverage.tsv" />
+                <element name="demo_Coverage" file="demo_Coverage.tsv" />
+                <element name="demo_Abundance" file="demo_Abundance.tsv" />
             </output_collection>
         </test>
     </tests>
