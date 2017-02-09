@@ -16,30 +16,32 @@
 
     <command><![CDATA[
         humann2_rename_table
-            -i $input_table
-            -o $output_table
-
-            --names $names
+            -i '$input_table'
+            -o '$output_table'
+            --names '$names'
             $simplify 
-
-            -c $mapping_file
+            -c '$custom'
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
+        <param argument="--input" type="data" format="tsv" label="Gene/pathway table"/>
 
-        <param name="names" type="select" label="Table features that can be renamed" help="(--names)">
+        <param argument="--names" type="select" label="Table features that can be renamed">
             <option value="metacyc-rxn" selected="true">MetaCyc reactions</option>
             <option value="metacyc-pwy">MetaCyc pathways</option>
-            <option value="ko">KEGG Orthogroups (KO)</option>
+            <option value="infogo1000">InfoGO1000</option>
+            <option value="uniref90">UniRef90</option>
+            <option value="kegg-module">KEGG Module</option>
             <option value="ec">Enzyme commision (EC)</option>
-            <option value="uniref50">UniRef50 gene families</option>
+            <option value="go">Gene Ontology (GO)</option>
+            <option value="pfam">PFAM</option>
+            <option value="eggnog">eggNOG</option>
+            <option value="uniref50">UniRef50</option>
+            <option value="kegg-pathway">KEGG Pathway</option>
+            <option value="kegg-orthology">KEGG Orthology</option>
         </param>
-
-        <param name='simplify' type='boolean' checked="false" truevalue='-s' falsevalue='' label="Remove non-alphanumeric characters from names?" help="(--simplify)"/>
-
-        <param name="mapping_file" type="data" format="tsv" label="Mapping file" help="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value (--custom)"/>
-       
+        <param argument='--simplify' type='boolean' checked="false" truevalue='-s' falsevalue='' label="Remove non-alphanumeric characters from names?"/>
+        <param argument="--custom" type="data" format="tsv" label="Mapping file" help="The mapping file must be tabular format file with two tab-separated columns. The first column must contain the value you want to modify and the second contain the new value"/>
     </inputs>
 
     <outputs>
@@ -48,10 +50,10 @@
 
     <tests>
         <test>
-            <param name="input_table" value="expected_pathway_abundance.tsv"/>
+            <param name="input" value="expected_pathway_abundance.tsv"/>
             <param name="names" value="metacyc-pwy" />
             <param name='simplify' value=""/>
-            <param name="mapping_file" value="pathway_rename_mapping.tsv"/>
+            <param name="custom" value="pathway_rename_mapping.tsv"/>
             <output name="output_table" file="renamed_metacyc_pathways.tsv" />
         </test>
     </tests>
