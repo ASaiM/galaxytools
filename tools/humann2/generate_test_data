@@ -61,3 +61,11 @@ humann2_renorm_table \
     --units 'relab' \
     --mode 'levelwise' \
     --special 'y'
+
+mkdir join_table_tmp_dir
+cp 'test-data/demo_pathabundance.tsv' join_table_tmp_dir
+cp 'test-data/demo_pathcoverage.tsv' join_table_tmp_dir
+humann2_join_tables \
+    -i 'join_table_tmp_dir' \
+    -o 'test-data/joined_pathway_coverage_abundance.tsv'
+ 
