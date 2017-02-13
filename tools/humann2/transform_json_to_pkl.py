@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import json
 import bz2
+import json
 import cPickle as pickle
 
 
