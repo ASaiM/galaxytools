@@ -1,13 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import sys
 import os
 import argparse
 import copy
 import operator
 
+
 FASTA_FILE_LAST_POS = None
+
 
 #################
 # Parse methods #
@@ -18,45 +19,48 @@ def text_end_of_file(row):
     else:
         return False
 
-def get_new_line(input_file, generate_error = True):
+
+def get_new_line(input_file, generate_error=True):
     row = input_file.readline()
     if text_end_of_file(row):
-        if generate_error :
+        if generate_error:
             string = os.path.basename(__file__) + ': '
             string += ' unexpected end of file'
             raise ValueError(string)
-        else :
+        else:
             return None
     else:
         return row[:-1]
 
+
 def next_fasta_record(input_file):
     global FASTA_FILE_LAST_POS
-    if FASTA_FILE_LAST_POS != None:
+    if FASTA_FILE_LAST_POS is not None:
         input_file.seek(FASTA_FILE_LAST_POS)
     else:
         FASTA_FILE_LAST_POS = input_file.tell()
 
-    id_line = get_new_line(input_file, generate_error = False)
-    if id_line == None:
+    id_line = get_new_line(input_file, generate_error=False)
+    if id_line is None:
         return None
     split_line = id_line[1:].split(' ')
     seq_id = split_line[0]
     description = id_line[1:]
-    new_line = get_new_line(input_file, generate_error = False)
+    new_line = get_new_line(input_file, generate_error=False)
     seq = ''
-    while new_line != None:
-        if new_line[0] != '>':        
+    while new_line is not None:
+        if new_line[0] != '>':
             seq += new_line
             FASTA_FILE_LAST_POS = input_file.tell()
-            new_line = get_new_line(input_file, generate_error = False)
+            new_line = get_new_line(input_file, generate_error=False)
         else:
             new_line = None
     return SeqRecord(seq_id, seq, description)
 
+
 def next_fastq_record(input_file):
-    id_line = get_new_line(input_file, generate_error = False)
-    if id_line == None:
+    id_line = get_new_line(input_file, generate_error=False)
+    if id_line is None:
         return None
     if id_line[0] != '@':
         string = os.path.basename(__file__) + ': '
@@ -66,9 +70,10 @@ def next_fastq_record(input_file):
     seq_id = split_line[0]
     description = ' '.join(split_line[1:])
     seq = get_new_line(input_file)
-    spacer = get_new_line(input_file)
+    get_new_line(input_file)
     quals = get_new_line(input_file)
     return SeqRecord(seq_id, seq, description, quals)
+
 
 def next_record(input_file, file_format):
     if file_format == 'fasta':
@@ -80,15 +85,18 @@ def next_record(input_file, file_format):
         string += file_format + ' is not managed'
         raise ValueError(string)
 
+
 def write_fasta_record(record, output_sequence_file):
-    output_sequence_file.write('>' + record.get_id() + ' ' + 
-        record.get_description() + '\n')
+    string = '>' + record.get_id() + ' ' + record.get_description() + '\n'
+    output_sequence_file.write(string)
     seq = record.get_sequence()
-    split_seq = [seq[i:i+60] for i in xrange(0,len(seq),60)]
+    split_seq = [seq[i:i+60] for i in range(0, len(seq), 60)]
     for split in split_seq:
         output_sequence_file.write(split + '\n')
 
-def format_qual_value(qual_score, sliding_value, authorized_range, qual_format):
+
+def format_qual_value(qual_score, sliding_value, authorized_range,
+                      qual_format):
     ascii_value = ord(qual_score)
     score = ascii_value-sliding_value
     if score < authorized_range[0] or score > authorized_range[1]:
@@ -98,40 +106,43 @@ def format_qual_value(qual_score, sliding_value, authorized_range, qual_format):
         raise ValueError(string)
     return score
 
+
 def format_qual_string(qual_string, qual_format):
     if qual_format == 'sanger':
-        return format_qual_value(qual_string, 33 ,[0,40], qual_format)
+        return format_qual_value(qual_string, 33, [0, 40], qual_format)
     elif qual_format == "solexa":
-        return format_qual_value(qual_string, 64 ,[-5,40], qual_format)
+        return format_qual_value(qual_string, 64, [-5, 40], qual_format)
     elif qual_format == "illumina_1_3":
-        return format_qual_value(qual_string, 33 ,[0,40], qual_format)
+        return format_qual_value(qual_string, 33, [0, 40], qual_format)
     elif qual_format == "illumina_1_5":
-        return format_qual_value(qual_string, 33 ,[3,40], qual_format)
+        return format_qual_value(qual_string, 33, [3, 40], qual_format)
     elif qual_format == "illumina_1_8":
-        return format_qual_value(qual_string, 33 ,[0,41], qual_format)
+        return format_qual_value(qual_string, 33, [0, 41], qual_format)
     else:
         string = os.path.basename(__file__) + ': quality format ('
         string += qual_format + ') is not managed'
-        raise ValueError(string) 
+        raise ValueError(string)
 
-def write_qual_record(record, output_qual_file, qual_format):
-    output_qual_file.write('>' + record.get_id() + ' ' + 
-        record.get_description() + '\n')
+
+def write_qual_record(record, output_qual_file, qual_for):
+    string = '>' + record.get_id() + ' ' + record.get_description() + '\n'
     qual = record.get_quality()
-    qual = [str(format_qual_string(qual_str,qual_format)) for qual_str in qual]
-    split_seq = [qual[i:i+60] for i in xrange(0,len(qual),60)]
+    qual = [str(format_qual_string(qual_str, qual_for)) for qual_str in qual]
+    split_seq = [qual[i:i+60] for i in range(0, len(qual), 60)]
     for split in split_seq:
-        output_qual_file.write(' '.join(split) + '\n')
+        string += ' '.join(split) + '\n'
+    output_qual_file.write(string)
+
 
 def write_fastq_record(record, output_sequence_file):
-    output_sequence_file.write('@' + record.get_id() + ' ' + 
-        record.get_description() + '\n')
-    output_sequence_file.write(record.get_sequence() + '\n')
-    output_sequence_file.write('+\n')
-    output_sequence_file.write(record.get_quality() + '\n')
+    string = '@' + record.get_id() + ' ' + record.get_description() + '\n'
+    string += record.get_sequence() + '\n' + '+\n'
+    string += record.get_quality() + '\n'
+    output_sequence_file.write(string)
 
-def write_information(record, output_file_formats, output_sequence_file, 
-    output_qual_file, qual_format):
+
+def write_information(record, output_file_formats, output_sequence_file,
+                      output_qual_file, qual_format):
     if "fasta" in output_file_formats:
         write_fasta_record(record, output_sequence_file)
     if "qual" in output_file_formats:
@@ -139,7 +150,8 @@ def write_information(record, output_file_formats, output_sequence_file,
     if "fastq" in output_file_formats:
         write_fastq_record(record, output_sequence_file)
 
-def fast_test_element_in_list(element,list_to_test):
+
+def fast_test_element_in_list(element, list_to_test):
     to_continue = True
     i = 0
     while to_continue:
@@ -175,12 +187,13 @@ extractable_information = {
     'description': str
 }
 
+
 ###########
 # Classes #
 ###########
 class SeqRecord:
 
-    def __init__(self, seq_id, sequence, description, quality = ""):
+    def __init__(self, seq_id, sequence, description, quality=""):
         self.id = seq_id
         self.sequence = sequence
         self.quality = quality
@@ -216,7 +229,7 @@ class SeqRecord:
             raise ValueError(string)
 
     # Other functions
-    def extract_information(self,to_extract):
+    def extract_information(self, to_extract):
         extracted_info = []
         for info_to_extract in to_extract:
             extracted_info.append(self.get(info_to_extract))
@@ -230,6 +243,7 @@ class SeqRecord:
                 to_conserve &= constraint.test_constraint(record_value)
         return to_conserve
 
+
 class Records:
 
     def __init__(self, input_filepath, file_format, constraints):
@@ -239,13 +253,13 @@ class Records:
             to_continue = True
             while to_continue:
                 record = next_record(input_file, file_format)
-                if record != None:
+                if record is not None:
                     self.records.append(record)
                     to_conserve = record.test_conservation(constraints)
                     if to_conserve:
                         self.conserved_records.append(copy.copy(record))
                 else:
-                    to_continue = False           
+                    to_continue = False
 
     # Getters
     def get_records(self):
@@ -261,11 +275,10 @@ class Records:
         return len(self.conserved_records)
 
     # Other functions
-    def save_conserved_records(self,args):
+    def save_conserved_records(self, args):
         if args.custom_extraction_type == 'True':
             to_extract = args.to_extract[1:-1].split(',')
             with open(args.output_information, 'w') as output_information_file:
-                #output_information_file.write('\t'.join(to_extract) + '\n')
                 for record in self.conserved_records:
                     extracted_info = record.extract_information(to_extract)
                     string_info = [str(info) for info in extracted_info]
@@ -277,26 +290,31 @@ class Records:
                 output_file_formats = ['fasta']
             elif args.format == 'fastq':
                 if args.split == 'True':
-                    output_file_formats = ['fasta','qual']
+                    output_file_formats = ['fasta', 'qual']
                     qual_format = args.quality_format
                 else:
                     output_file_formats = ['fastq']
 
-            with open(args.output_sequence,'w') as output_sequence_file: 
+            with open(args.output_sequence, 'w') as output_sequence_file:
                 if "qual" in output_file_formats:
                     output_qual_file = open(args.output_quality, 'w')
                 else:
                     output_qual_file = None
                 for record in self.conserved_records:
-                    write_information(record, output_file_formats,
-                        output_sequence_file, output_qual_file, qual_format)
+                    write_information(
+                        record,
+                        output_file_formats,
+                        output_sequence_file,
+                        output_qual_file,
+                        qual_format)
                 if "qual" in output_file_formats:
                     output_qual_file.close()
+
 
 class Constraint:
 
     def __init__(self, constraint_type, value, constrained_information):
-        if not constraints.has_key(constraint_type):
+        if constraint_type not in constraints:
             string = os.path.basename(__file__) + ': '
             string += constraint_type + ' is not a correct type of constraint'
             raise ValueError(string)
@@ -326,14 +344,18 @@ class Constraint:
     def test_constraint(self, similarity_info_value):
         to_conserve = True
         if self.raw_constraint_type == 'in':
-            to_conserve &= fast_test_element_in_list(similarity_info_value, 
+            to_conserve &= fast_test_element_in_list(
+                similarity_info_value,
                 self.values)
         elif self.raw_constraint_type == 'not_in':
-            to_conserve &= (not fast_test_element_in_list(similarity_info_value, 
-                self.values))
+            test = fast_test_element_in_list(
+                similarity_info_value,
+                self.values)
+            to_conserve &= (not test)
         else:
             to_conserve &= self.type(similarity_info_value, self.values[0])
-        return to_conserve    
+        return to_conserve
+
 
 ################
 # Misc methods #
@@ -344,17 +366,21 @@ def test_input_filepath(input_filepath, tool, file_format):
         string += input_filepath + ' does not exist'
         raise ValueError(string)
 
+
 def format_constraints(constraints):
     formatted_constraints = {}
-    if constraints != None:
+    if constraints is not None:
         for constr in constraints:
             split_constraint = constr.split(': ')
             constrained_information = split_constraint[0]
-            constraint = Constraint(split_constraint[1], split_constraint[2], 
+            constraint = Constraint(
+                split_constraint[1],
+                split_constraint[2],
                 constrained_information)
-            formatted_constraints.setdefault(constrained_information,[]).append(
-                constraint)
+            formatted_constraints.setdefault(constrained_information, [])
+            formatted_constraints[constrained_information].append(constraint)
     return formatted_constraints
+
 
 def convert_extract_sequence_file(args):
     input_filepath = args.input
@@ -364,34 +390,34 @@ def convert_extract_sequence_file(args):
 
     records = Records(input_filepath, file_format, formatted_constraints)
     records.save_conserved_records(args)
-    
+
     report_filepath = args.report
     with open(report_filepath, 'w') as report_file:
-
-        report_file.write('Information to extract:\n')
+        string = 'Information to extract:\n'
         if args.custom_extraction_type == 'True':
             for info in args.to_extract[1:-1].split(','):
-                report_file.write('\t' + info + '\n')
+                string += '\t' + info + '\n'
         else:
-            report_file.write('\tsequences\n')
+            string += '\tsequences\n'
 
-        if constraints != None:
-            report_file.write('Constraints on extraction:\n')
+        if constraints is not None:
+            string += 'Constraints on extraction:\n'
             for constrained_info in formatted_constraints:
-                report_file.write('\tInfo to constraint: ' + constrained_info 
-                    + '\n')
+                string += '\tInfo to constraint: ' + constrained_info + '\n'
                 for constraint in formatted_constraints[constrained_info]:
-                    report_file.write('\t\tType of constraint: ' + 
-                        constraint.get_raw_constraint_type()
-                        + '\n')
-                    report_file.write('\t\tValues:\n')
+                    string += '\t\tType of constraint: '
+                    string += constraint.get_raw_constraint_type()
+                    string += '\n'
+                    report_file.write()
+                    string += '\t\tValues:\n'
                     values = constraint.get_values()
                     for value in values:
-                        report_file.write('\t\t\t' + str(value) + '\n')
-        report_file.write('Number of similarity records: ' + 
-            str(records.get_record_nb()) + '\n')
-        report_file.write('Number of extracted similarity records: ' +
-            str(records.get_conserved_record_nb()) + '\n')
+                        string += '\t\t\t' + str(value) + '\n'
+        string += 'Number of similarity records: '
+        string += str(records.get_record_nb()) + '\n'
+        string += 'Number of extracted similarity records: '
+        string += str(records.get_conserved_record_nb()) + '\n'
+        report_file.write(string)
 
 ########
 # Main #
