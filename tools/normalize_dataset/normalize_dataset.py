@@ -66,6 +66,7 @@ def normalize_dataset(args):
                         sep = '\t'
                     output_file.write(string + '\n')
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', required=True)

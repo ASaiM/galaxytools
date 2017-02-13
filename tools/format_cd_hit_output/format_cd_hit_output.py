@@ -150,6 +150,7 @@ def format_cd_hit_outputs(args):
     if args.input_representative_sequences is not None:
         rename_representative_sequences(args, ref_seq_cluster)
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_cluster_info', required=True)

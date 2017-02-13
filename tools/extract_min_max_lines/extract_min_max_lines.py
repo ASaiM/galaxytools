@@ -51,6 +51,7 @@ def extract_min_max_lines(args):
         for line in conserved_lines:
             output_file.write('\t'.join(line) + "\n")
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', required=True)

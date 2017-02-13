@@ -82,6 +82,7 @@ def format_metaphlan2_output(args):
     for taxo_level_file in taxo_levels_abund_files:
         taxo_levels_abund_files[taxo_level_file].close()
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--metaphlan2_output', required=True)

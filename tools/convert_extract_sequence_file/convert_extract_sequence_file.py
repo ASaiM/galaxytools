@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import os
 import argparse
+import os
 import copy
 import operator
 
@@ -166,6 +166,7 @@ def fast_test_element_in_list(element, list_to_test):
             found = True
 
     return found
+
 
 #########################
 # Constraint definition #
@@ -418,6 +419,7 @@ def convert_extract_sequence_file(args):
         string += 'Number of extracted similarity records: '
         string += str(records.get_conserved_record_nb()) + '\n'
         report_file.write(string)
+
 
 ########
 # Main #

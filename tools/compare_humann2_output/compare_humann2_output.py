@@ -132,6 +132,7 @@ def compare_humann2_output(args):
         args.similar_output_file,
         args.specific_output_file)
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--sample_name', required=True, action='append')

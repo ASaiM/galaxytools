@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import cPickle as pickle
-import bz2
-import json
 import argparse
+import json
+import bz2
+import cPickle as pickle
 
 
 def transform_json_to_pkl(args):
@@ -19,6 +19,7 @@ def transform_json_to_pkl(args):
     pkl_output = bz2.BZ2File(args.pkl_output, 'w')
     pickle.dump(metadata, pkl_output, pickle.HIGHEST_PROTOCOL)
     pkl_output.close()
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

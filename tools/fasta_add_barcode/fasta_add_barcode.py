@@ -45,6 +45,7 @@ def fasta_add_barcode(args):
                 else:
                     seq += line[:-1]
 
+
 ########
 # Main #
 ########
