@@ -3,8 +3,8 @@
 
 import argparse
 import copy
-import os
 import operator
+import os
 
 
 FASTA_FILE_LAST_POS = None

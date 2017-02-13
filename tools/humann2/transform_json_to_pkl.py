@@ -3,8 +3,8 @@
 
 import argparse
 import bz2
-import json
 import cPickle as pickle
+import json
 
 
 def transform_json_to_pkl(args):
