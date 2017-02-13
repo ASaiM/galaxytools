@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
-import os
 import argparse
-import re
+
 
 def isfloat(value):
-  try:
-    float(value)
-    return True
-  except ValueError:
-    return False
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
 
 def normalize_dataset(args):
     with open(args.input_file, 'r') as input_file:
@@ -29,47 +28,55 @@ def normalize_dataset(args):
 
                     for col in split_line:
                         if isfloat(col):
-                            row_sum += float(col) 
+                            row_sum += float(col)
 
                     sep = ''
+                    string = ''
                     for col in split_line:
                         if isfloat(col):
+                            prop = float(col)/row_sum
                             if args.format == 'percentage':
-                                output_file.write(sep + str(100*float(col)/row_sum))
+                                string += sep + str(100*prop)
                             else:
-                                output_file.write(sep + str(float(col)/row_sum))
+                                string += sep + str(prop)
                         else:
-                            output_file.write(sep + col)
+                            string += sep + col
                         sep = '\t'
-                    output_file.write('\n')
+                    output_file.write(string + '\n')
 
                 elif args.normalization == 'column':
                     for i in range(len(split_line)):
                         if isfloat(split_line[i]):
-                            column_sum[i] += float(split_line[i]) 
+                            column_sum[i] += float(split_line[i])
 
             if args.normalization == 'column':
                 for line in input_file_content:
                     split_line = line[:-1].split('\t')
+                    string = ''
                     sep = ''
                     for i in range(len(split_line)):
                         if isfloat(split_line[i]):
+                            prop = float(split_line[i])/column_sum[i]
                             if args.format == 'percentage':
-                                output_file.write(sep + str(100*float(split_line[i])/column_sum[i]))
+                                string += sep + str(100*prop)
                             else:
-                                output_file.write(sep + str(float(split_line[i])/column_sum[i]))
+                                string += sep + str(prop)
                         else:
-                            output_file.write(sep + split_line[i])
+                            string += sep + split_line[i]
                         sep = '\t'
-                    output_file.write('\n')
+                    output_file.write(string + '\n')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', required=True)
     parser.add_argument('--output_file', required=True)
-    parser.add_argument('--normalization', required=True, 
-        choices= ['column','row'])
-    parser.add_argument('--format', required=True, 
-        choices= ['proportion','percentage'])
+    parser.add_argument(
+        '--normalization',
+        required=True,
+        choices=['column', 'row'])
+    parser.add_argument(
+        '--format',
+        required=True,
+        choices=['proportion', 'percentage'])
     args = parser.parse_args()
     normalize_dataset(args)
