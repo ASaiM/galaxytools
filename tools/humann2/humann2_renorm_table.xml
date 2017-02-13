@@ -16,7 +16,7 @@
 
     <command><![CDATA[
         humann2_renorm_table
-            --input '$input_table'
+            --input '$input'
             -o '$output_table'
             --units '$units'
             --mode '$mode'
@@ -42,14 +42,14 @@
 
     <tests>
         <test>
-            <param name="input_table" value="demo_pathabundance.tsv"/>
+            <param name="input" value="demo_pathabundance.tsv"/>
             <param name="units" value="cpm"/>
             <param name="mode" value="community"/>
             <param name="special" value="n"/>
             <output name="output_table" file="cpm_community_renormalized_pathway_abundance.tsv"/>
         </test>
         <test>
-            <param name="input_table" value="demo_pathabundance.tsv"/>
+            <param name="input" value="demo_pathabundance.tsv"/>
             <param name="units" value="relab"/>
             <param name="mode" value="levelwise"/>
             <param name="special" value="y"/>

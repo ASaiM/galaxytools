@@ -61,11 +61,11 @@
 
     <tests>
         <test>
-            <param name="input_gene" value="expected_gene_family_abundance.tsv"/>
-            <param name="input_pathway" value="expected_pathway_abundance.tsv"/>
+            <param name="input_gene" value="demo_genefamilies.tsv"/>
+            <param name="input_pathway" value="demo_pathabundance.tsv"/>
             <param name="gene_mapping_selection_test" value="false"/>
             <param name="pathway_mapping_selection" value="false"/>
-            <param name="remove_taxonomy" value="false"/>
+            <param name="remove_taxonomy" value=""/>
             <output name="output_table" file="merged_gene_families_pathways_abundances.tsv" /> 
         </test>
     </tests>

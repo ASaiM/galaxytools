@@ -23,7 +23,7 @@
     ]]></command>
 
     <inputs>
-        <param argument="--input" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
+        <param argument="--input" type="data" format="tsv" label="Gene/pathway table"/>
         <param argument="--function" type="select" label="Function to apply">
             <option value="max" selected="true">Max</option>
             <option value="sum">Sum</option>
@@ -43,7 +43,7 @@
 
     <tests>
         <test>
-            <param name="input" value="expected_gene_family_abundance.tsv"/>
+            <param name="input" value="demo_genefamilies.tsv"/>
             <param name="function" value="max"/>
             <param name="sort" value="name"/>
             <output name="output_table" file="max_reduced_gene_family_abundance.tsv"/>
