@@ -42,7 +42,14 @@
         <test>
             <param name="input_tables_0|input_table" value="demo_pathabundance.tsv"/>
             <param name="input_tables_1|input_table" value="demo_pathcoverage.tsv"/>
-            <output name="joined_table" file="joined_pathway_coverage_abundance.tsv"/>
+            <output name="joined_table">
+                <assert_content>
+                    <has_text text="PWY490-3: nitrate reduction VI (assimilatory)|unclassified" />
+                    <has_text text="PWY-1269: CMP-3-deoxy-D-manno-octulosonate biosynthesis I" />
+                    <has_text text="VALSYN-PWY: L-valine biosynthesis" />
+                    <has_text text="UNINTEGRATED|g__Bacteroides.s__Bacteroides_vulgatus" />
+                </assert_content>
+            </output>
         </test>
     </tests>
 
