@@ -1,5 +1,6 @@
 #/usr/bin/env bash
 
+#humann2
 humann2 \
     --input 'test-data/input_sequences.fasta' \
     -o 'humann2_output' \
