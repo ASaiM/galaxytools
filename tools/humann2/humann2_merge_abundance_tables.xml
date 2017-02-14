@@ -66,7 +66,14 @@
             <param name="gene_mapping_selection_test" value="false"/>
             <param name="pathway_mapping_selection" value="false"/>
             <param name="remove_taxonomy" value=""/>
-            <output name="output_table" file="merged_gene_families_pathways_abundances.tsv" /> 
+            <output name="output_table">
+                <assert_contents>
+                    <has_text text="PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L6Z6" />
+                    <has_text text="UNINTEGRATED|g__Bacteroides.s__Bacteroides_dorei" />
+                    <has_text text="COA-PWY-1|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7P1L8" />
+                    <has_text text="# Pathway" />
+                </assert_contents>
+            </output>
         </test>
     </tests>
 
