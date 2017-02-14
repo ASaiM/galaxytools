@@ -50,6 +50,7 @@ humann2_regroup_table \
     --ungrouped 'Y' \
     --protected 'Y'
 
+# humann2_renorm_table
 humann2_renorm_table \
     --input 'test-data/demo_pathabundance.tsv' \
     -o 'test-data/cpm_community_renormalized_pathway_abundance.tsv' \
