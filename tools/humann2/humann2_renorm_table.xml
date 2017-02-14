@@ -16,18 +16,24 @@
 
     <command><![CDATA[
         humann2_renorm_table
-            -i $input_table
-            -o $output_table
-            --norm $norm
+            --input '$input'
+            -o '$output_table'
+            --units '$units'
+            --mode '$mode'
+            --special '$special'
     ]]></command>
 
     <inputs>
-        <param name="input_table" type="data" format="tsv" label="Gene/pathway table" help="(-i)"/>
-
-        <param name="norm" type="select" label="Normalization scheme" help="(--norm)">
+        <param argument="--input" type="data" format="tsv" label="Gene/pathway table"/>
+        <param argument="--units" type="select" label="Normalization scheme" help="(--norm)">
             <option value="cpm" selected="true">Copies per million</option>
             <option value="relab">Relative abundance</option>
         </param>
+        <param argument="--mode" type="select" label="Normalization level" help="(--norm)">
+            <option value="community" selected="true">Normalization of all levels by community total</option>
+            <option value="levelwise">Normalization of all levels by levelwise total</option>
+        </param>
+        <param argument="--special" type='boolean' checked="true" truevalue='y' falsevalue='n' label="Include the special features UNMAPPED, UNINTEGRATED, and UNGROUPED?"/>
     </inputs>
 
     <outputs>
@@ -36,14 +42,18 @@
 
     <tests>
         <test>
-            <param name="input_table" value="expected_pathway_abundance.tsv"/>
-            <param name="norm" value="cpm"/>
-            <output name="output_table" file="cpm_renormalized_pathway_abundance.tsv"/>
+            <param name="input" value="demo_pathabundance.tsv"/>
+            <param name="units" value="cpm"/>
+            <param name="mode" value="community"/>
+            <param name="special" value="n"/>
+            <output name="output_table" file="cpm_community_renormalized_pathway_abundance.tsv"/>
         </test>
         <test>
-            <param name="input_table" value="expected_pathway_abundance.tsv"/>
-            <param name="norm" value="relab"/>
-            <output name="output_table" file="relab_renormalized_pathway_abundance.tsv"/>
+            <param name="input" value="demo_pathabundance.tsv"/>
+            <param name="units" value="relab"/>
+            <param name="mode" value="levelwise"/>
+            <param name="special" value="y"/>
+            <output name="output_table" file="relab_levelwise_renormalized_pathway_abundance.tsv"/>
         </test>
     </tests>
 

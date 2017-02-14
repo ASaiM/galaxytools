@@ -15,18 +15,17 @@
     </version_command>
 
     <command><![CDATA[
-        `mkdir tmp_dir`
+        mkdir tmp_dir
 
         && 
 
         #for $table in $input_tables
-            `cp $table.input_table tmp_dir`
+            cp '$table.input_table' 'tmp_dir' &&
         #end for
-
-        && 
+ 
         humann2_join_tables
-            -i "tmp_dir"
-            -o $joined_table           
+            -i 'tmp_dir'
+            -o '$joined_table'          
     ]]></command>
 
     <inputs>
@@ -41,8 +40,8 @@
 
     <tests>
         <test>
-            <param name="input_tables_0|input_table" value="expected_pathway_coverage.tsv"/>
-            <param name="input_tables_1|input_table" value="expected_pathway_abundance.tsv"/>
+            <param name="input_tables_0|input_table" value="demo_pathabundance.tsv"/>
+            <param name="input_tables_1|input_table" value="demo_pathcoverage.tsv"/>
             <output name="joined_table" file="joined_pathway_coverage_abundance.tsv"/>
         </test>
     </tests>

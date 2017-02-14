@@ -16,13 +16,13 @@
 
     <command><![CDATA[
         humann2_databases
-            --download $database_selector \${HUMANN2_DIR}/databases
+            --download '$database_selector' \${HUMANN2_DIR}/databases
             
             > $log
     ]]></command>
 
     <inputs>
-        <param name="database_selector" type="select" label="Database to download" help="">
+        <param name="database_selector" type="select" label="Database to download">
             <option value="chocophlan full">Nucleotide (ChocoPhlAn)</option>
             <option value="uniref diamond">Protein (UniRef50)</option>
         </param>

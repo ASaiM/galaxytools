@@ -1,7 +1,74 @@
-# Pathway	humann2_Abundance
-HOMOSER-METSYN-PWY: L-methionine biosynthesis I	1.3149243918
-HSERMETANA-PWY: L-methionine biosynthesis III	1.1318619128
-PWY-3841: folate transformations II	1.4268868747
-UNINTEGRATED	435.5199558332
-UNMAPPED	2.6377384941
-VALSYN-PWY: L-valine biosynthesis	0.8032128514
+# Pathway	demo_Abundance
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)	6.3694267516
+COA-PWY-1|g__Bacteroides.s__Bacteroides_vulgatus	4.7961630695
+COA-PWY-1|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7P1L8	4.016064257
+COA-PWY-1|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6L3F8	6.3492063492
+COA-PWY-1|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6KZR2	5.6022408964
+PWY-1269: CMP-3-deoxy-D-manno-octulosonate biosynthesis I	10.6471569863
+PWY-1269|unclassified	8.9740635174
+PWY-1269|unclassified|UniRef90_Z5XVM9	10.665534346
+PWY-1269|unclassified|UniRef90_X7F2P9	7.3126169751
+PWY-1269|unclassified|UniRef90_Z9K4C5	12.7438684783
+PWY-2942: L-lysine biosynthesis III	2.5305778153
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei	1.7857142857
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L5C5	6.4102564103
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R5W667	2.4968789014
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6KWW9	1.0964912281
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L6Z6	1.8832391714
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L5G7	2.5940337224
+PWY-2942|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6KZT3	4.5662100457
+PWY-5097: L-lysine biosynthesis VI	2.6664127226
+PWY-5423: oleoresin monoterpene volatiles biosynthesis	13.7815543238
+PWY-5423|unclassified	13.7815543238
+PWY-5423|unclassified|UniRef90_Q9ZUH4	13.7815543238
+PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation	2.8720157961
+PWY-6305: putrescine biosynthesis IV	12.3568523173
+PWY-6305|unclassified	12.3568523173
+PWY-6305|unclassified|UniRef90_Z5XKU5	11.3736016532
+PWY-6305|unclassified|UniRef90_X6L320	8.6463137003
+PWY-6305|unclassified|UniRef90_X5M7Z0	9.0719420554
+PWY-6700: queuosine biosynthesis	5.5726434156
+PWY-6700|g__Bacteroides.s__Bacteroides_dorei	3.4037771853
+PWY-6700|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6KZK0	3.1347962382
+PWY-6700|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R6TCP7	3.8759689922
+PWY-6700|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L2J3	2.8011204482
+PWY-6700|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R7NYU3	1.7873100983
+PWY-6700|g__Bacteroides.s__Bacteroides_vulgatus	1.4512868417
+PWY-6700|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6KZK0	2.0898641588
+PWY-6700|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R6TCP7	0.9689922481
+PWY-6700|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6L2J3	2.8011204482
+PWY-6700|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7NYU3	0.8936550492
+PWY-7111: pyruvate fermentation to isobutanol (engineered)	3.1668118122
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus	2.3731126339
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7P1Z5	2.5015634772
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7NKA0	6.5789473684
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R6IEC8	0.7716049383
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7NWD9	3.7243947858
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6L3E7	2.9342723005
+PWY-7111|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_D6D8M6	2.1164021164
+PWY-7219: adenosine ribonucleotides de novo biosynthesis	2.4290890774
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei	1.2474418751
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R5K610	0.8012820513
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L4M4	2.6773761714
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L1X1	1.705029838
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_A6L4L7	4.1753653445
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R6RZC5	1.2077294686
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_R6J7M6	2.7322404372
+PWY-7219|g__Bacteroides.s__Bacteroides_dorei|UniRef90_E6SQQ3	1.6339869281
+PWY490-3: nitrate reduction VI (assimilatory)	10.9962495261
+PWY490-3|unclassified	10.9962495261
+PWY490-3|unclassified|UniRef90_Z9JXD8	9.3092450619
+PWY490-3|unclassified|UniRef90_W8YTG4	12.6386317258
+PWY490-3|unclassified|UniRef90_W7DVV5	11.5904796756
+PWY490-3|unclassified|UniRef90_V5V2L3	8.8892176814
+UNINTEGRATED	6378.3363291102
+UNINTEGRATED|g__Bacteroides.s__Bacteroides_vulgatus	2909.3950875399
+UNINTEGRATED|g__Bacteroides.s__Bacteroides_dorei	1957.0469180460
+UNINTEGRATED|unclassified	46.5907339353
+UNMAPPED	1548.1865983490
+VALSYN-PWY: L-valine biosynthesis	3.1668118122
+VALSYN-PWY|g__Bacteroides.s__Bacteroides_vulgatus	2.3731126339
+VALSYN-PWY|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7P1Z5	2.5015634772
+VALSYN-PWY|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_R7NKA0	6.5789473684
+VALSYN-PWY|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_A6L3E7	2.9342723005
+VALSYN-PWY|g__Bacteroides.s__Bacteroides_vulgatus|UniRef90_D6D8M6	2.1164021164
