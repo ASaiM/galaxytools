@@ -55,7 +55,13 @@
             <param name="input" value="demo_genefamilies.tsv"/>
             <param name="names" value="uniref90" />
             <param name='simplify' value=""/>
-            <output name="output_table" file="renamed_genefamilies.tsv" />
+            <output name="output_table">
+                <assert_contents>
+                    <has_text text="UniRef90_R6I0Z3: NO_NAME|g__Bacteroides.s__Bacteroides_vulgatus" />
+                    <has_text text="UniRef90_I9RGY5: Tape measure domain-containing protein|g__Bacteroides.s__Bacteroides_dorei" />
+                    <has_text text="UniRef90_C3RF26: HRDC domain protein" />
+                </assert_contents>
+            </output>
         </test>
     </tests>
 
