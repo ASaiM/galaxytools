@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-#humann2
+# humann2
 humann2 \
     --input 'test-data/input_sequences.fasta' \
     -o 'humann2_output' \
@@ -25,6 +25,7 @@ humann2 \
     --output-basename 'humann2' \
     --pathways 'metacyc'
 
+# humann2_regroup_table
 humann2_regroup_table \
     --input 'test-data/demo_genefamilies.tsv' \
     -o 'test-data/regrouped_gene_families_to_infogo1000.tsv' \
