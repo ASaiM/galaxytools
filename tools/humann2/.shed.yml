@@ -1,6 +1,7 @@
 categories: 
   - Metagenomics
-description: HUMAnN2 is a pipeline for efficiently and accuretly profiling the presence/absence and abundance of microbial pathways in a community from metagenomic or metatranscriptomic sequencing data. 
+long_description: HUMAnN2 for functionally profiling metagenomes and metatranscriptomes at species-level resolution
+description: Profilte 
 name: humann2
 owner: bebatut
 remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/humann2/
