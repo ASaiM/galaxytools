@@ -78,13 +78,13 @@
             --metaphlan-options="$metaphlan_option"
 
             #if $nucleotide_db.nucleotide_db_selector == "cached"
-                --nucleotide-database '\${HUMANN2_DIR}/databases/chocophlan'
+                --nucleotide-database '$nucleotide_db.nucleotide_database'
             #else
                 --nucleotide-database nucleotide_db
             #end if
 
             #if $protein_db.protein_db_selector == "cached"
-                --protein-database '\${HUMANN2_DIR}/databases/uniref'
+                --protein-database '$protein_db.protein_database'
             #else
                 --protein-database protein_db
             #end if
@@ -133,7 +133,11 @@
                 <option value="history">From history (as collection)</option>
             </param>
 
-            <when value="cached"/>
+            <when value="cached">
+                <param name="nucleotide_database" type="select" label="Nucleotide database" help="">
+                    <options from_data_table="humann2_nucleotide_database"/>
+                </param>
+            </when>
             <when value="history">
                 <param format="fasta" name="nucleotide_database" argument="--nucleotide-database" type="data_collection" collection_type="list" label="Nucleotide database from history" help="Each file must be named: ^[g__].[s__]"/>
             </when>
@@ -147,7 +151,11 @@
                 <option value="history">From history</option>
             </param>
 
-            <when value="cached"/>
+            <when value="cached">
+                <param name="protein_database" type="select" label="Protein database" help="">
+                    <options from_data_table="humann2_protein_database"/>
+                </param>
+            </when>
             <when value="history">
                 <param name="protein_database" argument="--protein-database" type="data" format="fasta" label="Protein database from history"/>
             </when>
