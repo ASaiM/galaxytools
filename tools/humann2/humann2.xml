@@ -278,13 +278,13 @@
                     <has_text text="UniRef50_A0A016I611: Prophage LambdaSa1, N-acetylmuramoyl-L-alanine amidase, family 4|g__Bacteroides.s__Bacteroides_stercoris"/>
                 </assert_contents>
             </output>
-            <output name="pathcoverage_tsv" file="expected_pathway_coverage.tsv">
+            <output name="pathcoverage_tsv">
                 <assert_contents>
                     <has_text text="UNMAPPED" />
                     <has_text text="UNINTEGRATED" />
                 </assert_contents>
             </output>
-            <output name="pathabundance_tsv" file="expected_pathway_abundance.tsv">
+            <output name="pathabundance_tsv">
                 <assert_contents>
                     <has_text text="UNMAPPED" />
                     <has_text text="UNINTEGRATED" />
