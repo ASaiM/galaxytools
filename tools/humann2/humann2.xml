@@ -97,7 +97,7 @@
             --search-mode '$search_mode'
             --threads \${GALAXY_SLOTS:-4}
             --memory-use minimum
-	    --prescreen-threshold '$prescreen_threshold'
+	        --prescreen-threshold '$prescreen_threshold'
             --identity-threshold '$identity_threshold'
             --translated-subject-coverage-threshold '$translated_subject_coverage_threshold'
             --translated-query-coverage-threshold '$translated_query_coverage_threshold'
@@ -113,10 +113,7 @@
             $remove_statified_output
             $remove_column_description_output
 
-
-            --pathways '$pathways'
-            
-            
+            --pathways '$pathways'            
     ]]></command>
 
     <inputs>
@@ -182,7 +179,7 @@
             <when value="false">
                 <conditional name="metaphlan2_db_choice">
                     <param name="metaphlan2_db_selector" type="select" label="Database with clade-specific marker genes" help="">
-                        <option value="cached" selected="true">Locally cached</option>
+                        <option value="cached" selected="true">Default MetaPhlAn2 database</option>
                         <option value="history">From history</option>
                     </param>
 
