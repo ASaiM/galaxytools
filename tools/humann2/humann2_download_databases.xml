@@ -1,4 +1,4 @@
-<tool id="humann2_download_databases" name="Download" version="0.6.1">
+<tool id="humann2_download_databases" name="Download" version="@WRAPPER_VERSION@.0">
     <description>HUMAnN2 databases</description>
 
     <macros>

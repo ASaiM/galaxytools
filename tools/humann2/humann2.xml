@@ -1,4 +1,4 @@
-<tool id="humann2" name="HUMAnN2" version="0.6.1">
+<tool id="humann2" name="HUMAnN2" version="@WRAPPER_VERSION@.0">
     <description>to profile presence/absence and abundance of microbial pathways and gene families</description>
 
     <macros>
