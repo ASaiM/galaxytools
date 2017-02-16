@@ -30,10 +30,16 @@
         &&
 
         #if $protein_db.protein_db_selector == "history"
-            diamond makedb
-                --in '$protein_db.protein_database'
-                --db 'protein_db/protein_db'
-             &&
+            #if $translated_alignment == "diamond"
+                diamond makedb
+                    --in '$protein_db.protein_database'
+                    --db 'protein_db/protein_db'
+            #else
+                prerapsearch 
+                    -d '$protein_db.protein_database'
+                    -n 'protein_db/protein_db'
+            #end if
+            &&
         #end if
 
         #if $taxo_profile.taxonomic_profile_test == "false"
