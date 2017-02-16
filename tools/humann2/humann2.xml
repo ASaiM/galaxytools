@@ -288,6 +288,59 @@
                 </assert_contents>
             </output>
         </test>
+        <test>
+            <param name="input" value="input_sequences.fasta"/>
+            <param name='bypass_prescreen' value=''/>
+            <param name='bypass_nucleotide_index' value=''/>
+            <param name='bypass_translated_search' value=''/>
+            <param name='bypass_nucleotide_search' value=''/>
+            <param name="nucleotide_db_selector" value="history"/>
+            <param name="nucleotide_database">
+                <collection type="list">
+                    <element name="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_stercoris.centroids.v0.1.1.ffn.gz" />
+                    <element name="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1" ftype="fasta" value="g__Bacteroides.s__Bacteroides_thetaiotaomicron.centroids.v0.1.1.ffn.gz" />
+                </collection>
+            </param>
+            <param name="annotation_gene_index" value="8" />
+            <param name="protein_db_selector" value="history"/>
+            <param name="protein_database" value="reduced_uniref50.fasta"/>
+            <param name="evalue" value="1"/>
+            <param name="search_mode" value="uniref50"/>
+            <param name="prescreen_threshold" value="0.01"/>
+            <param name="identity_threshold" value="50"/>
+            <param name="translated_subject_coverage_threshold" value="50"/>
+            <param name="translated_query_coverage_threshold" value="50"/>
+            <param name='taxonomic_profile_test' value="false"/>
+            <param name='translated_alignment' value="rapsearch"/>
+            <param name='xipe' value='off'/>
+            <param name='minpath' value='on'/>
+            <param name='pick_frames' value='on'/>
+            <param name='gap_fill' value='off'/>
+            <param name='output_format' value="tsv"/>
+            <param name="output_max_dec" value="10"/>
+            <param name='remove_statified_output' value=''/>
+            <param name='remove_column_description_output' value=''/>
+            <param name='pathways' value="metacyc"/>
+            <output name="gene_families_tsv">
+                <assert_contents>
+                    <has_text text="UniRef90_unknown|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UniRef90_E1WVZ2|g__Bacteroides.s__Bacteroides_stercoris" />
+                    <has_text text="UniRef90_A0A016I611|g__Bacteroides.s__Bacteroides_stercoris"/>
+                </assert_contents>
+            </output>
+            <output name="pathcoverage_tsv">
+                <assert_contents>
+                    <has_text text="Purine_metabolism;XMP_biosynthesis_via_salvage_pathway;XMP_from_xanthine:_step_1/1" />
+                    <has_text text="Purine_metabolism;GMP_biosynthesis;GMP_from_XMP_(L-Gln_route):_step_1/1.|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                </assert_contents>
+            </output>
+            <output name="pathabundance_tsv">
+                <assert_contents>
+                    <has_text text="Purine_metabolism;XMP_biosynthesis_via_salvage_pathway;XMP_from_xanthine:_step_1/1" />
+                    <has_text text="Purine_metabolism;GMP_biosynthesis;GMP_from_XMP_(L-Gln_route):_step_1/1.|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                </assert_contents>
+            </output>
+        </test>
     </tests>
 
     <help><![CDATA[
