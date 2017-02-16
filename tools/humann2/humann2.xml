@@ -305,7 +305,7 @@
             <param name="protein_db_selector" value="history"/>
             <param name="protein_database" value="reduced_uniref50.fasta"/>
             <param name="evalue" value="1"/>
-            <param name="search_mode" value="uniref50"/>
+            <param name="search_mode" value="uniref90"/>
             <param name="prescreen_threshold" value="0.01"/>
             <param name="identity_threshold" value="50"/>
             <param name="translated_subject_coverage_threshold" value="50"/>
@@ -320,7 +320,7 @@
             <param name="output_max_dec" value="10"/>
             <param name='remove_statified_output' value=''/>
             <param name='remove_column_description_output' value=''/>
-            <param name='pathways' value="metacyc"/>
+            <param name='pathways' value="unipathway"/>
             <output name="gene_families_tsv">
                 <assert_contents>
                     <has_text text="UniRef90_unknown|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
