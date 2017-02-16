@@ -64,12 +64,7 @@
             #if $taxo_profile.taxonomic_profile_test == "true":
                 --taxonomic-profile '$taxo_profile.taxonomic_profile'
             #else
-                #if $taxo_profile.metaphlan2_db_choice.metaphlan2_db_selector == "cached"
-                    #set $table = dict([(_[0], _[2]) for _ in $taxo_profile.metaphlan2_db_choice.cached_metaphlan2_db.input.options.tool_data_table.data])
-                    #set $db_choice = $taxo_profile.metaphlan2_db_choice.cached_metaphlan2_db.value
-                    #set $metaphlan_option += " --bowtie2db " + $table[$db_choice]
-                    #set $metaphlan_option += " --mpa_pkl " + $table[$db_choice] + ".pkl"
-                #else
+                #if $taxo_profile.metaphlan2_db_choice.metaphlan2_db_selector == "history"
                     #set $metaphlan_option += " --bowtie2db " + ref_db/ref_db
                     #set $metaphlan_option += " --mpa_pkl " + ref_db/metadata.pkl
                 #end if
@@ -177,11 +172,7 @@
                         <option value="history">From history</option>
                     </param>
 
-                    <when value="cached">
-                        <param name="cached_metaphlan2_db" label="Cached database with clade-specific marker genes" type="select" >
-                          <options from_data_table="metaphlan2_db" />
-                        </param>
-                    </when>
+                    <when value="cached"/>
                     <when value="history">
                         <param name="metaphlan2_db_sequences" type="data" format="fasta" label="Database with clade-specific marker genes from history" help="(--bowtie2db)"/>
                         <param name="metaphlan2_db_metadata" type="data" format="json" label="Metadata associate to the database with clade-specific marker genes from history" help="(--mpa_pkl)"/>
