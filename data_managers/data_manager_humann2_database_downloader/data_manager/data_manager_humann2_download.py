@@ -1,16 +1,12 @@
 #!/usr/bin/env python
 #
-# Data manager for reference data for the 'mothur_toolsuite' Galaxy tools
+# Data manager for reference data for the 'humann2' Galaxy tools
+import datetime
 import json
 import optparse
 import os
-import shutil
+import subprocess
 import sys
-import tarfile
-import tempfile
-import urllib2
-import zipfile
-import datetime
 
 
 HUMANN2_REFERENCE_DATA = {
@@ -23,6 +19,7 @@ HUMANN2_REFERENCE_DATA = {
     "uniref90_ec_filtered_diamond": "EC-filtered UniRef90",
     "DEMO_diamond": "Demo"
 }
+
 
 # Utility functions for interacting with Galaxy JSON
 def read_input_json(jsonfile):
@@ -111,10 +108,13 @@ def download_humann2_db(data_tables, table_name, database, build, target_dir):
       target_dir: directory to put copy or link to the data file
 
     """
+    today = datetime.date.today()
     db_target_dir = os.path.join(target_dir, database, build)
     os.mkdir(db_target_dir)
-    cmd = "humann2_databases --download %s %s %s" % (database, build, db_target_dir)
-    subprocess.check_call( cmd, shell=True )
+    cmd = "humann2_databases --download %s %s %s" % (database,
+                                                     build,
+                                                     db_target_dir)
+    subprocess.check_call(cmd, shell=True)
     add_data_table_entry(
         data_tables,
         table_name,
@@ -125,15 +125,15 @@ def download_humann2_db(data_tables, table_name, database, build, target_dir):
 
 
 if __name__ == "__main__":
-    print "Starting..."
+    print("Starting...")
 
     # Read command line
     parser = optparse.OptionParser()
     parser.add_option('--database', action='store', dest='database')
     parser.add_option('--build', action='store', dest='build', default='')
     options, args = parser.parse_args()
-    print "options: %s" % options
-    print "args   : %s" % args
+    print("options: %s" % options)
+    print("args   : %s" % args)
 
     # Check for JSON file
     if len(args) != 1:
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     params, target_dir = read_input_json(jsonfile)
 
     # Make the target directory
-    print "Making %s" % target_dir
+    print("Making %s" % target_dir)
     os.mkdir(target_dir)
 
     # Set up data tables dictionary
@@ -159,10 +159,15 @@ if __name__ == "__main__":
     add_data_table(data_tables, table_name)
 
     # Fetch data from specified data sources
-    download_humann2_db(data_tables, table_name, options.database, options.build, target_dir)
+    download_humann2_db(
+        data_tables,
+        table_name,
+        options.database,
+        options.build,
+        target_dir)
 
     # Write output JSON
-    print "Outputting JSON"
-    print str(json.dumps(data_tables))
+    print("Outputting JSON")
+    print(str(json.dumps(data_tables)))
     open(jsonfile, 'wb').write(json.dumps(data_tables))
-    print "Done."
+    print("Done.")
