@@ -275,9 +275,9 @@
             <param name='pathways' value="metacyc"/>
             <output name="gene_families_tsv">
                 <assert_contents>
-                    <has_text text="UniRef50_R5IH84|g__Bacteroides.s__Bacteroides_stercoris" />
-                    <has_text text="UniRef50_R5RH80: TPR-repeat-containing protein|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
-                    <has_text text="UniRef50_A0A016I611: Prophage LambdaSa1, N-acetylmuramoyl-L-alanine amidase, family 4|g__Bacteroides.s__Bacteroides_stercoris"/>
+                    <has_text text="UniRef50_R5C4D7|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UniRef50_R5NYX5: Sodium ion-translocating decarboxylase beta subunit|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UniRef50_A0A016FAQ7: N-6 DNA Methylase family protein (Fragment)|g__Bacteroides.s__Bacteroides_stercoris"/>
                 </assert_contents>
             </output>
             <output name="pathcoverage_tsv">
@@ -328,21 +328,20 @@
             <param name='pathways' value="unipathway"/>
             <output name="gene_families_tsv">
                 <assert_contents>
-                    <has_text text="UniRef90_unknown|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
-                    <has_text text="UniRef90_E1WVZ2|g__Bacteroides.s__Bacteroides_stercoris" />
-                    <has_text text="UniRef90_A0A016I611|g__Bacteroides.s__Bacteroides_stercoris"/>
+                    <has_text text="UNMAPPED" />
+                    <has_text text="# Gene Family" />
                 </assert_contents>
             </output>
             <output name="pathcoverage_tsv">
                 <assert_contents>
-                    <has_text text="Purine_metabolism;XMP_biosynthesis_via_salvage_pathway;XMP_from_xanthine:_step_1/1" />
-                    <has_text text="Purine_metabolism;GMP_biosynthesis;GMP_from_XMP_(L-Gln_route):_step_1/1.|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UNMAPPED" />
+                    <has_text text="UNINTEGRATED" />
                 </assert_contents>
             </output>
             <output name="pathabundance_tsv">
                 <assert_contents>
-                    <has_text text="Purine_metabolism;XMP_biosynthesis_via_salvage_pathway;XMP_from_xanthine:_step_1/1" />
-                    <has_text text="Purine_metabolism;GMP_biosynthesis;GMP_from_XMP_(L-Gln_route):_step_1/1.|g__Bacteroides.s__Bacteroides_thetaiotaomicron" />
+                    <has_text text="UNMAPPED" />
+                    <has_text text="UNINTEGRATED" />
                 </assert_contents>
             </output>
         </test>
