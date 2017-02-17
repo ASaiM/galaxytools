@@ -1,4 +1,4 @@
-<tool id="humann2_join_tables" name="Join" version="0.6.1">
+<tool id="humann2_join_tables" name="Join" version="@WRAPPER_VERSION@.0">
     <description>HUMAnN2 generated tables</description>
 
     <macros>
