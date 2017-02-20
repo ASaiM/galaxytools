@@ -110,7 +110,7 @@ def download_humann2_db(data_tables, table_name, database, build, target_dir):
     """
     today = datetime.date.today()
     db_target_dir = os.path.join(target_dir, database, build)
-    os.mkdir(db_target_dir)
+    os.makedirs(db_target_dir)
     cmd = "humann2_databases --download %s %s %s" % (database,
                                                      build,
                                                      db_target_dir)
@@ -128,12 +128,12 @@ if __name__ == "__main__":
     print("Starting...")
 
     # Read command line
-    parser = optparse.OptionParser()
-    parser.add_option('--database', action='store', dest='database')
-    parser.add_option('--build', action='store', dest='build', default='')
+    parser = optparse.OptionParser(description='Download HUMAnN2 database')
+    parser.add_option('--database', help="Database name")
+    parser.add_option('--build', help="Build of the database")
     options, args = parser.parse_args()
-    print("options: %s" % options)
     print("args   : %s" % args)
+    
 
     # Check for JSON file
     if len(args) != 1:
