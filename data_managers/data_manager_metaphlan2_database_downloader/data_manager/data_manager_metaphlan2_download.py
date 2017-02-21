@@ -78,7 +78,7 @@ def add_data_table_entry(d, table, entry):
         raise Exception("add_data_table_entry: no table '%s'" % table)
 
 
-def download_metaphlan2_db(data_tables, table_name, target_dir):
+def download_metaphlan2_db(data_tables, build, table_name, target_dir):
     """Download MetaPhlAn2 database
 
     Creates references to the specified file(s) on the Galaxy
@@ -95,9 +95,9 @@ def download_metaphlan2_db(data_tables, table_name, target_dir):
 
     """
     today = datetime.date.today()
-    db_target_dir = os.path.join(target_dir, database, build)
+    db_target_dir = os.path.join(target_dir, build)
     os.makedirs(db_target_dir)
-    cmd = "metaphlan2_databases --output %s" % (db_target_dir)
+    cmd = "download_metaphlan2_db.py --output %s" % (db_target_dir)
     subprocess.check_call(cmd, shell=True)
     add_data_table_entry(
         data_tables,
@@ -105,7 +105,8 @@ def download_metaphlan2_db(data_tables, table_name, target_dir):
         dict(
             dbkey=build,
             value=today.isoformat(),
-            name="MetaPhlAn2 clade-specific marker genes")
+            name="MetaPhlAn2 clade-specific marker genes",
+            path=db_target_dir))
 
 
 if __name__ == "__main__":
@@ -113,6 +114,7 @@ if __name__ == "__main__":
 
     # Read command line
     parser = optparse.OptionParser(description='Download MetaPhlan2 database')
+    parser.add_option('--database', help="Database name")
     options, args = parser.parse_args()
     print("args   : %s" % args)
     
@@ -136,13 +138,16 @@ if __name__ == "__main__":
     add_data_table(data_tables, "metaphlan2_database")
 
     # Fetch data from specified data sources
-    download_metaphlan2_db(
-        data_tables,
-        "metaphlan2_database",
-        target_dir)
+    if options.database == "db_v20":
+        download_metaphlan2_db(
+            data_tables,
+            "db_v20",
+            "metaphlan2_database",
+            target_dir)
 
     # Write output JSON
     print("Outputting JSON")
     print(str(json.dumps(data_tables)))
-    open(jsonfile, 'wb').write(json.dumps(data_tables))
+    with open(jsonfile, 'wb') as out:
+        out.write(json.dumps(data_tables))
     print("Done.")
