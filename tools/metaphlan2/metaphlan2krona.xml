@@ -9,22 +9,18 @@
     <expand macro="requirements"/>
     <expand macro="stdio"/>
 
-    <version_command>
-<![CDATA[
-metaphlan2krona.py -v
-]]>
-    </version_command>
+    <version_command>metaphlan2krona.py -v</version_command>
 
     <command>
 <![CDATA[
         metaphlan2krona.py
-            -p $input_file
-            -k $krona
+            --profile '$profile'
+            -k '$krona'
 ]]>
     </command>
 
     <inputs>
-        <param name="input_file" type="data" format="tabular,txt" label="Input file (MetaPhlAN2 output)" help="(--profile)"/>
+        <param argument="--profile" type="data" format="tabular,txt" label="Input file (MetaPhlAN2 output)"/>
     </inputs>
 
     <outputs>
@@ -33,7 +29,7 @@ metaphlan2krona.py -v
 
     <tests>
         <test>
-            <param name="input_file" value="community_profile.tabular"/>
+            <param name="profile" value="community_profile.tabular"/>
             <output name="krona" file="formatted_to_krona.tabular"/>
         </test>
     </tests>
