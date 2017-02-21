@@ -6,7 +6,10 @@
         <import>metaphlan2_macros.xml</import>
     </macros>
 
-    <expand macro="requirements"/>
+    <expand macro="requirements">
+        <requirement type="package" version="2.2.5">bowtie2</requirement>
+    </expand>
+    
     <expand macro="stdio"/>
 
     <version_command>
@@ -94,7 +97,7 @@ metaphlan2.py -v
         <conditional name="analysis_type">
             <param name="analysis_type_select" type="select" label="Type of analysis to perform" argument="-t">
               <option value="rel_ab" selected="true">Profiling a metagenomes in terms of relative abundances</option>
-              <option value="rel_ab_w_read_stats" selected="true">Profiling a metagenomes in terms of relative abundances and estimate the number of reads comming from each clade</option>
+              <option value="rel_ab_w_read_stats">Profiling a metagenomes in terms of relative abundances and estimate the number of reads comming from each clade</option>
               <option value="reads_map">Mapping from reads to clades (only reads hitting a marker)</option>
               <option value="clade_profiles">Normalized marker counts for clades with at least a non-null marker</option>
               <option value="marker_ab_table">Normalized marker counts (only when > 0.0 and normalized by metagenome size if --nreads is specified)</option>
@@ -156,8 +159,8 @@ metaphlan2.py -v
         <test>
             <param name="input_file" value="input_sequences.fasta"/>
             <param name="db_selector" value="history" />
-            <param name="db_metadata" value="marker_metadata.json" />
-            <param name="db_sequences" value="marker_sequences.fasta" />
+            <param name="mpa_pkl" value="marker_metadata.json" />
+            <param name="bowtie2db" value="marker_sequences.fasta" />
             <param name="analysis_type_select" value="rel_ab" />
             <param name="taxonomic_level" value="a" />
             <param name="min_cu_len" value="2000" />
@@ -167,6 +170,8 @@ metaphlan2.py -v
             <param name="ignore_bacteria" value="" />
             <param name="ignore_archaea" value="" />
             <param name="stat_q" value="0.1" />
+            <param name="sample_id_key" value="#SampleID"/>
+            <param name="sample_id" value="Metaphlan2_Analysis"/>
             <output name="output_file" file="community_profile.tabular"/>
         </test>
     </tests>
