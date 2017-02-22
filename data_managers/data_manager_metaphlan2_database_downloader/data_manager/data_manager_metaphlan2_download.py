@@ -117,7 +117,6 @@ if __name__ == "__main__":
     parser.add_option('--database', help="Database name")
     options, args = parser.parse_args()
     print("args   : %s" % args)
-    
 
     # Check for JSON file
     if len(args) != 1:
