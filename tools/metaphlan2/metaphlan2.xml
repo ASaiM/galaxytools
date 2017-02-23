@@ -42,10 +42,9 @@ metaphlan2.py -v
             --bowtie2_exe `which bowtie2`
 
             #if $db.db_selector == "cached"
-                #set $paths = dict([(_[0], _[3]) for _ in $db.cached_db.input.options.tool_data_table.data])
-                #set $db_choice = $db.cached_db.value
-                --bowtie2db `ls $paths[$db_choice]/*.pkl | sed 's/\(.*\)\..*/\1/'`
-                --mpa_pkl `ls $paths[$db_choice]/*.pkl`
+                #set $path = $db.cached_db.fields.path
+                --bowtie2db `ls $path/*.pkl | sed 's/\(.*\)\..*/\1/'`
+                --mpa_pkl `ls $path/*.pkl`
             #else
                 --bowtie2db 'ref_db/ref_db'
                 --mpa_pkl 'ref_db/metadata.pkl'
@@ -77,15 +76,15 @@ metaphlan2.py -v
     </command>
 
     <inputs>
-        <param name="input_file" type="data" format="fastq,fasta,sam" label="Input file" help=""/>
+        <param name="input_file" type="data" format="fastq,fasta,sam" label="Input file"/>
         <conditional name="db">
-            <param name="db_selector" type="select" label="Database with clade-specific marker genes" help="">
+            <param name="db_selector" type="select" label="Database with clade-specific marker genes">
                 <option value="cached" selected="true">Locally cached</option>
                 <option value="history">From history</option>
             </param>
             <when value="cached">
-                <param name="cached_db" label="Cached database with clade-specific marker genes" type="select" >
-                <options from_data_table="metaphlan2_database" />
+                <param name="cached_db" label="Cached database with clade-specific marker genes" type="select">
+                    <options from_data_table="metaphlan2_database"/>
                 </param>
             </when>
             <when value="history">
