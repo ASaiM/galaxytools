@@ -1,4 +1,4 @@
-<tool id="metaphlan2krona" name="Format MetaPhlAn2" version="2.5.0">
+<tool id="metaphlan2krona" name="Format MetaPhlAn2" version="@WRAPPER_VERSION@.0">
 
     <description>output for Krona</description>
 
@@ -9,22 +9,18 @@
     <expand macro="requirements"/>
     <expand macro="stdio"/>
 
-    <version_command>
-<![CDATA[
-metaphlan2krona.py -v
-]]>
-    </version_command>
+    <version_command>metaphlan2krona.py -v</version_command>
 
     <command>
 <![CDATA[
         metaphlan2krona.py
-            -p $input_file
-            -k $krona
+            --profile '$profile'
+            -k '$krona'
 ]]>
     </command>
 
     <inputs>
-        <param name="input_file" type="data" format="tabular,txt" label="Input file (MetaPhlAN2 output)" help="(--profile)"/>
+        <param argument="--profile" type="data" format="tabular,txt" label="Input file (MetaPhlAN2 output)"/>
     </inputs>
 
     <outputs>
@@ -33,7 +29,7 @@ metaphlan2krona.py -v
 
     <tests>
         <test>
-            <param name="input_file" value="community_profile.tabular"/>
+            <param name="profile" value="community_profile.tabular"/>
             <output name="krona" file="formatted_to_krona.tabular"/>
         </test>
     </tests>
@@ -48,7 +44,5 @@ This tool formats MetaPhlAn2 output to be ready for Krona.
 
     ]]></help>
 
-    <citations>
-        <citation type="doi">10.1038/nmeth.3589</citation>
-    </citations>
+    <expand macro="citations"/>
 </tool>

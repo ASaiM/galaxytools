@@ -11,7 +11,6 @@ tools/format_metaphlan2_output
 tools/graphlan
 tools/group_humann2_uniref_abundances_to_GO
 tools/humann2
-tools/metaphlan2
 tools/normalize_dataset
 tools/plot_barplot
 tools/plot_generic_x_y_plot
