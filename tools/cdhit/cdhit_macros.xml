@@ -30,24 +30,24 @@
 
       #if $advanced.align.style == 'local':
         -G 0
-        #if str($advance.align.align_coverage_long) != 'None':
-          -aL $advance.align.align_coverage_long
+        #if str($advanced.align.align_coverage_long) != 'None':
+          -aL $advanced.align.align_coverage_long
         #end if
 
-        #if str($advance.align.align_coverage_long_control) != 'None':
-          -AL $advance.align.align_coverage_long_control
+        #if str($advanced.align.align_coverage_long_control) != 'None':
+          -AL $advanced.align.align_coverage_long_control
         #end if
 
-        #if str($advance.aling.align_coverage_short) != 'None':
-          -aS $advance.align.align_coverage_short
+        #if str($advanced.aling.align_coverage_short) != 'None':
+          -aS $advanced.align.align_coverage_short
         #end if
 
-        #if str($advance.aling.align_coverage_short_control) != 'None':
-          -AS $advance.align.align_coverage_short_control
+        #if str($advanced.aling.align_coverage_short_control) != 'None':
+          -AS $advanced.align.align_coverage_short_control
         #end if
 
-        #if str($advance.align.align_coverage_min) != 'None':
-          -A $advance.align.aling_coverage_min
+        #if str($advanced.align.align_coverage_min) != 'None':
+          -A $advanced.align.aling_coverage_min
         #end if
       #end if
     #end if 
