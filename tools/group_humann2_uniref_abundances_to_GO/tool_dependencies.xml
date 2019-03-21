@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
 <tool_dependency>
-    <package name="numpy" version="1.9">
-        <repository name="package_python_2_7_numpy_1_9" owner="iuc" />
-    </package>
-    <package name="humann2" version="0.6.1">
-        <repository name="package_humann2_0_6_1" owner="bebatut" />
-    </package>
-    <package name="goatools" version="0.6.4">
-        <repository name="package_goatools_0_6_4" owner="bebatut" />
-    </package>
     <package name="group_humann2_uniref_abundances_to_go" version="1.2.0">
         <install version="1.0">
             <actions>
