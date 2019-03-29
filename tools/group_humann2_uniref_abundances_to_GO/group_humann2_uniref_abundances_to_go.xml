@@ -1,4 +1,4 @@
-<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances" version="1.2.0">
+<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances" version="1.2.1">
     <description> of UniRef50 gene families obtained (HUMAnN2 output) to Gene Ontology (GO) slim terms</description>
 
     <requirements>
