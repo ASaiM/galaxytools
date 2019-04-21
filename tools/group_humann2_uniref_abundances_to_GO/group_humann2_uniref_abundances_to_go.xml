@@ -101,7 +101,7 @@
 
 HUMAnN2 is a pipeline to profile the presence/absence and abundance of microbial pathways in community of microbiota sequencing data. One output is a file with UniRef50 gene family abundances. HUMAnN2 proposes a script to regroup Uniref50 to GO, but used GO terms are too precise to get a broad overview of the ontology content.
 
-The tool described here contains scripts to group UniRef50 abundances obtained using main HUMANn2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
+The tool described here contains scripts to group UniRef50 abundances obtained using main HUMAnN2 script (Gene families) to GO slim terms. GO slim is a subset of the terms in the whole GO. For this tool, metagenomics GO slim terms developed by Jane Lomax and the InterPro group.
 
 More information on `dedicated GitHub repository <https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO>`_.
 
