@@ -4,10 +4,10 @@
 import argparse
 
 
-def extract_clade_abundance(metaphlan2_filepath):
-    clade_abundance = {}
-    with open(metaphlan2_filepath, 'r') as metaphlan2_file:
-        for line in metaphlan2_file.readlines():
+def extract_clade_abundance(metaphlan2_fp):
+    clade_abund = {}
+    with open(metaphlan2_fp, 'r') as metaphlan2_f:
+        for line in metaphlan2_f.readlines():
             if line.find('g__') == -1:
                 continue
 
@@ -18,23 +18,23 @@ def extract_clade_abundance(metaphlan2_filepath):
             genus = taxo[(taxo.find('g__')+3):]
             if genus.find('|') != -1:
                 genus = genus[:(genus.find('|'))]
-            clade_abundance.setdefault(genus, {'abundance': 0, 'species': {}})
+            clade_abund.setdefault(genus, {'abundance': 0, 'species': {}})
             if taxo.find('t__') != -1:
                 continue
             elif taxo.find('s__') != -1:
                 species = taxo[(taxo.find('s__')+3):]
-                clade_abundance[genus]['species'].setdefault(
+                clade_abund[genus]['species'].setdefault(
                     species,
                     abundance)
             else:
-                clade_abundance[genus]['abundance'] = abundance
-    return clade_abundance
+                clade_abund[genus]['abundance'] = abundance
+    return clade_abund
 
 
-def compute_overall_abundance(humann2_file):
+def compute_overall_abundance(humann2_fp):
     overall_abundance = 0
-    with open(args.humann2_file, 'r') as humann2_file:
-        for line in humann2_file.readlines():
+    with open(humann2_fp, 'r') as humann2_f:
+        for line in humann2_f.readlines():
             if line.find('|') != -1 or line.startswith('#'):
                 continue
             split_line = line[:-1].split('\t')
@@ -43,43 +43,38 @@ def compute_overall_abundance(humann2_file):
 
 
 def format_characteristic_name(name):
-    format_name = name
-    format_name = format_name.replace('/', ' ')
-    format_name = format_name.replace('-', ' ')
-    format_name = format_name.replace("'", '')
-    if format_name.find('(') != -1 and format_name.find(')') != -1:
-        open_bracket = format_name.find('(')
-        close_bracket = format_name.find(')')+1
-        format_name = format_name[:open_bracket] + format_name[close_bracket:]
-    return format_name
+    formatted_n = name
+    formatted_n = formatted_n.replace('/', ' ')
+    formatted_n = formatted_n.replace('-', ' ')
+    formatted_n = formatted_n.replace("'", '')
+    if formatted_n.find('(') != -1 and formatted_n.find(')') != -1:
+        open_bracket = formatted_n.find('(')
+        close_bracket = formatted_n.find(')')+1
+        formatted_n = formatted_n[:open_bracket] + formatted_n[close_bracket:]
+    return formatted_n
 
 
 def combine_metaphlan2_humann2(args):
-    clade_abundance = extract_clade_abundance(args.metaphlan2_file)
-    overall_abundance = compute_overall_abundance(args.humann2_file)
+    clade_abund = extract_clade_abundance(args.metaphlan2_fp)
+    overall_abund = compute_overall_abundance(args.humann2_fp)
 
-    with open(args.output_file, 'w') as output_file:
-        string = 'genus\t'
-        string += 'genus_abundance\t'
-        string += 'species\t'
-        string += 'species_abundance\t'
-        string += args.type + '_id\t'
-        string += args.type + '_name\t'
-        string += args.type + '_abundance\n'
-        output_file.write(string)
-        with open(args.humann2_file, 'r') as humann2_file:
-            for line in humann2_file.readlines():
+    with open(args.output_fp, 'w') as output_f:
+        s = 'genus\tgenus_abundance\tspecies\tspecies_abundance\t'
+        s = '%s\t%s_id\t%s_name\t%s_abundance\n' % (s, args.type, args.type, args.type)
+        output_f.write(s)
+        with open(args.humann2_fp, 'r') as humann2_f:
+            for line in humann2_f.readlines():
                 if line.find('|') == -1:
                     continue
 
                 split_line = line[:-1].split('\t')
-                abundance = 100*float(split_line[1])/overall_abundance
+                abundance = 100*float(split_line[1])/overall_abund
                 annotation = split_line[0].split('|')
-                characteristic = annotation[0].split(':')
-                characteristic_id = characteristic[0]
+                charact = annotation[0].split(':')
+                charact_id = charact[0]
                 char_name = ''
-                if len(characteristic) > 1:
-                    char_name = format_characteristic_name(characteristic[-1])
+                if len(charact) > 1:
+                    char_name = format_characteristic_name(charact[-1])
                 taxo = annotation[1].split('.')
 
                 if taxo[0] == 'unclassified':
@@ -87,28 +82,24 @@ def combine_metaphlan2_humann2(args):
                 genus = taxo[0][3:]
                 species = taxo[1][3:]
 
-                if genus not in clade_abundance:
-                    print("no" + genus + "found in" + args.metaphlan2_file)
+                if genus not in clade_abund:
+                    print("no %s found in %s" % (genus, args.metaphlan2_fp))
                     continue
-                if species not in clade_abundance[genus]['species']:
-                    string = "no" + species + "found in" + args.metaphlan2_file
-                    string += "for" + genus
-                    print(string)
+                if species not in clade_abund[genus]['species']:
+                    print("no %s found in %s for % s" % (species, args.metaphlan2_fp, genus))
                     continue
-                string = genus + '\t'
-                string += clade_abundance[genus]['abundance'] + '\t'
-                string += species + '\t'
-                string += clade_abundance[genus]['species'][species] + '\t'
-                string += characteristic_id + '\t'
-                string += char_name + '\t'
-                string += str(abundance) + '\n'
+
+                s = "%s\t%s\t" % (genus, clade_abund[genus]['abundance'])
+                s += "%s\t%s\t" % (species, clade_abund[genus]['species'][species])
+                s += "%s\t%s\t%s\n" % (charact_id, char_name, abundance)
+                output_f.write(s)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--humann2_file', required=True)
-    parser.add_argument('--metaphlan2_file', required=True)
-    parser.add_argument('--output_file', required=True)
+    parser.add_argument('--humann2_fp', required=True)
+    parser.add_argument('--metaphlan2_fp', required=True)
+    parser.add_argument('--output_fp', required=True)
     parser.add_argument(
         '--type',
         required=True,
