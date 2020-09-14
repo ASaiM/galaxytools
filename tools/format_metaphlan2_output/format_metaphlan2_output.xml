@@ -1,4 +1,4 @@
-<tool id="format_metaphlan2_output" name="Format MetaPhlAn2" version="0.1.0">
+<tool id="format_metaphlan2_output" name="Format MetaPhlAn2" version="0.2.0">
     <description>output to extract abundance at different taxonomic levels</description>
 
     <requirements>
