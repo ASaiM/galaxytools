@@ -1,6 +1,7 @@
 <tool id="combine_metaphlan2_humann2" name="Combine MetaPhlAn2 and HUMAnN2 outputs" version="0.2.0">
     <description>to relate genus/species abundances and gene families/pathways abundances</description>
     <requirements>
+        <requirement type="package" version="3.7">python</requirement>
     </requirements>
     <stdio>
         <exit_code range="1:" />
@@ -8,10 +9,10 @@
     </stdio>
     <version_command></version_command>
     <command><![CDATA[
-        python $__tool_directory__/combine_metaphlan2_humann2.py 
+        python '$__tool_directory__/combine_metaphlan2_humann2.py'
             --metaphlan2_fp '$metaphlan2_file'
             --humann2_fp '$humann2_file'
-            --type '$type'   
+            --type $type    
 
             #if str($type) == 'gene_families'
                 --output_fp '$gene_families_output_file'

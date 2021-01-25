@@ -1,5 +1,4 @@
 tools/cdhit
-tools/combine_metaphlan2_humann2
 tools/compare_humann2_output
 tools/compute_wilcoxon_test
 tools/convert_extract_sequence_file
