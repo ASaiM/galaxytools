@@ -1,8 +1,0 @@
-categories: 
-  - Fasta Manipulation
-  - Sequence Analysis
-description: Cd-Hit is a very widely used program for clustering and comparing protein or nucleotide sequences
-homepage_url: https://github.com/weizhongli/cdhit
-name: cdhit
-owner: bebatut
-remote_repository_url: https://github.com/ASaiM/galaxytools/tree/master/tools/cdhit/
